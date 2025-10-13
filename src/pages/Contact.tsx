@@ -96,12 +96,17 @@ const Contact = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-hero text-secondary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 animate-fade-in">
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-hero" />
+        <div className="absolute inset-0 bg-gradient-mesh" />
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <div className="inline-block px-4 py-2 mb-6 rounded-full bg-white/10 backdrop-blur-md border border-white/20 animate-fade-in">
+            <span className="text-sm font-medium text-white">💬 We're Here to Help</span>
+          </div>
+          <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 text-white animate-fade-in leading-tight">
             Get in Touch
           </h1>
-          <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto animate-fade-in">
+          <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto text-white animate-fade-in">
             Let's discuss how we can help bring your engineering project to life
           </p>
         </div>
@@ -112,21 +117,25 @@ const Contact = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
             {contactInfo.map((info, index) => (
-              <Card key={index} className="text-center animate-scale-in border-border">
+              <Card 
+                key={index} 
+                className="text-center group hover:-translate-y-2 transition-all duration-300 animate-scale-in border-border/50 hover:border-primary/50 bg-gradient-card hover:shadow-xl"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
                 <CardContent className="p-8">
-                  <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10">
-                    <info.icon className="h-7 w-7 text-primary" />
+                  <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 group-hover:bg-primary group-hover:scale-110 transition-all shadow-md group-hover:shadow-glow">
+                    <info.icon className="h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors" />
                   </div>
                   <h3 className="text-lg font-semibold mb-2">{info.title}</h3>
                   {info.link ? (
                     <a
                       href={info.link}
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="text-muted-foreground hover:text-primary transition-colors font-medium"
                     >
                       {info.details}
                     </a>
                   ) : (
-                    <p className="text-muted-foreground">{info.details}</p>
+                    <p className="text-muted-foreground font-medium">{info.details}</p>
                   )}
                 </CardContent>
               </Card>
@@ -136,7 +145,7 @@ const Contact = () => {
           {/* Contact Form and Map */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Form */}
-            <Card className="animate-fade-in border-border">
+            <Card className="animate-fade-in border-border/50 bg-gradient-card shadow-xl">
               <CardContent className="p-8">
                 <h2 className="text-3xl font-serif font-bold mb-6">Send Us a Message</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -199,17 +208,20 @@ const Contact = () => {
             </Card>
 
             {/* Map Placeholder */}
-            <Card className="animate-fade-in border-border">
+            <Card className="animate-fade-in border-border/50 shadow-xl overflow-hidden">
               <CardContent className="p-0 h-full">
-                <div className="w-full h-full min-h-[500px] bg-muted rounded-lg flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <MapPin className="h-16 w-16 text-primary mx-auto mb-4" />
-                    <h3 className="text-xl font-semibold mb-2">Visit Our Office</h3>
-                    <p className="text-muted-foreground">
+                <div className="w-full h-full min-h-[500px] bg-gradient-to-br from-muted to-muted/50 rounded-lg flex items-center justify-center relative overflow-hidden group">
+                  <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
+                  <div className="text-center p-8 relative z-10">
+                    <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-primary/10 mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                      <MapPin className="h-10 w-10 text-primary animate-pulse-glow" />
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3">Visit Our Office</h3>
+                    <p className="text-muted-foreground font-medium mb-6">
                       123 Engineering Plaza<br />
                       Dubai, UAE
                     </p>
-                    <Button variant="outline" className="mt-6" asChild>
+                    <Button variant="outline" className="mt-2 shadow-md hover:shadow-lg" asChild>
                       <a
                         href="https://maps.google.com"
                         target="_blank"

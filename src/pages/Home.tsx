@@ -47,26 +47,33 @@ const Home = () => {
           <img
             src={heroImage}
             alt="Engineering Excellence"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover scale-105 animate-[scale-in_1s_ease-out]"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 to-secondary/70" />
+          <div className="absolute inset-0 bg-gradient-hero-overlay" />
+          <div className="absolute inset-0 bg-gradient-mesh" />
         </div>
         
-        <div className="container mx-auto px-4 z-10 animate-fade-in">
-          <div className="max-w-3xl text-secondary-foreground">
-            <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6">
-              Engineering Excellence, Delivered
+        <div className="container mx-auto px-4 z-10">
+          <div className="max-w-4xl text-secondary-foreground">
+            <div className="inline-block px-4 py-2 mb-6 rounded-full bg-white/10 backdrop-blur-md border border-white/20 animate-fade-in">
+              <span className="text-sm font-medium">🏗️ Engineering Excellence Since 1998</span>
+            </div>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold mb-6 animate-fade-in leading-tight">
+              Engineering Excellence,{" "}
+              <span className="bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">
+                Delivered
+              </span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 opacity-90">
+            <p className="text-xl md:text-2xl mb-10 opacity-90 animate-fade-in max-w-2xl">
               Transforming visions into reality with innovative solutions and unmatched expertise
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" asChild className="text-lg">
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in">
+              <Button size="lg" asChild className="text-lg shadow-glow hover:shadow-primary transition-all">
                 <Link to="/contact">
                   Get Started <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild className="text-lg bg-background/10 backdrop-blur-sm border-secondary-foreground/20 text-secondary-foreground hover:bg-background/20">
+              <Button size="lg" variant="outline" asChild className="text-lg bg-white/10 backdrop-blur-md border-white/30 text-white hover:bg-white/20 hover:border-white/40 transition-all">
                 <Link to="/services">
                   Our Services
                 </Link>
@@ -74,18 +81,29 @@ const Home = () => {
             </div>
           </div>
         </div>
+        
+        {/* Floating Elements */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 animate-float">
+          <div className="w-8 h-12 rounded-full border-2 border-white/50 flex items-start justify-center p-2">
+            <div className="w-1.5 h-3 bg-white/70 rounded-full animate-pulse" />
+          </div>
+        </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-muted">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-gradient-to-b from-background via-muted/50 to-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-mesh opacity-40" />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center animate-scale-in">
-                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
-                  {stat.value}
+              <div key={index} className="text-center group animate-scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                <div className="relative inline-block mb-4">
+                  <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl group-hover:blur-2xl transition-all" />
+                  <div className="relative text-5xl md:text-6xl font-bold bg-gradient-to-br from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform">
+                    {stat.value}
+                  </div>
                 </div>
-                <div className="text-sm md:text-base text-muted-foreground">
+                <div className="text-sm md:text-base text-muted-foreground font-medium">
                   {stat.label}
                 </div>
               </div>
@@ -108,13 +126,18 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
-              <Card key={index} className="group hover:shadow-lg transition-all duration-300 animate-fade-in border-border">
-                <CardContent className="p-6">
-                  <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    <service.icon className="h-6 w-6 text-primary group-hover:text-primary-foreground" />
+              <Card 
+                key={index} 
+                className="group relative overflow-hidden border-border/50 hover:border-primary/50 bg-gradient-card hover:-translate-y-2 transition-all duration-300 animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="absolute inset-0 bg-gradient-shine opacity-0 group-hover:opacity-100 group-hover:animate-shimmer transition-opacity" />
+                <CardContent className="p-6 relative z-10">
+                  <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 group-hover:bg-primary group-hover:scale-110 transition-all duration-300 shadow-md group-hover:shadow-glow">
+                    <service.icon className="h-7 w-7 text-primary group-hover:text-primary-foreground transition-colors" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                  <p className="text-muted-foreground">{service.description}</p>
+                  <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">{service.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{service.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -161,11 +184,12 @@ const Home = () => {
                 </Link>
               </Button>
             </div>
-            <div className="animate-scale-in">
+            <div className="animate-scale-in relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl blur-2xl group-hover:blur-3xl transition-all" />
               <img
                 src={projectImage}
                 alt="Featured Project"
-                className="rounded-lg shadow-xl"
+                className="relative rounded-2xl shadow-2xl group-hover:shadow-primary transition-all duration-500 group-hover:scale-[1.02]"
               />
             </div>
           </div>
@@ -173,16 +197,17 @@ const Home = () => {
       </section>
 
       {/* Clients Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
+        <div className="container mx-auto px-4 relative z-10">
           <h3 className="text-2xl font-semibold text-center mb-12 text-muted-foreground">
             Trusted by Leading Organizations
           </h3>
-          <div className="flex flex-wrap justify-center items-center gap-12">
+          <div className="flex flex-wrap justify-center items-center gap-16">
             {clients.map((client, index) => (
               <div
                 key={index}
-                className="text-2xl font-bold text-muted-foreground/60 hover:text-primary transition-colors"
+                className="text-2xl font-bold text-muted-foreground/50 hover:text-primary transition-all duration-300 hover:scale-110 cursor-default"
               >
                 {client}
               </div>
@@ -192,15 +217,22 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-hero text-secondary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-hero" />
+        <div className="absolute inset-0 bg-gradient-mesh" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_hsl(0_0%_100%_/_0.1),_transparent_50%)]" />
+        
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <div className="inline-block px-4 py-2 mb-6 rounded-full bg-white/10 backdrop-blur-md border border-white/20 animate-pulse-glow">
+            <span className="text-sm font-medium text-white">🚀 Let's Build Something Amazing</span>
+          </div>
+          <h2 className="text-4xl md:text-6xl font-serif font-bold mb-6 text-white leading-tight">
             Ready to Start Your Project?
           </h2>
-          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+          <p className="text-xl mb-10 opacity-90 max-w-2xl mx-auto text-white">
             Let's discuss how our engineering expertise can bring your vision to life
           </p>
-          <Button size="lg" variant="secondary" asChild className="text-lg">
+          <Button size="lg" variant="secondary" asChild className="text-lg shadow-2xl hover:shadow-primary hover:scale-105 transition-all">
             <Link to="/contact">
               Contact Us Today <ArrowRight className="ml-2 h-5 w-5" />
             </Link>

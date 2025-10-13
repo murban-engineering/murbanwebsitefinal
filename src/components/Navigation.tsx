@@ -17,12 +17,12 @@ const Navigation = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed w-full z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <nav className="fixed w-full z-50 bg-background/80 backdrop-blur-md border-b border-border/50 shadow-md">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-serif font-bold text-primary">
+          <Link to="/" className="flex items-center space-x-2 group">
+            <div className="text-2xl font-serif font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-105 transition-transform">
               Murban Engineering
             </div>
           </Link>
@@ -33,14 +33,15 @@ const Navigation = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  isActive(link.path) ? "text-primary" : "text-foreground"
+                className={`text-sm font-semibold transition-all relative group ${
+                  isActive(link.path) ? "text-primary" : "text-foreground hover:text-primary"
                 }`}
               >
                 {link.name}
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all ${isActive(link.path) ? "w-full" : "w-0 group-hover:w-full"}`} />
               </Link>
             ))}
-            <Button asChild>
+            <Button asChild className="shadow-md hover:shadow-glow transition-all">
               <Link to="/contact">Get Started</Link>
             </Button>
           </div>
