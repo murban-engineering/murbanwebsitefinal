@@ -2,11 +2,21 @@ import { ArrowRight, CheckCircle, Building2, Wrench, Shield, Users } from "lucid
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { AnimatedCounter } from "@/components/AnimatedCounter";
 import heroImage from "@/assets/hero-engineering.jpg";
 import teamImage from "@/assets/team-collaboration.jpg";
 import projectImage from "@/assets/project-showcase.jpg";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const services = [
     {
       icon: Building2,
@@ -41,16 +51,19 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
+      {/* Hero Section with Parallax */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
+        <div 
+          className="absolute inset-0 z-0"
+          style={{ transform: `translateY(${scrollY * 0.5}px)` }}
+        >
           <img
             src={heroImage}
             alt="Engineering Excellence"
-            className="w-full h-full object-cover scale-105 animate-[scale-in_1s_ease-out]"
+            className="w-full h-full object-cover scale-110"
           />
           <div className="absolute inset-0 bg-gradient-hero-overlay" />
-          <div className="absolute inset-0 bg-gradient-mesh" />
+          <div className="absolute inset-0 bg-gradient-mesh animate-pulse-glow" />
         </div>
         
         <div className="container mx-auto px-4 z-10">
@@ -68,12 +81,21 @@ const Home = () => {
               Transforming visions into reality with innovative solutions and unmatched expertise
             </p>
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in">
-              <Button size="lg" asChild className="text-lg shadow-glow hover:shadow-primary transition-all">
+              <Button 
+                size="lg" 
+                asChild 
+                className="text-lg bg-accent hover:bg-accent/90 shadow-glow hover:shadow-primary transition-all hover:scale-105 group"
+              >
                 <Link to="/contact">
-                  Get Started <ArrowRight className="ml-2 h-5 w-5" />
+                  Get Started <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild className="text-lg bg-white/10 backdrop-blur-md border-white/30 text-white hover:bg-white/20 hover:border-white/40 transition-all">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                asChild 
+                className="text-lg bg-white/10 backdrop-blur-md border-white/30 text-white hover:bg-white/20 hover:border-white/40 transition-all hover:scale-105"
+              >
                 <Link to="/services">
                   Our Services
                 </Link>
@@ -96,14 +118,24 @@ const Home = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center group animate-scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
+              <div key={index} className="text-center group animate-bounce-in" style={{ animationDelay: `${index * 0.1}s` }}>
                 <div className="relative inline-block mb-4">
-                  <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl group-hover:blur-2xl transition-all" />
-                  <div className="relative text-5xl md:text-6xl font-bold bg-gradient-to-br from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform">
-                    {stat.value}
+                  <div className="absolute inset-0 bg-accent/20 rounded-full blur-xl group-hover:blur-2xl transition-all animate-glow" />
+                  <div className="relative text-5xl md:text-6xl font-bold bg-gradient-to-br from-primary via-accent to-secondary bg-clip-text text-transparent group-hover:scale-110 transition-transform">
+                    {stat.value.includes('+') ? (
+                      <>
+                        <AnimatedCounter end={parseInt(stat.value)} />+
+                      </>
+                    ) : stat.value.includes('%') ? (
+                      <>
+                        <AnimatedCounter end={parseInt(stat.value)} />%
+                      </>
+                    ) : (
+                      stat.value
+                    )}
                   </div>
                 </div>
-                <div className="text-sm md:text-base text-muted-foreground font-medium">
+                <div className="text-sm md:text-base text-muted-foreground font-medium group-hover:text-foreground transition-colors">
                   {stat.label}
                 </div>
               </div>
@@ -128,16 +160,21 @@ const Home = () => {
             {services.map((service, index) => (
               <Card 
                 key={index} 
-                className="group relative overflow-hidden border-border/50 hover:border-primary/50 bg-gradient-card hover:-translate-y-2 transition-all duration-300 animate-fade-in"
+                className="group relative overflow-hidden border-border/50 hover:border-accent/50 bg-gradient-card hover:-translate-y-3 transition-all duration-500 animate-slide-up cursor-pointer"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/0 via-accent/5 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute inset-0 bg-gradient-shine opacity-0 group-hover:opacity-100 group-hover:animate-shimmer transition-opacity" />
-                <CardContent className="p-6 relative z-10">
-                  <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 group-hover:bg-primary group-hover:scale-110 transition-all duration-300 shadow-md group-hover:shadow-glow">
-                    <service.icon className="h-7 w-7 text-primary group-hover:text-primary-foreground transition-colors" />
+                <CardContent className="p-8 relative z-10">
+                  <div className="mb-6 inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-accent/10 group-hover:bg-accent group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg group-hover:shadow-glow">
+                    <service.icon className="h-8 w-8 text-accent group-hover:text-accent-foreground transition-colors duration-300" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">{service.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                  <h3 className="text-xl font-semibold mb-3 group-hover:text-accent transition-colors duration-300">{service.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300">{service.description}</p>
+                  <div className="mt-4 flex items-center text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="text-sm font-medium">Learn more</span>
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -232,9 +269,13 @@ const Home = () => {
           <p className="text-xl mb-10 opacity-90 max-w-2xl mx-auto text-white">
             Let's discuss how our engineering expertise can bring your vision to life
           </p>
-          <Button size="lg" variant="secondary" asChild className="text-lg shadow-2xl hover:shadow-primary hover:scale-105 transition-all">
+          <Button 
+            size="lg" 
+            asChild 
+            className="text-lg bg-accent hover:bg-accent/90 shadow-2xl hover:shadow-primary hover:scale-105 transition-all group animate-glow"
+          >
             <Link to="/contact">
-              Contact Us Today <ArrowRight className="ml-2 h-5 w-5" />
+              Contact Us Today <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </Button>
         </div>

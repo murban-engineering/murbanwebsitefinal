@@ -25,10 +25,14 @@ All colors MUST be HSL.
     --secondary: 204 100% 18%;
     --secondary-foreground: 0 0% 100%;
 
+    /* Safety Orange - Modern Accent */
+    --orange-accent: 20 100% 56%;
+    --orange-accent-foreground: 0 0% 100%;
+
     --muted: 210 20% 96%;
     --muted-foreground: 215 16% 47%;
 
-    --accent: 348 73% 35%;
+    --accent: 20 100% 56%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -79,10 +83,14 @@ All colors MUST be HSL.
     --secondary: 204 100% 25%;
     --secondary-foreground: 0 0% 100%;
 
+    /* Safety Orange - Modern Accent */
+    --orange-accent: 20 100% 56%;
+    --orange-accent-foreground: 0 0% 100%;
+
     --muted: 204 50% 20%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 348 73% 45%;
+    --accent: 20 100% 60%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 63% 31%;

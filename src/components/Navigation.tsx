@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "./ThemeToggle";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,30 +35,34 @@ const Navigation = () => {
                 key={link.path}
                 to={link.path}
                 className={`text-sm font-semibold transition-all relative group ${
-                  isActive(link.path) ? "text-primary" : "text-foreground hover:text-primary"
+                  isActive(link.path) ? "text-accent" : "text-foreground hover:text-accent"
                 }`}
               >
                 {link.name}
-                <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all ${isActive(link.path) ? "w-full" : "w-0 group-hover:w-full"}`} />
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-accent transition-all ${isActive(link.path) ? "w-full" : "w-0 group-hover:w-full"}`} />
               </Link>
             ))}
-            <Button asChild className="shadow-md hover:shadow-glow transition-all">
+            <ThemeToggle />
+            <Button asChild className="shadow-md hover:shadow-glow transition-all bg-accent hover:bg-accent/90 hover:scale-105">
               <Link to="/contact">Get Started</Link>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            {isOpen ? (
-              <X className="h-6 w-6 text-foreground" />
-            ) : (
-              <Menu className="h-6 w-6 text-foreground" />
-            )}
-          </button>
+          <div className="md:hidden flex items-center gap-3">
+            <ThemeToggle />
+            <button
+              className="p-2"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
+            >
+              {isOpen ? (
+                <X className="h-6 w-6 text-foreground" />
+              ) : (
+                <Menu className="h-6 w-6 text-foreground" />
+              )}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -69,8 +74,8 @@ const Navigation = () => {
                   key={link.path}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className={`text-sm font-medium transition-colors hover:text-primary ${
-                    isActive(link.path) ? "text-primary" : "text-foreground"
+                  className={`text-sm font-medium transition-colors hover:text-accent ${
+                    isActive(link.path) ? "text-accent" : "text-foreground"
                   }`}
                 >
                   {link.name}
