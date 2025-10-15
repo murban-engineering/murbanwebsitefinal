@@ -10,8 +10,7 @@ import { z } from "zod";
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
   email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
-  subject: z.string().trim().min(1, "Subject is required").max(200, "Subject must be less than 200 characters"),
-  message: z.string().trim().min(1, "Message is required").max(1000, "Message must be less than 1000 characters"),
+  message: z.string().trim().max(1000, "Message must be less than 1000 characters").optional(),
 });
 
 const Contact = () => {
@@ -19,7 +18,6 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "",
     message: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -52,7 +50,7 @@ const Contact = () => {
       });
 
       // Reset form
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      setFormData({ name: "", email: "", message: "" });
     } catch (error) {
       if (error instanceof z.ZodError) {
         const fieldErrors: Record<string, string> = {};
@@ -75,21 +73,21 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: MapPin,
-      title: "Office Address",
-      details: "123 Engineering Plaza, Dubai, UAE",
-    },
-    {
-      icon: Phone,
-      title: "Phone Number",
-      details: "+971 1234 5678",
-      link: "tel:+97112345678",
-    },
-    {
       icon: Mail,
       title: "Email Address",
       details: "info@murban-eng.com",
       link: "mailto:info@murban-eng.com",
+    },
+    {
+      icon: Phone,
+      title: "Phone Number",
+      details: "+ 254 20 265 0618",
+      link: "tel:+254202650618",
+    },
+    {
+      icon: MapPin,
+      title: "Address",
+      details: "Off Airport Road, Mombasa Port Reitz",
     },
   ];
 
@@ -101,13 +99,19 @@ const Contact = () => {
         <div className="absolute inset-0 bg-gradient-mesh" />
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="inline-block px-4 py-2 mb-6 rounded-full bg-white/10 backdrop-blur-md border border-white/20 animate-fade-in">
-            <span className="text-sm font-medium text-white">💬 We're Here to Help</span>
+            <span className="text-sm font-medium text-white">Home - Contact Us</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 text-white animate-fade-in leading-tight">
-            Get in Touch
+            CONTACT US
           </h1>
+          <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-white animate-fade-in">
+            Get in Touch
+          </h2>
+          <p className="text-2xl md:text-3xl font-medium mb-4 text-white/90 animate-fade-in">
+            Do You Have Any Questions?
+          </p>
           <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto text-white animate-fade-in">
-            Let's discuss how we can help bring your engineering project to life
+            Let's connect — we'd love to hear from you.
           </p>
         </div>
       </section>
@@ -152,7 +156,7 @@ const Contact = () => {
                   <div>
                     <Input
                       name="name"
-                      placeholder="Your Name"
+                      placeholder="Your name"
                       value={formData.name}
                       onChange={handleChange}
                       className={errors.name ? "border-destructive" : ""}
@@ -165,7 +169,7 @@ const Contact = () => {
                     <Input
                       name="email"
                       type="email"
-                      placeholder="Your Email"
+                      placeholder="Your email"
                       value={formData.email}
                       onChange={handleChange}
                       className={errors.email ? "border-destructive" : ""}
@@ -175,21 +179,9 @@ const Contact = () => {
                     )}
                   </div>
                   <div>
-                    <Input
-                      name="subject"
-                      placeholder="Subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      className={errors.subject ? "border-destructive" : ""}
-                    />
-                    {errors.subject && (
-                      <p className="text-destructive text-sm mt-1">{errors.subject}</p>
-                    )}
-                  </div>
-                  <div>
                     <Textarea
                       name="message"
-                      placeholder="Your Message"
+                      placeholder="Your message (optional)"
                       rows={6}
                       value={formData.message}
                       onChange={handleChange}
@@ -218,8 +210,8 @@ const Contact = () => {
                     </div>
                     <h3 className="text-xl font-semibold mb-3">Visit Our Office</h3>
                     <p className="text-muted-foreground font-medium mb-6">
-                      123 Engineering Plaza<br />
-                      Dubai, UAE
+                      Off Airport Road<br />
+                      Mombasa Port Reitz
                     </p>
                     <Button variant="outline" className="mt-2 shadow-md hover:shadow-lg" asChild>
                       <a
@@ -238,28 +230,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Business Hours */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-serif font-bold mb-8">Business Hours</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="p-6">
-                <p className="font-semibold mb-2">Monday - Thursday</p>
-                <p className="text-muted-foreground">8:00 AM - 6:00 PM</p>
-              </div>
-              <div className="p-6">
-                <p className="font-semibold mb-2">Friday</p>
-                <p className="text-muted-foreground">8:00 AM - 12:00 PM</p>
-              </div>
-              <div className="p-6 md:col-span-2">
-                <p className="font-semibold mb-2">Saturday - Sunday</p>
-                <p className="text-muted-foreground">Closed</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
