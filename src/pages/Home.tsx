@@ -45,15 +45,26 @@ const Home = () => {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      {/* Ethereal Background Shadows - Fixed throughout page */}
+      {/* Ethereal Background Shadows - Fixed throughout page - MUCH MORE VISIBLE */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-primary/5 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '8s' }} />
-        <div className="absolute top-40 right-20 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-[140px] animate-pulse" style={{ animationDuration: '10s', animationDelay: '2s' }} />
-        <div className="absolute bottom-40 left-1/3 w-[600px] h-[600px] bg-accent/4 rounded-full blur-[160px] animate-pulse" style={{ animationDuration: '12s', animationDelay: '4s' }} />
+        {/* Large red ethereal shadow - top left */}
+        <div className="absolute -top-40 -left-40 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[150px] animate-pulse" style={{ animationDuration: '8s' }} />
+        
+        {/* Large blue ethereal shadow - top right */}
+        <div className="absolute -top-20 -right-20 w-[700px] h-[700px] bg-secondary/20 rounded-full blur-[140px] animate-pulse" style={{ animationDuration: '10s', animationDelay: '2s' }} />
+        
+        {/* Medium red ethereal shadow - middle left */}
+        <div className="absolute top-1/3 -left-32 w-[600px] h-[600px] bg-primary/15 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '12s', animationDelay: '4s' }} />
+        
+        {/* Large blue ethereal shadow - bottom right */}
+        <div className="absolute bottom-20 right-10 w-[750px] h-[750px] bg-secondary/18 rounded-full blur-[130px] animate-pulse" style={{ animationDuration: '9s', animationDelay: '1s' }} />
+        
+        {/* Accent ethereal shadow - bottom center */}
+        <div className="absolute -bottom-32 left-1/4 w-[650px] h-[650px] bg-accent/15 rounded-full blur-[140px] animate-pulse" style={{ animationDuration: '11s', animationDelay: '3s' }} />
       </div>
 
       {/* Blended Gradient Background Overlay */}
-      <div className="fixed inset-0 pointer-events-none z-0 bg-[var(--gradient-blend-fade)] opacity-50" />
+      <div className="fixed inset-0 pointer-events-none z-0 bg-[var(--gradient-blend-fade)] opacity-70" />
 
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden z-10">
@@ -108,10 +119,10 @@ const Home = () => {
       <section className="py-20 bg-gradient-to-b from-background via-muted/50 to-background relative overflow-hidden z-10">
         <div className="absolute inset-0 bg-gradient-mesh opacity-40" />
         
-        {/* Decorative Image - Crane in irregular shape */}
-        <div className="absolute top-10 right-10 w-64 h-80 opacity-10 transition-all duration-700 hover:opacity-20 hover:scale-105">
-          <div className="w-full h-full overflow-hidden" style={{ clipPath: 'polygon(30% 0%, 100% 0%, 100% 70%, 70% 100%, 0% 100%, 0% 30%)' }}>
-            <img src={craneImage} alt="" className="w-full h-full object-cover" style={{ boxShadow: 'var(--shadow-ethereal-blue)' }} />
+        {/* Decorative Image - Crane in irregular shape with STRONG ethereal shadow */}
+        <div className="absolute top-10 right-10 w-64 h-80 opacity-20 transition-all duration-700 hover:opacity-30 hover:scale-105 shadow-ethereal-blue">
+          <div className="w-full h-full overflow-hidden shadow-ethereal-blue" style={{ clipPath: 'polygon(30% 0%, 100% 0%, 100% 70%, 70% 100%, 0% 100%, 0% 30%)' }}>
+            <img src={craneImage} alt="" className="w-full h-full object-cover" />
           </div>
         </div>
         
@@ -136,17 +147,17 @@ const Home = () => {
 
       {/* Services Section */}
       <section className="py-20 relative z-10">
-        {/* Decorative Image - Pipeline in curved rectangle */}
-        <div className="absolute top-20 left-5 w-72 h-56 opacity-10 transition-all duration-700 hover:opacity-20 hover:scale-105">
-          <div className="w-full h-full overflow-hidden rounded-[40px_10px_40px_10px]">
-            <img src={pipelineImage} alt="" className="w-full h-full object-cover" style={{ boxShadow: 'var(--shadow-ethereal-red)' }} />
+        {/* Decorative Image - Pipeline in curved rectangle with STRONG ethereal shadow */}
+        <div className="absolute top-20 left-5 w-72 h-56 opacity-20 transition-all duration-700 hover:opacity-30 hover:scale-105 shadow-ethereal-red">
+          <div className="w-full h-full overflow-hidden rounded-[40px_10px_40px_10px] shadow-ethereal-red">
+            <img src={pipelineImage} alt="" className="w-full h-full object-cover" />
           </div>
         </div>
         
-        {/* Decorative Image - Pipes by water in arch shape */}
-        <div className="absolute bottom-10 right-10 w-80 h-64 opacity-10 transition-all duration-700 hover:opacity-20 hover:scale-105">
-          <div className="w-full h-full overflow-hidden" style={{ clipPath: 'ellipse(50% 40% at 50% 50%)' }}>
-            <img src={pipesWaterImage} alt="" className="w-full h-full object-cover" style={{ boxShadow: 'var(--shadow-ethereal-blend)' }} />
+        {/* Decorative Image - Pipes by water in arch shape with STRONG ethereal shadow */}
+        <div className="absolute bottom-10 right-10 w-80 h-64 opacity-20 transition-all duration-700 hover:opacity-30 hover:scale-105 shadow-ethereal-blend">
+          <div className="w-full h-full overflow-hidden shadow-ethereal-blend" style={{ clipPath: 'ellipse(50% 40% at 50% 50%)' }}>
+            <img src={pipesWaterImage} alt="" className="w-full h-full object-cover" />
           </div>
         </div>
         
@@ -191,10 +202,10 @@ const Home = () => {
 
       {/* Featured Project Section */}
       <section className="py-20 bg-muted relative z-10">
-        {/* Decorative Image - Flare tower in unique geometric shape */}
-        <div className="absolute top-1/2 -translate-y-1/2 left-10 w-48 h-72 opacity-10 transition-all duration-700 hover:opacity-20 hover:scale-105">
-          <div className="w-full h-full overflow-hidden" style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' }}>
-            <img src={flareImage} alt="" className="w-full h-full object-cover" style={{ boxShadow: 'var(--shadow-ethereal-red)' }} />
+        {/* Decorative Image - Flare tower in unique geometric shape with STRONG ethereal shadow */}
+        <div className="absolute top-1/2 -translate-y-1/2 left-10 w-48 h-72 opacity-20 transition-all duration-700 hover:opacity-30 hover:scale-105 shadow-ethereal-red">
+          <div className="w-full h-full overflow-hidden shadow-ethereal-red" style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' }}>
+            <img src={flareImage} alt="" className="w-full h-full object-cover" />
           </div>
         </div>
         
@@ -243,10 +254,10 @@ const Home = () => {
       <section className="py-20 relative overflow-hidden z-10">
         <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
         
-        {/* Decorative Image - Crane in rounded square */}
-        <div className="absolute bottom-5 right-1/4 w-56 h-56 opacity-10 transition-all duration-700 hover:opacity-20 hover:scale-105">
-          <div className="w-full h-full overflow-hidden rounded-[60px]">
-            <img src={craneImage} alt="" className="w-full h-full object-cover rotate-45" style={{ boxShadow: 'var(--shadow-ethereal-blue)' }} />
+        {/* Decorative Image - Crane in rounded square with STRONG ethereal shadow */}
+        <div className="absolute bottom-5 right-1/4 w-56 h-56 opacity-20 transition-all duration-700 hover:opacity-30 hover:scale-105 shadow-ethereal-blue">
+          <div className="w-full h-full overflow-hidden rounded-[60px] shadow-ethereal-blue">
+            <img src={craneImage} alt="" className="w-full h-full object-cover rotate-45" />
           </div>
         </div>
         
@@ -273,10 +284,10 @@ const Home = () => {
         <div className="absolute inset-0 bg-gradient-mesh" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_hsl(0_0%_100%_/_0.1),_transparent_50%)]" />
         
-        {/* Decorative Image - Pipeline infrastructure in irregular pentagon */}
-        <div className="absolute top-10 right-20 w-64 h-48 opacity-15 transition-all duration-700 hover:opacity-25 hover:scale-105">
-          <div className="w-full h-full overflow-hidden" style={{ clipPath: 'polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%)' }}>
-            <img src={pipelineImage} alt="" className="w-full h-full object-cover" style={{ boxShadow: 'var(--shadow-ethereal-blend)' }} />
+        {/* Decorative Image - Pipeline infrastructure in irregular pentagon with STRONG ethereal shadow */}
+        <div className="absolute top-10 right-20 w-64 h-48 opacity-25 transition-all duration-700 hover:opacity-35 hover:scale-105 shadow-ethereal-blend">
+          <div className="w-full h-full overflow-hidden shadow-ethereal-blend" style={{ clipPath: 'polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%)' }}>
+            <img src={pipelineImage} alt="" className="w-full h-full object-cover" />
           </div>
         </div>
         
