@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import heroImage from "@/assets/hero-engineering.jpg";
 import teamImage from "@/assets/team-collaboration.jpg";
 import projectImage from "@/assets/project-showcase.jpg";
+import Testimonials from "@/components/Testimonials";
 
 const Home = () => {
   const services = [
@@ -31,10 +32,10 @@ const Home = () => {
   ];
 
   const stats = [
-    { value: "500+", label: "Projects Completed" },
+    { value: "1873", label: "Total Projects" },
     { value: "25+", label: "Years Experience" },
     { value: "200+", label: "Expert Engineers" },
-    { value: "98%", label: "Client Satisfaction" },
+    { value: "ISO 9001:2015", label: "Certified" },
   ];
 
   const clients = ["Emaar", "Dubai Properties", "Aldar", "Damac", "Nakheel"];
@@ -195,6 +196,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <Testimonials />
 
       {/* Clients Section */}
       <section className="py-20 relative overflow-hidden">

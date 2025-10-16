@@ -2,6 +2,7 @@ import { Award, Target, Eye, Shield, Heart, Lightbulb, Users, TrendingUp, MapPin
 import { Card, CardContent } from "@/components/ui/card";
 import teamImage from "@/assets/team-collaboration.jpg";
 import AfricaMap from "@/components/AfricaMap";
+import WhyChooseUs from "@/components/WhyChooseUs";
 
 const About = () => {
   const foundationValues = [
@@ -118,7 +119,7 @@ const About = () => {
                 <Target className="h-12 w-12 text-primary mb-4" />
                 <h3 className="text-2xl font-serif font-bold mb-4">Our Mission</h3>
                 <p className="text-muted-foreground">
-                  To deliver value to clients by executing world-class asset integrity services that maximize uptime and safety.
+                  We will deliver value to our clients by executing world class asset integrity that maximize up-time and safety.
                 </p>
               </CardContent>
             </Card>
@@ -134,6 +135,9 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* Why Choose Us */}
+      <WhyChooseUs />
 
       {/* Values Section */}
       <section className="py-20 bg-muted">
