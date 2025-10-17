@@ -1,139 +1,108 @@
 import { useState } from "react";
 import { MapPin } from "lucide-react";
+import africaMap from "@/assets/africa-map.jpg";
 
 const AfricaMap = () => {
   const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
 
-  const countries = [
-    { name: "Kenya", cx: "68", cy: "52" },
-    { name: "Uganda", cx: "62", cy: "48" },
-    { name: "Tanzania", cx: "65", cy: "56" },
-    { name: "Ethiopia", cx: "68", cy: "40" },
-    { name: "Rwanda", cx: "60", cy: "50" },
-    { name: "Burundi", cx: "60", cy: "52" },
-    { name: "Zambia", cx: "58", cy: "66" },
-    { name: "Eritrea", cx: "68", cy: "34" },
-    { name: "Seychelles", cx: "80", cy: "54" },
-    { name: "Madagascar", cx: "75", cy: "68" },
-    { name: "Ghana", cx: "32", cy: "42" },
-    { name: "DRC", cx: "52", cy: "52" },
-    { name: "Malawi", cx: "64", cy: "66" },
-    { name: "Djibouti", cx: "72", cy: "36" },
-    { name: "Zimbabwe", cx: "60", cy: "70" },
-    { name: "Somalia", cx: "74", cy: "44" },
+  // Location coordinates based on actual geographic positions (as percentages)
+  const locations = [
+    { name: "Kenya", left: "67%", top: "48%", description: "Main Operations Hub" },
+    { name: "Uganda", left: "61%", top: "45%", description: "Regional Office" },
+    { name: "Tanzania", left: "64%", top: "54%", description: "Project Sites" },
+    { name: "Ethiopia", left: "67%", top: "36%", description: "Operations" },
+    { name: "Rwanda", left: "59%", top: "47%", description: "Service Area" },
+    { name: "Burundi", left: "59%", top: "49%", description: "Service Area" },
+    { name: "Zambia", left: "57%", top: "63%", description: "Project Sites" },
+    { name: "Eritrea", left: "67%", top: "30%", description: "Operations" },
+    { name: "Seychelles", left: "78%", top: "50%", description: "Service Area" },
+    { name: "Madagascar", left: "73%", top: "66%", description: "Service Area" },
+    { name: "Ghana", left: "30%", top: "38%", description: "Operations" },
+    { name: "DRC", left: "51%", top: "49%", description: "Project Sites" },
+    { name: "Malawi", left: "63%", top: "63%", description: "Service Area" },
+    { name: "Djibouti", left: "71%", top: "33%", description: "Operations" },
+    { name: "Zimbabwe", left: "59%", top: "68%", description: "Service Area" },
+    { name: "Somalia", left: "72%", top: "41%", description: "Service Area" },
   ];
 
   return (
     <div className="relative w-full max-w-4xl mx-auto">
-      <svg
-        viewBox="0 0 100 100"
-        className="w-full h-auto"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        {/* Africa continent outline - simplified SVG path */}
-        <path
-          d="M 48 10 
-             C 50 10, 52 11, 54 12
-             L 58 15
-             C 62 18, 65 22, 67 26
-             L 70 32
-             C 72 36, 73 40, 73 44
-             L 73 50
-             C 73 54, 74 58, 76 62
-             L 78 68
-             C 79 72, 78 76, 76 80
-             L 72 86
-             C 68 90, 62 92, 56 92
-             L 48 92
-             C 42 92, 36 90, 32 87
-             L 26 82
-             C 22 78, 20 73, 20 68
-             L 20 62
-             C 20 58, 18 54, 16 50
-             L 14 44
-             C 13 40, 14 36, 16 32
-             L 20 26
-             C 23 22, 27 19, 32 17
-             L 38 14
-             C 41 12, 44 10, 48 10 Z"
-          className="fill-muted/40 stroke-border stroke-[0.5]"
+      {/* Map container with image background */}
+      <div className="relative w-full rounded-2xl overflow-hidden shadow-elegant border border-border/50">
+        {/* Africa map image */}
+        <img 
+          src={africaMap} 
+          alt="Africa Map showing Murban Engineering operational areas"
+          className="w-full h-auto"
         />
         
-        {/* Decorative gradient overlay */}
-        <defs>
-          <radialGradient id="mapGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.1" />
-            <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0" />
-          </radialGradient>
-        </defs>
-        
-        <ellipse cx="50" cy="50" rx="35" ry="42" fill="url(#mapGlow)" />
+        {/* Location markers overlay */}
+        <div className="absolute inset-0">
+          {locations.map((location) => (
+            <div
+              key={location.name}
+              className="absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer group"
+              style={{ left: location.left, top: location.top }}
+              onMouseEnter={() => setHoveredCountry(location.name)}
+              onMouseLeave={() => setHoveredCountry(null)}
+            >
+              {/* Pulse animation for hovered marker */}
+              {hoveredCountry === location.name && (
+                <div className="absolute inset-0 -m-2">
+                  <div className="w-6 h-6 rounded-full bg-primary/30 animate-ping" />
+                </div>
+              )}
+              
+              {/* Location pin */}
+              <div
+                className={`relative z-10 transition-all duration-300 ${
+                  hoveredCountry === location.name ? "scale-125" : "scale-100"
+                }`}
+              >
+                <MapPin
+                  className={`w-6 h-6 transition-all duration-300 ${
+                    hoveredCountry === location.name
+                      ? "text-primary drop-shadow-[0_0_8px_hsl(var(--primary))]"
+                      : "text-primary/80"
+                  }`}
+                  fill={hoveredCountry === location.name ? "hsl(var(--primary))" : "none"}
+                  strokeWidth={2.5}
+                />
+              </div>
 
-        {/* Country markers */}
-        {countries.map((country) => (
-          <g
-            key={country.name}
-            onMouseEnter={() => setHoveredCountry(country.name)}
-            onMouseLeave={() => setHoveredCountry(null)}
-            className="cursor-pointer transition-all duration-200"
-          >
-            {/* Pulse animation for hovered marker */}
-            {hoveredCountry === country.name && (
-              <circle
-                cx={country.cx}
-                cy={country.cy}
-                r="2.5"
-                className="fill-primary animate-ping opacity-75"
-              />
-            )}
-            
-            {/* Main marker */}
-            <circle
-              cx={country.cx}
-              cy={country.cy}
-              r="1.5"
-              className={`transition-all duration-200 ${
-                hoveredCountry === country.name
-                  ? "fill-primary stroke-primary-foreground stroke-[0.5] scale-125"
-                  : "fill-primary/80 stroke-background stroke-[0.3]"
-              }`}
-              style={{
-                filter: hoveredCountry === country.name 
-                  ? "drop-shadow(0 0 3px hsl(var(--primary)))" 
-                  : "none",
-              }}
-            />
-          </g>
-        ))}
-      </svg>
-
-      {/* Country name tooltip */}
-      {hoveredCountry && (
-        <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-card border border-border px-4 py-2 rounded-xl shadow-lg animate-fade-in backdrop-blur-sm">
-          <div className="flex items-center gap-2">
-            <MapPin className="h-4 w-4 text-primary" />
-            <span className="font-semibold text-sm">{hoveredCountry}</span>
-          </div>
+              {/* Hover tooltip */}
+              {hoveredCountry === location.name && (
+                <div className="absolute top-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-card border border-border px-3 py-2 rounded-lg shadow-elegant animate-fade-in backdrop-blur-sm z-20">
+                  <div className="text-sm font-semibold text-foreground">
+                    {location.name}
+                  </div>
+                  <div className="text-xs text-muted-foreground">
+                    {location.description}
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
-      )}
+      </div>
 
       {/* Legend */}
       <div className="mt-8 text-center">
-        <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
-          <div className="h-3 w-3 rounded-full bg-primary" />
-          <span>Hover over markers to see country names</span>
+        <div className="inline-flex items-center gap-2 text-sm text-muted-foreground mb-6">
+          <MapPin className="h-4 w-4 text-primary" />
+          <span>Hover over markers to see locations and operations</span>
         </div>
-        <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
-          {countries.map((country) => (
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+          {locations.map((location) => (
             <div
-              key={country.name}
+              key={location.name}
               className={`transition-all duration-200 ${
-                hoveredCountry === country.name
-                  ? "text-primary font-semibold"
+                hoveredCountry === location.name
+                  ? "text-primary font-semibold scale-105"
                   : "text-muted-foreground"
               }`}
             >
-              {country.name}
+              {location.name}
             </div>
           ))}
         </div>
