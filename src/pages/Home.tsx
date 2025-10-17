@@ -33,12 +33,10 @@ const Home = () => {
 
   const stats = [
     { value: "1873", label: "Total Projects" },
-    { value: "25+", label: "Years Experience" },
-    { value: "200+", label: "Expert Engineers" },
     { value: "ISO 9001:2015", label: "Certified" },
   ];
 
-  const clients = ["Emaar", "Dubai Properties", "Aldar", "Damac", "Nakheel"];
+  const clients = ["TotalEnergies", "KenGen", "Bolloré Africa Logistics", "KPC"];
 
   return (
     <div className="min-h-screen">
@@ -95,7 +93,7 @@ const Home = () => {
       <section className="py-20 bg-gradient-to-b from-background via-muted/50 to-background relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-mesh opacity-40" />
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-3xl mx-auto">
             {stats.map((stat, index) => (
               <div key={index} className="text-center group animate-scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
                 <div className="relative inline-block mb-4">

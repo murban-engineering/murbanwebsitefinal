@@ -17,7 +17,7 @@ const Testimonials = () => {
   const testimonials: Testimonial[] = [
     {
       company: "TotalEnergies",
-      text: "The level of HSE standards and problem solving is efficient",
+      text: "The level of HSE standards and problem solving is effecient",
     },
     {
       company: "TotalEnergies",
@@ -49,8 +49,15 @@ const Testimonials = () => {
     },
     {
       company: "TotalEnergies",
-      text: "The pipeline inspection provided were thorough, timely and exceeded our expectations. Their use of advanced technology, combined with a highly skilled team, helped us identify critical issues early and avoid costly downtime.",
+      text: "The level of HSE standards and problem solving is effecient",
     },
+  ];
+
+  const clientLogos = [
+    { name: "TotalEnergies", width: "w-24" },
+    { name: "KenGen", width: "w-32" },
+    { name: "Bolloré Africa Logistics", width: "w-32" },
+    { name: "KPC", width: "w-20" },
   ];
 
   return (
@@ -96,6 +103,20 @@ const Testimonials = () => {
             <CarouselPrevious className="hidden md:flex" />
             <CarouselNext className="hidden md:flex" />
           </Carousel>
+        </div>
+
+        {/* Client Logos */}
+        <div className="mt-16">
+          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16">
+            {clientLogos.map((logo, index) => (
+              <div
+                key={index}
+                className="text-xl md:text-2xl font-bold text-foreground/70 hover:text-primary transition-all duration-300 hover:scale-110 cursor-default"
+              >
+                {logo.name}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
