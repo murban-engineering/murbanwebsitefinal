@@ -6,6 +6,10 @@ import heroImage from "@/assets/hero-engineering.jpg";
 import teamImage from "@/assets/team-collaboration.jpg";
 import projectImage from "@/assets/project-showcase.jpg";
 import Testimonials from "@/components/Testimonials";
+import totalenergiesLogo from "@/assets/totalenergies-logo.png";
+import kengenLogo from "@/assets/kengen-logo.png";
+import bolloreLogo from "@/assets/bollore-logo.png";
+import kpcLogo from "@/assets/kpc-logo.png";
 
 const Home = () => {
   const services = [
@@ -36,7 +40,12 @@ const Home = () => {
     { value: "ISO 9001:2015", label: "Certified" },
   ];
 
-  const clients = ["TotalEnergies", "KenGen", "Bolloré Africa Logistics", "KPC"];
+  const clientLogos = [
+    { name: "TotalEnergies", logo: totalenergiesLogo, width: "w-28" },
+    { name: "KenGen", logo: kengenLogo, width: "w-24" },
+    { name: "Bolloré Africa Logistics", logo: bolloreLogo, width: "w-36" },
+    { name: "KPC", logo: kpcLogo, width: "w-20" },
+  ];
 
   return (
     <div className="min-h-screen">
@@ -205,13 +214,17 @@ const Home = () => {
           <h3 className="text-2xl font-semibold text-center mb-12 text-muted-foreground">
             Trusted by Leading Organizations
           </h3>
-          <div className="flex flex-wrap justify-center items-center gap-16">
-            {clients.map((client, index) => (
+          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16">
+            {clientLogos.map((logo, index) => (
               <div
                 key={index}
-                className="text-2xl font-bold text-muted-foreground/50 hover:text-primary transition-all duration-300 hover:scale-110 cursor-default"
+                className="transition-all duration-300 hover:scale-110 opacity-80 hover:opacity-100"
               >
-                {client}
+                <img
+                  src={logo.logo}
+                  alt={`${logo.name} logo`}
+                  className={`${logo.width} h-auto object-contain`}
+                />
               </div>
             ))}
           </div>
