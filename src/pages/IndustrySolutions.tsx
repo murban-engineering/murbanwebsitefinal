@@ -7,14 +7,14 @@
                       className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500"
                     />
                     {/* Glossy overlay gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                     
                     {/* Title and Icon on Image */}
                     <div className="absolute bottom-0 left-0 right-0 p-6 flex flex-col items-center text-center">
-                      <div className="mb-3 inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary/20 backdrop-blur-md border border-primary/30 transition-colors duration-300 shadow-lg">
+                      <div className="mb-3 inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary backdrop-blur-md border border-primary shadow-lg">
                         <industry.icon className="h-7 w-7 text-primary-foreground" />
                       </div>
-                      <CardTitle className="text-xl font-serif text-secondary-foreground drop-shadow-lg">{industry.title}</CardTitle>
+                      <CardTitle className="text-xl font-serif text-white font-bold">{industry.title}</CardTitle>
                     </div>
                   </div>
                   
