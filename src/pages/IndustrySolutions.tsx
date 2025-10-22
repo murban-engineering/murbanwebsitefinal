@@ -2,12 +2,19 @@ import { Factory, Droplets, Zap, Ship, Building2, Truck, Fuel } from "lucide-rea
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import oilGasImg from "@/assets/oil-gas-industry.png";
+import storageTerminalsImg from "@/assets/storage-terminals.png";
+import foodProcessingImg from "@/assets/food-processing.png";
+import renewableEnergyImg from "@/assets/renewable-energy.png";
+import railIndustryImg from "@/assets/rail-industry.png";
+import shippingMarineImg from "@/assets/shipping-marine.png";
 
 const IndustrySolutions = () => {
   const industries = [
     {
       icon: Droplets,
       title: "Oil & Gas Industry",
+      image: oilGasImg,
       assetsCovered: "Storage tanks, sphere tanks, pressure vessels, pipelines, marine terminals, FPSOs",
       services: [
         "API 653 Storage Tank Inspection",
@@ -29,6 +36,7 @@ const IndustrySolutions = () => {
     {
       icon: Building2,
       title: "Storage and Logistic Terminals",
+      image: storageTerminalsImg,
       assetsCovered: "Bulk liquid tanks, LPG spheres, loading lines, depot infrastructure",
       services: [
         "Storage Tank Calibration",
@@ -47,6 +55,7 @@ const IndustrySolutions = () => {
     {
       icon: Factory,
       title: "Food Processing Industry",
+      image: foodProcessingImg,
       assetsCovered: "Stainless tanks, pressure vessels, food-grade pipelines, steam boilers",
       services: [
         "UT Thickness Surveys for Corrosion in Clean Systems",
@@ -61,6 +70,7 @@ const IndustrySolutions = () => {
     {
       icon: Zap,
       title: "Renewable Energy & Geothermal",
+      image: renewableEnergyImg,
       assetsCovered: "Geothermal drilling rigs, solar plants, wind support structures",
       services: [
         "NDT on Cementing and Casing Equipment",
@@ -75,6 +85,7 @@ const IndustrySolutions = () => {
     {
       icon: Truck,
       title: "Rail Industry",
+      image: railIndustryImg,
       assetsCovered: "Rail wagons, bogies, bridges, storage depots, fuel tanks",
       services: [
         "UT and RT for railcar tanks and weld seams",
@@ -90,6 +101,7 @@ const IndustrySolutions = () => {
     {
       icon: Ship,
       title: "Shipping & Marine Industry",
+      image: shippingMarineImg,
       assetsCovered: "Cargo tanks, ballast tanks, marine pipelines, ship hulls, offshore loading arms, vessel pressure systems, tankers, offshore platforms",
       services: [
         "Ultrasonic Thickness Measurement (UTM) of hull plating and tanks",
@@ -138,37 +150,59 @@ const IndustrySolutions = () => {
 
           <div className="space-y-16">
             {industries.map((industry, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 animate-fade-in border-border overflow-hidden">
-                <div className="grid md:grid-cols-3 gap-6">
-                  <div className="md:col-span-1 bg-primary/5 p-8 flex flex-col justify-center items-center text-center">
-                    <div className="mb-6 inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-primary/10 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                      <industry.icon className="h-10 w-10 text-primary group-hover:text-primary-foreground" />
+              <Card key={index} className="group hover:shadow-2xl hover:scale-[1.02] transition-all duration-500 animate-fade-in border-border overflow-hidden bg-card/50 backdrop-blur-sm">
+                <div className="grid md:grid-cols-3 gap-0">
+                  {/* Image Section with Title Overlay */}
+                  <div className="md:col-span-1 relative h-80 md:h-auto overflow-hidden">
+                    <img 
+                      src={industry.image} 
+                      alt={industry.title}
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    {/* Glossy overlay gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent"></div>
+                    
+                    {/* Title and Icon on Image */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6 flex flex-col items-center text-center">
+                      <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/20 backdrop-blur-md border border-primary/30 group-hover:bg-primary group-hover:border-primary transition-all duration-300 shadow-lg">
+                        <industry.icon className="h-8 w-8 text-primary-foreground" />
+                      </div>
+                      <CardTitle className="text-2xl font-serif text-secondary-foreground drop-shadow-lg">{industry.title}</CardTitle>
                     </div>
-                    <CardTitle className="text-2xl font-serif mb-2">{industry.title}</CardTitle>
                   </div>
                   
-                  <div className="md:col-span-2 p-8">
+                  {/* Content Section */}
+                  <div className="md:col-span-2 p-8 bg-gradient-to-br from-card via-card to-card/80">
                     <div className="space-y-6">
                       <div>
-                        <h4 className="text-lg font-semibold mb-3 text-primary">Assets Covered</h4>
-                        <p className="text-muted-foreground">{industry.assetsCovered}</p>
+                        <h4 className="text-lg font-semibold mb-3 text-primary flex items-center">
+                          <span className="w-1 h-6 bg-primary mr-3 rounded-full"></span>
+                          Assets Covered
+                        </h4>
+                        <p className="text-muted-foreground pl-4">{industry.assetsCovered}</p>
                       </div>
                       
                       <div>
-                        <h4 className="text-lg font-semibold mb-3 text-primary">Key Services</h4>
-                        <div className="grid sm:grid-cols-2 gap-2">
+                        <h4 className="text-lg font-semibold mb-3 text-primary flex items-center">
+                          <span className="w-1 h-6 bg-primary mr-3 rounded-full"></span>
+                          Key Services
+                        </h4>
+                        <div className="grid sm:grid-cols-2 gap-2 pl-4">
                           {industry.services.map((service, idx) => (
-                            <div key={idx} className="flex items-start text-sm">
-                              <span className="text-primary mr-2 mt-1">•</span>
-                              <span>{service}</span>
+                            <div key={idx} className="flex items-start text-sm group/item">
+                              <span className="text-primary mr-2 mt-1 group-hover/item:scale-125 transition-transform">•</span>
+                              <span className="group-hover/item:text-primary transition-colors">{service}</span>
                             </div>
                           ))}
                         </div>
                       </div>
                       
                       <div>
-                        <h4 className="text-lg font-semibold mb-3 text-primary">Why It Matters</h4>
-                        <p className="text-muted-foreground leading-relaxed">{industry.whyItMatters}</p>
+                        <h4 className="text-lg font-semibold mb-3 text-primary flex items-center">
+                          <span className="w-1 h-6 bg-primary mr-3 rounded-full"></span>
+                          Why It Matters
+                        </h4>
+                        <p className="text-muted-foreground leading-relaxed pl-4">{industry.whyItMatters}</p>
                       </div>
                     </div>
                   </div>
