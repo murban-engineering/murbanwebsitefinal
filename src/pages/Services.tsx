@@ -34,6 +34,7 @@ import {
   Sparkles,
   type LucideIcon,
 } from "lucide-react";
+import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -44,6 +45,18 @@ type ServiceCardProps = {
   icon: LucideIcon;
   title: string;
   description: string;
+};
+
+type ServiceDetail = {
+  label: string;
+  breadcrumb: string[];
+  headline: string;
+  description: string;
+  sections?: Array<{
+    title: string;
+    items: string[];
+  }>;
+  relatedServices?: string[];
 };
 
 const ServiceCard = ({ icon: Icon, title, description }: ServiceCardProps) => {
@@ -262,6 +275,65 @@ const Services = () => {
     },
   ];
 
+  const [selectedService, setSelectedService] = useState<string>("Tank Calibration Services");
+
+  const allServices = [...ndtServices, ...fabricationServices];
+
+  const serviceDetails: Record<string, ServiceDetail> = {
+    "Tank Calibration Services": {
+      label: "Tank Calibration Service",
+      breadcrumb: ["Home", "Industry Solutions", "Services We Offer"],
+      headline: "Precision Tank Calibration & Volume Verification",
+      description:
+        "Tank calibration is essential for ensuring accurate volume measurements and compliance with industry standards. Murban Engineering specializes in Tank Calibration Services, utilizing precise methods and equipment to calibrate your tanks accurately. Our services help you maintain compliance, minimize discrepancies in volume measurements, and ensure efficient operations in various industries, including oil and gas, chemicals, and more.",
+      sections: [
+        {
+          title: "Advantages",
+          items: [
+            "Ensures precise measurement accuracy for equipment and machinery using laser technology.",
+            "Facilitates calibration of dimensional, angular, and positional parameters with high precision.",
+            "Enhances quality control by minimizing measurement errors and ensuring traceability.",
+            "Supports compliance with industry standards and regulatory requirements.",
+          ],
+        },
+      ],
+      relatedServices: [
+        "Alternating Current Field Measurement",
+        "API 579 Murban Fitness for Service",
+        "API 653 Above Ground Storage Tank Inspection",
+        "API 580 Murban Risk Based Service",
+        "Boiler Inspection Service",
+        "Lifting Equipment Thorough Examination and Certification",
+        "RT Radiographic Services",
+        "Magnetic Particle Testing",
+        "Surface Hardness Testing",
+        "Dye Penetrant Testing",
+        "Fluorescent Magnet Particle Testing",
+        "Floormap 3D MFL Scanning",
+        "Paint and Coating Inspection",
+        "PMI Testing",
+        "Murban SIMS Tank Inspection Software",
+        "Sphere Tank Inspections",
+        "3D Laser Scanning Services",
+        "Murban Tank Inspection Database",
+        "Thermal Camera Inspection",
+        "Pressure Testing",
+        "UAV Drone Inspection",
+        "Fabrication and Engineering Services",
+        "Ultrasonic Flaw Testing C Scan",
+        "Murban Phased Array Testing",
+        "Ultrasonic Thickness Measurement",
+        "Visual Inspection",
+        "API 510 Pressure Vessel Inspection",
+        "API 570 Piping Inspection",
+        "Gas Detection",
+      ],
+    },
+  };
+
+  const selectedDetail = serviceDetails[selectedService];
+  const selectedSummary = allServices.find((service) => service.title === selectedService);
+
   return (
     <div className="min-h-screen pt-20 bg-background">
       {/* Hero Section */}
@@ -281,6 +353,129 @@ const Services = () => {
         </div>
         <div className="pointer-events-none absolute -bottom-16 right-6 h-48 w-48 rounded-full bg-white/20 blur-3xl" />
         <div className="pointer-events-none absolute -top-10 left-10 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
+      </section>
+
+      {/* Service Spotlight Section */}
+      <section className="relative py-24">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(14,116,144,0.15),_transparent_65%)]" />
+        <div className="container relative mx-auto px-4">
+          <div className="mx-auto mb-12 max-w-4xl text-center">
+            <Badge className="mb-4 bg-primary/10 text-primary">Service Spotlight</Badge>
+            <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 text-foreground">
+              Explore Our Specialized Capabilities
+            </h2>
+            <p className="text-lg md:text-xl text-muted-foreground">
+              Choose a service to see how Murban Engineering delivers precision, compliance, and dependable results for your
+              assets.
+            </p>
+          </div>
+
+          <div className="grid gap-10 lg:grid-cols-[320px_1fr] items-start">
+            <div className="rounded-3xl border border-border/60 bg-card/70 backdrop-blur-xl p-6 shadow-lg">
+              <div className="mb-6 flex items-center justify-between">
+                <h3 className="text-lg font-semibold text-foreground">Service Directory</h3>
+                <span className="text-sm text-muted-foreground">{allServices.length} services</span>
+              </div>
+              <div className="space-y-2 max-h-[28rem] overflow-y-auto pr-1">
+                {allServices.map((service) => {
+                  const isActive = selectedService === service.title;
+                  const Icon = service.icon;
+
+                  return (
+                    <button
+                      key={service.title}
+                      type="button"
+                      onClick={() => setSelectedService(service.title)}
+                      className={`w-full rounded-2xl border px-4 py-3 text-left transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
+                        isActive
+                          ? "border-primary bg-primary text-primary-foreground shadow-md"
+                          : "border-transparent bg-muted/40 text-muted-foreground hover:bg-muted/70"
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <span
+                          className={`flex h-10 w-10 items-center justify-center rounded-xl border ${
+                            isActive ? "border-white/40 bg-white/10" : "border-border/60 bg-background"
+                          }`}
+                        >
+                          <Icon className="h-5 w-5" strokeWidth={2.5} />
+                        </span>
+                        <div>
+                          <p className="font-semibold leading-snug">{service.title}</p>
+                          <p className="text-sm opacity-80 leading-snug">
+                            {service.description}
+                          </p>
+                        </div>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="rounded-3xl border border-border/60 bg-card/80 backdrop-blur-xl p-8 shadow-xl">
+              <div className="flex flex-col gap-6">
+                <div className="space-y-4">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span className="inline-flex items-center rounded-full border border-primary/40 bg-primary/10 px-4 py-1 text-sm font-semibold text-primary">
+                      {selectedDetail?.label ?? selectedService}
+                    </span>
+                    {selectedDetail?.breadcrumb && (
+                      <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+                        {selectedDetail.breadcrumb.map((crumb, index) => (
+                          <span key={crumb} className="flex items-center gap-2">
+                            {index > 0 && <span className="opacity-70">/</span>}
+                            <span>{crumb}</span>
+                          </span>
+                        ))}
+                        <span className="opacity-70">/</span>
+                        <span className="text-foreground font-medium">{selectedDetail?.label ?? selectedService}</span>
+                      </div>
+                    )}
+                  </div>
+
+                  <h3 className="text-3xl md:text-4xl font-serif font-bold text-foreground">
+                    {selectedDetail?.headline ?? selectedService}
+                  </h3>
+                  <p className="text-lg leading-relaxed text-muted-foreground">
+                    {selectedDetail?.description ?? selectedSummary?.description}
+                  </p>
+                </div>
+
+                {selectedDetail?.sections?.map((section) => (
+                  <div key={section.title} className="rounded-2xl border border-border/50 bg-background/60 p-6">
+                    <h4 className="text-xl font-semibold mb-4 text-foreground">{section.title}</h4>
+                    <ul className="space-y-3 text-muted-foreground">
+                      {section.items.map((item) => (
+                        <li key={item} className="flex items-start gap-3">
+                          <span className="mt-1 inline-flex h-2 w-2 rounded-full bg-primary" aria-hidden="true" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+
+                {selectedDetail?.relatedServices && (
+                  <div>
+                    <h4 className="text-lg font-semibold mb-3 text-foreground">Related Services We Offer</h4>
+                    <div className="grid gap-2 sm:grid-cols-2">
+                      {selectedDetail.relatedServices.map((item) => (
+                        <div
+                          key={item}
+                          className="flex items-center gap-2 rounded-xl border border-border/40 bg-background/60 px-4 py-2 text-sm text-muted-foreground"
+                        >
+                          <span className="inline-flex h-1.5 w-1.5 rounded-full bg-primary" aria-hidden="true" />
+                          <span className="leading-tight">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* NDT Services Section */}
