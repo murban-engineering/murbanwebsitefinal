@@ -311,6 +311,53 @@ const Services = () => {
   const allServices = [...ndtServices, ...fabricationServices];
 
   const serviceDetails: Record<string, ServiceDetail> = {
+    "API 510 Pressure Vessel Inspection": {
+      label: "API 510 Pressure Vessel Inspection",
+      breadcrumb: ["Home", "Services", "API 510 Pressure Vessel Inspection"],
+      headline: "API 510 PRESSURE VESSEL Inspection: Ensuring SAFETY & Reliability",
+      description:
+        "Murban Engineering is your trusted partner for API 510 inspection services, dedicated to ensuring the safety, reliability, and compliance of your pressure vessels. With comprehensive expertise and a commitment to excellence, we tailor inspection solutions to meet your operational needs.",
+      sections: [
+        {
+          title: "Why Murban Engineering for API 510 Inspection?",
+          items: [
+            "Industry expertise from certified inspectors with deep knowledge of API 510 standards.",
+            "Regulatory compliance guidance that keeps your pressure vessels aligned with mandatory requirements.",
+            "Customized inspection approaches adapted to your facility, operational demands, and maintenance goals.",
+          ],
+        },
+        {
+          title: "Technology-Driven Insights",
+          items: [
+            "Cutting-edge inspection technology that uncovers defects, degradation, and risk indicators early.",
+            "Detailed inspection reports with actionable recommendations for maintenance, repair, or continued monitoring.",
+            "Clear documentation that empowers informed decisions on asset readiness and lifecycle planning.",
+          ],
+        },
+        {
+          title: "Our Commitment to Safety & Reliability",
+          items: [
+            "Consistent focus on safeguarding assets while elevating safety and reliability standards.",
+            "Professional service delivery that upholds the highest levels of quality across every inspection.",
+            "Responsive support that makes it easy to schedule inspections and maintain compliance momentum.",
+          ],
+        },
+      ],
+      relatedServices: [
+        "API 570 Piping Inspection and Certification",
+        "API 653 Aboveground Storage Tank Inspection and Certification",
+        "API 579 Murban Fitness for Service",
+        "API 580 Murban Risk Based Inspection",
+        "Pressure Testing",
+        "Ultrasonic Thickness Measurement",
+        "Magnetic Particle Testing",
+        "Dye Penetrant Testing",
+        "Thermal Camera Inspection",
+        "UAV Drone Inspection",
+        "3D Laser Scanning Services",
+        "Murban SIMS Tank Inspection Software",
+      ],
+    },
     "API 570 Piping Inspection and Certification": {
       label: "API 570 Piping Inspection & Certification",
       breadcrumb: ["Home", "Industry Solutions", "Services We Offer"],
