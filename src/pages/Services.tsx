@@ -31,12 +31,64 @@ import {
   Settings,
   Building2,
   Zap,
-  Sparkles
+  Sparkles,
+  type LucideIcon,
 } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
+import "./Services.css";
+
+type ServiceCardProps = {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+};
+
+const ServiceCard = ({ icon: Icon, title, description }: ServiceCardProps) => {
+  return (
+    <div className="parent">
+      <div className="card">
+        <div className="logo" aria-hidden="true">
+          <span className="circle circle1" />
+          <span className="circle circle2" />
+          <span className="circle circle3" />
+          <span className="circle circle4" />
+          <span className="circle circle5">
+            <Icon className="lucide-icon" strokeWidth={2.5} />
+          </span>
+        </div>
+        <div className="glass" />
+        <div className="content">
+          <span className="title">{title}</span>
+          <span className="text">{description}</span>
+        </div>
+        <div className="bottom">
+          <div className="social-buttons-container" aria-hidden="true">
+            <button className="social-button" type="button" tabIndex={-1}>
+              <Icon className="lucide-icon" strokeWidth={2.5} />
+            </button>
+          </div>
+          <div className="view-more">
+            <Link to="/contact" className="view-more-button">
+              Contact us
+            </Link>
+            <svg
+              className="svg"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const Services = () => {
   const ndtServices = [
@@ -244,25 +296,14 @@ const Services = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {ndtServices.map((service, index) => (
-              <Card
-                key={index}
-                className="group relative overflow-hidden border border-border/50 bg-card/70 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:shadow-[0_20px_45px_-25px_rgba(37,99,235,0.65)]"
-              >
-                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary/60 via-primary to-primary/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                <CardHeader className="space-y-4">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
-                    <service.icon className="h-6 w-6" />
-                  </div>
-                  <CardTitle className="text-lg font-serif text-foreground">
-                    {service.title}
-                  </CardTitle>
-                  <CardDescription className="text-sm leading-relaxed text-muted-foreground">
-                    {service.description}
-                  </CardDescription>
-                </CardHeader>
-              </Card>
+          <div className="services-grid">
+            {ndtServices.map((service) => (
+              <ServiceCard
+                key={service.title}
+                icon={service.icon}
+                title={service.title}
+                description={service.description}
+              />
             ))}
           </div>
         </div>
@@ -283,27 +324,14 @@ const Services = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-            {fabricationServices.map((service, index) => (
-              <Card
-                key={index}
-                className="group relative overflow-hidden border border-border/40 bg-background/80 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:shadow-[0_25px_55px_-30px_rgba(14,116,144,0.6)]"
-              >
-                <div className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10" />
-                </div>
-                <CardHeader className="relative space-y-5">
-                  <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
-                    <service.icon className="h-7 w-7" />
-                  </div>
-                  <CardTitle className="text-xl font-serif text-foreground">
-                    {service.title}
-                  </CardTitle>
-                  <CardDescription className="text-base leading-relaxed text-muted-foreground">
-                    {service.description}
-                  </CardDescription>
-                </CardHeader>
-              </Card>
+          <div className="services-grid">
+            {fabricationServices.map((service) => (
+              <ServiceCard
+                key={service.title}
+                icon={service.icon}
+                title={service.title}
+                description={service.description}
+              />
             ))}
           </div>
         </div>
