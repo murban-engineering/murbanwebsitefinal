@@ -1,247 +1,233 @@
-/* Services 3D card styles */
-.parent {
-  width: min(100%, 320px);
+/* Services flip card styles */
+.service-card {
+  width: min(100%, 280px);
   height: 360px;
-  perspective: 1000px;
+  perspective: 1200px;
   position: relative;
 }
 
-.card {
+.service-card .card {
+  overflow: visible;
+  width: 100%;
   height: 100%;
-  border-radius: 50px;
-  background: linear-gradient(
-    135deg,
-    hsl(var(--primary) / 0.25) 0%,
-    hsl(var(--background)) 45%,
-    hsl(var(--secondary) / 0.25) 100%
-  );
-  transition: all 0.5s ease-in-out;
+}
+
+.service-card .content {
+  width: 100%;
+  height: 100%;
   transform-style: preserve-3d;
-  box-shadow: hsl(var(--primary) / 0.2) 0px 40px 50px -40px,
-    hsl(var(--secondary) / 0.25) 0px 25px 30px -8px;
+  transition: transform 300ms;
+  box-shadow: 0px 0px 10px 1px #000000ee;
+  border-radius: 12px;
   position: relative;
 }
 
-.glass {
-  transform-style: preserve-3d;
+.service-card .front,
+.service-card .back {
+  background-color: #151515;
   position: absolute;
-  inset: 8px;
-  border-radius: 55px;
-  border-top-right-radius: 100%;
-  background: linear-gradient(
-    135deg,
-    hsl(var(--background) / 0.9) 0%,
-    hsl(var(--background) / 0.75) 100%
-  );
-  transform: translate3d(0px, 0px, 25px);
-  border-left: 1px solid white;
-  border-bottom: 1px solid white;
-  transition: all 0.5s ease-in-out;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-.content {
-  padding: 90px 36px 0px 30px;
-  transform: translate3d(0, 0, 26px);
+.service-card .back {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  transform: rotateY(180deg);
+}
+
+.service-card .back::before {
+  position: absolute;
+  content: " ";
+  display: block;
+  width: 160px;
+  height: 160%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #ff9966,
+    #ff9966,
+    #ff9966,
+    #ff9966,
+    transparent
+  );
+  animation: rotation_481 5000ms infinite linear;
+}
+
+.service-card .back-content {
+  position: absolute;
+  width: 95%;
+  height: 90%;
+  background-color: #151515;
+  border-radius: 10px;
+  color: white;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  padding: 1.5rem;
 }
 
-.content .title {
-  display: block;
-  color: hsl(var(--secondary));
-  font-weight: 900;
-  font-size: 20px;
-  line-height: 1.2;
+.service-card .service-card-icon {
+  width: 48px;
+  height: 48px;
+  color: #ff9966;
 }
 
-.content .text {
-  display: block;
-  color: hsl(var(--secondary) / 0.7);
-  font-size: 15px;
-  line-height: 1.45;
+.service-card .title .service-card-icon {
+  width: 24px;
+  height: 24px;
 }
 
-.bottom {
-  padding: 10px 20px 20px;
-  transform-style: preserve-3d;
+.service-card .back-content strong {
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.service-card .back-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 153, 102, 0.4);
+  color: white;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+.service-card .back-cta:hover {
+  background-color: #ff9966;
+  color: #151515;
+}
+
+.service-card .card:hover .content {
+  transform: rotateY(180deg);
+}
+
+@keyframes rotation_481 {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.service-card .front {
+  color: white;
+}
+
+.service-card .front .front-content {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  width: 100%;
+  height: 100%;
+  padding: 16px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-between;
-  transform: translate3d(0, 0, 26px);
+  z-index: 1;
 }
 
-.bottom .view-more {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  justify-content: flex-end;
-  transition: all 0.2s ease-in-out;
-}
-
-.bottom .view-more:hover {
-  transform: translate3d(0, 0, 10px);
-}
-
-.bottom .view-more .view-more-button {
-  background: none;
-  border: none;
-  color: hsl(var(--primary));
-  font-weight: bolder;
-  font-size: 12px;
+.service-card .front-content .badge {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  backdrop-filter: blur(2px);
+  width: fit-content;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
-.bottom .view-more .svg {
-  fill: none;
-  stroke: hsl(var(--primary));
-  stroke-width: 3px;
-  max-height: 15px;
+.service-card .description {
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.55);
+  width: 100%;
+  padding: 14px;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  border-radius: 10px;
 }
 
-.bottom .social-buttons-container {
+.service-card .title {
+  font-size: 0.95rem;
+  max-width: 100%;
   display: flex;
-  gap: 10px;
-  transform-style: preserve-3d;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
 }
 
-.bottom .social-buttons-container .social-button {
-  width: 40px;
-  aspect-ratio: 1;
-  padding: 5px;
-  background: hsl(var(--background));
-  border-radius: 50%;
-  border: none;
-  display: grid;
-  place-content: center;
-  box-shadow: hsl(var(--secondary) / 0.3) 0px 7px 5px -5px;
+.service-card .title p {
+  margin: 0;
 }
 
-.bottom .social-buttons-container .social-button .lucide-icon {
-  stroke: hsl(var(--secondary));
+.service-card .card-footer {
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 8px;
+  font-size: 0.75rem;
+  line-height: 1.4;
 }
 
-.bottom .social-buttons-container .social-button:hover {
-  background: hsl(var(--secondary));
-}
-
-.bottom .social-buttons-container .social-button:hover .lucide-icon {
-  stroke: white;
-}
-
-.bottom .social-buttons-container .social-button:active {
-  background: hsl(var(--primary));
-}
-
-.bottom .social-buttons-container .social-button:active .lucide-icon {
-  stroke: white;
-}
-
-.logo {
+.service-card .front .img {
   position: absolute;
-  right: 0;
-  top: 0;
-  transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  object-position: center;
 }
 
-.logo .circle {
-  display: block;
-  position: absolute;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  top: 0;
-  right: 0;
-  box-shadow: hsl(var(--secondary) / 0.25) -10px 10px 20px 0px;
-  backdrop-filter: blur(5px);
-  background: hsl(var(--primary) / 0.18);
-  transition: all 0.5s ease-in-out;
-}
-
-.logo .circle1 {
-  width: 170px;
-  transform: translate3d(0, 0, 20px);
-  top: 8px;
-  right: 8px;
-}
-
-.logo .circle2 {
-  width: 140px;
-  transform: translate3d(0, 0, 40px);
-  top: 10px;
-  right: 10px;
-  backdrop-filter: blur(1px);
-  transition-delay: 0.4s;
-}
-
-.logo .circle3 {
+.service-card .circle {
   width: 110px;
-  transform: translate3d(0, 0, 60px);
-  top: 17px;
-  right: 17px;
-  transition-delay: 0.8s;
+  height: 110px;
+  border-radius: 50%;
+  background-color: #ffbb66;
+  position: absolute;
+  filter: blur(20px);
+  animation: floating 2600ms infinite linear;
 }
 
-.logo .circle4 {
-  width: 80px;
-  transform: translate3d(0, 0, 80px);
-  top: 23px;
-  right: 23px;
-  transition-delay: 1.2s;
+.service-card #bottom {
+  background-color: #ff8866;
+  left: 50px;
+  top: 40px;
+  width: 160px;
+  height: 160px;
+  animation-delay: -800ms;
 }
 
-.logo .circle5 {
-  width: 50px;
-  transform: translate3d(0, 0, 100px);
-  top: 30px;
-  right: 30px;
-  display: grid;
-  place-content: center;
-  transition-delay: 1.6s;
-  background: hsl(var(--primary));
+.service-card #right {
+  background-color: #ff2233;
+  right: -20px;
+  top: -40px;
+  width: 60px;
+  height: 60px;
+  animation-delay: -1800ms;
 }
 
-.logo .circle5 .lucide-icon {
-  width: 22px;
-  height: 22px;
-  stroke: white;
-}
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
 
-.social-buttons-container .lucide-icon {
-  width: 18px;
-  height: 18px;
-  stroke: hsl(var(--secondary));
-}
+  50% {
+    transform: translateY(10px);
+  }
 
-.parent:hover .card {
-  transform: rotate3d(1, 1, 0, 30deg);
-  box-shadow: hsl(var(--primary) / 0.35) 30px 50px 25px -40px,
-    hsl(var(--secondary) / 0.2) 0px 25px 30px 0px;
-}
-
-.parent:hover .card .bottom .social-buttons-container .social-button {
-  transform: translate3d(0, 0, 50px);
-  box-shadow: hsl(var(--secondary) / 0.25) -5px 20px 10px 0px;
-}
-
-.parent:hover .card .logo .circle2 {
-  transform: translate3d(0, 0, 60px);
-}
-
-.parent:hover .card .logo .circle3 {
-  transform: translate3d(0, 0, 80px);
-}
-
-.parent:hover .card .logo .circle4 {
-  transform: translate3d(0, 0, 100px);
-}
-
-.parent:hover .card .logo .circle5 {
-  transform: translate3d(0, 0, 120px);
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .services-grid {

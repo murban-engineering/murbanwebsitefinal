@@ -48,41 +48,44 @@ type ServiceCardProps = {
 
 const ServiceCard = ({ icon: Icon, title, description }: ServiceCardProps) => {
   return (
-    <div className="parent">
+    <div className="service-card">
       <div className="card">
-        <div className="logo" aria-hidden="true">
-          <span className="circle circle1" />
-          <span className="circle circle2" />
-          <span className="circle circle3" />
-          <span className="circle circle4" />
-          <span className="circle circle5">
-            <Icon className="lucide-icon" strokeWidth={2.5} />
-          </span>
-        </div>
-        <div className="glass" />
         <div className="content">
-          <span className="title">{title}</span>
-          <span className="text">{description}</span>
-        </div>
-        <div className="bottom">
-          <div className="social-buttons-container" aria-hidden="true">
-            <button className="social-button" type="button" tabIndex={-1}>
-              <Icon className="lucide-icon" strokeWidth={2.5} />
-            </button>
+          <div className="back">
+            <div className="back-content">
+              <Icon
+                className="service-card-icon"
+                aria-hidden="true"
+                strokeWidth={2.5}
+              />
+              <strong>{title}</strong>
+              <Link to="/contact" className="back-cta">
+                Talk to our team
+              </Link>
+            </div>
           </div>
-          <div className="view-more">
-            <Link to="/contact" className="view-more-button">
-              Read more
-            </Link>
-            <svg
-              className="svg"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="m6 9 6 6 6-6"></path>
-            </svg>
+          <div className="front">
+            <div className="img" aria-hidden="true">
+              <div className="circle" />
+              <div className="circle" id="right" />
+              <div className="circle" id="bottom" />
+            </div>
+            <div className="front-content">
+              <small className="badge">Service</small>
+              <div className="description">
+                <div className="title">
+                  <p className="title">
+                    <strong>{title}</strong>
+                  </p>
+                  <Icon
+                    className="service-card-icon"
+                    aria-hidden="true"
+                    strokeWidth={2.5}
+                  />
+                </div>
+                <p className="card-footer">{description}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
