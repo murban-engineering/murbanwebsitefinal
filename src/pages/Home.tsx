@@ -1,4 +1,17 @@
-import { ArrowRight, CheckCircle, Building2, Wrench, Shield, Users } from "lucide-react";
+import {
+  ArrowRight,
+  Building2,
+  Wrench,
+  Shield,
+  Users,
+  Compass,
+  BarChart3,
+  Sparkles,
+  Lightbulb,
+  CheckCircle2,
+  Layers,
+  Spline,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -16,28 +29,113 @@ const Home = () => {
     {
       icon: Building2,
       title: "Structural Engineering",
-      description: "Comprehensive structural design and analysis for commercial and residential projects.",
+      description: "Future-ready structures engineered with advanced simulation and modelling.",
+      highlights: ["Seismic resilience", "Hybrid material systems", "Digital twin ready"],
     },
     {
       icon: Wrench,
-      title: "MEP Engineering",
-      description: "Mechanical, electrical, and plumbing systems designed for optimal efficiency.",
+      title: "MEP Systems",
+      description: "High-performance mechanical, electrical and plumbing systems for smart facilities.",
+      highlights: ["Net-zero ready", "Smart automation", "Lifecycle analytics"],
     },
     {
       icon: Shield,
-      title: "Project Management",
-      description: "End-to-end project oversight ensuring quality, timeline, and budget adherence.",
+      title: "Project Leadership",
+      description: "Integrated delivery teams that align people, processes and technology.",
+      highlights: ["Design-build expertise", "Risk mitigation", "Transparent dashboards"],
     },
     {
       icon: Users,
-      title: "Consulting Services",
-      description: "Expert engineering consultation for complex technical challenges.",
+      title: "Advisory & Consulting",
+      description: "Strategic engineering guidance for complex infrastructure ventures.",
+      highlights: ["Sustainability roadmaps", "Feasibility studies", "Regulatory compliance"],
     },
   ];
 
   const stats = [
-    { value: "1873", label: "Total Projects" },
-    { value: "ISO 9001:2015", label: "Certified" },
+    { value: "25+", label: "Years Engineering Landmarks" },
+    { value: "1.8k", label: "Projects Delivered" },
+    { value: "42", label: "Specialist Engineers" },
+    { value: "ISO 9001", label: "Certified Excellence" },
+  ];
+
+  const differentiators = [
+    {
+      icon: Sparkles,
+      title: "Signature Delivery Experience",
+      description:
+        "Our cross-functional squads embed alongside your team to accelerate approvals, procurement and commissioning.",
+    },
+    {
+      icon: BarChart3,
+      title: "Data-Driven Decisions",
+      description:
+        "Live project analytics and predictive modelling ensure you are always ahead of risk and budget curveballs.",
+    },
+    {
+      icon: Compass,
+      title: "Sustainability by Design",
+      description:
+        "We engineer for carbon, water and energy performance from day zero, ensuring compliance and positive impact.",
+    },
+  ];
+
+  const process = [
+    {
+      title: "Discover",
+      description: "Immersive workshops to align scope, metrics and stakeholders from day one.",
+    },
+    {
+      title: "Design",
+      description: "Iterative co-design with digital twins, rapid prototyping and compliance reviews.",
+    },
+    {
+      title: "Deliver",
+      description: "On-site leadership coupled with smart monitoring to keep execution seamless.",
+    },
+    {
+      title: "Optimize",
+      description: "Operational intelligence, retro-commissioning and continuous performance tuning.",
+    },
+  ];
+
+  const projects = [
+    {
+      title: "Regional Smart Logistics Hub",
+      description:
+        "A 120,000 sqm logistics campus integrating autonomous warehousing, renewable microgrids and resilient structures.",
+      impact: "32% faster fulfilment, 18% energy reduction",
+    },
+    {
+      title: "Urban Mixed-Use Tower",
+      description:
+        "Iconic high-rise featuring adaptive façade systems, community amenities and net-zero ready mechanical systems.",
+      impact: "LEED Platinum pre-certified, 24-month delivery",
+    },
+    {
+      title: "Industrial Utilities Upgrade",
+      description:
+        "Mission-critical plant revitalization ensuring continuity, safety compliance and digital oversight.",
+      impact: "Zero downtime transition, predictive maintenance deployed",
+    },
+  ];
+
+  const insights = [
+    {
+      title: "Decarbonizing Industrial Assets",
+      description: "Frameworks for transforming existing facilities into low-carbon powerhouses.",
+      icon: Layers,
+    },
+    {
+      title: "Digital Twins for Smarter Operations",
+      description: "How real-time models unlock visibility across the project lifecycle.",
+      icon: Spline,
+    },
+    {
+      title: "Collaborative Delivery Playbook",
+      description: "Integrating designers, builders and owners to unlock speed and certainty.",
+      icon: Lightbulb,
+    },
   ];
 
   const clientLogos = [
@@ -48,71 +146,93 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img
-            src={heroImage}
-            alt="Engineering Excellence"
-            className="w-full h-full object-cover scale-105 animate-[scale-in_1s_ease-out]"
-          />
-          <div className="absolute inset-0 bg-gradient-hero-overlay" />
-          <div className="absolute inset-0 bg-gradient-mesh" />
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={heroImage} alt="Engineering excellence" className="h-full w-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/70 to-background/95" />
+          <div className="absolute inset-0 mix-blend-overlay bg-gradient-mesh opacity-60" />
+          <div className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-primary/30 blur-3xl" />
+          <div className="absolute -bottom-20 -left-10 h-72 w-72 rounded-full bg-accent/25 blur-3xl" />
         </div>
-        
-        <div className="container mx-auto px-4 z-10">
-          <div className="max-w-4xl text-secondary-foreground">
-            <div className="inline-block px-4 py-2 mb-6 rounded-full bg-white/10 backdrop-blur-md border border-white/20 animate-fade-in">
-              <span className="text-sm font-medium">🏗️ Engineering Excellence Since 1998</span>
+
+        <div className="relative z-10 container mx-auto px-4 py-32 md:py-40">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div className="space-y-8">
+              <div className="inline-flex items-center gap-3 rounded-full border border-foreground/10 bg-foreground/5 px-5 py-2 text-sm font-medium backdrop-blur-md">
+                <span className="flex h-2.5 w-2.5 rounded-full bg-primary animate-pulse" />
+                Engineering excellence since 1998
+              </div>
+              <h1 className="text-4xl font-serif font-bold leading-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+                Designing the spaces where innovation lives and industry thrives.
+              </h1>
+              <p className="max-w-2xl text-lg text-muted-foreground md:text-xl">
+                We partner with visionary developers, industrial leaders and public agencies to engineer sustainable, human-centred environments that perform today and evolve tomorrow.
+              </p>
+              <div className="flex flex-col gap-4 sm:flex-row">
+                <Button size="lg" asChild className="text-base shadow-glow">
+                  <Link to="/contact">
+                    Start a project <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  asChild
+                  className="text-base border-foreground/20 bg-background/80 backdrop-blur-md hover:bg-foreground/5"
+                >
+                  <Link to="/services">Explore services</Link>
+                </Button>
+              </div>
+              <div className="flex flex-wrap items-center gap-6 rounded-2xl border border-foreground/10 bg-background/80 p-6 shadow-lg shadow-primary/5 backdrop-blur-md">
+                {stats.slice(0, 3).map((stat) => (
+                  <div key={stat.label} className="flex flex-col border-l pl-6 first:border-0 first:pl-0">
+                    <span className="text-3xl font-semibold text-foreground md:text-4xl">{stat.value}</span>
+                    <span className="text-sm uppercase tracking-wide text-muted-foreground">{stat.label}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold mb-6 animate-fade-in leading-tight">
-              Engineering Excellence,{" "}
-              <span className="bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">
-                Delivered
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-10 opacity-90 animate-fade-in max-w-2xl">
-              Transforming visions into reality with innovative solutions and unmatched expertise
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in">
-              <Button size="lg" asChild className="text-lg shadow-glow hover:shadow-primary transition-all">
-                <Link to="/contact">
-                  Get Started <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild className="text-lg bg-white/10 backdrop-blur-md border-white/30 text-white hover:bg-white/20 hover:border-white/40 transition-all">
-                <Link to="/services">
-                  Our Services
-                </Link>
-              </Button>
+            <div className="relative">
+              <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-primary/30 via-primary/10 to-background blur-2xl" />
+              <div className="relative overflow-hidden rounded-3xl border border-foreground/10 bg-background/90 shadow-2xl backdrop-blur">
+                <img src={teamImage} alt="Collaborative engineering team" className="h-80 w-full object-cover" />
+                <div className="grid gap-6 p-8">
+                  <div className="flex items-center justify-between">
+                    <span className="text-lg font-medium">Active Programmes</span>
+                    <span className="text-sm text-muted-foreground">Real-time insights</span>
+                  </div>
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    {differentiators.map((item) => (
+                      <div key={item.title} className="rounded-2xl border border-foreground/10 bg-foreground/5 p-4">
+                        <item.icon className="mb-3 h-6 w-6 text-primary" />
+                        <h3 className="text-base font-semibold">{item.title}</h3>
+                        <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        
-        {/* Floating Elements */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 animate-float">
-          <div className="w-8 h-12 rounded-full border-2 border-white/50 flex items-start justify-center p-2">
-            <div className="w-1.5 h-3 bg-white/70 rounded-full animate-pulse" />
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-gradient-to-b from-background via-muted/50 to-background relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-mesh opacity-40" />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-3xl mx-auto">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center group animate-scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="relative inline-block mb-4">
-                  <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl group-hover:blur-2xl transition-all" />
-                  <div className="relative text-5xl md:text-6xl font-bold bg-gradient-to-br from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform">
-                    {stat.value}
-                  </div>
-                </div>
-                <div className="text-sm md:text-base text-muted-foreground font-medium">
-                  {stat.label}
+      <section className="relative py-20">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-muted/40 via-background to-background" />
+        <div className="container mx-auto px-4">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="group relative overflow-hidden rounded-3xl border border-foreground/10 bg-background p-8 shadow-lg shadow-primary/10 transition-all hover:-translate-y-1 hover:shadow-primary/20"
+              >
+                <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-primary/5 transition-transform group-hover:scale-125" />
+                <div className="relative">
+                  <span className="text-4xl font-semibold text-foreground md:text-5xl">{stat.value}</span>
+                  <p className="mt-3 text-sm uppercase tracking-wide text-muted-foreground">{stat.label}</p>
                 </div>
               </div>
             ))}
@@ -123,38 +243,52 @@ const Home = () => {
       {/* Services Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">
-              Our Services
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive engineering solutions tailored to your project needs
+          <div className="mx-auto mb-16 max-w-3xl text-center">
+            <span className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Capabilities</span>
+            <h2 className="mt-6 text-4xl font-serif font-bold md:text-5xl">Engineering services tailored to your ambition</h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              From concept to commissioning, our multidisciplinary teams orchestrate resilient systems that feel effortless to operate and maintain.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, index) => (
-              <Card 
-                key={index} 
-                className="group relative overflow-hidden border-border/50 hover:border-primary/50 bg-gradient-card hover:-translate-y-2 transition-all duration-300 animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {services.map((service) => (
+              <Card
+                key={service.title}
+                className="group relative h-full overflow-hidden rounded-3xl border border-foreground/10 bg-gradient-to-br from-background via-background to-muted/40 transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 hover:shadow-primary/30"
               >
-                <div className="absolute inset-0 bg-gradient-shine opacity-0 group-hover:opacity-100 group-hover:animate-shimmer transition-opacity" />
-                <CardContent className="p-6 relative z-10">
-                  <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 group-hover:bg-primary group-hover:scale-110 transition-all duration-300 shadow-md group-hover:shadow-glow">
-                    <service.icon className="h-7 w-7 text-primary group-hover:text-primary-foreground transition-colors" />
+                <div className="absolute inset-0 opacity-0 blur-xl transition-all duration-500 group-hover:opacity-100 group-hover:blur-2xl" />
+                <CardContent className="relative flex h-full flex-col gap-6 p-8">
+                  <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/15 text-primary">
+                    <service.icon className="h-7 w-7" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">{service.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                  <div className="space-y-3">
+                    <h3 className="text-xl font-semibold text-foreground">{service.title}</h3>
+                    <p className="text-sm leading-relaxed text-muted-foreground">{service.description}</p>
+                  </div>
+                  <div className="mt-auto space-y-2">
+                    {service.highlights.map((highlight) => (
+                      <div key={highlight} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <CheckCircle2 className="h-4 w-4 text-primary" />
+                        {highlight}
+                      </div>
+                    ))}
+                  </div>
                 </CardContent>
               </Card>
             ))}
           </div>
 
-          <div className="text-center mt-12">
-            <Button size="lg" variant="outline" asChild>
+          <div className="mt-14 flex flex-col items-center justify-center gap-6 rounded-3xl border border-primary/20 bg-primary/10 p-10 text-center sm:flex-row sm:text-left">
+            <div className="flex-1">
+              <h3 className="text-2xl font-semibold text-foreground">Need a bespoke engineering team?</h3>
+              <p className="mt-2 text-muted-foreground">
+                We tailor cross-disciplinary squads for complex programmes and remote locations across Africa.
+              </p>
+            </div>
+            <Button size="lg" asChild className="shadow-primary/30 shadow-lg">
               <Link to="/services">
-                View All Services <ArrowRight className="ml-2 h-5 w-5" />
+                View full service catalogue <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
           </div>
@@ -162,44 +296,76 @@ const Home = () => {
       </section>
 
       {/* Featured Project Section */}
-      <section className="py-20 bg-muted">
+      <section className="relative overflow-hidden py-20">
+        <div className="absolute inset-0 -z-10 bg-muted" />
+        <div className="absolute inset-x-0 top-10 -z-10 mx-auto h-80 w-[90%] rounded-full bg-gradient-to-r from-primary/30 via-primary/10 to-accent/20 blur-3xl" />
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in">
-              <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">
-                Engineering the Future
-              </h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                With over 25 years of experience, Murban Engineering has established itself as a trusted partner in delivering complex engineering projects across the region.
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div className="space-y-6">
+              <span className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Signature programmes</span>
+              <h2 className="text-4xl font-serif font-bold md:text-5xl">Engineering the future with purposeful design</h2>
+              <p className="text-lg text-muted-foreground">
+                Our teams combine deep technical mastery with a human-centric approach. Every engagement is anchored in measurable outcomes, resilient systems and meaningful experiences for the people who use them.
               </p>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 text-primary mr-3 flex-shrink-0 mt-0.5" />
-                  <span>Innovative solutions backed by cutting-edge technology</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 text-primary mr-3 flex-shrink-0 mt-0.5" />
-                  <span>Dedicated team of certified engineering professionals</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 text-primary mr-3 flex-shrink-0 mt-0.5" />
-                  <span>Commitment to sustainability and environmental responsibility</span>
-                </li>
-              </ul>
-              <Button size="lg" asChild>
+              <div className="grid gap-4">
+                {differentiators.map((item) => (
+                  <div key={item.title} className="flex items-start gap-4 rounded-2xl border border-foreground/10 bg-background/80 p-5 shadow-sm">
+                    <item.icon className="mt-1 h-6 w-6 text-primary" />
+                    <div>
+                      <h3 className="text-lg font-semibold">{item.title}</h3>
+                      <p className="mt-1 text-sm text-muted-foreground">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <Button size="lg" asChild className="shadow-primary/30 shadow-lg">
                 <Link to="/about">
-                  Learn More About Us <ArrowRight className="ml-2 h-5 w-5" />
+                  Learn more about our approach <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
             </div>
-            <div className="animate-scale-in relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl blur-2xl group-hover:blur-3xl transition-all" />
-              <img
-                src={projectImage}
-                alt="Featured Project"
-                className="relative rounded-2xl shadow-2xl group-hover:shadow-primary transition-all duration-500 group-hover:scale-[1.02]"
-              />
+            <div className="relative">
+              <div className="absolute -inset-8 rounded-3xl bg-gradient-to-br from-primary/20 via-foreground/5 to-background blur-2xl" />
+              <div className="relative overflow-hidden rounded-3xl border border-foreground/10 shadow-2xl">
+                <img src={projectImage} alt="Featured project" className="h-full w-full object-cover" />
+                <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/20 bg-white/80 p-6 text-secondary shadow-lg backdrop-blur-md">
+                  <p className="text-sm font-semibold uppercase tracking-wide text-secondary">Trusted delivery partners</p>
+                  <p className="mt-2 text-lg font-semibold text-secondary">
+                    Seamless collaboration from masterplanning to commissioning and ongoing optimization.
+                  </p>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">How we work</span>
+            <h2 className="mt-6 text-4xl font-serif font-bold md:text-5xl">A seamless journey from idea to impact</h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Our integrated framework keeps teams aligned, decisions clear and delivery predictable.
+            </p>
+          </div>
+          <div className="mt-16 grid gap-6 lg:grid-cols-4">
+            {process.map((step, index) => (
+              <div
+                key={step.title}
+                className="relative flex h-full flex-col gap-4 rounded-3xl border border-foreground/10 bg-muted/60 p-8 text-left shadow-sm"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-semibold uppercase tracking-wide text-primary">Step {index + 1}</span>
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full border border-primary/20 bg-primary/10 text-lg font-semibold text-primary">
+                    {index + 1}
+                  </span>
+                </div>
+                <h3 className="text-xl font-semibold">{step.title}</h3>
+                <p className="text-sm text-muted-foreground">{step.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -208,22 +374,28 @@ const Home = () => {
       <Testimonials />
 
       {/* Clients Section */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
-        <div className="container mx-auto px-4 relative z-10">
-          <h3 className="text-2xl font-semibold text-center mb-12 text-muted-foreground">
-            Trusted by Leading Organizations
-          </h3>
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16">
-            {clientLogos.map((logo, index) => (
+      <section className="relative overflow-hidden py-20">
+        <div className="absolute inset-0 -z-10 bg-gradient-mesh opacity-40" />
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Strategic partners</span>
+            <h3 className="mt-4 text-3xl font-serif font-bold text-foreground md:text-4xl">
+              Trusted by leading organizations across energy, infrastructure and logistics
+            </h3>
+            <p className="mt-4 text-lg text-muted-foreground">
+              We collaborate with industry trailblazers who demand resilient solutions, transparent reporting and design excellence.
+            </p>
+          </div>
+          <div className="mt-14 flex flex-wrap items-center justify-center gap-12 md:gap-16">
+            {clientLogos.map((logo) => (
               <div
-                key={index}
-                className="transition-all duration-300 hover:scale-110 opacity-80 hover:opacity-100"
+                key={logo.name}
+                className="group relative flex items-center justify-center rounded-2xl border border-foreground/5 bg-background/80 px-10 py-6 shadow-sm transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-primary/20"
               >
                 <img
                   src={logo.logo}
                   alt={`${logo.name} logo`}
-                  className={`${logo.width} h-auto object-contain`}
+                  className={`${logo.width} h-auto object-contain opacity-80 group-hover:opacity-100`}
                 />
               </div>
             ))}
@@ -231,27 +403,89 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-hero" />
-        <div className="absolute inset-0 bg-gradient-mesh" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_hsl(0_0%_100%_/_0.1),_transparent_50%)]" />
-        
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="inline-block px-4 py-2 mb-6 rounded-full bg-white/10 backdrop-blur-md border border-white/20 animate-pulse-glow">
-            <span className="text-sm font-medium text-white">🚀 Let's Build Something Amazing</span>
+      {/* Projects Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <span className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Project stories</span>
+            <h2 className="mt-6 text-4xl font-serif font-bold md:text-5xl">Impact that scales with your ambition</h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Discover how our teams unlock performance, resilience and human-centric experiences across sectors.
+            </p>
           </div>
-          <h2 className="text-4xl md:text-6xl font-serif font-bold mb-6 text-white leading-tight">
-            Ready to Start Your Project?
+          <div className="grid gap-6 lg:grid-cols-3">
+            {projects.map((project) => (
+              <div key={project.title} className="flex h-full flex-col justify-between rounded-3xl border border-foreground/10 bg-background p-8 shadow-lg shadow-primary/10">
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-semibold text-foreground">{project.title}</h3>
+                  <p className="text-sm text-muted-foreground">{project.description}</p>
+                </div>
+                <div className="mt-8 rounded-2xl border border-primary/20 bg-primary/10 p-4 text-sm font-medium text-primary">
+                  {project.impact}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Insights Section */}
+      <section className="relative overflow-hidden py-20">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-background via-muted/40 to-background" />
+        <div className="container mx-auto px-4">
+          <div className="mx-auto mb-16 max-w-3xl text-center">
+            <span className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Insights</span>
+            <h2 className="mt-6 text-4xl font-serif font-bold md:text-5xl">Ideas shaping the built world</h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Our specialists regularly publish thought leadership on resilient infrastructure, digital delivery and sustainable transformation.
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {insights.map((insight) => (
+              <div
+                key={insight.title}
+                className="group flex h-full flex-col gap-4 rounded-3xl border border-foreground/10 bg-background p-8 shadow-lg transition-transform hover:-translate-y-2"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/15 text-primary">
+                  <insight.icon className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-semibold text-foreground">{insight.title}</h3>
+                <p className="text-sm text-muted-foreground">{insight.description}</p>
+                <Link to="/blog" className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                  Explore insight <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="relative overflow-hidden py-24">
+        <div className="absolute inset-0 -z-10 bg-gradient-hero opacity-90" />
+        <div className="absolute inset-0 -z-10 bg-gradient-mesh opacity-70" />
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,_hsl(0_0%_100%_/_0.18),_transparent_45%)]" />
+
+        <div className="container relative mx-auto px-4 text-center text-secondary-foreground">
+          <div className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-medium uppercase tracking-[0.3em]">
+            <span className="flex h-2.5 w-2.5 rounded-full bg-white/80" /> Let's build the extraordinary
+          </div>
+          <h2 className="mt-8 text-4xl font-serif font-bold md:text-6xl">
+            Ready to shape the next era of infrastructure?
           </h2>
-          <p className="text-xl mb-10 opacity-90 max-w-2xl mx-auto text-white">
-            Let's discuss how our engineering expertise can bring your vision to life
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80">
+            Partner with Murban Engineering for end-to-end delivery across structural, MEP and advisory services.
           </p>
-          <Button size="lg" variant="secondary" asChild className="text-lg shadow-2xl hover:shadow-primary hover:scale-105 transition-all">
-            <Link to="/contact">
-              Contact Us Today <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
+          <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+            <Button size="lg" asChild className="text-lg shadow-primary/40 shadow-2xl">
+              <Link to="/contact">
+                Book a consultation <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <Button size="lg" variant="secondary" asChild className="text-lg bg-white/15 text-white hover:bg-white/25">
+              <Link to="/about">Discover our story</Link>
+            </Button>
+          </div>
         </div>
       </section>
     </div>
