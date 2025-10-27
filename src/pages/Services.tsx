@@ -111,7 +111,7 @@ const Services = () => {
     {
       icon: GitBranch,
       title: "API 570 Piping Inspection and Certification",
-      description: "Piping system inspection and certification to maintain full API 570 compliance.",
+      description: "Piping system inspection for code compliance.",
     },
     {
       icon: Database,
@@ -268,11 +268,78 @@ const Services = () => {
     },
   ];
 
-  const [selectedService, setSelectedService] = useState<string>("Tank Calibration Services");
+  const [selectedService, setSelectedService] = useState<string>(
+    "API 570 Piping Inspection and Certification",
+  );
 
   const allServices = [...ndtServices, ...fabricationServices];
 
   const serviceDetails: Record<string, ServiceDetail> = {
+    "API 570 Piping Inspection and Certification": {
+      label: "API 570 Piping Inspection & Certification",
+      breadcrumb: ["Home", "Industry Solutions", "Services We Offer"],
+      headline: "API 570 Piping Inspection and Certification",
+      description:
+        "At Murban Engineering, we recognize the critical role that API 570 Piping Inspection plays in maintaining the integrity and safety of industrial piping systems across petrochemical, oil and gas, refining, and other high-demand sectors. With Murban Engineering, you can trust that your piping systems remain safe, compliant, and optimized for efficient operation.",
+      sections: [
+        {
+          title: "The Significance of API 570 Inspection",
+          items: [
+            "Thoroughly assesses piping for corrosion, leaks, defects, and structural weaknesses before they compromise performance.",
+            "Prevents costly downtime, environmental incidents, and safety hazards by catching issues early.",
+            "Supports regulatory compliance, operational licensing, and safe facility operation through documented API 570 adherence.",
+          ],
+        },
+        {
+          title: "Our Comprehensive API 570 Inspection Process",
+          items: [
+            "Certified API 570 inspectors perform detailed visual examinations and non-destructive testing (NDT).",
+            "Precise thickness measurements, component assessments, and flaw classification for every piping circuit.",
+            "Action-oriented reports recommending repairs, replacements, alterations, or continued monitoring to maintain compliance.",
+          ],
+        },
+        {
+          title: "Why Choose Murban for API 570 Compliance",
+          items: [
+            "Prioritizes safety to reduce the risk of piping failures, accidents, and environmental events.",
+            "Extends piping system lifespan, reducing replacement frequency and overall maintenance costs.",
+            "Enhances facility reputation, reliability, and conformance with industry standards and environmental regulations.",
+          ],
+        },
+      ],
+      relatedServices: [
+        "Alternating Current Field Measurement",
+        "API 579 Murban Fitness for Service",
+        "API 653 Above Ground Storage Tank Inspection",
+        "API 580 Murban Risked Based Service",
+        "Boiler Inspection Service",
+        "Lifting Equipment Through Examination and Certification",
+        "RT Radiographic Services",
+        "Magnetic Particle Testing",
+        "Surface Hardness Testing",
+        "Dye Penetrant Testing",
+        "Fluorescent Magnet Particle Testing",
+        "Floormap 3D MFL Scanning",
+        "Paint and Coating Inspection",
+        "PMI Testing",
+        "Murban SIMS Tank Inspection Software",
+        "Sphere Tank Inspections",
+        "3D Laser Scanning Services",
+        "Tank Calibration Services",
+        "Murban Tank Inspection Database",
+        "Thermal Camera Inspection",
+        "Pressure Testing",
+        "UAV Drone Inspection",
+        "Fabrication and Engineering Services",
+        "Ultrasonic Flaw Testing C Scan",
+        "Murban Phased Array Testing",
+        "Ultrasonic Thickness Measurement",
+        "Visual Inspection",
+        "API 510 Pressure Vessel Inspection",
+        "API 570 Piping Inspection",
+        "Gas Detection",
+      ],
+    },
     "Tank Calibration Services": {
       label: "Tank Calibration Service",
       breadcrumb: ["Home", "Industry Solutions", "Services We Offer"],
