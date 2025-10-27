@@ -14,8 +14,9 @@ const Navigation = () => {
     { name: "Services", path: "/services" },
     { name: "Industry Solutions", path: "/industry-solutions" },
     { name: "Blog", path: "/blog" },
+    { name: "Portal", path: "https://murbanportal.com/", external: true },
     { name: "Contact Us", path: "/contact" },
-  ];
+  ] as const;
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -37,18 +38,41 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`text-sm font-semibold transition-all relative group ${
-                  isActive(link.path) ? "text-primary" : "text-foreground hover:text-primary"
-                }`}
-              >
-                {link.name}
-                <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all ${isActive(link.path) ? "w-full" : "w-0 group-hover:w-full"}`} />
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const active = !link.external && isActive(link.path);
+
+              if (link.external) {
+                return (
+                  <a
+                    key={link.path}
+                    href={link.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-semibold transition-all relative group text-foreground hover:text-primary"
+                  >
+                    {link.name}
+                    <span className="absolute -bottom-1 left-0 h-0.5 bg-primary transition-all w-0 group-hover:w-full" />
+                  </a>
+                );
+              }
+
+              return (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`text-sm font-semibold transition-all relative group ${
+                    active ? "text-primary" : "text-foreground hover:text-primary"
+                  }`}
+                >
+                  {link.name}
+                  <span
+                    className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all ${
+                      active ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
+                  />
+                </Link>
+              );
+            })}
             <Button asChild className="shadow-md hover:shadow-glow transition-all">
               <Link to="/contact">Get Quote</Link>
             </Button>
@@ -72,18 +96,37 @@ const Navigation = () => {
         {isOpen && (
           <div className="md:hidden py-4 animate-fade-in">
             <div className="flex flex-col space-y-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`text-sm font-medium transition-colors hover:text-primary ${
-                    isActive(link.path) ? "text-primary" : "text-foreground"
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                const active = !link.external && isActive(link.path);
+
+                if (link.external) {
+                  return (
+                    <a
+                      key={link.path}
+                      href={link.path}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsOpen(false)}
+                      className="text-sm font-medium transition-colors hover:text-primary text-foreground"
+                    >
+                      {link.name}
+                    </a>
+                  );
+                }
+
+                return (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    onClick={() => setIsOpen(false)}
+                    className={`text-sm font-medium transition-colors hover:text-primary ${
+                      active ? "text-primary" : "text-foreground"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
               <Button asChild className="w-full">
                 <Link to="/contact" onClick={() => setIsOpen(false)}>
                   Get Quote
