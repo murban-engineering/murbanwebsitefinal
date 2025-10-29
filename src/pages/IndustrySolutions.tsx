@@ -277,10 +277,9 @@ const IndustrySolutions = () => {
           <div className="bg-card border border-border rounded-3xl shadow-sm p-8 md:p-12 space-y-4">
             <h3 className="text-2xl md:text-3xl font-serif font-semibold text-primary">Detailed Engineering</h3>
             <p className="text-base text-muted-foreground leading-relaxed">
-              We combine structural analysis, layout optimisation, and material expertise to deliver engineered solutions that
-              perform from concept through commissioning. Whether you need bespoke fabrication drawings, compliance-ready
-              documentation, or end-to-end project support, our fabrication and engineering team ensures every component is
-              designed and executed to excel in demanding industrial environments.
+              Our experienced engineers provide comprehensive design and drafting services, including structural analysis,
+              layout plans, material selection, and comprehensive project documentation. We ensure that all designs comply
+              with the highest quality and safety standards in the industry.
             </p>
           </div>
         </div>
