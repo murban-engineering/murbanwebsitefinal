@@ -75,12 +75,6 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/blog" className="text-sm text-gray-300 hover:text-primary transition-colors flex items-center gap-1">
-                  <ChevronRight className="h-4 w-4" />
-                  Press & Blog
-                </Link>
-              </li>
-              <li>
                 <Link to="#" className="text-sm text-gray-300 hover:text-primary transition-colors flex items-center gap-1">
                   <ChevronRight className="h-4 w-4" />
                   Privacy & Policy

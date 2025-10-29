@@ -451,8 +451,8 @@ const Home = () => {
                 </div>
                 <h3 className="text-xl font-semibold text-foreground">{insight.title}</h3>
                 <p className="text-sm text-muted-foreground">{insight.description}</p>
-                <Link to="/blog" className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-primary">
-                  Explore insight <ArrowRight className="h-4 w-4" />
+                <Link to="/services" className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                  Explore services <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
             ))}
