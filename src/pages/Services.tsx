@@ -1662,6 +1662,30 @@ const Services = () => {
         "API 653 Aboveground Storage Tank Inspection and Certification",
       ],
     },
+    "Construction & Erection": {
+      label: "Fabrication & Engineering Services",
+      breadcrumb: ["Home", "Industry Solutions", "Fabrication & Engineering"],
+      headline: "Construction and Erection",
+      description:
+        "We offer full erection services for large-scale industrial projects, ensuring the safe and efficient assembly of steel structures, pipelines, and storage tanks. Our skilled team ensures all structures are erected with precision and comply with the latest health, safety, and regulatory standards.",
+      sections: [
+        {
+          title: "What We Deliver",
+          items: [
+            "Full erection services tailored to large-scale industrial projects.",
+            "Safe and efficient assembly of steel structures, pipelines, and storage tanks.",
+            "Precise execution that aligns with current health, safety, and regulatory standards.",
+          ],
+        },
+      ],
+      relatedServices: [
+        "Detailed Engineering",
+        "Procurement",
+        "Fabrication",
+        "Specialized Welding",
+        "Surface Preparation & Paint Works",
+      ],
+    },
     "Sphere Tank Inspections": {
       label: "Sphere Tank Inspections",
       breadcrumb: ["Home", "Industry Solutions", "Services We Offer"],
