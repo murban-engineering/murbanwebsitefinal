@@ -247,7 +247,8 @@ const Services = () => {
     {
       icon: Wind,
       title: "Murban Gas Detection",
-      description: "Gas leaks identified using continuously monitored, advanced detection sensors.",
+      description:
+        "Comprehensive monitoring solutions that detect hazardous gases early and keep worksites compliant.",
     },
     {
       icon: CircleGauge,
@@ -1335,6 +1336,42 @@ const Services = () => {
         "Alternating Current Field Measurement",
         "API 579 Murban Fitness for Service",
         "API 580 Murban Risk Based Inspection",
+      ],
+    },
+    "Murban Gas Detection": {
+      label: "Murban Gas Detection",
+      breadcrumb: ["Home", "Industry Solutions", "Services We Offer"],
+      headline: "Comprehensive Industrial Gas Detection",
+      description:
+        "Safety is paramount in any industry, and Murban Engineering's Gas Detection services are engineered to identify and mitigate gas-related risks in your operations. We deploy state-of-the-art detection technology to monitor gas levels continuously and provide timely alerts whenever potential hazards arise, helping create safer work environments and minimizing the risk of leaks or exposure.",
+      sections: [
+        {
+          title: "Comprehensive Gas Monitoring Solutions",
+          items: [
+            "Deploy fixed and portable detection systems tailored to plant processes and hazardous areas.",
+            "Continuously track gas concentrations with real-time alarms that trigger immediate response protocols.",
+            "Integrate monitoring outputs with control rooms, shutdown systems, and safety procedures for rapid mitigation.",
+          ],
+        },
+        {
+          title: "Advantages",
+          items: [
+            "Ensures a safe working environment by identifying hazardous gases before they escalate.",
+            "Helps prevent accidents and potential leaks, mitigating operational and safety risks.",
+            "Enables early detection of gas leaks, minimizing downtime and associated losses.",
+            "Supports compliance with regulatory requirements and industry standards.",
+          ],
+        },
+      ],
+      relatedServices: [
+        "Thermal Camera Inspection",
+        "Murban Pressure Testing",
+        "Murban UAV Inspection",
+        "API 579 Murban Fitness for Service",
+        "API 580 Murban Risk Based Inspection",
+        "Ultrasonic Thickness Measurement",
+        "Murban Phased Array Testing",
+        "Positive Material Identification Testing",
       ],
     },
   };
