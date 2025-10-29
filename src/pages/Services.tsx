@@ -213,7 +213,8 @@ const Services = () => {
     {
       icon: Thermometer,
       title: "Thermal Camera Inspection",
-      description: "Heat mapping inspections that reveal thermal anomalies before they become failures.",
+      description:
+        "Thermal imaging surveys that uncover temperature anomalies and emerging issues before they escalate.",
     },
     {
       icon: Cpu,
@@ -820,6 +821,60 @@ const Services = () => {
         "Thermal Camera Inspection",
         "UAV Drone Inspection",
         "Murban SIMS Tank Inspection Software",
+      ],
+    },
+    "Thermal Camera Inspection": {
+      label: "Thermal Camera Inspection",
+      breadcrumb: ["Home", "Industry Solutions", "Services We Offer"],
+      headline: "Thermal Camera Inspection",
+      description:
+        "Murban Engineering utilizes thermal cameras for inspections, allowing us to detect temperature anomalies and potential issues in your equipment and structures. Our thermal camera inspections provide valuable insights into the condition of critical components, helping you identify problems before they become major concerns. With our services, you can enhance the safety and reliability of your assets while minimizing downtime and maintenance costs.",
+      sections: [
+        {
+          title: "Services We Offer",
+          items: [
+            "Alternating Current Field Measurement",
+            "API 579 Murban Fitness for Service",
+            "API 580 Murban Risk Based Inspection",
+            "Above Ground Storage Tank Inspection and Certification",
+            "Boiler Inspection Service",
+            "Lifting Equipment Thorough Examination and Certification",
+            "Magnetic Particle Testing",
+            "Dye Penetrant Testing",
+            "Fluorescent Magnetic Particle Testing",
+            "Floormap 3D MFL Scanning",
+            "Paint and Coating Inspection",
+            "PMI Testing",
+            "Murban SIMS Tank Inspection Software",
+            "Sphere Tank Inspections",
+            "3D Laser Scanning Services",
+            "Tank Calibration Services",
+            "Murban Tank Inspection Database",
+            "Murban UAV Inspection",
+            "Ultrasonic Flaw Testing C-Scan",
+            "Murban Phased Array Testing",
+            "Ultrasonic Thickness Measurement",
+            "Visual Inspection",
+            "API 510 Pressure Vessel Inspection",
+            "API 570 Piping Inspection and Certification",
+          ],
+        },
+        {
+          title: "Advantages",
+          items: [
+            "Identifies temperature anomalies indicative of potential defects or failures.",
+            "Enhances safety by identifying overheating components or electrical issues.",
+            "Supports predictive maintenance strategies to optimize asset performance.",
+          ],
+        },
+      ],
+      relatedServices: [
+        "Alternating Current Field Measurement",
+        "Floormap 3D MFL Scanning",
+        "Murban Phased Array Testing",
+        "Ultrasonic Thickness Measurement",
+        "Murban UAV Inspection",
+        "Paint and Coating Inspection",
       ],
     },
     "Tank Calibration Services": {
