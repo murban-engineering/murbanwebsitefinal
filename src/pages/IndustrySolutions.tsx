@@ -122,6 +122,40 @@ const IndustrySolutions = () => {
     },
   ];
 
+  const engineeringServices = [
+    "Alternating Current Field Measurement",
+    "API 579 Murban Fitness for Service",
+    "API 653 Above Ground Storage Tank Inspection",
+    "API 580 Murban Risk-Based Service",
+    "Boiler Inspection Service",
+    "Lifting Equipment Thorough Examination and Certification",
+    "RT Radiographic Services",
+    "Magnetic Particle Testing",
+    "Surface Hardness Testing",
+    "Dye Penetrant Testing",
+    "Fluorescent Magnet Particle Testing",
+    "Floormap 3D MFL Scanning",
+    "Paint and Coating Inspection",
+    "PMI Testing",
+    "Murban SIMS Tank Inspection Software",
+    "Sphere Tank Inspections",
+    "3D Laser Scanning Services",
+    "Tank Calibration Services",
+    "Murban Tank Inspection Database",
+    "Thermal Camera Inspection",
+    "Pressure Testing",
+    "UAV Drone Inspection",
+    "Fabrication and Engineering Services",
+    "Ultrasonic Flaw Testing C Scan",
+    "Murban Phased Array Testing",
+    "Ultrasonic Thickness Measurement",
+    "Visual Inspection",
+    "API 510 Pressure Vessel Inspection",
+    "API 570 Piping Inspection",
+    "Gas Detection",
+    "Detailed Engineering",
+  ];
+
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
@@ -209,6 +243,45 @@ const IndustrySolutions = () => {
                 </div>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Fabrication & Engineering Services Overview */}
+      <section className="py-20 bg-muted/40">
+        <div className="container mx-auto px-4 max-w-5xl space-y-12">
+          <div className="text-center space-y-4">
+            <p className="text-sm uppercase tracking-[0.3em] text-primary font-semibold">
+              Home - Industry Solutions
+            </p>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold">
+              Fabrication and Engineering Services
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Our experienced engineers provide comprehensive design and drafting services, including structural analysis,
+              layout plans, material selection, and complete project documentation. Every design is delivered to meet the highest
+              standards of quality, safety, and regulatory compliance.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {engineeringServices.map((service) => (
+              <Card key={service} className="h-full border-dashed border-border/60 bg-background/80 backdrop-blur">
+                <CardContent className="p-6 flex items-center h-full">
+                  <span className="text-sm font-semibold tracking-wide leading-snug">{service}</span>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="bg-card border border-border rounded-3xl shadow-sm p-8 md:p-12 space-y-4">
+            <h3 className="text-2xl md:text-3xl font-serif font-semibold text-primary">Detailed Engineering</h3>
+            <p className="text-base text-muted-foreground leading-relaxed">
+              We combine structural analysis, layout optimisation, and material expertise to deliver engineered solutions that
+              perform from concept through commissioning. Whether you need bespoke fabrication drawings, compliance-ready
+              documentation, or end-to-end project support, our fabrication and engineering team ensures every component is
+              designed and executed to excel in demanding industrial environments.
+            </p>
           </div>
         </div>
       </section>
