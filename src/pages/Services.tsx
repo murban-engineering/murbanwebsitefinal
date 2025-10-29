@@ -776,6 +776,52 @@ const Services = () => {
         "Gas Detection",
       ],
     },
+    "Positive Material Identification Testing": {
+      label: "Positive Material Identification (PMI) Testing",
+      breadcrumb: ["Home", "Industry Solutions", "Services We Offer"],
+      headline: "Positive Material Identification (PMI) Testing",
+      description:
+        "Positive Material Identification (PMI) Testing is a critical service offered by Murban Engineering to confirm the composition of materials used in your equipment and structures. Our PMI testing ensures material compatibility with intended applications and compliance with industry standards. With our expertise, you can maintain the quality and safety of your assets, preventing material-related issues and ensuring long-term reliability.",
+      sections: [
+        {
+          title: "What Our PMI Testing Provides",
+          items: [
+            "Confirms alloy chemistry on-site or in the shop using advanced XRF and OES analyzers for immediate answers.",
+            "Validates that incoming materials, in-service components, and repairs meet specification before they enter service.",
+            "Documents traceability and compliance for audits, quality programs, and regulatory reviews.",
+            "Supports integrity teams with rapid mobilisation, experienced technicians, and clear acceptance criteria.",
+          ],
+        },
+        {
+          title: "Advantages",
+          items: [
+            "Verifies material composition to ensure suitability for intended use.",
+            "Helps prevent material mix-ups and potential quality issues.",
+            "Supports compliance with industry standards and regulatory requirements.",
+            "Enhances product quality and reliability through accurate material identification.",
+          ],
+        },
+      ],
+      relatedServices: [
+        "Alternating Current Field Measurement",
+        "API 570 Piping Inspection and Certification",
+        "API 579 Murban Fitness for Service",
+        "API 653 Aboveground Storage Tank Inspection and Certification",
+        "API 580 Murban Risk Based Inspection",
+        "Magnetic Particle Testing",
+        "Dye Penetrant Testing",
+        "Fluorescent Magnet Particle Testing",
+        "Surface Hardness Testing",
+        "RT Radiographic Services",
+        "Ultrasonic Thickness Measurement",
+        "Ultrasonic Flaw Testing C-Scan",
+        "Murban Phased Array Testing",
+        "3D Laser Scanning Services",
+        "Thermal Camera Inspection",
+        "UAV Drone Inspection",
+        "Murban SIMS Tank Inspection Software",
+      ],
+    },
     "Tank Calibration Services": {
       label: "Tank Calibration Service",
       breadcrumb: ["Home", "Industry Solutions", "Services We Offer"],
