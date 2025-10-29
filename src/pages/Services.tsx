@@ -1625,6 +1625,43 @@ const Services = () => {
         "Positive Material Identification Testing",
       ],
     },
+    "Detailed Engineering": {
+      label: "Fabrication & Engineering Services",
+      breadcrumb: ["Home", "Industry Solutions", "Fabrication & Engineering"],
+      headline: "Detailed Engineering & Project Documentation",
+      description:
+        "Our experienced engineers provide comprehensive design and drafting services, including structural analysis, layout plans, material selection, and comprehensive project documentation. We ensure that all designs comply with the highest quality and safety standards in the industry.",
+      sections: [
+        {
+          title: "Services We Offer",
+          items: [
+            "Detailed Engineering",
+            "Surface Preparation & Paint Works",
+            "Fabrication",
+            "Procurement",
+            "Specialized Welding",
+            "Construction & Erection",
+          ],
+        },
+        {
+          title: "What Sets Our Detailed Engineering Apart",
+          items: [
+            "Structural analysis and layout development tailored to complex industrial assets.",
+            "Material selection guidance that balances performance, longevity, and compliance.",
+            "Comprehensive drawing packages and project documentation to drive efficient execution.",
+          ],
+        },
+      ],
+      relatedServices: [
+        "Procurement",
+        "Fabrication",
+        "Construction & Erection",
+        "Specialized Welding",
+        "Surface Preparation & Paint Works",
+        "API 570 Piping Inspection and Certification",
+        "API 653 Aboveground Storage Tank Inspection and Certification",
+      ],
+    },
     "Sphere Tank Inspections": {
       label: "Sphere Tank Inspections",
       breadcrumb: ["Home", "Industry Solutions", "Services We Offer"],
