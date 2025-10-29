@@ -208,7 +208,8 @@ const Services = () => {
     {
       icon: Scan,
       title: "3D Laser Scanning Services",
-      description: "Precise 3D measurements to support modeling, fit-up, and structural analysis.",
+      description:
+        "High-accuracy spatial data capture for asset management, design planning, and facility maintenance.",
     },
     {
       icon: Thermometer,
@@ -869,6 +870,40 @@ const Services = () => {
         "API 510 Pressure Vessel Inspection",
         "API 570 Piping Inspection",
         "Gas Detection",
+      ],
+    },
+    "3D Laser Scanning Services": {
+      label: "3D Laser Scanning Services",
+      breadcrumb: ["Home", "Industry Solutions", "Services We Offer"],
+      headline: "High-Fidelity 3D Laser Scanning & Digital Twin Capture",
+      description:
+        "Murban Engineering provides 3D Laser Scanning Services, a cutting-edge technology that allows for precise measurements and mapping of structures, assets, and environments. Our state-of-the-art laser scanners capture detailed data, enabling accurate assessments for asset management, design planning, and facility maintenance. With our 3D Laser Scanning Services, you gain invaluable insights into your assets' conditions, facilitating informed decision-making and optimized operations.",
+      sections: [
+        {
+          title: "Advantages",
+          items: [
+            "Captures comprehensive and detailed 3D representations of objects, structures, or environments.",
+            "Enables accurate measurement, analysis, and visualization of complex geometries.",
+            "Supports various applications including reverse engineering, as-built documentation, and quality control.",
+            "Enhances efficiency in design, manufacturing, and construction processes by providing accurate spatial data.",
+          ],
+        },
+      ],
+      relatedServices: [
+        "Tank Calibration Services",
+        "Murban SIMS Tank Inspection Software",
+        "Murban Tank Inspection Database",
+        "Floormap 3D MFL Scanning",
+        "Thermal Camera Inspection",
+        "UAV Drone Inspection",
+        "Ultrasonic Flaw Testing C Scan",
+        "Ultrasonic Thickness Measurement",
+        "Magnetic Particle Testing",
+        "Dye Penetrant Testing",
+        "Fluorescent Magnet Particle Testing",
+        "Alternating Current Field Measurement",
+        "API 579 Murban Fitness for Service",
+        "API 580 Murban Risk Based Inspection",
       ],
     },
   };
