@@ -2229,6 +2229,28 @@ const Services = () => {
               </div>
             ))}
           </div>
+          <div className="mt-20">
+            <div className="mx-auto max-w-3xl text-center">
+              <h3 className="text-2xl md:text-4xl font-serif font-semibold text-foreground">
+                Murban Engineering and Fabrications Services
+              </h3>
+              <p className="mt-4 text-lg text-muted-foreground">
+                End-to-end capabilities that transform engineered designs into field-ready assets with precision craftsmanship
+                and rigorous quality control.
+              </p>
+            </div>
+            <div className="mt-12 services-grid">
+              {fabricationServices.map((service) => (
+                <ServiceCard
+                  key={service.title}
+                  icon={service.icon}
+                  title={service.title}
+                  description={service.description}
+                  showCTA={false}
+                />
+              ))}
+            </div>
+          </div>
           <div className="mt-10 text-center">
             <Button variant="secondary" asChild>
               <Link to="/contact">Discuss your next build</Link>
