@@ -134,7 +134,6 @@ const ServiceCard = ({
 const Services = () => {
   const serviceSections = [
     { id: "service-spotlight", label: "Service Spotlight" },
-    { id: "ndt-services", label: "NDT Inspection & Testing" },
     { id: "fabrication-services", label: "Engineering & Fabrication" },
     { id: "services-contact", label: "Contact Our Team" },
   ];
@@ -322,13 +321,6 @@ const Services = () => {
   );
 
   const allServices = [...ndtServices, ...fabricationServices];
-
-  const ndtHighlights = [
-    "Advanced ultrasonic inspections including phased array, corrosion mapping, and precision thickness gauging.",
-    "Certified API programs covering piping, pressure vessels, storage tanks, and lifting equipment compliance.",
-    "Surface and volumetric testing capabilities such as radiography, magnetic particle, dye penetrant, and eddy current methods.",
-    "Digital reporting support with UAV inspections, 3D laser scanning, and data-backed integrity assessments.",
-  ];
 
   const serviceDetails: Record<string, ServiceDetail> = {
     "NDT Inspection Services": {
@@ -2153,40 +2145,6 @@ const Services = () => {
                 )}
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* NDT Services Section */}
-      <section id="ndt-services" className="relative py-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.08),_transparent_60%)]" />
-        <div className="container relative mx-auto px-4">
-          <div className="mx-auto mb-16 max-w-4xl text-center">
-            <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4">
-              🔧 NDT Inspection & Testing Services
-            </h2>
-            <p className="text-lg md:text-xl text-muted-foreground">
-              Delivering advanced inspection programs that safeguard assets, reduce downtime, and keep your facilities compliant with international standards.
-            </p>
-          </div>
-
-          <div className="mx-auto max-w-5xl grid gap-6 md:grid-cols-2">
-            {ndtHighlights.map((highlight) => (
-              <div
-                key={highlight}
-                className="rounded-3xl border border-border/60 bg-background/80 p-6 text-left shadow-sm backdrop-blur-xl"
-              >
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="mt-1 h-5 w-5 text-primary" aria-hidden="true" />
-                  <p className="text-base leading-relaxed text-muted-foreground">{highlight}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-10 text-center">
-            <Button variant="outline" asChild>
-              <Link to="/contact">Connect with an NDT specialist</Link>
-            </Button>
           </div>
         </div>
       </section>
