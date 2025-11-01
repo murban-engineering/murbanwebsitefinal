@@ -2021,7 +2021,7 @@ const Services = () => {
       >
         <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/60 to-secondary/80" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.25),_transparent_55%)]" />
-        <div className="container relative mx-auto px-4 text-center">
+        <div className="container relative z-10 mx-auto px-4 text-center">
           <Badge className="mb-6 border border-white/40 bg-white/20 text-secondary-foreground backdrop-blur-sm">
             Murban Inspection & Engineering
           </Badge>
@@ -2053,7 +2053,7 @@ const Services = () => {
       {/* Service Spotlight Section */}
       <section id="service-spotlight" className="relative py-24">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(14,116,144,0.15),_transparent_65%)]" />
-        <div className="container relative mx-auto px-4">
+        <div className="container relative z-10 mx-auto px-4">
           <div className="mx-auto mb-12 max-w-4xl text-center">
             <Badge className="mb-4 bg-primary/10 text-primary">Service Spotlight</Badge>
             <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 text-foreground">
@@ -2158,7 +2158,7 @@ const Services = () => {
       >
         <div className="absolute inset-0 bg-muted/60" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(14,116,144,0.15),_transparent_60%)]" />
-        <div className="container relative mx-auto px-4">
+        <div className="container relative z-10 mx-auto px-4">
           <div className="services-grid">
             {fabricationServices.map((service) => (
               <ServiceCard
