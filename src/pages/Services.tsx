@@ -78,6 +78,14 @@ const ServiceDetailContent = ({
     return null;
   }
 
+  const baseDescription = detail?.description ?? description;
+  const descriptionParagraphs = baseDescription
+    ? baseDescription
+        .split(/\r?\n\s*\r?\n/)
+        .map((paragraph) => paragraph.trim())
+        .filter(Boolean)
+    : [];
+
   return (
     <div
       id={detailId}
@@ -107,9 +115,22 @@ const ServiceDetailContent = ({
         <h4 className="text-2xl md:text-3xl font-serif font-semibold text-foreground">
           {detail?.headline ?? title}
         </h4>
-        <p className="text-base leading-relaxed text-muted-foreground">
-          {detail?.description ?? description}
-        </p>
+        {descriptionParagraphs.length > 0 ? (
+          <div className="space-y-4">
+            {descriptionParagraphs.map((paragraph, index) => (
+              <p
+                key={`${detailId ?? title}-description-${index}`}
+                className="text-base leading-relaxed text-muted-foreground"
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        ) : (
+          <p className="text-base leading-relaxed text-muted-foreground">
+            {baseDescription}
+          </p>
+        )}
       </div>
 
       {detail?.sections?.map((section) => (
@@ -1815,27 +1836,6 @@ const Services = () => {
       headline: "Detailed Engineering & Project Documentation",
       description:
         "Our experienced engineers provide comprehensive design and drafting services, including structural analysis, layout plans, material selection, and comprehensive project documentation. We ensure that all designs comply with the highest quality and safety standards in the industry.",
-      sections: [
-        {
-          title: "Services We Offer",
-          items: [
-            "Detailed Engineering",
-            "Surface Preparation and Paint Works",
-            "Fabrication",
-            "Procurement",
-            "Specialized Welding",
-            "Construction and Erection",
-          ],
-        },
-        {
-          title: "What Sets Our Detailed Engineering Apart",
-          items: [
-            "Structural analysis and layout development tailored to complex industrial assets.",
-            "Material selection guidance that balances performance, longevity, and compliance.",
-            "Comprehensive drawing packages and project documentation to drive efficient execution.",
-          ],
-        },
-      ],
       relatedServices: [
         "Procurement",
         "Fabrication",
@@ -1851,22 +1851,15 @@ const Services = () => {
       breadcrumb: ["Home", "Industry Solutions", "Fabrication & Engineering"],
       headline: "Precision Shop Fabrication & Assembly",
       description:
-        "Murban Engineering fabricates structural steel, process skids, and custom metalwork with controlled procedures and multi-discipline quality oversight. Our fabrication teams coordinate closely with engineering and site crews to ensure every component installs smoothly and performs reliably from day one.",
+        "We specialize in the fabrication of complex and heavy structural steel components, such as platforms, supports, tanks, and pressure vessels. Our state-of-the-art facilities are equipped with advanced technology, allowing us to provide precision fabrication services to meet the specific needs of each project.",
       sections: [
         {
-          title: "Core Capabilities",
+          title: "Our Services Include",
           items: [
-            "CNC cutting, rolling, and forming for carbon, stainless, and alloy materials.",
-            "Certified welding procedures supported by in-house inspection and non-destructive testing.",
-            "Fit-up and trial assembly that verify tolerances, interfaces, and lifting plans before delivery.",
-          ],
-        },
-        {
-          title: "Quality Assurance",
-          items: [
-            "Documented fabrication travelers and inspection records for full traceability.",
-            "Dimensional control and laser scanning to confirm conformance with issued-for-construction drawings.",
-            "Packaging and transport coordination that protect finishes and critical alignments.",
+            "Steel Fabrication: Structural steel, plate work, beams, frames, and custom steel components.",
+            "Pressure Vessel Fabrication: Designed and manufactured to meet industry codes and regulations, particularly for the Oil and Gas sector.",
+            "Pipe Spooling & Prefabrication: Pipework solutions that meet the rigorous demands of the energy sector.",
+            "Hydrates and Specialty Welding: Utilization of advanced welding techniques for intricate and specialized requirements.",
           ],
         },
       ],
@@ -2054,25 +2047,7 @@ const Services = () => {
       breadcrumb: ["Home", "Industry Solutions", "Fabrication & Engineering"],
       headline: "Surface Preparation & Protective Coating Systems",
       description:
-        "Murban Engineering prepares and coats fabricated components to withstand harsh industrial environments. We apply specification-driven blasting, coating, and curing processes so finished assets arrive on site protected, documented, and ready for service.",
-      sections: [
-        {
-          title: "Execution Excellence",
-          items: [
-            "Abrasive blasting, power-tool cleaning, and surface profiling matched to coating manufacturer requirements.",
-            "Multi-coat systems applied in controlled environments with continuous environmental monitoring.",
-            "Holiday detection, adhesion testing, and thickness verification to confirm coating performance.",
-          ],
-        },
-        {
-          title: "Advantages",
-          items: [
-            "Extends asset life by shielding steelwork and equipment from corrosion and chemical attack.",
-            "Delivers traceable quality records that satisfy owners, EPCs, and regulatory agencies.",
-            "Reduces rework at site by delivering turnkey finished components ready for installation.",
-          ],
-        },
-      ],
+        "Murban Engineering provides comprehensive surface preparation and coating services for all fabricated steelwork, pipelines, and structures. We use advanced methods like abrasive blasting and chemical treatment to ensure the best adhesion for coatings.\n\nWe then apply high-performance coatings, ensuring long-term protection against corrosion, especially in harsh environments such as offshore and industrial plants.",
       relatedServices: [
         "Fabrication",
         "Specialized Welding",
@@ -2088,24 +2063,6 @@ const Services = () => {
       headline: "Procurement & Supply Chain Assurance",
       description:
         "Murban Engineering handles the procurement of high-quality raw materials and components, sourcing from trusted suppliers and ensuring that all materials meet the technical specifications for each project. We ensure timely delivery and cost efficiency in all procurement processes.",
-      sections: [
-        {
-          title: "Our Procurement Process",
-          items: [
-            "Identify and qualify reputable suppliers who meet strict quality, safety, and compliance criteria.",
-            "Source raw materials and components that align precisely with project technical specifications.",
-            "Coordinate purchase orders, inspections, and documentation to maintain full traceability.",
-          ],
-        },
-        {
-          title: "Delivery & Cost Control",
-          items: [
-            "Manage logistics to ensure materials arrive when fabrication and site teams need them.",
-            "Monitor supplier performance and lead times to keep projects on schedule.",
-            "Optimize spend through negotiated contracts, bulk purchasing, and proactive cost tracking.",
-          ],
-        },
-      ],
       relatedServices: [
         "Detailed Engineering",
         "Fabrication",
