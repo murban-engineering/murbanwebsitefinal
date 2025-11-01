@@ -37,7 +37,6 @@ import {
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import "./Services.css";
 
@@ -328,13 +327,6 @@ const Services = () => {
     "Certified API programs covering piping, pressure vessels, storage tanks, and lifting equipment compliance.",
     "Surface and volumetric testing capabilities such as radiography, magnetic particle, dye penetrant, and eddy current methods.",
     "Digital reporting support with UAV inspections, 3D laser scanning, and data-backed integrity assessments.",
-  ];
-
-  const fabricationHighlights = [
-    "Concept-to-completion delivery that integrates detailed engineering, procurement, fabrication, and erection.",
-    "Specialized welding procedures and quality control programs tailored to critical industry specifications.",
-    "Surface preparation, coating systems, and finishing services that protect assets in the harshest environments.",
-    "Collaborative project management that aligns timelines, safety plans, and documentation with client objectives.",
   ];
 
   const serviceDetails: Record<string, ServiceDetail> = {
@@ -2206,50 +2198,16 @@ const Services = () => {
         <div className="absolute inset-0 bg-muted/60" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(14,116,144,0.15),_transparent_60%)]" />
         <div className="container relative mx-auto px-4">
-          <div className="mx-auto mb-16 max-w-4xl text-center">
-            <Badge className="mb-4 bg-primary/10 text-primary">Fabrication and Engineering Services</Badge>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 text-foreground">
-              ⚙️ Murban Engineering and Fabrications Services
-            </h2>
-            <p className="text-lg md:text-xl text-muted-foreground">
-              Complete, turnkey solutions covering detailed engineering, procurement, fabrication, and on-site execution — delivered with premium finishes and precision quality control.
-            </p>
-          </div>
-
-          <div className="mx-auto max-w-5xl grid gap-6 md:grid-cols-2">
-            {fabricationHighlights.map((highlight) => (
-              <div
-                key={highlight}
-                className="rounded-3xl border border-border/60 bg-background/80 p-6 text-left shadow-sm backdrop-blur-xl"
-              >
-                <div className="flex items-start gap-3">
-                  <Sparkles className="mt-1 h-5 w-5 text-primary" aria-hidden="true" />
-                  <p className="text-base leading-relaxed text-muted-foreground">{highlight}</p>
-                </div>
-              </div>
+          <div className="services-grid">
+            {fabricationServices.map((service) => (
+              <ServiceCard
+                key={service.title}
+                icon={service.icon}
+                title={service.title}
+                description={service.description}
+                showCTA={false}
+              />
             ))}
-          </div>
-          <div className="mt-20">
-            <div className="mx-auto max-w-3xl text-center">
-              <h3 className="text-2xl md:text-4xl font-serif font-semibold text-foreground">
-                Murban Engineering and Fabrications Services
-              </h3>
-              <p className="mt-4 text-lg text-muted-foreground">
-                End-to-end capabilities that transform engineered designs into field-ready assets with precision craftsmanship
-                and rigorous quality control.
-              </p>
-            </div>
-            <div className="mt-12 services-grid">
-              {fabricationServices.map((service) => (
-                <ServiceCard
-                  key={service.title}
-                  icon={service.icon}
-                  title={service.title}
-                  description={service.description}
-                  showCTA={false}
-                />
-              ))}
-            </div>
           </div>
           <div className="mt-10 text-center">
             <Button variant="secondary" asChild>
