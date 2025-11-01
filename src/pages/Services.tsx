@@ -292,7 +292,8 @@ const Services = () => {
     {
       icon: ShoppingCart,
       title: "Procurement",
-      description: "Strategic sourcing of high-quality materials and equipment to meet project requirements.",
+      description:
+        "Murban Engineering handles the procurement of high-quality raw materials and components, sourcing from trusted suppliers and ensuring that all materials meet the technical specifications for each project. We ensure timely delivery and cost efficiency in all procurement processes.",
     },
     {
       icon: Settings,
