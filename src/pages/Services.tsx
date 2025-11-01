@@ -303,7 +303,8 @@ const Services = () => {
     {
       icon: Building2,
       title: "Construction & Erection",
-      description: "On-site assembly, erection, and installation of fabricated structures and systems.",
+      description:
+        "Full-scale erection of steel structures, pipelines, and storage tanks with uncompromising safety and quality control.",
     },
     {
       icon: Zap,
@@ -1781,7 +1782,7 @@ const Services = () => {
           title: "What We Deliver",
           items: [
             "Turnkey erection services tailored to complex, large-scale industrial facilities.",
-            "Safe and efficient assembly of steel structures, process piping networks, and storage tanks.",
+            "Safe and efficient assembly of steel structures, pipelines, and storage tanks.",
             "Project controls that keep schedules on track while meeting rigorous quality benchmarks.",
           ],
         },
@@ -1789,8 +1790,8 @@ const Services = () => {
           title: "Safety & Compliance First",
           items: [
             "Certified rigging and lifting teams that prioritize zero-incident execution.",
-            "Comprehensive safety planning aligned with the latest industry regulations and client requirements.",
-            "Detailed documentation and inspection reports that verify every stage of construction meets governance standards.",
+            "Comprehensive safety planning aligned with the latest health, safety, and regulatory standards.",
+            "Detailed documentation and inspection reports that verify every stage of construction meets governance and client requirements.",
           ],
         },
       ],
