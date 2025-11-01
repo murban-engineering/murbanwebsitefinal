@@ -338,6 +338,41 @@ const Services = () => {
   ];
 
   const serviceDetails: Record<string, ServiceDetail> = {
+    "NDT Inspection Services": {
+      label: "Comprehensive NDT Programs",
+      breadcrumb: ["Home", "Industry Solutions", "Services We Offer"],
+      headline: "Full-Scope Non-Destructive Testing",
+      description:
+        "Murban Engineering delivers complete non-destructive testing (NDT) programs that combine certified inspectors, proven procedures, and advanced instrumentation. From in-service assets to fabrication projects, we help facilities document condition, validate compliance, and schedule maintenance with confidence.",
+      sections: [
+        {
+          title: "Inspection Capabilities",
+          items: [
+            "Program management that coordinates phased array, ultrasonic, radiographic, magnetic particle, and dye penetrant testing.",
+            "API-certified inspectors who apply standardized procedures to piping, tanks, pressure vessels, and structural components.",
+            "Digital reporting that captures readings, imagery, and traceable documentation for audits and regulators.",
+          ],
+        },
+        {
+          title: "Advantages",
+          items: [
+            "Detects defects early so corrective action can be taken before safety or production is impacted.",
+            "Supports regulatory compliance and client specifications through certified procedures and documentation.",
+            "Optimizes maintenance budgets by targeting repairs based on quantitative condition data.",
+          ],
+        },
+      ],
+      relatedServices: [
+        "Murban Phased Array Testing",
+        "Ultrasonic Flaw Testing C-Scan",
+        "Ultrasonic Flaw Testing B-Scan",
+        "Magnetic Particle Testing",
+        "Dye Penetrant Testing",
+        "RT Radiographic Services",
+        "Alternating Current Field Measurement",
+        "API 579 Murban Fitness for Service",
+      ],
+    },
     "Murban Phased Array Testing": {
       label: "Murban Phased Array Testing",
       breadcrumb: ["Home", "Industry Solutions", "Services We Offer"],
@@ -1187,6 +1222,39 @@ const Services = () => {
         "API 580 Murban Risk Based Inspection",
       ],
     },
+    "Ultrasonic Flaw Testing B-Scan": {
+      label: "Ultrasonic Flaw Testing B-Scan",
+      breadcrumb: ["Home", "Industry Solutions", "Services We Offer"],
+      headline: "Ultrasonic Flaw Testing B-Scan (Profile Mapping)",
+      description:
+        "B-scan ultrasonic testing provides a cross-sectional profile of wall thickness, laminations, and internal damage. Murban Engineering leverages B-scan techniques to map corrosion, erosion, and remaining life in piping systems, pressure boundaries, and structural weldments.",
+      sections: [
+        {
+          title: "Service Highlights",
+          items: [
+            "Generates side-view imaging that reveals wall loss depth and contour changes in real time.",
+            "Identifies localized thinning, pitting, and inclusions that may be missed with spot thickness readings.",
+            "Integrates with phased array and C-scan data sets to validate findings across large surface areas.",
+          ],
+        },
+        {
+          title: "Advantages",
+          items: [
+            "Supports run-repair-replace decisions with quantified measurements of remaining wall thickness.",
+            "Minimizes intrusive inspections by characterizing defects without cutting or disassembling equipment.",
+            "Improves safety by highlighting critical flaw growth trends before they escalate to failure.",
+          ],
+        },
+      ],
+      relatedServices: [
+        "Ultrasonic Flaw Testing C-Scan",
+        "Ultrasonic Thickness Measurement",
+        "Murban Phased Array Testing",
+        "Alternating Current Field Measurement",
+        "API 570 Piping Inspection and Certification",
+        "API 579 Murban Fitness for Service",
+      ],
+    },
     "Fluorescent Magnet Particle Testing": {
       label: "Fluorescent Magnetic Particle Testing",
       breadcrumb: ["Home", "Industry Solutions", "Services We Offer"],
@@ -1683,6 +1751,39 @@ const Services = () => {
         "API 653 Aboveground Storage Tank Inspection and Certification",
       ],
     },
+    Fabrication: {
+      label: "Fabrication Services",
+      breadcrumb: ["Home", "Industry Solutions", "Fabrication & Engineering"],
+      headline: "Precision Shop Fabrication & Assembly",
+      description:
+        "Murban Engineering fabricates structural steel, process skids, and custom metalwork with controlled procedures and multi-discipline quality oversight. Our fabrication teams coordinate closely with engineering and site crews to ensure every component installs smoothly and performs reliably from day one.",
+      sections: [
+        {
+          title: "Core Capabilities",
+          items: [
+            "CNC cutting, rolling, and forming for carbon, stainless, and alloy materials.",
+            "Certified welding procedures supported by in-house inspection and non-destructive testing.",
+            "Fit-up and trial assembly that verify tolerances, interfaces, and lifting plans before delivery.",
+          ],
+        },
+        {
+          title: "Quality Assurance",
+          items: [
+            "Documented fabrication travelers and inspection records for full traceability.",
+            "Dimensional control and laser scanning to confirm conformance with issued-for-construction drawings.",
+            "Packaging and transport coordination that protect finishes and critical alignments.",
+          ],
+        },
+      ],
+      relatedServices: [
+        "Detailed Engineering",
+        "Procurement",
+        "Specialized Welding",
+        "Surface Preparation & Paint Works",
+        "Construction & Erection",
+        "Murban Pressure Testing",
+      ],
+    },
     "Construction & Erection": {
       label: "Fabrication & Engineering Services",
       breadcrumb: ["Home", "Industry Solutions", "Fabrication & Engineering"],
@@ -1713,6 +1814,40 @@ const Services = () => {
         "Fabrication",
         "Specialized Welding",
         "Surface Preparation & Paint Works",
+      ],
+    },
+    "Specialized Welding": {
+      label: "Specialized Welding",
+      breadcrumb: ["Home", "Industry Solutions", "Fabrication & Engineering"],
+      headline: "Advanced Welding Procedures & Metallurgy Support",
+      description:
+        "From critical pressure boundaries to exotic alloys, Murban Engineering delivers specialized welding solutions backed by procedure qualification, welder certification, and non-destructive examination. We tailor welding strategies to service conditions and project codes so joints achieve lasting integrity.",
+      sections: [
+        {
+          title: "Welding Expertise",
+          items: [
+            "Qualified GTAW, SMAW, FCAW, GMAW, and SAW procedures for carbon, stainless, duplex, and nickel alloys.",
+            "On-site and shop welding teams supported by welding engineers and certified inspectors.",
+            "Heat treatment coordination and metallurgical review to manage hardness, distortion, and residual stress.",
+          ],
+        },
+        {
+          title: "Advantages",
+          items: [
+            "Ensures welds meet project codes and client specifications for critical service.",
+            "Reduces rework through qualified procedures, welder training, and staged inspections.",
+            "Integrates NDT and documentation for complete welding data packages.",
+          ],
+        },
+      ],
+      relatedServices: [
+        "Fabrication",
+        "Detailed Engineering",
+        "Surface Preparation & Paint Works",
+        "Construction & Erection",
+        "Murban Pressure Testing",
+        "Murban Phased Array Testing",
+        "Magnetic Particle Testing",
       ],
     },
     "Sphere Tank Inspections": {
@@ -1817,6 +1952,39 @@ const Services = () => {
         "Specialized Welding",
         "Construction & Erection",
         "Surface Preparation & Paint Works",
+      ],
+    },
+    "Surface Preparation & Paint Works": {
+      label: "Surface Preparation & Paint Works",
+      breadcrumb: ["Home", "Industry Solutions", "Fabrication & Engineering"],
+      headline: "Surface Preparation & Protective Coating Systems",
+      description:
+        "Murban Engineering prepares and coats fabricated components to withstand harsh industrial environments. We apply specification-driven blasting, coating, and curing processes so finished assets arrive on site protected, documented, and ready for service.",
+      sections: [
+        {
+          title: "Execution Excellence",
+          items: [
+            "Abrasive blasting, power-tool cleaning, and surface profiling matched to coating manufacturer requirements.",
+            "Multi-coat systems applied in controlled environments with continuous environmental monitoring.",
+            "Holiday detection, adhesion testing, and thickness verification to confirm coating performance.",
+          ],
+        },
+        {
+          title: "Advantages",
+          items: [
+            "Extends asset life by shielding steelwork and equipment from corrosion and chemical attack.",
+            "Delivers traceable quality records that satisfy owners, EPCs, and regulatory agencies.",
+            "Reduces rework at site by delivering turnkey finished components ready for installation.",
+          ],
+        },
+      ],
+      relatedServices: [
+        "Fabrication",
+        "Specialized Welding",
+        "Procurement",
+        "Paint & Coating Inspection",
+        "Detailed Engineering",
+        "Construction & Erection",
       ],
     },
     Procurement: {
