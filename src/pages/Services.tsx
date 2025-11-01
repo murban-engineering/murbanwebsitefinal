@@ -412,12 +412,14 @@ const Services = () => {
     {
       icon: Building2,
       title: "Construction and Erection",
-      description: "On-site structure building and installation service.",
+      description:
+        "Safe, code-compliant erection of steel structures, pipelines, and storage tanks.",
     },
     {
       icon: Zap,
       title: "Specialized Welding",
-      description: "Advanced welding for critical applications.",
+      description:
+        "Certified TIG, MIG, SMAW, and SAW welding that safeguards structural integrity.",
     },
     {
       icon: Sparkles,
@@ -1914,24 +1916,24 @@ const Services = () => {
     "Specialized Welding": {
       label: "Specialized Welding",
       breadcrumb: ["Home", "Industry Solutions", "Fabrication & Engineering"],
-      headline: "Advanced Welding Procedures & Metallurgy Support",
+      headline: "Specialized Welding & Code Compliance",
       description:
-        "From critical pressure boundaries to exotic alloys, Murban Engineering delivers specialized welding solutions backed by procedure qualification, welder certification, and non-destructive examination. We tailor welding strategies to service conditions and project codes so joints achieve lasting integrity.",
+        "Our fabrication team executes TIG, MIG, SMAW, and submerged arc welding to ensure every component is built for strength and reliability. Each weld is delivered under strict adherence to API welding codes and the governing project standards so quality is never in doubt.",
       sections: [
         {
-          title: "Welding Expertise",
+          title: "Specialized Welding",
           items: [
-            "Qualified GTAW, SMAW, FCAW, GMAW, and SAW procedures for carbon, stainless, duplex, and nickel alloys.",
-            "On-site and shop welding teams supported by welding engineers and certified inspectors.",
-            "Heat treatment coordination and metallurgical review to manage hardness, distortion, and residual stress.",
+            "Certified craftsmen proficient in TIG, MIG, SMAW, and submerged arc processes for complex fabrications.",
+            "Technique selection and procedure control that safeguard the integrity of tanks, piping, and structural work.",
+            "Coordinated shop and field teams ready to deliver critical welds where they are needed most.",
           ],
         },
         {
-          title: "Advantages",
+          title: "Code Compliance & Quality",
           items: [
-            "Ensures welds meet project codes and client specifications for critical service.",
-            "Reduces rework through qualified procedures, welder training, and staged inspections.",
-            "Integrates NDT and documentation for complete welding data packages.",
+            "Strict alignment with API welding codes and applicable international standards.",
+            "Procedure qualification records and welder certifications maintained for every project.",
+            "Integrated inspections and documentation packages that verify weld quality from root to cap.",
           ],
         },
       ],
