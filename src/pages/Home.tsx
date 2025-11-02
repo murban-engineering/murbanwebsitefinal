@@ -1,16 +1,19 @@
 import {
   ArrowRight,
-  Building2,
-  Wrench,
-  Shield,
-  Users,
-  Compass,
   BarChart3,
-  Sparkles,
-  Lightbulb,
+  Building2,
   CheckCircle2,
+  Compass,
+  Factory,
+  Globe2,
   Layers,
+  Leaf,
+  Lightbulb,
+  Shield,
+  Sparkles,
   Spline,
+  Users,
+  Wrench,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -77,6 +80,40 @@ const Home = () => {
       title: "Sustainability by Design",
       description:
         "We engineer for carbon, water and energy performance from day zero, ensuring compliance and positive impact.",
+    },
+  ];
+
+  const heroHighlights = [
+    {
+      icon: Sparkles,
+      title: "Connected delivery",
+      description: "Integrated teams orchestrating design and construction workflows with absolute transparency.",
+    },
+    {
+      icon: Shield,
+      title: "Resilient systems",
+      description: "High-performance structures and MEP solutions engineered to adapt, scale and thrive.",
+    },
+  ];
+
+  const focusAreas = [
+    {
+      icon: Leaf,
+      title: "Regenerative design",
+      description: "Climate-positive strategies embedded into every structure, campus and public realm we touch.",
+      metric: "57% average operational carbon reduction",
+    },
+    {
+      icon: Factory,
+      title: "Industrial evolution",
+      description: "Modernising plants and logistics hubs with predictive maintenance, automation and resilient utilities.",
+      metric: "14 active markets across Africa",
+    },
+    {
+      icon: Globe2,
+      title: "Connected infrastructure",
+      description: "Digital twins, remote oversight and data-rich dashboards for mission-critical delivery programmes.",
+      metric: "Live intelligence across every project stage",
     },
   ];
 
@@ -148,30 +185,31 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden pt-28 pb-48 sm:pt-32 sm:pb-56">
         <div className="absolute inset-0">
           <img src={heroImage} alt="Engineering excellence" className="h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/70 to-background/95" />
+          <div className="absolute inset-0 bg-gradient-to-br from-background/85 via-background/80 to-background/95" />
           <div className="absolute inset-0 mix-blend-overlay bg-gradient-mesh opacity-60" />
-          <div className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-primary/30 blur-3xl" />
-          <div className="absolute -bottom-20 -left-10 h-72 w-72 rounded-full bg-accent/25 blur-3xl" />
+          <div className="absolute -top-40 -right-32 h-[420px] w-[420px] rounded-full bg-primary/25 blur-3xl" />
+          <div className="absolute -bottom-24 -left-20 h-80 w-80 rounded-full bg-secondary/30 blur-3xl" />
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 py-32 md:py-40">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <div className="space-y-8">
-              <div className="inline-flex items-center gap-3 rounded-full border border-foreground/10 bg-foreground/5 px-5 py-2 text-sm font-medium backdrop-blur-md">
-                <span className="flex h-2.5 w-2.5 rounded-full bg-primary animate-pulse" />
-                Engineering excellence since 1998
+        <div className="relative z-10 container mx-auto px-4">
+          <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1fr)_420px]">
+            <div className="space-y-10">
+              <div className="inline-flex items-center gap-3 rounded-full border border-foreground/10 bg-foreground/5 px-6 py-2 text-xs font-semibold uppercase tracking-[0.3em] backdrop-blur">
+                <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" /> Next era engineering partner
               </div>
-              <h1 className="text-4xl font-serif font-bold leading-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
-                Designing the spaces where innovation lives and industry thrives.
-              </h1>
-              <p className="max-w-2xl text-lg text-muted-foreground md:text-xl">
-                We partner with visionary developers, industrial leaders and public agencies to engineer sustainable, human-centred environments that perform today and evolve tomorrow.
-              </p>
-              <div className="flex flex-col gap-4 sm:flex-row">
-                <Button size="lg" asChild className="text-base shadow-glow">
+              <div className="space-y-6">
+                <h1 className="text-4xl font-serif font-bold leading-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+                  Intelligent environments built for people, performance and planet.
+                </h1>
+                <p className="max-w-2xl text-lg text-muted-foreground md:text-xl">
+                  Murban Engineering blends structural, MEP and advisory expertise to deliver iconic developments, resilient infrastructure and immersive experiences across the continent.
+                </p>
+              </div>
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+                <Button size="lg" asChild className="text-base rounded-full px-8 shadow-primary/40 shadow-2xl">
                   <Link to="/contact">
                     Start a project <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
@@ -180,41 +218,87 @@ const Home = () => {
                   size="lg"
                   variant="outline"
                   asChild
-                  className="text-base border-foreground/20 bg-background/80 backdrop-blur-md hover:bg-foreground/5"
+                  className="text-base rounded-full border-foreground/20 bg-background/70 px-8 backdrop-blur hover:bg-foreground/5"
                 >
                   <Link to="/services">Explore services</Link>
                 </Button>
               </div>
-              <div className="flex flex-wrap items-center gap-6 rounded-2xl border border-foreground/10 bg-background/80 p-6 shadow-lg shadow-primary/5 backdrop-blur-md">
+              <div className="grid gap-4 sm:grid-cols-3">
                 {stats.slice(0, 3).map((stat) => (
-                  <div key={stat.label} className="flex flex-col border-l pl-6 first:border-0 first:pl-0">
+                  <div
+                    key={stat.label}
+                    className="rounded-3xl border border-foreground/10 bg-background/80 p-5 text-left shadow-lg shadow-primary/10 backdrop-blur"
+                  >
                     <span className="text-3xl font-semibold text-foreground md:text-4xl">{stat.value}</span>
-                    <span className="text-sm uppercase tracking-wide text-muted-foreground">{stat.label}</span>
+                    <span className="mt-2 block text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                      {stat.label}
+                    </span>
                   </div>
                 ))}
               </div>
             </div>
             <div className="relative">
-              <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-primary/30 via-primary/10 to-background blur-2xl" />
-              <div className="relative overflow-hidden rounded-3xl border border-foreground/10 bg-background/90 shadow-2xl backdrop-blur">
-                <img src={teamImage} alt="Collaborative engineering team" className="h-80 w-full object-cover" />
-                <div className="grid gap-6 p-8">
-                  <div className="flex items-center justify-between">
-                    <span className="text-lg font-medium">Active Programmes</span>
-                    <span className="text-sm text-muted-foreground">Real-time insights</span>
-                  </div>
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    {differentiators.map((item) => (
-                      <div key={item.title} className="rounded-2xl border border-foreground/10 bg-foreground/5 p-4">
-                        <item.icon className="mb-3 h-6 w-6 text-primary" />
-                        <h3 className="text-base font-semibold">{item.title}</h3>
-                        <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
+              <div className="absolute -inset-6 rounded-[36px] bg-gradient-to-br from-primary/25 via-primary/10 to-background blur-3xl" />
+              <div className="relative overflow-hidden rounded-[32px] border border-foreground/10 bg-background/85 shadow-2xl backdrop-blur">
+                <img src={teamImage} alt="Collaborative engineering team" className="h-96 w-full object-cover" />
+                <div className="absolute bottom-5 left-5 right-5 rounded-3xl border border-white/20 bg-white/80 p-5 text-secondary backdrop-blur">
+                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-secondary">Real-time oversight</p>
+                  <p className="mt-2 text-base font-semibold text-secondary">
+                    Command centre dashboards orchestrating every workstream across your portfolio.
+                  </p>
+                </div>
+              </div>
+              <div className="absolute -bottom-20 left-6 right-6">
+                <div className="rounded-3xl border border-foreground/10 bg-background/95 p-6 shadow-2xl">
+                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Why partners choose Murban</p>
+                  <div className="mt-4 space-y-4">
+                    {heroHighlights.map((item) => (
+                      <div key={item.title} className="flex items-start gap-3">
+                        <item.icon className="mt-1 h-5 w-5 text-primary" />
+                        <div>
+                          <p className="text-sm font-semibold text-foreground">{item.title}</p>
+                          <p className="text-xs text-muted-foreground">{item.description}</p>
+                        </div>
                       </div>
                     ))}
                   </div>
                 </div>
               </div>
+              <div className="absolute -top-10 right-6">
+                <div className="rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/25 via-primary/10 to-background/90 p-4 text-sm text-primary shadow-xl">
+                  <p className="text-xs uppercase tracking-[0.3em] text-primary/80">Active programmes</p>
+                  <p className="mt-2 text-lg font-semibold text-primary">72 sites in delivery</p>
+                  <p className="text-xs text-primary/80">Across energy, logistics and civic infrastructure</p>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Focus Areas Section */}
+      <section className="-mt-28 pb-16 sm:-mt-32 sm:pb-24">
+        <div className="container mx-auto px-4">
+          <div className="grid gap-6 md:grid-cols-3">
+            {focusAreas.map((area) => (
+              <div
+                key={area.title}
+                className="group relative overflow-hidden rounded-3xl border border-foreground/10 bg-background/95 p-6 shadow-lg shadow-primary/10 backdrop-blur"
+              >
+                <div className="absolute inset-0 opacity-0 transition-all duration-500 group-hover:opacity-100">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-secondary/20" />
+                  <div className="absolute -right-8 -top-12 h-32 w-32 rounded-full bg-primary/10 blur-2xl" />
+                </div>
+                <div className="relative flex h-full flex-col gap-4">
+                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/15 text-primary">
+                    <area.icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground">{area.title}</h3>
+                  <p className="text-sm text-muted-foreground">{area.description}</p>
+                  <div className="mt-auto text-sm font-semibold text-primary">{area.metric}</div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -223,11 +307,15 @@ const Home = () => {
       <section className="relative py-20">
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-muted/40 via-background to-background" />
         <div className="container mx-auto px-4">
+          <div className="mx-auto mb-12 max-w-2xl text-center">
+            <span className="text-xs font-semibold uppercase tracking-[0.4em] text-primary">Proof points</span>
+            <h2 className="mt-4 text-3xl font-serif font-bold md:text-4xl">Quantified impact earned over 25+ years</h2>
+          </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="group relative overflow-hidden rounded-3xl border border-foreground/10 bg-background p-8 shadow-lg shadow-primary/10 transition-all hover:-translate-y-1 hover:shadow-primary/20"
+                className="group relative overflow-hidden rounded-[28px] border border-foreground/10 bg-background/95 p-8 shadow-lg shadow-primary/10 transition-all hover:-translate-y-1 hover:shadow-primary/20"
               >
                 <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-primary/5 transition-transform group-hover:scale-125" />
                 <div className="relative">
