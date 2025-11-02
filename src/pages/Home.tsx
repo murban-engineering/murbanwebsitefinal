@@ -20,6 +20,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { AnimatedText } from "@/components/ui/animated-underline-text-one";
+import { DottedSurface } from "@/components/ui/dotted-surface";
 import heroImage from "@/assets/hero-engineering.jpg";
 import teamImage from "@/assets/team-collaboration.jpg";
 import projectImage from "@/assets/project-showcase.jpg";
@@ -28,6 +29,7 @@ import totalenergiesLogo from "@/assets/totalenergies-logo.png";
 import kengenLogo from "@/assets/kengen-logo.png";
 import bolloreLogo from "@/assets/bollore-logo.png";
 import kpcLogo from "@/assets/kpc-logo.png";
+import { cn } from "@/lib/utils";
 
 const Home = () => {
   const services = [
@@ -185,14 +187,30 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="relative z-20">
-        <div className="container mx-auto flex justify-end px-4 pt-6">
-          <ThemeToggle id="home-theme-toggle" />
+    <div className="relative min-h-screen bg-background">
+      <section className="relative flex h-[340px] w-full items-center justify-center overflow-hidden sm:h-[420px]">
+        <DottedSurface className="size-full">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div
+              aria-hidden="true"
+              className={cn(
+                "pointer-events-none absolute -top-10 left-1/2 size-full -translate-x-1/2 rounded-full",
+                "bg-[radial-gradient(ellipse_at_center,--theme(--color-foreground/.1),transparent_50%)]",
+                "blur-[30px]",
+              )}
+            />
+            <h1 className="font-mono text-4xl font-semibold text-foreground">Dotted Surface</h1>
+          </div>
+        </DottedSurface>
+      </section>
+      <div className="relative z-10">
+        <div className="relative z-20">
+          <div className="container mx-auto flex justify-end px-4 pt-6">
+            <ThemeToggle id="home-theme-toggle" />
+          </div>
         </div>
-      </div>
-      {/* Hero Section */}
-      <section className="relative overflow-hidden pt-28 pb-48 sm:pt-32 sm:pb-56">
+        {/* Hero Section */}
+        <section className="relative overflow-hidden pt-28 pb-48 sm:pt-32 sm:pb-56">
         <div className="absolute inset-0">
           <img src={heroImage} alt="Engineering excellence" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-br from-background/85 via-background/80 to-background/95" />
@@ -586,6 +604,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      </div>
     </div>
   );
 };
