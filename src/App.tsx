@@ -12,6 +12,8 @@ import ServiceDetailPage from "./pages/ServiceDetailPage";
 import IndustrySolutions from "./pages/IndustrySolutions";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Faq from "./pages/Faq";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +32,8 @@ const App = () => (
             <Route path="/services/:slug" element={<ServiceDetailPage />} />
             <Route path="/industry-solutions" element={<IndustrySolutions />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/faq" element={<Faq />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
