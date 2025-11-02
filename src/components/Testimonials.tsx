@@ -64,6 +64,8 @@ const Testimonials = () => {
     { name: "KPC", logo: kpcLogo, width: "w-20" },
   ];
 
+  const marqueeLogos = [...clientLogos, ...clientLogos];
+
   return (
     <section className="py-20 bg-muted relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
@@ -111,19 +113,24 @@ const Testimonials = () => {
 
         {/* Client Logos */}
         <div className="mt-16">
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16">
-            {clientLogos.map((logo, index) => (
-              <div
-                key={index}
-                className="transition-all duration-300 hover:scale-110 opacity-80 hover:opacity-100"
-              >
-                <img
-                  src={logo.logo}
-                  alt={`${logo.name} logo`}
-                  className={`${logo.width} h-auto object-contain`}
-                />
-              </div>
-            ))}
+          <div className="relative overflow-hidden">
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-muted to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-muted to-transparent" />
+            <div className="flex items-center gap-12 md:gap-16 animate-marquee will-change-transform">
+              {marqueeLogos.map((logo, index) => (
+                <div
+                  key={`${logo.name}-${index}`}
+                  className="flex-shrink-0 transition-transform duration-300 hover:scale-110 opacity-80 hover:opacity-100"
+                  aria-hidden={index >= clientLogos.length}
+                >
+                  <img
+                    src={logo.logo}
+                    alt={`${logo.name} logo`}
+                    className={`${logo.width} h-auto object-contain`}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
