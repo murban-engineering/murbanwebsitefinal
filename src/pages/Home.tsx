@@ -208,9 +208,6 @@ const Home = () => {
                   textClassName="text-left font-serif text-4xl font-bold leading-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl"
                   underlineClassName="text-primary"
                 />
-                <h2 className="text-4xl font-serif font-bold leading-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
-                  Intelligent environments built for people, performance and planet.
-                </h2>
                 <p className="max-w-2xl text-lg text-muted-foreground md:text-xl">
                   Murban Engineering blends structural, MEP and advisory expertise to deliver iconic developments, resilient infrastructure and immersive experiences across the continent.
                 </p>
