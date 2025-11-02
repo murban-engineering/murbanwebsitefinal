@@ -3,25 +3,33 @@ import { Card, CardContent } from "@/components/ui/card";
 import teamImage from "@/assets/team-collaboration.jpg";
 import AfricaMap from "@/components/AfricaMap";
 import WhyChooseUs from "@/components/WhyChooseUs";
-import WorldMap, { type WorldMapConnection } from "@/components/WorldMap";
+import { WorldMap, type WorldMapConnection } from "@/components/ui/world-map";
 
 const About = () => {
   const globalConnections: WorldMapConnection[] = [
     {
-      start: { lat: -4.0435, lng: 39.6682, label: "Mombasa" },
-      end: { lat: 6.5244, lng: 3.3792, label: "Lagos" },
+      start: { lat: 64.2008, lng: -149.4937, label: "Fairbanks" },
+      end: { lat: 34.0522, lng: -118.2437, label: "Los Angeles" },
     },
     {
-      start: { lat: -4.0435, lng: 39.6682, label: "Mombasa" },
-      end: { lat: -1.2864, lng: 36.8172, label: "Nairobi" },
+      start: { lat: 64.2008, lng: -149.4937, label: "Fairbanks" },
+      end: { lat: -15.7975, lng: -47.8919, label: "Brasília" },
     },
     {
-      start: { lat: -4.0435, lng: 39.6682, label: "Mombasa" },
-      end: { lat: -26.2041, lng: 28.0473, label: "Johannesburg" },
+      start: { lat: -15.7975, lng: -47.8919, label: "Brasília" },
+      end: { lat: 38.7223, lng: -9.1393, label: "Lisbon" },
     },
     {
-      start: { lat: -4.0435, lng: 39.6682, label: "Mombasa" },
-      end: { lat: 30.0444, lng: 31.2357, label: "Cairo" },
+      start: { lat: 51.5074, lng: -0.1278, label: "London" },
+      end: { lat: 28.6139, lng: 77.209, label: "New Delhi" },
+    },
+    {
+      start: { lat: 28.6139, lng: 77.209, label: "New Delhi" },
+      end: { lat: 43.1332, lng: 131.9113, label: "Vladivostok" },
+    },
+    {
+      start: { lat: 28.6139, lng: 77.209, label: "New Delhi" },
+      end: { lat: -1.2921, lng: 36.8219, label: "Nairobi" },
     },
   ];
 
