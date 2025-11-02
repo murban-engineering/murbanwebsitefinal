@@ -38,7 +38,7 @@ import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Services.css";
 
 type ServiceCardProps = {
@@ -49,6 +49,13 @@ type ServiceCardProps = {
   isActive?: boolean;
   showCTA?: boolean;
   detail?: ServiceDetail;
+};
+
+type ServiceItem = {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  slug?: string;
 };
 
 type ServiceDetail = {
@@ -270,7 +277,9 @@ const Services = () => {
     { id: "services-contact", label: "Contact Our Team" },
   ];
 
-  const ndtServices = [
+  const navigate = useNavigate();
+
+  const ndtServices: ServiceItem[] = [
     {
       icon: ShieldCheck,
       title: "NDT Inspection Services",
@@ -414,38 +423,44 @@ const Services = () => {
     },
   ];
 
-  const fabricationServices = [
+  const fabricationServices: ServiceItem[] = [
     {
       icon: Ruler,
       title: "Detailed Engineering",
       description: "Comprehensive technical plans and documentation.",
+      slug: "detailed-engineering",
     },
     {
       icon: ShoppingCart,
       title: "Procurement",
       description: "Sourcing materials for project execution.",
+      slug: "procurement",
     },
     {
       icon: Settings,
       title: "Fabrication",
       description: "Precision cutting, welding, and assembly services.",
+      slug: "fabrication",
     },
     {
       icon: Building2,
       title: "Construction and Erection",
       description:
         "Safe, code-compliant erection of steel structures, pipelines, and storage tanks.",
+      slug: "construction-and-erection",
     },
     {
       icon: Zap,
       title: "Specialized Welding",
       description:
         "Certified TIG, MIG, SMAW, and SAW welding that safeguards structural integrity.",
+      slug: "specialized-welding",
     },
     {
       icon: Sparkles,
       title: "Surface Preparation and Paint Works",
       description: "Surface cleaning and industrial paint coating.",
+      slug: "surface-preparation-and-paint-works",
     },
   ];
 
@@ -2134,18 +2149,31 @@ const Services = () => {
             <span className="text-sm">{allServices.length} services</span>
           </div>
           <div className="services-grid services-grid--selectable">
-            {allServices.map((service) => (
-              <ServiceCard
-                key={service.title}
-                icon={service.icon}
-                title={service.title}
-                description={service.description}
-                onSelect={() => setSelectedService(service.title)}
-                isActive={selectedService === service.title}
-                showCTA={false}
-                detail={serviceDetails[service.title]}
-              />
-            ))}
+            {allServices.map((service) => {
+              const handleSelect = () => {
+                if (service.slug) {
+                  navigate(`/services/${service.slug}`);
+                  return;
+                }
+
+                setSelectedService(service.title);
+              };
+
+              const isNavigable = Boolean(service.slug);
+
+              return (
+                <ServiceCard
+                  key={service.title}
+                  icon={service.icon}
+                  title={service.title}
+                  description={service.description}
+                  onSelect={handleSelect}
+                  isActive={!isNavigable && selectedService === service.title}
+                  showCTA={false}
+                  detail={!isNavigable ? serviceDetails[service.title] : undefined}
+                />
+              );
+            })}
           </div>
         </div>
       </section>
@@ -2173,6 +2201,7 @@ const Services = () => {
                 icon={service.icon}
                 title={service.title}
                 description={service.description}
+                onSelect={() => navigate(`/services/${service.slug}`)}
                 showCTA={false}
               />
             ))}
