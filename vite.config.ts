@@ -13,6 +13,8 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      "dotted-map": path.resolve(__dirname, "./src/lib/dotted-map.ts"),
+      "framer-motion": path.resolve(__dirname, "./src/lib/simple-motion.tsx"),
     },
   },
 }));

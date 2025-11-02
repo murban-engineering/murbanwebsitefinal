@@ -4,7 +4,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "dotted-map": ["./src/lib/dotted-map"],
+      "framer-motion": ["./src/lib/simple-motion"],
+      "framer-motion/*": ["./src/lib/simple-motion"],
+      "dotted-map/*": ["./src/lib/dotted-map"],
     },
     "noImplicitAny": false,
     "noUnusedParameters": false,

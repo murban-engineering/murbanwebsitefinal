@@ -23,7 +23,11 @@
 
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "dotted-map": ["./src/lib/dotted-map"],
+      "dotted-map/*": ["./src/lib/dotted-map"],
+      "framer-motion": ["./src/lib/simple-motion"],
+      "framer-motion/*": ["./src/lib/simple-motion"],
     }
   },
   "include": ["src"]

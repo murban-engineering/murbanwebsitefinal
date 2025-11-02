@@ -3,8 +3,28 @@ import { Card, CardContent } from "@/components/ui/card";
 import teamImage from "@/assets/team-collaboration.jpg";
 import AfricaMap from "@/components/AfricaMap";
 import WhyChooseUs from "@/components/WhyChooseUs";
+import WorldMap, { type WorldMapConnection } from "@/components/WorldMap";
 
 const About = () => {
+  const globalConnections: WorldMapConnection[] = [
+    {
+      start: { lat: -4.0435, lng: 39.6682, label: "Mombasa" },
+      end: { lat: 6.5244, lng: 3.3792, label: "Lagos" },
+    },
+    {
+      start: { lat: -4.0435, lng: 39.6682, label: "Mombasa" },
+      end: { lat: -1.2864, lng: 36.8172, label: "Nairobi" },
+    },
+    {
+      start: { lat: -4.0435, lng: 39.6682, label: "Mombasa" },
+      end: { lat: -26.2041, lng: 28.0473, label: "Johannesburg" },
+    },
+    {
+      start: { lat: -4.0435, lng: 39.6682, label: "Mombasa" },
+      end: { lat: 30.0444, lng: 31.2357, label: "Cairo" },
+    },
+  ];
+
   const foundationValues = [
     {
       icon: Heart,
@@ -58,9 +78,12 @@ const About = () => {
 
       {/* Company Profile */}
       <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in">
+        <div className="container mx-auto space-y-12 px-4">
+          <div className="animate-fade-in">
+            <WorldMap dots={globalConnections} lineColor="#ef4444" />
+          </div>
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+            <div className="space-y-6 animate-fade-in">
               <h2 className="text-4xl font-serif font-bold mb-6">Company Profile</h2>
               <p className="text-lg text-muted-foreground mb-4">
                 Murban Engineering is a specialist firm in Asset Integrity, Inspection, and Non-Destructive Testing (NDT). We deliver reliable and safe inspection solutions that support critical infrastructure in the oil & gas, energy, marine, and industrial sectors.
