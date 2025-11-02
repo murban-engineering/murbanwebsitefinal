@@ -199,7 +199,7 @@ const Home = () => {
                 "blur-[30px]",
               )}
             />
-            <h1 className="font-mono text-4xl font-semibold text-foreground">Dotted Surface</h1>
+            <h1 className="font-mono text-4xl font-semibold text-foreground">Murban Engineering</h1>
           </div>
         </DottedSurface>
       </section>
