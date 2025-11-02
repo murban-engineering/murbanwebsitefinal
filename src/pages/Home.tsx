@@ -18,6 +18,7 @@ import {
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { AnimatedText } from "@/components/ui/animated-underline-text-one";
 import heroImage from "@/assets/hero-engineering.jpg";
 import teamImage from "@/assets/team-collaboration.jpg";
@@ -185,6 +186,11 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <div className="relative z-20">
+        <div className="container mx-auto flex justify-end px-4 pt-6">
+          <ThemeToggle id="home-theme-toggle" />
+        </div>
+      </div>
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-28 pb-48 sm:pt-32 sm:pb-56">
         <div className="absolute inset-0">
