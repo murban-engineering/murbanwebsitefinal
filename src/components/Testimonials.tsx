@@ -7,10 +7,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import totalenergiesLogo from "@/assets/totalenergies-logo.png";
-import kengenLogo from "@/assets/kengen-logo.png";
-import bolloreLogo from "@/assets/bollore-logo.png";
-import kpcLogo from "@/assets/kpc-logo.png";
 
 interface Testimonial {
   company: string;
@@ -57,15 +53,6 @@ const Testimonials = () => {
     },
   ];
 
-  const clientLogos = [
-    { name: "TotalEnergies", logo: totalenergiesLogo, width: "w-28" },
-    { name: "KenGen", logo: kengenLogo, width: "w-24" },
-    { name: "Bolloré Africa Logistics", logo: bolloreLogo, width: "w-36" },
-    { name: "KPC", logo: kpcLogo, width: "w-20" },
-  ];
-
-  const marqueeLogos = [...clientLogos, ...clientLogos];
-
   return (
     <section className="py-20 bg-muted relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
@@ -109,29 +96,6 @@ const Testimonials = () => {
             <CarouselPrevious className="hidden md:flex" />
             <CarouselNext className="hidden md:flex" />
           </Carousel>
-        </div>
-
-        {/* Client Logos */}
-        <div className="mt-16">
-          <div className="relative overflow-hidden">
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-muted to-transparent" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-muted to-transparent" />
-            <div className="flex items-center gap-12 md:gap-16 animate-marquee will-change-transform">
-              {marqueeLogos.map((logo, index) => (
-                <div
-                  key={`${logo.name}-${index}`}
-                  className="flex-shrink-0 transition-transform duration-300 hover:scale-110 opacity-80 hover:opacity-100"
-                  aria-hidden={index >= clientLogos.length}
-                >
-                  <img
-                    src={logo.logo}
-                    alt={`${logo.name} logo`}
-                    className={`${logo.width} h-auto object-contain`}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>

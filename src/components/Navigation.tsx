@@ -16,14 +16,14 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
+  const navLinks: Array<{ name: string; path: string; external?: boolean }> = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Services", path: "/services" },
     { name: "Industry Solutions", path: "/industry-solutions" },
     { name: "Portal", path: "https://murbanportal.com/", external: true },
     { name: "Contact Us", path: "/contact" },
-  ] as const;
+  ];
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -39,13 +39,12 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 rounded-full border border-border/60 bg-background/70 px-4 py-2 transition-all hover:border-primary/40 hover:shadow-glow">
-            <div className="relative h-11 w-11 overflow-hidden rounded-full">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/40 to-primary/10 blur-md" />
-              <img src={murbanLogo} alt="Murban Engineering Logo" className="relative h-full w-full rounded-full object-cover" />
+          <Link to="/" className="flex items-center gap-3 rounded-full border border-border/40 bg-background/90 px-4 py-2 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 backdrop-blur-md">
+            <div className="relative h-10 w-10 overflow-hidden rounded-full ring-2 ring-primary/20">
+              <img src={murbanLogo} alt="Murban Engineering Logo" className="h-full w-full object-cover" />
             </div>
-            <div className="text-lg font-semibold tracking-tight">
-              <span className="bg-gradient-to-r from-primary via-primary/80 to-secondary bg-clip-text text-transparent">
+            <div className="text-base font-bold tracking-tight">
+              <span className="bg-gradient-to-r from-primary via-primary to-secondary bg-clip-text text-transparent">
                 Murban Engineering
               </span>
             </div>

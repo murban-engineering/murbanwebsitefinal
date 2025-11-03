@@ -21,6 +21,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { AnimatedText } from "@/components/ui/animated-underline-text-one";
 import { DottedSurface } from "@/components/ui/dotted-surface";
+import TypingAnimation from "@/components/TypingAnimation";
 import heroImage from "@/assets/hero-engineering.jpg";
 import teamImage from "@/assets/team-collaboration.jpg";
 import projectImage from "@/assets/project-showcase.jpg";
@@ -188,18 +189,20 @@ const Home = () => {
 
   return (
     <div className="relative min-h-screen bg-background">
-      <section className="relative flex h-[340px] w-full items-center justify-center overflow-hidden sm:h-[420px]">
+      <section className="relative flex h-[340px] w-full items-center justify-center overflow-hidden sm:h-[420px] bg-background">
         <DottedSurface className="size-full">
           <div className="absolute inset-0 flex items-center justify-center">
             <div
               aria-hidden="true"
               className={cn(
                 "pointer-events-none absolute -top-10 left-1/2 size-full -translate-x-1/2 rounded-full",
-                "bg-[radial-gradient(ellipse_at_center,--theme(--color-foreground/.1),transparent_50%)]",
-                "blur-[30px]",
+                "bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/.15),transparent_50%)]",
+                "blur-[40px]",
               )}
             />
-            <h1 className="font-mono text-4xl font-semibold text-foreground">Murban Engineering</h1>
+            <h1 className="font-mono text-4xl font-semibold text-foreground relative z-10">
+              <TypingAnimation text="Murban Engineering" speed={80} className="text-foreground" />
+            </h1>
           </div>
         </DottedSurface>
       </section>

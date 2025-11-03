@@ -1,26 +1,11 @@
-"use client";
 import { WorldMap } from "@/components/ui/world-map";
-import { motion } from "framer-motion";
 
 export function WorldMapDemo() {
   return (
     <div className="w-full bg-white py-40 dark:bg-black">
       <div className="mx-auto max-w-7xl text-center">
         <p className="text-xl font-bold text-black dark:text-white md:text-4xl">
-          Remote{" "}
-          <span className="text-neutral-400">
-            {"Connectivity".split("").map((word, idx) => (
-              <motion.span
-                key={idx}
-                className="inline-block"
-                initial={{ x: -10, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.5, delay: idx * 0.04 }}
-              >
-                {word}
-              </motion.span>
-            ))}
-          </span>
+          Remote <span className="text-neutral-400">Connectivity</span>
         </p>
         <p className="mx-auto max-w-2xl py-4 text-sm text-neutral-500 md:text-lg">
           Break free from traditional boundaries. Work from anywhere, at the comfort of your own studio apartment. Perfect for
