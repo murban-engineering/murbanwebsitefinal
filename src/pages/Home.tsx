@@ -200,9 +200,6 @@ const Home = () => {
                 "blur-[40px]",
               )}
             />
-            <h1 className="font-mono text-4xl font-semibold text-foreground relative z-10">
-              <TypingAnimation text="Murban Engineering" speed={80} className="text-foreground" />
-            </h1>
           </div>
         </DottedSurface>
       </section>
@@ -229,12 +226,9 @@ const Home = () => {
                 <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" /> Next era engineering partner
               </div>
               <div className="space-y-6">
-                <AnimatedText
-                  text="Murban Engineering"
-                  className="!items-start"
-                  textClassName="text-left font-serif text-4xl font-bold leading-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl"
-                  underlineClassName="text-primary"
-                />
+                <h1 className="text-left font-serif text-4xl font-bold leading-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+                  <TypingAnimation text="Murban Engineering" speed={80} className="text-foreground" />
+                </h1>
                 <p className="max-w-2xl text-lg text-muted-foreground md:text-xl">
                   Murban Engineering blends structural, MEP and advisory expertise to deliver iconic developments, resilient infrastructure and immersive experiences across the continent.
                 </p>
