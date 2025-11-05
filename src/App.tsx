@@ -14,6 +14,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Faq from "./pages/Faq";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
       <Sonner />
       <div className="flex flex-col min-h-screen">
         <Navigation />
+        <ScrollToTop />
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<Home />} />

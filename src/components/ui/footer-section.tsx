@@ -37,6 +37,33 @@ const additionalServices = [
   { label: "Sphere Tank Inspection", to: servicePath("Sphere Tank Inspections") },
 ];
 
+const socialLinks = [
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/",
+    icon: Facebook,
+    tooltip: "Follow us on Facebook",
+  },
+  {
+    label: "Twitter",
+    href: "https://www.twitter.com/",
+    icon: Twitter,
+    tooltip: "Follow us on Twitter",
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/",
+    icon: Instagram,
+    tooltip: "Follow us on Instagram",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/",
+    icon: Linkedin,
+    tooltip: "Connect with us on LinkedIn",
+  },
+];
+
 function Footerdemo() {
   return (
     <footer className="relative border-t bg-background text-foreground transition-colors duration-300">
@@ -97,60 +124,25 @@ function Footerdemo() {
           </div>
           <div className="relative">
             <h3 className="mb-4 text-lg font-semibold">Follow Us</h3>
-            <div className="mb-6 flex space-x-4">
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" className="rounded-full">
-                      <Facebook className="h-4 w-4" />
-                      <span className="sr-only">Facebook</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Follow us on Facebook</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" className="rounded-full">
-                      <Twitter className="h-4 w-4" />
-                      <span className="sr-only">Twitter</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Follow us on Twitter</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" className="rounded-full">
-                      <Instagram className="h-4 w-4" />
-                      <span className="sr-only">Instagram</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Follow us on Instagram</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" className="rounded-full">
-                      <Linkedin className="h-4 w-4" />
-                      <span className="sr-only">LinkedIn</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Connect with us on LinkedIn</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-            </div>
+            <TooltipProvider>
+              <div className="mb-6 flex space-x-4">
+                {socialLinks.map(({ label, href, icon: Icon, tooltip }) => (
+                  <Tooltip key={label}>
+                    <TooltipTrigger asChild>
+                      <Button asChild variant="outline" size="icon" className="rounded-full">
+                        <a href={href} target="_blank" rel="noopener noreferrer">
+                          <Icon className="h-4 w-4" />
+                          <span className="sr-only">{label}</span>
+                        </a>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>{tooltip}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                ))}
+              </div>
+            </TooltipProvider>
             <ThemeToggle id="footer-theme-toggle" className="bg-background/90" />
           </div>
         </div>
