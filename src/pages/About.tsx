@@ -3,37 +3,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import teamImage from "@/assets/team-collaboration.jpg";
 import AfricaMap from "@/components/AfricaMap";
 import WhyChooseUs from "@/components/WhyChooseUs";
-import { WorldMap, type WorldMapConnection } from "@/components/ui/world-map";
 import { DottedSurface } from "@/components/ui/dotted-surface";
 
 const About = () => {
-  const globalConnections: WorldMapConnection[] = [
-    {
-      start: { lat: 64.2008, lng: -149.4937, label: "Fairbanks" },
-      end: { lat: 34.0522, lng: -118.2437, label: "Los Angeles" },
-    },
-    {
-      start: { lat: 64.2008, lng: -149.4937, label: "Fairbanks" },
-      end: { lat: -15.7975, lng: -47.8919, label: "Brasília" },
-    },
-    {
-      start: { lat: -15.7975, lng: -47.8919, label: "Brasília" },
-      end: { lat: 38.7223, lng: -9.1393, label: "Lisbon" },
-    },
-    {
-      start: { lat: 51.5074, lng: -0.1278, label: "London" },
-      end: { lat: 28.6139, lng: 77.209, label: "New Delhi" },
-    },
-    {
-      start: { lat: 28.6139, lng: 77.209, label: "New Delhi" },
-      end: { lat: 43.1332, lng: 131.9113, label: "Vladivostok" },
-    },
-    {
-      start: { lat: 28.6139, lng: 77.209, label: "New Delhi" },
-      end: { lat: -1.2921, lng: 36.8219, label: "Nairobi" },
-    },
-  ];
-
   const foundationValues = [
     {
       icon: Heart,
@@ -94,9 +66,6 @@ const About = () => {
       {/* Company Profile */}
       <section className="py-20">
         <div className="container mx-auto space-y-12 px-4">
-          <div className="animate-fade-in">
-            <WorldMap dots={globalConnections} lineColor="#ef4444" />
-          </div>
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <div className="space-y-6 animate-fade-in">
               <h2 className="text-4xl font-serif font-bold mb-6">Company Profile</h2>
