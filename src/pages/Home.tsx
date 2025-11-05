@@ -1,20 +1,20 @@
 import {
-  ArrowRight,
-  BarChart3,
-  Building2,
-  CheckCircle2,
-  Compass,
-  Factory,
-  Globe2,
-  Layers,
-  Leaf,
-  Lightbulb,
-  Shield,
-  Sparkles,
-  Spline,
-  Users,
-  Wrench,
-} from "lucide-react";
+  ArrowRightIcon as ArrowRight,
+  BarChartIcon as BarChart3,
+  BuildingIcon as Building2,
+  CheckCircleIcon as CheckCircle2,
+  CompassIcon as Compass,
+  FactoryIcon as Factory,
+  GlobeAltIcon as Globe2,
+  LayersIcon as Layers,
+  LeafIcon as Leaf,
+  LightbulbIcon as Lightbulb,
+  ShieldIcon as Shield,
+  SparklesIcon as Sparkles,
+  SplineIcon as Spline,
+  UsersIcon as Users,
+  WrenchIcon as Wrench,
+} from "@/components/ui/icons";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";

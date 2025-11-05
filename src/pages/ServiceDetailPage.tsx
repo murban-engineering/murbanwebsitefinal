@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeftIcon, ArrowRightIcon } from "@/components/ui/icons";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -46,14 +46,14 @@ const ServiceDetailPage = () => {
         <nav className="mb-8 flex flex-wrap items-center justify-between gap-4">
           <Button asChild variant="ghost">
             <Link to="/services" className="inline-flex items-center gap-2">
-              <ArrowLeft className="h-4 w-4" />
+              <ArrowLeftIcon className="h-4 w-4" />
               Back to services
             </Link>
           </Button>
           <Button asChild variant="outline">
             <Link to="/contact" className="inline-flex items-center gap-2">
               Discuss your project
-              <ArrowRight className="h-4 w-4" />
+              <ArrowRightIcon className="h-4 w-4" />
             </Link>
           </Button>
         </nav>

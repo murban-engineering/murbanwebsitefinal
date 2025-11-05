@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Quote } from "lucide-react";
+import { QuoteIcon } from "@/components/ui/icons";
 import {
   Carousel,
   CarouselContent,
@@ -79,7 +79,7 @@ const Testimonials = () => {
                 <CarouselItem key={index}>
                   <Card className="border-border/50 bg-gradient-card">
                     <CardContent className="p-8 md:p-12">
-                      <Quote className="h-12 w-12 text-primary mb-6 opacity-50" />
+                      <QuoteIcon className="h-12 w-12 text-primary mb-6 opacity-50" />
                       <p className="text-lg md:text-xl mb-8 leading-relaxed text-foreground">
                         {testimonial.text}
                       </p>

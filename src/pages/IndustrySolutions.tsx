@@ -1,4 +1,12 @@
-import { Factory, Droplets, Zap, Ship, Building2, Truck, Fuel } from "lucide-react";
+import {
+  FactoryIcon as Factory,
+  DropletsIcon as Droplets,
+  ZapIcon as Zap,
+  ShipIcon as Ship,
+  BuildingIcon as Building2,
+  TruckIcon as Truck,
+  FuelIcon as Fuel,
+} from "@/components/ui/icons";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";

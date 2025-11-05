@@ -1,5 +1,10 @@
 import * as React from "react";
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import {
+  FacebookIcon,
+  InstagramIcon,
+  LinkedinIcon,
+  TwitterIcon,
+} from "@/components/ui/icons";
 import { Link } from "react-router-dom";
 
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -41,25 +46,25 @@ const socialLinks = [
   {
     label: "Facebook",
     href: "https://www.facebook.com/",
-    icon: Facebook,
+    icon: FacebookIcon,
     tooltip: "Follow us on Facebook",
   },
   {
     label: "Twitter",
     href: "https://www.twitter.com/",
-    icon: Twitter,
+    icon: TwitterIcon,
     tooltip: "Follow us on Twitter",
   },
   {
     label: "Instagram",
     href: "https://www.instagram.com/",
-    icon: Instagram,
+    icon: InstagramIcon,
     tooltip: "Follow us on Instagram",
   },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/",
-    icon: Linkedin,
+    icon: LinkedinIcon,
     tooltip: "Connect with us on LinkedIn",
   },
 ];

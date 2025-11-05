@@ -1,39 +1,39 @@
 import {
-  ShieldCheck,
-  Gauge,
-  GitBranch,
-  Database,
-  Disc,
-  ScanLine,
-  Activity,
-  Magnet,
-  Lightbulb,
-  Droplet,
-  Radio,
-  Paintbrush,
-  TestTube,
-  Grid3x3,
-  Scan,
-  Thermometer,
-  Cpu,
-  CheckCircle,
-  TrendingUp,
-  Flame,
-  ArrowUp,
-  Wind,
-  CircleGauge,
-  Map,
-  Globe,
-  Hammer,
-  Plane,
-  Ruler,
-  ShoppingCart,
-  Settings,
-  Building2,
-  Zap,
-  Sparkles,
-  type LucideIcon,
-} from "lucide-react";
+  ShieldCheckIcon as ShieldCheck,
+  GaugeIcon as Gauge,
+  GitBranchIcon as GitBranch,
+  DatabaseIcon as Database,
+  DiscIcon as Disc,
+  ScanLineIcon as ScanLine,
+  ActivityIcon as Activity,
+  MagnetIcon as Magnet,
+  LightbulbIcon as Lightbulb,
+  DropletIcon as Droplet,
+  RadioIcon as Radio,
+  PaintbrushIcon as Paintbrush,
+  TestTubeIcon as TestTube,
+  GridIcon as Grid3x3,
+  ScanIcon as Scan,
+  ThermometerIcon as Thermometer,
+  CpuIcon as Cpu,
+  CheckCircleIcon as CheckCircle,
+  TrendingUpIcon as TrendingUp,
+  FlameIcon as Flame,
+  ArrowUpIcon as ArrowUp,
+  WindIcon as Wind,
+  GaugeCircleIcon as CircleGauge,
+  MapIcon as Map,
+  GlobeIcon as Globe,
+  HammerIcon as Hammer,
+  PlaneIcon as Plane,
+  RulerIcon as Ruler,
+  ShoppingCartIcon as ShoppingCart,
+  SettingsIcon as Settings,
+  BuildingIcon as Building2,
+  ZapIcon as Zap,
+  SparklesIcon as Sparkles,
+} from "@/components/ui/icons";
+import type { IconComponent } from "@/components/ui/icons";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -42,7 +42,7 @@ import { DottedSurface } from "@/components/ui/dotted-surface";
 import "./Services.css";
 
 type ServiceCardProps = {
-  icon: LucideIcon;
+  icon: IconComponent;
   title: string;
   description: string;
   onSelect?: () => void;
@@ -50,14 +50,14 @@ type ServiceCardProps = {
 };
 
 type ServiceItemInput = {
-  icon: LucideIcon;
+  icon: IconComponent;
   title: string;
   description: string;
   slug?: string;
 };
 
 export type ServiceItem = {
-  icon: LucideIcon;
+  icon: IconComponent;
   title: string;
   description: string;
   slug: string;

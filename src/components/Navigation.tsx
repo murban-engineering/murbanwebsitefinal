@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { CloseIcon, MenuIcon } from "@/components/ui/icons";
 import { Button } from "@/components/ui/button";
 import murbanLogo from "@/assets/murban-logo.jpg";
 
@@ -102,7 +102,11 @@ const Navigation = () => {
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
-            {isOpen ? <X className="h-6 w-6 text-foreground" /> : <Menu className="h-6 w-6 text-foreground" />}
+            {isOpen ? (
+              <CloseIcon className="h-6 w-6 text-foreground" />
+            ) : (
+              <MenuIcon className="h-6 w-6 text-foreground" />
+            )}
           </button>
         </div>
 

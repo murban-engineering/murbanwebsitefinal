@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MapPin } from "lucide-react";
+import { MapPinIcon } from "@/components/ui/icons";
 import africaMap from "@/assets/africa-map-clean.jpg";
 
 const AfricaMap = () => {
@@ -70,7 +70,7 @@ const AfricaMap = () => {
                     : "bg-background/80"
                 }`} />
                 
-                <MapPin
+                <MapPinIcon
                   className={`relative w-7 h-7 transition-all duration-300 ${
                     hoveredCountry === location.name
                       ? "text-primary drop-shadow-[0_0_12px_hsl(var(--primary))]"
@@ -100,7 +100,7 @@ const AfricaMap = () => {
       {/* Legend */}
       <div className="mt-10 text-center">
         <div className="inline-flex items-center gap-2 text-sm text-muted-foreground mb-8 bg-card/50 backdrop-blur-sm px-4 py-2 rounded-full border border-border/50">
-          <MapPin className="h-5 w-5 text-primary fill-white" />
+          <MapPinIcon className="h-5 w-5 text-primary" fill="white" />
           <span className="font-medium">Hover over markers to explore our operational areas</span>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm max-w-4xl mx-auto">

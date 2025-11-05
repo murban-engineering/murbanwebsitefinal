@@ -120,4 +120,9 @@ All colors MUST be HSL.
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  svg.modern-icon {
+    display: inline-block;
+    flex-shrink: 0;
+  }
 }
