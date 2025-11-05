@@ -617,3 +617,391 @@ export const LinkedinIcon = createIcon(
   </>,
 );
 
+// Custom service icons
+export const IntegrityShieldIcon = createIcon(
+  <>
+    <path d="M12 21c-3.6-1.8-6-5-6-9.2V6.5L12 4l6 2.5v5.3c0 4.2-2.4 7.4-6 9.2Z" />
+    <path d="M9 12.2 11.4 14.6 15 10.5" />
+    <path d="M8.2 8.5h7.6" />
+  </>,
+);
+
+export const CalibrationGaugeIcon = createIcon(
+  <>
+    <path d="M5 15.5a7 7 0 0 1 14 0V19H5Z" />
+    <path d="M12 14l3.3-3.3" />
+    <path d="M7 12h3" />
+    <path d="M9 19v1.5" />
+    <path d="M15 19v1.5" />
+  </>,
+);
+
+export const PipelineInspectionIcon = createIcon(
+  <>
+    <path d="M4 8h16v8H4Z" />
+    <path d="M4 12h16" />
+    <path d="M8 4v4" />
+    <path d="M16 16v4" />
+    <path d="M6 10.5 9 13.5" />
+    <path d="M15 10.5 18 13.5" />
+  </>,
+);
+
+export const StorageTankIcon = createIcon(
+  <>
+    <ellipse cx="12" cy="7" rx="6.5" ry="3.2" />
+    <path d="M5.5 7v6.5c0 1.9 2.9 3.3 6.5 3.3s6.5-1.4 6.5-3.3V7" />
+    <path d="M5.5 13.5v3c0 1.9 2.9 3.3 6.5 3.3s6.5-1.4 6.5-3.3v-3" />
+    <path d="M8 7V4h8v3" />
+  </>,
+);
+
+export const VesselComplianceIcon = createIcon(
+  <>
+    <path d="M8 5.5h8l2 3.5-2 3.5H8l-2-3.5Z" />
+    <path d="M8 12.5h8l2 3.5-2 3.5H8l-2-3.5Z" />
+    <path d="M9.5 15.5 12 18l2.5-2.5" />
+  </>,
+);
+
+export const UltrasonicMatrixIcon = createIcon(
+  <>
+    <rect x="4" y="6" width="16" height="12" rx="2" />
+    <path d="M7 9h3M7 12h3M7 15h3" />
+    <path d="M12.5 9.5 17 7" />
+    <path d="M12.5 12 18 9.5" />
+    <path d="M12.5 14.5 18 12" />
+  </>,
+);
+
+export const UltrasonicSliceIcon = createIcon(
+  <>
+    <rect x="4.5" y="5" width="15" height="14" rx="2" />
+    <path d="M7 9c2.5 0 3.5 2 5 2s2.5-2 5-2" />
+    <path d="M7 13c2.5 0 3.5 2 5 2s2.5-2 5-2" />
+    <path d="M12 5v14" />
+  </>,
+);
+
+export const MagneticFieldIcon = createIcon(
+  <>
+    <path d="M7 13V9a5 5 0 0 1 10 0v4" />
+    <path d="M7 13v2a5 5 0 0 0 10 0v-2" />
+    <path d="M5 7h3" />
+    <path d="M16 7h3" />
+    <path d="M8 11h2" />
+    <path d="M14 11h2" />
+  </>,
+);
+
+export const MagneticLumenIcon = createIcon(
+  <>
+    <path d="M6 12a6 6 0 0 1 12 0v3.5" />
+    <path d="M6 12v2a6 6 0 0 0 12 0v-2" />
+    <circle cx="12" cy="12" r="2.3" />
+    <path d="M9.5 3.5 8 6" />
+    <path d="M14.5 3.5 16 6" />
+  </>,
+);
+
+export const CapillarySearchIcon = createIcon(
+  <>
+    <path d="M11 3c2 2.3 4 5.1 4 7.2a3.8 3.8 0 0 1-7.6 0C7.4 8.1 9 5.3 11 3Z" />
+    <path d="M11 14.5v6" />
+    <path d="M8.5 17.5 11 20l2.5-2.5" />
+    <circle cx="16.5" cy="16.5" r="2.5" />
+    <path d="M18.3 18.3 20 20" />
+  </>,
+);
+
+export const RadiographicImagingIcon = createIcon(
+  <>
+    <rect x="4" y="6" width="16" height="12" rx="2.5" />
+    <path d="M7 9h3l1.5 3L13 9h3" />
+    <circle cx="12" cy="15" r="1.5" />
+    <path d="M4 12h16" />
+  </>,
+);
+
+export const CoatingShieldIcon = createIcon(
+  <>
+    <path d="M6 7.5 12 4l6 3.5v4.5c0 3.1-1.9 5.8-6 7.5-4.1-1.7-6-4.4-6-7.5Z" />
+    <path d="M9 12h6" />
+    <path d="M8 9.5h8" />
+    <path d="M9 14.5h6" />
+  </>,
+);
+
+export const MaterialSpectrumIcon = createIcon(
+  <>
+    <rect x="5" y="5" width="14" height="14" rx="3" />
+    <circle cx="12" cy="12" r="3.5" />
+    <path d="M12 8.5V6" />
+    <path d="M12 18v-2.5" />
+    <path d="M8.5 12H6" />
+    <path d="M18 12h-2.5" />
+  </>,
+);
+
+export const PhasedArrayIcon = createIcon(
+  <>
+    <rect x="5" y="6" width="14" height="12" rx="2.5" />
+    <path d="M8 9h8" />
+    <path d="M9 12h6" />
+    <path d="M10 15h4" />
+    <path d="M6 6 12 3l6 3" />
+  </>,
+);
+
+export const LaserCubeIcon = createIcon(
+  <>
+    <path d="M7 8.5 12 6l5 2.5v5l-5 2.5-5-2.5Z" />
+    <path d="M7 8.5v5l5 2.5" />
+    <path d="M17 8.5v5l-5 2.5" />
+    <path d="M12 6v-2" />
+    <path d="M12 19.5V18" />
+  </>,
+);
+
+export const ThermalScannerIcon = createIcon(
+  <>
+    <rect x="5" y="4.5" width="14" height="15" rx="3" />
+    <circle cx="12" cy="12" r="3.5" />
+    <path d="M9.5 12a2.5 2.5 0 0 1 5 0" />
+    <path d="M8 7.5h8" />
+    <path d="M10 19.5h4" />
+  </>,
+);
+
+export const ElectromagneticFieldIcon = createIcon(
+  <>
+    <path d="M5 12c0-4.4 3.1-8 7-8s7 3.6 7 8" />
+    <path d="M5 12c0 4.4 3.1 8 7 8s7-3.6 7-8" />
+    <circle cx="12" cy="12" r="2.5" />
+    <path d="M12 4V2" />
+    <path d="M12 22v-2" />
+  </>,
+);
+
+export const FitnessAssessmentIcon = createIcon(
+  <>
+    <path d="M6 7.5 12 4l6 3.5v4.5c0 3.2-1.9 6-6 7.7-4.1-1.7-6-4.5-6-7.7Z" />
+    <path d="M9 12.5 12 15l3-2.5" />
+    <path d="M9 9.5h6" />
+  </>,
+);
+
+export const RiskGaugeIcon = createIcon(
+  <>
+    <path d="M5 15.5a7 7 0 0 1 14 0V19H5Z" />
+    <path d="M12 15.5 16 10" />
+    <circle cx="12" cy="15.5" r="1.5" />
+    <path d="M8 11h2" />
+    <path d="M14 11h2" />
+  </>,
+);
+
+export const BoilerGuardIcon = createIcon(
+  <>
+    <rect x="6" y="5" width="12" height="14" rx="3" />
+    <path d="M9 5V3h6v2" />
+    <path d="M9 13h6" />
+    <path d="M9 9h6" />
+    <path d="M12 13v6" />
+  </>,
+);
+
+export const LiftingHookIcon = createIcon(
+  <>
+    <path d="M12 3a3 3 0 0 1 3 3v3.5a3 3 0 1 1-6 0V6a3 3 0 0 1 3-3Z" />
+    <path d="M12 12v4c0 1.6 1.3 3 3 3h2" />
+    <path d="M7 21h6" />
+    <path d="M9 16h2" />
+  </>,
+);
+
+export const GasMonitorIcon = createIcon(
+  <>
+    <rect x="6" y="4" width="12" height="16" rx="3" />
+    <circle cx="12" cy="10" r="2.5" />
+    <path d="M9 15h6" />
+    <path d="M11 7h2" />
+    <path d="M10 20h4" />
+  </>,
+);
+
+export const PressureSealIcon = createIcon(
+  <>
+    <circle cx="12" cy="12" r="7" />
+    <path d="M12 5v14" />
+    <path d="M5 12h14" />
+    <path d="M9 9l3 3 3-3" />
+    <path d="M9 15l3-3 3 3" />
+  </>,
+);
+
+export const TankFloorScanIcon = createIcon(
+  <>
+    <rect x="4" y="6.5" width="16" height="11" rx="2.5" />
+    <path d="M4 12h16" />
+    <path d="M8 16l4-4 4 4" />
+    <path d="M8 9l4 4 4-4" />
+  </>,
+);
+
+export const SphereInspectionIcon = createIcon(
+  <>
+    <circle cx="12" cy="12" r="7" />
+    <path d="M12 5a7 7 0 0 0 0 14" />
+    <path d="M12 5a7 7 0 0 1 0 14" />
+    <path d="M7 12h10" />
+    <path d="M12 7v10" />
+  </>,
+);
+
+export const HardnessMeterIcon = createIcon(
+  <>
+    <rect x="6" y="4" width="12" height="16" rx="3" />
+    <path d="M9 8h6" />
+    <path d="M9 12h6" />
+    <path d="M12 16v4" />
+    <circle cx="12" cy="12" r="2" />
+  </>,
+);
+
+export const UavSurveyIcon = createIcon(
+  <>
+    <circle cx="12" cy="12" r="2.5" />
+    <path d="M4 8h4l2 3" />
+    <path d="M20 8h-4l-2 3" />
+    <path d="M4 16h4l2-3" />
+    <path d="M20 16h-4l-2-3" />
+    <path d="M8 5l4-2 4 2" />
+    <path d="M8 19l4 2 4-2" />
+  </>,
+);
+
+export const BlueprintCompassIcon = createIcon(
+  <>
+    <rect x="4" y="5" width="16" height="14" rx="2.5" />
+    <path d="M8 5v14" />
+    <path d="M16 5v14" />
+    <circle cx="12" cy="12" r="2.5" />
+    <path d="M12 9v6" />
+    <path d="M6 9h2" />
+    <path d="M16 9h2" />
+  </>,
+);
+
+export const ProcurementFlowIcon = createIcon(
+  <>
+    <rect x="4.5" y="6" width="15" height="12" rx="2.5" />
+    <path d="M7.5 9h4.5l1.5 2-1.5 2H7.5Z" />
+    <path d="M15.5 9.5a2.5 2.5 0 1 1 0 5" />
+    <path d="M15.5 9.5v5" />
+  </>,
+);
+
+export const FabricationBeamIcon = createIcon(
+  <>
+    <rect x="4" y="7" width="16" height="10" rx="2" />
+    <path d="M4 9h16" />
+    <path d="M4 15h16" />
+    <path d="M8 19v2" />
+    <path d="M16 19v2" />
+  </>,
+);
+
+export const StructureLiftIcon = createIcon(
+  <>
+    <path d="M5 18h14" />
+    <path d="M7 18V9l5-4 5 4v9" />
+    <path d="M7 13h10" />
+    <path d="M12 5V3" />
+    <path d="M9 21h6" />
+  </>,
+);
+
+export const WeldingArcIcon = createIcon(
+  <>
+    <path d="M5 15c0-3.9 3.1-7 7-7s7 3.1 7 7" />
+    <path d="M5 15c0 3.9 3.1 7 7 7s7-3.1 7-7" />
+    <path d="M7 12h10" />
+    <path d="M9 9 12 6l3 3" />
+    <path d="M9 18l3 3 3-3" />
+  </>,
+);
+
+export const SurfaceTreatmentIcon = createIcon(
+  <>
+    <rect x="4" y="6" width="16" height="12" rx="3" />
+    <path d="M7 10h10" />
+    <path d="M7 14h6" />
+    <path d="M11 6V4h2v2" />
+    <path d="M11 18v2h2v-2" />
+  </>,
+);
+
+// Custom industry icons
+export const EnergyReservoirIcon = createIcon(
+  <>
+    <path d="M6 7.5 12 4l6 3.5v4.5c0 3.2-2 6-6 7.7-4-1.7-6-4.5-6-7.7Z" />
+    <path d="M12 8.5v7" />
+    <path d="M9.5 13.5 12 11l2.5 2.5" />
+    <path d="M9 6h6" />
+  </>,
+);
+
+export const TerminalLogisticsIcon = createIcon(
+  <>
+    <rect x="5" y="6" width="14" height="12" rx="3" />
+    <path d="M5 12h14" />
+    <path d="M8 9h4l1.5 3L15 9h4" />
+    <path d="M8 15h2" />
+    <path d="M14 15h2" />
+  </>,
+);
+
+export const FoodProcessIcon = createIcon(
+  <>
+    <circle cx="9" cy="12" r="3" />
+    <path d="M11 9 16 5" />
+    <path d="M13 11 19 7" />
+    <path d="M13 15h6" />
+    <path d="M5 14a4 4 0 0 0 4 4h10" />
+  </>,
+);
+
+export const RenewableCycleIcon = createIcon(
+  <>
+    <circle cx="12" cy="12" r="6.5" />
+    <path d="M12 5.5V3" />
+    <path d="M12 21v-2.5" />
+    <path d="M18.5 12H21" />
+    <path d="M3 12h2.5" />
+    <path d="M9 9l3-4 3 4" />
+    <path d="M9 15l3 4 3-4" />
+  </>,
+);
+
+export const RailNetworkIcon = createIcon(
+  <>
+    <path d="M5 18h14" />
+    <rect x="7" y="5" width="10" height="10" rx="2.5" />
+    <path d="M9 9h6" />
+    <path d="M9 12h6" />
+    <path d="M7 15l-2 3" />
+    <path d="M17 15l2 3" />
+  </>,
+);
+
+export const MarineLogisticsIcon = createIcon(
+  <>
+    <path d="M4 6h16l-2 6a6 6 0 0 1-12 0Z" />
+    <path d="M6 18s2 2 6 2 6-2 6-2" />
+    <path d="M9 10h6" />
+    <path d="M12 6V3" />
+    <path d="M8 14h8" />
+  </>,
+);
+

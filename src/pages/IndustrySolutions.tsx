@@ -1,11 +1,10 @@
 import {
-  FactoryIcon as Factory,
-  DropletsIcon as Droplets,
-  ZapIcon as Zap,
-  ShipIcon as Ship,
-  BuildingIcon as Building2,
-  TruckIcon as Truck,
-  FuelIcon as Fuel,
+  EnergyReservoirIcon,
+  TerminalLogisticsIcon,
+  FoodProcessIcon,
+  RenewableCycleIcon,
+  RailNetworkIcon,
+  MarineLogisticsIcon,
 } from "@/components/ui/icons";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -20,7 +19,7 @@ import shippingMarineImg from "@/assets/shipping-marine.png";
 const IndustrySolutions = () => {
   const industries = [
     {
-      icon: Droplets,
+      icon: EnergyReservoirIcon,
       title: "Oil & Gas Industry",
       image: oilGasImg,
       assetsCovered: "Storage tanks, sphere tanks, pressure vessels, pipelines, marine terminals, FPSOs",
@@ -42,7 +41,7 @@ const IndustrySolutions = () => {
       whyItMatters: "At Murban Engineering, we offer industry-leading inspection and integrity solutions tailored to the critical demands of the oil and gas sector. Our services span upstream, midstream, and downstream operations—from pipeline and pressure vessel inspections to storage tank calibration and corrosion assessment. Using advanced techniques like Phased Array Ultrasonic Testing (PAUT), Magnetic Flux Leakage (MFL), and Risk-Based Inspection (RBI), we help oil and gas operators extend asset life, avoid unplanned outages, and meet the highest standards of safety and compliance.",
     },
     {
-      icon: Building2,
+      icon: TerminalLogisticsIcon,
       title: "Storage and Logistic Terminals",
       image: storageTerminalsImg,
       assetsCovered: "Bulk liquid tanks, LPG spheres, loading lines, depot infrastructure",
@@ -61,7 +60,7 @@ const IndustrySolutions = () => {
       whyItMatters: "Bulk liquid and fuel terminals are complex facilities that demand accurate calibration, corrosion monitoring, and tank integrity assurance. Murban Engineering provides comprehensive solutions for tank farms, depots, and LPG storage facilities using technologies like 3D laser scanning, UAV-based inspections, and API 653-compliant tank assessments. Our goal is to help operators maintain regulatory compliance, safeguard stored products, and optimize infrastructure performance across the entire terminal lifecycle.",
     },
     {
-      icon: Factory,
+      icon: FoodProcessIcon,
       title: "Food Processing Industry",
       image: foodProcessingImg,
       assetsCovered: "Stainless tanks, pressure vessels, food-grade pipelines, steam boilers",
@@ -76,7 +75,7 @@ const IndustrySolutions = () => {
       whyItMatters: "In food and beverage processing, cleanliness, accuracy, and structural integrity are non negotiable. Murban supports this industry with non-contaminating inspection techniques, volumetric tank calibration, and material identification suited for food grade environments. Whether it's ensuring weld quality in stainless vessels or verifying tank geometry for accurate mixing and batching, we bring precision, hygiene-compliant methods, and peace of mind to food manufacturers.",
     },
     {
-      icon: Zap,
+      icon: RenewableCycleIcon,
       title: "Renewable Energy & Geothermal",
       image: renewableEnergyImg,
       assetsCovered: "Geothermal drilling rigs, solar plants, wind support structures",
@@ -91,7 +90,7 @@ const IndustrySolutions = () => {
       whyItMatters: "The renewable energy sector is expanding rapidly, and so is the need for safe, reliable, and long-lasting infrastructure. At Murban, we offer targeted inspection services for geothermal rigs, solar installations, and wind structures. From flaw detection in rig welds to thermal imaging of solar panels and structural surveys using UAVs and laser scanning, we ensure your green energy systems are safe, efficient, and compliant with modern engineering codes.",
     },
     {
-      icon: Truck,
+      icon: RailNetworkIcon,
       title: "Rail Industry",
       image: railIndustryImg,
       assetsCovered: "Rail wagons, bogies, bridges, storage depots, fuel tanks",
@@ -107,7 +106,7 @@ const IndustrySolutions = () => {
       whyItMatters: "Railway infrastructure must meet the demands of heavy loads, constant vibration, and dynamic stresses. Murban provides specialized inspection and certification services for railcars, bridges, depots, and fuel wagons. Our techniques—ranging from ultrasonic and radiographic testing to tank calibration and corrosion inspection—help operators ensure safety, prevent failures, and maintain smooth operations across the rail network.",
     },
     {
-      icon: Ship,
+      icon: MarineLogisticsIcon,
       title: "Shipping & Marine Industry",
       image: shippingMarineImg,
       assetsCovered: "Cargo tanks, ballast tanks, marine pipelines, ship hulls, offshore loading arms, vessel pressure systems, tankers, offshore platforms",
