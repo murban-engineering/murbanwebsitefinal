@@ -6,9 +6,15 @@ interface TypingAnimationProps {
   speed?: number;
 }
 
-const TypingAnimation = ({ text, className = "", speed = 100 }: TypingAnimationProps) => {
+const TypingAnimation = ({ text, className = "", speed = 50 }: TypingAnimationProps) => {
   const [displayedText, setDisplayedText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Reset animation when component mounts or text changes
+  useEffect(() => {
+    setDisplayedText("");
+    setCurrentIndex(0);
+  }, [text]);
 
   useEffect(() => {
     if (currentIndex < text.length) {
