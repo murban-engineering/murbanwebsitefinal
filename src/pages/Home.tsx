@@ -219,7 +219,7 @@ const Home = () => {
               </div>
               <div className="space-y-6">
                 <h1 className="text-left font-serif text-4xl font-bold leading-tight sm:text-5xl md:text-6xl lg:text-7xl">
-                  <TypingAnimation text="Murban Engineering" speed={40} className="text-foreground" enableSound={false} />
+                  <TypingAnimation text="Murban Engineering" speed={40} className="text-foreground" />
                 </h1>
                 <p className="max-w-2xl text-lg text-muted-foreground md:text-xl">
                   Murban Engineering blends structural, MEP and advisory expertise to deliver iconic developments, resilient infrastructure and immersive experiences across the continent.
@@ -258,9 +258,9 @@ const Home = () => {
               <div className="absolute -inset-6 rounded-[36px] bg-gradient-to-br from-primary/25 via-primary/10 to-background blur-3xl" />
               <div className="relative overflow-hidden rounded-[32px] border border-foreground/10 bg-background/85 shadow-2xl backdrop-blur">
                 <img src={teamImage} alt="Collaborative engineering team" className="h-96 w-full object-cover" />
-                <div className="absolute bottom-5 left-5 right-5 rounded-3xl border border-border/50 bg-card/95 p-5 backdrop-blur">
-                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Real-time oversight</p>
-                  <p className="mt-2 text-base font-semibold text-foreground">
+                <div className="absolute bottom-5 left-5 right-5 rounded-3xl border border-white/20 bg-white/80 p-5 text-secondary backdrop-blur">
+                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-secondary">Real-time oversight</p>
+                  <p className="mt-2 text-base font-semibold text-secondary">
                     Command centre dashboards orchestrating every workstream across your portfolio.
                   </p>
                 </div>
@@ -433,9 +433,9 @@ const Home = () => {
               <div className="absolute -inset-8 rounded-3xl bg-gradient-to-br from-primary/20 via-foreground/5 to-background blur-2xl" />
               <div className="relative overflow-hidden rounded-3xl border border-foreground/10 shadow-2xl">
                 <img src={projectImage} alt="Featured project" className="h-full w-full object-cover" />
-                <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-border/50 bg-card/95 p-6 shadow-lg backdrop-blur-md">
-                  <p className="text-sm font-semibold uppercase tracking-wide text-primary">Trusted delivery partners</p>
-                  <p className="mt-2 text-lg font-semibold text-foreground">
+                <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/20 bg-white/80 p-6 text-secondary shadow-lg backdrop-blur-md">
+                  <p className="text-sm font-semibold uppercase tracking-wide text-secondary">Trusted delivery partners</p>
+                  <p className="mt-2 text-lg font-semibold text-secondary">
                     Seamless collaboration from masterplanning to commissioning and ongoing optimization.
                   </p>
                 </div>
