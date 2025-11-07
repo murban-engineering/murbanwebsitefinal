@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   IntegrityShieldIcon,
   CalibrationGaugeIcon,
@@ -1981,6 +1982,20 @@ export const getServiceDetailBySlug = (slug: string) => {
 
 const Services = () => {
   const navigate = useNavigate();
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+
+  const categories = ["All", "NDT Inspection", "API Certifications", "Advanced Testing", "Engineering Services"];
+
+  const getServiceCategory = (title: string): string => {
+    if (title.includes("API")) return "API Certifications";
+    if (title.includes("Fabrication") || title.includes("Engineering") || title.includes("Welding") || title.includes("Construction")) return "Engineering Services";
+    if (title.includes("Phased Array") || title.includes("3D") || title.includes("UAV") || title.includes("Thermal") || title.includes("Laser")) return "Advanced Testing";
+    return "NDT Inspection";
+  };
+
+  const filteredServices = selectedCategory === "All" 
+    ? allServices 
+    : allServices.filter(service => getServiceCategory(service.title) === selectedCategory);
 
   return (
     <div className="min-h-screen pt-20 bg-background relative">
@@ -2041,12 +2056,26 @@ const Services = () => {
             </p>
           </div>
 
+          {/* Category Filter */}
+          <div className="mb-8 flex flex-wrap justify-center gap-3">
+            {categories.map((category) => (
+              <Button
+                key={category}
+                variant={selectedCategory === category ? "default" : "outline"}
+                onClick={() => setSelectedCategory(category)}
+                className="rounded-full"
+              >
+                {category}
+              </Button>
+            ))}
+          </div>
+
           <div className="mb-6 flex items-center justify-between text-muted-foreground">
             <span className="text-sm uppercase tracking-[0.2em]">Service Cards</span>
-            <span className="text-sm">{allServices.length} services</span>
+            <span className="text-sm">{filteredServices.length} services</span>
           </div>
           <div className="services-grid services-grid--selectable">
-            {allServices.map((service) => (
+            {filteredServices.map((service) => (
               <ServiceCard
                 key={service.title}
                 icon={service.icon}

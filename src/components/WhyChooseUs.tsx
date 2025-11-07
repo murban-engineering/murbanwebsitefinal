@@ -1,4 +1,5 @@
 import { CheckCircleIcon } from "@/components/ui/icons";
+import teamImage from "@/assets/team-collaboration.jpg";
 
 const WhyChooseUs = () => {
   const reasons = [
@@ -16,7 +17,7 @@ const WhyChooseUs = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in order-2 lg:order-1">
             <img
-              src="https://images.unsplash.com/photo-1581094794329-c8112c4e5190?auto=format&fit=crop&q=80&w=1200"
+              src={teamImage}
               alt="Industrial Equipment"
               className="rounded-lg shadow-xl w-full h-auto"
             />

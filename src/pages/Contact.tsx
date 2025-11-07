@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import {
   MailIcon as Mail,
   PhoneIcon as Phone,
@@ -9,32 +9,95 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
 import { DottedSurface } from "@/components/ui/dotted-surface";
 
+const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
+const ACCEPTED_FILE_TYPES = [
+  "application/pdf",
+  "application/msword",
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  "image/jpeg",
+  "image/png",
+  "image/jpg",
+];
+
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
   email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
+  phone: z.string().trim().max(20, "Phone must be less than 20 characters").optional(),
+  serviceType: z.string().min(1, "Please select a service type"),
   message: z.string().trim().max(1000, "Message must be less than 1000 characters").optional(),
 });
 
 const Contact = () => {
   const { toast } = useToast();
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
+    serviceType: "",
     message: "",
   });
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const serviceTypes = [
+    "NDT Inspection Services",
+    "API 653 Tank Inspection",
+    "API 510 Pressure Vessel",
+    "API 570 Piping Inspection",
+    "Phased Array Testing",
+    "3D Laser Scanning",
+    "UAV Inspection",
+    "Engineering & Fabrication",
+    "Tank Calibration",
+    "General Inquiry",
+    "Other",
+  ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-    // Clear error for this field when user starts typing
     if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: "" }));
+    }
+  };
+
+  const handleSelectChange = (value: string) => {
+    setFormData(prev => ({ ...prev, serviceType: value }));
+    if (errors.serviceType) {
+      setErrors(prev => ({ ...prev, serviceType: "" }));
+    }
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      // Validate file size
+      if (file.size > MAX_FILE_SIZE) {
+        setErrors(prev => ({ ...prev, file: "File size must be less than 10MB" }));
+        return;
+      }
+      // Validate file type
+      if (!ACCEPTED_FILE_TYPES.includes(file.type)) {
+        setErrors(prev => ({ ...prev, file: "Please upload PDF, Word document, or image files only" }));
+        return;
+      }
+      setSelectedFile(file);
+      setErrors(prev => ({ ...prev, file: "" }));
+    }
+  };
+
+  const handleRemoveFile = () => {
+    setSelectedFile(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
     }
   };
 
@@ -56,7 +119,11 @@ const Contact = () => {
       });
 
       // Reset form
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ name: "", email: "", phone: "", serviceType: "", message: "" });
+      setSelectedFile(null);
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
     } catch (error) {
       if (error instanceof z.ZodError) {
         const fieldErrors: Record<string, string> = {};
@@ -166,7 +233,9 @@ const Contact = () => {
                 <h2 className="text-3xl font-serif font-bold mb-6">Send Us a Message</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
+                    <Label htmlFor="name">Name *</Label>
                     <Input
+                      id="name"
                       name="name"
                       placeholder="Your name"
                       value={formData.name}
@@ -178,7 +247,9 @@ const Contact = () => {
                     )}
                   </div>
                   <div>
+                    <Label htmlFor="email">Email *</Label>
                     <Input
+                      id="email"
                       name="email"
                       type="email"
                       placeholder="Your email"
@@ -191,9 +262,44 @@ const Contact = () => {
                     )}
                   </div>
                   <div>
+                    <Label htmlFor="phone">Phone (Optional)</Label>
+                    <Input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      placeholder="Your phone number"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className={errors.phone ? "border-destructive" : ""}
+                    />
+                    {errors.phone && (
+                      <p className="text-destructive text-sm mt-1">{errors.phone}</p>
+                    )}
+                  </div>
+                  <div>
+                    <Label htmlFor="serviceType">Service Type *</Label>
+                    <Select value={formData.serviceType} onValueChange={handleSelectChange}>
+                      <SelectTrigger className={errors.serviceType ? "border-destructive" : ""}>
+                        <SelectValue placeholder="Select a service" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {serviceTypes.map((service) => (
+                          <SelectItem key={service} value={service}>
+                            {service}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    {errors.serviceType && (
+                      <p className="text-destructive text-sm mt-1">{errors.serviceType}</p>
+                    )}
+                  </div>
+                  <div>
+                    <Label htmlFor="message">Message (Optional)</Label>
                     <Textarea
+                      id="message"
                       name="message"
-                      placeholder="Your message (optional)"
+                      placeholder="Tell us about your project or inquiry"
                       rows={6}
                       value={formData.message}
                       onChange={handleChange}
@@ -202,6 +308,52 @@ const Contact = () => {
                     {errors.message && (
                       <p className="text-destructive text-sm mt-1">{errors.message}</p>
                     )}
+                  </div>
+                  <div>
+                    <Label htmlFor="file">Attach File (Optional)</Label>
+                    <div className="mt-2">
+                      <input
+                        ref={fileInputRef}
+                        id="file"
+                        type="file"
+                        accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+                        onChange={handleFileChange}
+                        className="hidden"
+                      />
+                      {!selectedFile ? (
+                        <Button
+                          type="button"
+                          variant="outline"
+                          onClick={() => fileInputRef.current?.click()}
+                          className="w-full"
+                        >
+                          Upload Document or Image
+                        </Button>
+                      ) : (
+                        <div className="flex items-center justify-between p-3 border border-border rounded-lg">
+                          <div className="flex items-center gap-2">
+                            <span className="text-sm">{selectedFile.name}</span>
+                            <span className="text-xs text-muted-foreground">
+                              ({(selectedFile.size / 1024 / 1024).toFixed(2)} MB)
+                            </span>
+                          </div>
+                          <Button
+                            type="button"
+                            variant="ghost"
+                            size="sm"
+                            onClick={handleRemoveFile}
+                          >
+                            Remove
+                          </Button>
+                        </div>
+                      )}
+                      <p className="text-xs text-muted-foreground mt-1">
+                        PDF, Word, or images up to 10MB
+                      </p>
+                      {errors.file && (
+                        <p className="text-destructive text-sm mt-1">{errors.file}</p>
+                      )}
+                    </div>
                   </div>
                   <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
                     {isSubmitting ? "Sending..." : "Send Message"}
