@@ -4,10 +4,7 @@ import {
   BuildingIcon as Building2,
   CheckCircleIcon as CheckCircle2,
   CompassIcon as Compass,
-  FactoryIcon as Factory,
-  GlobeAltIcon as Globe2,
   LayersIcon as Layers,
-  LeafIcon as Leaf,
   LightbulbIcon as Lightbulb,
   ShieldIcon as Shield,
   SparklesIcon as Sparkles,
@@ -19,7 +16,6 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { AnimatedText } from "@/components/ui/animated-underline-text-one";
 import { DottedSurface } from "@/components/ui/dotted-surface";
 import TypingAnimation from "@/components/TypingAnimation";
 import projectImage from "@/assets/project-showcase.jpg";
@@ -28,8 +24,6 @@ import totalenergiesLogo from "@/assets/totalenergies-logo.png";
 import kengenLogo from "@/assets/kengen-logo.png";
 import bolloreLogo from "@/assets/bollore-logo.png";
 import kpcLogo from "@/assets/kpc-logo.png";
-import { cn } from "@/lib/utils";
-
 const Home = () => {
   const services = [
     {
@@ -96,27 +90,6 @@ const Home = () => {
       icon: Shield,
       title: "Resilient systems",
       description: "High-performance structures and MEP solutions engineered to adapt, scale and thrive.",
-    },
-  ];
-
-  const focusAreas = [
-    {
-      icon: Leaf,
-      title: "Regenerative design",
-      description: "Climate-positive strategies embedded into every structure, campus and public realm we touch.",
-      metric: "57% average operational carbon reduction",
-    },
-    {
-      icon: Factory,
-      title: "Industrial evolution",
-      description: "Modernising plants and logistics hubs with predictive maintenance, automation and resilient utilities.",
-      metric: "14 active markets across Africa",
-    },
-    {
-      icon: Globe2,
-      title: "Connected infrastructure",
-      description: "Digital twins, remote oversight and data-rich dashboards for mission-critical delivery programmes.",
-      metric: "Live intelligence across every project stage",
     },
   ];
 
@@ -293,33 +266,6 @@ const Home = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Focus Areas Section */}
-      <section className="-mt-28 pb-16 sm:-mt-32 sm:pb-24">
-        <div className="container mx-auto px-4">
-          <div className="grid gap-6 md:grid-cols-3">
-            {focusAreas.map((area) => (
-              <div
-                key={area.title}
-                className="group relative overflow-hidden rounded-3xl border border-foreground/10 bg-background/95 p-6 shadow-lg shadow-primary/10 backdrop-blur"
-              >
-                <div className="absolute inset-0 opacity-0 transition-all duration-500 group-hover:opacity-100">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-secondary/20" />
-                  <div className="absolute -right-8 -top-12 h-32 w-32 rounded-full bg-primary/10 blur-2xl" />
-                </div>
-                <div className="relative flex h-full flex-col gap-4">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/15 text-primary">
-                    <area.icon className="h-6 w-6" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-foreground">{area.title}</h3>
-                  <p className="text-sm text-muted-foreground">{area.description}</p>
-                  <div className="mt-auto text-sm font-semibold text-primary">{area.metric}</div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
