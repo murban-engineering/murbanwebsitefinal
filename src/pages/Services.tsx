@@ -2010,6 +2010,14 @@ const Services = () => {
         id="services-hero"
         className="relative overflow-hidden py-24 text-secondary-foreground"
       >
+        <div className="absolute inset-0">
+          <img
+            src="/_MG_2642 - Copy (2).jpg"
+            alt="Technicians delivering Murban engineering services"
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-primary/70" aria-hidden="true" />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/60 to-secondary/80" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.25),_transparent_55%)]" />
         <div className="container relative z-10 mx-auto px-4 text-center">
