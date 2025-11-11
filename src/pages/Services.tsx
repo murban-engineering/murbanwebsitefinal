@@ -2016,9 +2016,8 @@ const Services = () => {
             alt="Technicians delivering Murban engineering services"
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-primary/70" aria-hidden="true" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/60 to-secondary/80" />
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950/75 via-slate-900/50 to-slate-800/40" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.25),_transparent_55%)]" />
         <div className="container relative z-10 mx-auto px-4 text-center">
           <Badge className="mb-6 border border-white/40 bg-white/20 text-secondary-foreground backdrop-blur-sm">
