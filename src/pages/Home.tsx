@@ -22,8 +22,6 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import { AnimatedText } from "@/components/ui/animated-underline-text-one";
 import { DottedSurface } from "@/components/ui/dotted-surface";
 import TypingAnimation from "@/components/TypingAnimation";
-import heroImage from "@/assets/hero-engineering.jpg";
-import teamImage from "@/assets/team-collaboration.jpg";
 import projectImage from "@/assets/project-showcase.jpg";
 import Testimonials from "@/components/Testimonials";
 import totalenergiesLogo from "@/assets/totalenergies-logo.png";
@@ -203,16 +201,11 @@ const Home = () => {
         </div>
         {/* Hero Section */}
         <section className="relative overflow-hidden pt-20 pb-48 sm:pt-24 sm:pb-56">
-        <div className="absolute inset-0">
-          <img src={heroImage} alt="Engineering excellence" className="h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-br from-background/85 via-background/80 to-background/95" />
-          <div className="absolute inset-0 mix-blend-overlay bg-gradient-mesh opacity-60" />
           <div className="absolute -top-40 -right-32 h-[420px] w-[420px] rounded-full bg-primary/25 blur-3xl" />
           <div className="absolute -bottom-24 -left-20 h-80 w-80 rounded-full bg-secondary/30 blur-3xl" />
-        </div>
 
-        <div className="relative z-10 container mx-auto px-4">
-          <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1fr)_420px]">
+          <div className="relative z-10 container mx-auto px-4">
+            <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1fr)_420px]">
             <div className="space-y-10">
               <div className="inline-flex items-center gap-3 rounded-full border border-foreground/10 bg-foreground/5 px-6 py-2 text-xs font-semibold uppercase tracking-[0.3em] backdrop-blur">
                 <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" /> Next era engineering partner
@@ -257,7 +250,18 @@ const Home = () => {
             <div className="relative">
               <div className="absolute -inset-6 rounded-[36px] bg-gradient-to-br from-primary/25 via-primary/10 to-background blur-3xl" />
               <div className="relative overflow-hidden rounded-[32px] border border-foreground/10 bg-background/85 shadow-2xl backdrop-blur">
-                <img src={teamImage} alt="Collaborative engineering team" className="h-96 w-full object-cover" />
+                <div
+                  className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background/70 to-background"
+                  aria-hidden="true"
+                />
+                <div className="absolute -top-10 -left-8 h-40 w-40 rounded-full bg-primary/20 blur-3xl" />
+                <div className="absolute -bottom-12 -right-10 h-48 w-48 rounded-full bg-secondary/25 blur-3xl" />
+                <div className="relative flex h-96 flex-col items-center justify-center gap-4 text-center">
+                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Immersive collaboration</p>
+                  <p className="max-w-[260px] text-sm text-muted-foreground">
+                    Human-centred engineering partnerships powered by real-time project intelligence.
+                  </p>
+                </div>
                 <div className="absolute bottom-5 left-5 right-5 rounded-3xl border border-border bg-card/95 p-5 backdrop-blur">
                   <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Real-time oversight</p>
                   <p className="mt-2 text-base font-semibold text-card-foreground">
