@@ -351,6 +351,40 @@ export const fabricationServices: ServiceItem[] = fabricationServiceItems.map((s
 
 export const allServices: ServiceItem[] = [...ndtServices, ...fabricationServices];
 
+const serviceBySlug = new Map(allServices.map((service) => [service.slug, service]));
+
+const serviceSlugAliasMap: Record<string, string> = {
+  [createServiceSlug("API 653 Above Ground Storage Tank Inspection")]: createServiceSlug(
+    "API 653 Aboveground Storage Tank Inspection and Certification",
+  ),
+  [createServiceSlug("API 580 Murban Risk Based Service")]: createServiceSlug(
+    "API 580 Murban Risk Based Inspection",
+  ),
+  [createServiceSlug("API 580 Murban Risked Based Service")]: createServiceSlug(
+    "API 580 Murban Risk Based Inspection",
+  ),
+  [createServiceSlug("Boiler Inspection Service")]: createServiceSlug(
+    "Boiler Inspection Services",
+  ),
+  [createServiceSlug("Lifting Equipment Through Examination and Certification")]:
+    createServiceSlug("Lifting Equipment Thorough Examination and Certification"),
+  [createServiceSlug("Paint and Coating Inspection")]: createServiceSlug(
+    "Paint & Coating Inspection",
+  ),
+  [createServiceSlug("PMI Testing")]: createServiceSlug(
+    "Positive Material Identification Testing",
+  ),
+  [createServiceSlug("Pressure Testing")]: createServiceSlug("Murban Pressure Testing"),
+  [createServiceSlug("Gas Detection")]: createServiceSlug("Murban Gas Detection"),
+  [createServiceSlug("UAV Drone Inspection")]: createServiceSlug("Murban UAV Inspection"),
+  [createServiceSlug("API 570 Piping Inspection")]: createServiceSlug(
+    "API 570 Piping Inspection and Certification",
+  ),
+  [createServiceSlug("Paint & Coating Inspection")]: createServiceSlug(
+    "Paint & Coating Inspection",
+  ),
+};
+
 export const serviceDetails: Record<string, ServiceDetail> = {
   "NDT Inspection Services": {
     label: "Comprehensive NDT Programs",
@@ -1972,8 +2006,28 @@ export const serviceDetails: Record<string, ServiceDetail> = {
   },
 };
 
-export const getServiceBySlug = (slug: string) =>
-  allServices.find((service) => service.slug === slug);
+export const getServiceBySlug = (slug: string) => serviceBySlug.get(slug);
+
+export const getServiceSlugForName = (name: string) => {
+  const normalized = name.trim();
+  if (!normalized) return undefined;
+
+  const baseSlug = createServiceSlug(normalized);
+  if (serviceBySlug.has(baseSlug)) {
+    return baseSlug;
+  }
+
+  const aliasSlug = serviceSlugAliasMap[baseSlug];
+  if (aliasSlug && serviceBySlug.has(aliasSlug)) {
+    return aliasSlug;
+  }
+
+  const directMatch = allServices.find(
+    (service) => service.title.toLowerCase() === normalized.toLowerCase(),
+  );
+
+  return directMatch?.slug;
+};
 
 export const getServiceDetailBySlug = (slug: string) => {
   const service = getServiceBySlug(slug);

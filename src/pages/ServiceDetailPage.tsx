@@ -2,11 +2,7 @@ import { ArrowLeftIcon, ArrowRightIcon } from "@/components/ui/icons";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  createServiceSlug,
-  getServiceBySlug,
-  getServiceDetailBySlug,
-} from "./Services";
+import { getServiceBySlug, getServiceDetailBySlug, getServiceSlugForName } from "./Services";
 
 const ServiceDetailPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -31,8 +27,8 @@ const ServiceDetailPage = () => {
     : [];
 
   const relatedEntries = (detail?.relatedServices ?? []).map((name) => {
-    const relatedSlug = createServiceSlug(name);
-    const relatedService = getServiceBySlug(relatedSlug);
+    const relatedSlug = getServiceSlugForName(name);
+    const relatedService = relatedSlug ? getServiceBySlug(relatedSlug) : undefined;
 
     return {
       name,
@@ -101,15 +97,29 @@ const ServiceDetailPage = () => {
                 {section.title}
               </h2>
               <ul className="space-y-3 text-base text-muted-foreground">
-                {section.items.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span
-                      className="mt-1 inline-flex h-2 w-2 rounded-full bg-primary"
-                      aria-hidden="true"
-                    />
-                    <span>{item}</span>
-                  </li>
-                ))}
+                {section.items.map((item) => {
+                  const itemSlug = getServiceSlugForName(item);
+                  const itemService = itemSlug ? getServiceBySlug(itemSlug) : undefined;
+
+                  return (
+                    <li key={item} className="flex items-start gap-3">
+                      <span
+                        className="mt-1 inline-flex h-2 w-2 rounded-full bg-primary"
+                        aria-hidden="true"
+                      />
+                      {itemService ? (
+                        <Link
+                          to={`/services/${itemSlug}`}
+                          className="font-medium text-foreground underline decoration-primary/60 decoration-2 underline-offset-4 transition hover:text-primary"
+                        >
+                          {item}
+                        </Link>
+                      ) : (
+                        <span>{item}</span>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </section>
           ))}
