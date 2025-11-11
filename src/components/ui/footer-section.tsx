@@ -63,7 +63,7 @@ const socialLinks = [
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/",
+    href: "https://ke.linkedin.com/company/murban-engineering",
     icon: LinkedinIcon,
     tooltip: "Connect with us on LinkedIn",
   },
