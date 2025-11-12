@@ -5,11 +5,9 @@ import {
   RenewableCycleIcon,
   RailNetworkIcon,
   MarineLogisticsIcon,
-  CheckCircleIcon,
 } from "@/components/ui/icons";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import oilGasImg from "@/assets/oil-gas-industry.png";
 import storageTerminalsImg from "@/assets/storage-terminals.png";
@@ -17,8 +15,6 @@ import foodProcessingImg from "@/assets/food-processing.png";
 import renewableEnergyImg from "@/assets/renewable-energy.png";
 import railIndustryImg from "@/assets/rail-industry.png";
 import shippingMarineImg from "@/assets/shipping-marine.png";
-import heroBackground from "@/assets/field-work-2.jpg";
-import fieldWork3 from "@/assets/field-work-3.jpg";
 
 const IndustrySolutions = () => {
   const industries = [
@@ -170,62 +166,21 @@ const IndustrySolutions = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative py-32 overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src={heroBackground}
-            alt="Industrial infrastructure"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/85 to-background/90"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-transparent to-background/20"></div>
-        </div>
-        
-        {/* Animated gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5 animate-pulse"></div>
-        
-        {/* Content */}
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <Badge className="mb-6 px-4 py-2 text-sm font-semibold uppercase tracking-wider">
-            Industry Expertise
-          </Badge>
-          <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 drop-shadow-lg animate-fade-in">
+      <section className="py-20 bg-gradient-hero text-secondary-foreground">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6">
             Industry Solutions
           </h1>
-          
-          {/* Divider Line */}
-          <div className="flex items-center justify-center gap-3 mb-8">
-            <div className="h-px w-12 bg-primary"></div>
-            <CheckCircleIcon className="h-5 w-5 text-primary" />
-            <div className="h-px w-12 bg-primary"></div>
-          </div>
-          
-          <p className="text-xl md:text-2xl text-foreground/90 max-w-3xl mx-auto mb-10 leading-relaxed">
+          <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto">
             Tailored inspection and integrity solutions for diverse industries across Africa
           </p>
-          
-          {/* CTAs */}
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <Button size="lg" className="rounded-full shadow-xl hover:scale-105 transition-transform" asChild>
-              <Link to="/contact">
-                Get Started Today →
-              </Link>
-            </Button>
-            <Button size="lg" variant="outline" className="rounded-full shadow-lg hover:scale-105 transition-transform" asChild>
-              <a href="#industries">
-                View Industries
-              </a>
-            </Button>
-          </div>
         </div>
       </section>
 
-      {/* Industries We Serve */}
-      <section id="industries" className="py-24 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
-            <Badge className="mb-4 px-4 py-2">Our Expertise</Badge>
+      {/* Industries Grid */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">
               Industries We Serve
             </h2>
@@ -234,100 +189,65 @@ const IndustrySolutions = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="space-y-12">
             {industries.map((industry, index) => (
-              <Card 
-                key={index} 
-                className="group hover:shadow-2xl hover:scale-105 transition-all duration-300 overflow-hidden border-border bg-card animate-fade-in cursor-pointer"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {/* Image */}
-                <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={industry.image} 
-                    alt={industry.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+              <Card key={index} className="group transition-shadow duration-300 border-border overflow-hidden bg-card/50 backdrop-blur-sm shadow-md hover:shadow-lg">
+                <div className="grid md:grid-cols-5 gap-0">
+                  {/* Image Section with Title Overlay */}
+                  <div className="md:col-span-2 relative h-96 md:h-auto overflow-hidden">
+                    <img 
+                      src={industry.image} 
+                      alt={industry.title}
+                      className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500"
+                    />
+                    {/* Glossy overlay gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    
+                    {/* Title and Icon on Image */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6 flex flex-col items-center text-center">
+                      <div className="mb-3 inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary backdrop-blur-md border border-primary shadow-lg">
+                        <industry.icon className="h-7 w-7 text-primary-foreground" />
+                      </div>
+                      <CardTitle className="text-xl font-serif text-white font-bold">{industry.title}</CardTitle>
+                    </div>
+                  </div>
                   
-                  {/* Icon */}
-                  <div className="absolute top-4 right-4 p-3 rounded-xl bg-primary/90 backdrop-blur-sm border border-primary shadow-lg">
-                    <industry.icon className="h-6 w-6 text-primary-foreground" />
+                  {/* Content Section */}
+                  <div className="md:col-span-3 p-6 bg-gradient-to-br from-card via-card to-card/80">
+                    <div className="space-y-5">
+                      <div>
+                        <h4 className="text-base font-semibold mb-2 text-primary flex items-center">
+                          <span className="w-1 h-5 bg-primary mr-2 rounded-full"></span>
+                          Assets Covered
+                        </h4>
+                        <p className="text-sm text-muted-foreground pl-3">{industry.assetsCovered}</p>
+                      </div>
+                      
+                      <div>
+                        <h4 className="text-base font-semibold mb-2 text-primary flex items-center">
+                          <span className="w-1 h-5 bg-primary mr-2 rounded-full"></span>
+                          Key Services
+                        </h4>
+                        <div className="grid sm:grid-cols-2 gap-1.5 pl-3">
+                          {industry.services.map((service, idx) => (
+                            <div key={idx} className="flex items-start text-xs">
+                              <span className="text-primary mr-1.5 mt-0.5">•</span>
+                              <span className="leading-snug">{service}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      
+                      <div>
+                        <h4 className="text-base font-semibold mb-2 text-primary flex items-center">
+                          <span className="w-1 h-5 bg-primary mr-2 rounded-full"></span>
+                          Why It Matters
+                        </h4>
+                        <p className="text-sm text-muted-foreground leading-relaxed pl-3">{industry.whyItMatters}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                
-                <CardHeader className="pb-4">
-                  <CardTitle className="text-xl font-serif font-bold">{industry.title}</CardTitle>
-                  <CardDescription className="line-clamp-2">
-                    {industry.assetsCovered}
-                  </CardDescription>
-                </CardHeader>
-                
-                <CardContent className="pt-0">
-                  <Button variant="ghost" size="sm" className="w-full group-hover:text-primary transition-colors" asChild>
-                    <Link to="/contact">
-                      Learn More →
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5"></div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16 animate-fade-in">
-            <Badge className="mb-4 px-4 py-2">Why Murban</Badge>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">
-              Why Choose Us
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Industry-leading expertise backed by cutting-edge technology
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-            {[
-              {
-                icon: CheckCircleIcon,
-                title: "Certified Experts",
-                description: "API certified professionals with decades of combined experience in NDT and asset integrity."
-              },
-              {
-                icon: EnergyReservoirIcon,
-                title: "Advanced Technology",
-                description: "State-of-the-art equipment including PAUT, MFL, UAV systems, and 3D laser scanning."
-              },
-              {
-                icon: TerminalLogisticsIcon,
-                title: "Regional Presence",
-                description: "Operations across Africa with rapid response teams and local expertise."
-              },
-              {
-                icon: RenewableCycleIcon,
-                title: "Quality Assurance",
-                description: "Rigorous standards compliance and commitment to international safety protocols."
-              }
-            ].map((feature, index) => (
-              <Card 
-                key={index} 
-                className="text-center hover:shadow-xl transition-all duration-300 border-border bg-card/50 backdrop-blur-sm animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <CardContent className="pt-8 pb-6 px-6">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 mb-6">
-                    <feature.icon className="h-8 w-8 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-serif font-bold mb-3">{feature.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {feature.description}
-                  </p>
-                </CardContent>
               </Card>
             ))}
           </div>
@@ -373,54 +293,23 @@ const IndustrySolutions = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 relative overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src={fieldWork3}
-            alt="Engineering excellence"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary/90 to-secondary/90"></div>
-        </div>
-        
-        {/* Texture Pattern Overlay */}
-        <div className="absolute inset-0 opacity-10" style={{
-          backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 10px, currentColor 10px, currentColor 11px)`,
-        }}></div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-white drop-shadow-lg">
-              Ready to Discuss Your Industry Needs?
-            </h2>
-            <p className="text-xl text-white/95 mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow">
-              Our team of experts is ready to provide tailored solutions for your specific industry challenges.
-            </p>
-            
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <Button 
-                size="lg" 
-                variant="secondary" 
-                className="rounded-full shadow-2xl hover:scale-105 transition-transform text-lg px-8"
-                asChild
-              >
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <Card className="bg-gradient-hero text-secondary-foreground border-0">
+            <CardContent className="p-12 text-center">
+              <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">
+                Ready to Discuss Your Industry Needs?
+              </h2>
+              <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
+                Our team of experts is ready to provide tailored solutions for your specific industry challenges.
+              </p>
+              <Button size="lg" variant="secondary" asChild className="text-lg">
                 <Link to="/contact">
-                  Schedule a Consultation →
+                  Get in Touch
                 </Link>
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="rounded-full shadow-xl bg-white/10 text-white border-white/30 hover:bg-white/20 hover:scale-105 transition-transform text-lg px-8"
-                asChild
-              >
-                <Link to="/services">
-                  Explore Services
-                </Link>
-              </Button>
-            </div>
-          </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
     </div>
