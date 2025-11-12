@@ -11,6 +11,7 @@ import Services from "./pages/Services";
 import ServiceDetailPage from "./pages/ServiceDetailPage";
 import IndustrySolutions from "./pages/IndustrySolutions";
 import Contact from "./pages/Contact";
+import DiscoverExcellence from "./pages/DiscoverExcellence";
 import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Faq from "./pages/Faq";
@@ -36,6 +37,7 @@ const App = () => (
             <Route path="/industry-solutions" element={<IndustrySolutions />} />
             <Route path="/project-gallery" element={<ProjectGallery />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/discover-excellence" element={<DiscoverExcellence />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/faq" element={<Faq />} />
             <Route path="*" element={<NotFound />} />
