@@ -1,49 +1,53 @@
-"use client";
+import { WorldMap } from "@/components/ui/world-map";
 
-import DisplayCards from "@/components/ui/display-cards";
-import { SparklesIcon as Sparkles } from "@/components/ui/icons";
-
-const defaultCards = [
-  {
-    icon: <Sparkles className="h-4 w-4 text-blue-300" />,
-    title: "Featured",
-    description: "Discover amazing content",
-    date: "Just now",
-    iconClassName: "text-blue-500",
-    titleClassName: "text-blue-500",
-    className:
-      "[grid-area:stack] hover:-translate-y-10 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration-700 hover:grayscale-0 before:left-0 before:top-0",
-  },
-  {
-    icon: <Sparkles className="h-4 w-4 text-blue-300" />,
-    title: "Popular",
-    description: "Trending this week",
-    date: "2 days ago",
-    iconClassName: "text-blue-500",
-    titleClassName: "text-blue-500",
-    className:
-      "[grid-area:stack] translate-x-12 translate-y-10 hover:-translate-y-1 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration-700 hover:grayscale-0 before:left-0 before:top-0",
-  },
-  {
-    icon: <Sparkles className="h-4 w-4 text-blue-300" />,
-    title: "New",
-    description: "Latest updates and features",
-    date: "Today",
-    iconClassName: "text-blue-500",
-    titleClassName: "text-blue-500",
-    className:
-      "[grid-area:stack] translate-x-24 translate-y-20 hover:translate-y-10",
-  },
-];
-
-function DisplayCardsDemo() {
+export function WorldMapDemo() {
   return (
-    <div className="flex min-h-[400px] w-full items-center justify-center py-20">
-      <div className="w-full max-w-3xl">
-        <DisplayCards cards={defaultCards} />
+    <div className="w-full bg-white py-40 dark:bg-black">
+      <div className="mx-auto max-w-7xl text-center">
+        <p className="text-xl font-bold text-black dark:text-white md:text-4xl">
+          Remote <span className="text-neutral-400">Connectivity</span>
+        </p>
+        <p className="mx-auto max-w-2xl py-4 text-sm text-neutral-500 md:text-lg">
+          Break free from traditional boundaries. Work from anywhere, at the comfort of your own studio apartment. Perfect for
+          Nomads and Travellers.
+        </p>
       </div>
+      <WorldMap
+        dots={[
+          {
+            start: {
+              lat: 64.2008,
+              lng: -149.4937,
+            },
+            end: {
+              lat: 34.0522,
+              lng: -118.2437,
+            },
+          },
+          {
+            start: { lat: 64.2008, lng: -149.4937 },
+            end: { lat: -15.7975, lng: -47.8919 },
+          },
+          {
+            start: { lat: -15.7975, lng: -47.8919 },
+            end: { lat: 38.7223, lng: -9.1393 },
+          },
+          {
+            start: { lat: 51.5074, lng: -0.1278 },
+            end: { lat: 28.6139, lng: 77.209 },
+          },
+          {
+            start: { lat: 28.6139, lng: 77.209 },
+            end: { lat: 43.1332, lng: 131.9113 },
+          },
+          {
+            start: { lat: 28.6139, lng: 77.209 },
+            end: { lat: -1.2921, lng: 36.8219 },
+          },
+        ]}
+      />
     </div>
   );
 }
 
-export { DisplayCardsDemo };
+export default WorldMapDemo;

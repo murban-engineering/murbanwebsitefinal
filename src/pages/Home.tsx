@@ -13,14 +13,12 @@ import {
   WrenchIcon as Wrench,
 } from "@/components/ui/icons";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { DottedSurface } from "@/components/ui/dotted-surface";
-import { BackgroundPaths } from "@/components/ui/background-paths";
 import TypingAnimation from "@/components/TypingAnimation";
+import projectImage from "@/assets/project-showcase.jpg";
 import Testimonials from "@/components/Testimonials";
 import totalenergiesLogo from "@/assets/totalenergies-logo.png";
 import kengenLogo from "@/assets/kengen-logo.png";
@@ -29,18 +27,7 @@ import kpcLogo from "@/assets/kpc-logo.png";
 import fieldWork1 from "@/assets/field-work-1.jpg";
 import fieldWork3 from "@/assets/field-work-3.jpg";
 import fieldWork4 from "@/assets/field-work-4.jpg";
-import { cn } from "@/lib/utils";
-import DisplayCards from "@/components/ui/display-cards";
 const Home = () => {
-  const heroImage = "/_MG_2668%20-%20Copy%20-%20Copy%20-%20Copy(1).jpg";
-  const [isHeroTextVisible, setHeroTextVisible] = useState(false);
-
-  useEffect(() => {
-    const frame = requestAnimationFrame(() => setHeroTextVisible(true));
-
-    return () => cancelAnimationFrame(frame);
-  }, []);
-
   const services = [
     {
       icon: Building2,
@@ -69,42 +56,10 @@ const Home = () => {
   ];
 
   const stats = [
-    { value: "50+", label: "Infrastructure programs delivered" },
-    { value: "1.9k", label: "Digital-first releases" },
-    { value: "60", label: "Specialist leads on staff" },
-    { value: "ISO 9001", label: "Certified excellence" },
-  ];
-
-  const heroCards = [
-    {
-      icon: <Sparkles className="size-4 text-blue-200" />,
-      title: "Program briefings",
-      description: "Live highlights across structural, MEP and advisory streams.",
-      date: "Synced moments ago",
-      iconClassName: "bg-blue-900",
-      titleClassName: "text-blue-400",
-      className:
-        "[grid-area:stack] hover:-translate-y-10 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration-700 hover:grayscale-0 before:left-0 before:top-0",
-    },
-    {
-      icon: <Layers className="size-4 text-indigo-200" />,
-      title: "Systems sync",
-      description: "Coordinated models aligning design and fabrication windows.",
-      date: "Updated 12m ago",
-      iconClassName: "bg-indigo-900",
-      titleClassName: "text-indigo-400",
-      className:
-        "[grid-area:stack] translate-x-16 translate-y-10 hover:-translate-y-1 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration-700 hover:grayscale-0 before:left-0 before:top-0",
-    },
-    {
-      icon: <Compass className="size-4 text-cyan-200" />,
-      title: "Advisory insight",
-      description: "Risk signals and commercial guidance surfaced instantly.",
-      date: "New intelligence",
-      iconClassName: "bg-cyan-900",
-      titleClassName: "text-cyan-400",
-      className: "[grid-area:stack] translate-x-32 translate-y-20 hover:translate-y-10",
-    },
+    { value: "25+", label: "Years Engineering Landmarks" },
+    { value: "1.8k", label: "Projects Delivered" },
+    { value: "42", label: "Specialist Engineers" },
+    { value: "ISO 9001", label: "Certified Excellence" },
   ];
 
   const differentiators = [
@@ -125,6 +80,19 @@ const Home = () => {
       title: "Sustainability by Design",
       description:
         "We engineer for carbon, water and energy performance from day zero, ensuring compliance and positive impact.",
+    },
+  ];
+
+  const heroHighlights = [
+    {
+      icon: Sparkles,
+      title: "Connected delivery",
+      description: "Integrated teams orchestrating design and construction workflows with absolute transparency.",
+    },
+    {
+      icon: Shield,
+      title: "Resilient systems",
+      description: "High-performance structures and MEP solutions engineered to adapt, scale and thrive.",
     },
   ];
 
@@ -193,176 +161,117 @@ const Home = () => {
     { name: "KPC", logo: kpcLogo, width: "w-20" },
   ];
 
-  const transformationHighlights = [
-    {
-      icon: Sparkles,
-      title: "Immersive Digital Oversight",
-      description:
-        "Unified command centres with predictive analytics that surface insights for every stakeholder in real time.",
-      stat: "98% uptime across active sites",
-    },
-    {
-      icon: Compass,
-      title: "Regenerative Design Systems",
-      description:
-        "Low-carbon materials, adaptive envelopes and net-positive water strategies embedded at concept stage.",
-      stat: "40% average energy intensity reduction",
-    },
-    {
-      icon: Shield,
-      title: "Lifecycle Assurance",
-      description:
-        "Asset integrity programmes, NDT and digital twins that extend operational life and mitigate unplanned downtime.",
-      stat: "ISO 55001-aligned stewardship",
-    },
-  ];
-
   return (
-    <div className="flex flex-col">
-      <section className="relative">
-        <BackgroundPaths title="Engineering Excellence" />
-      </section>
-
-      <div className="relative min-h-screen bg-background">
-        {/* Full Page Dotted Background */}
-        <div className="fixed inset-0 pointer-events-none z-0">
-          <DottedSurface className="size-full opacity-40" />
-          <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
+    <div className="relative min-h-screen bg-background">
+      {/* Full Page Dotted Background */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <DottedSurface className="size-full opacity-40" />
+        <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
+      </div>
+      
+      <div className="relative z-10">
+        <div className="relative z-20">
+          <div className="container mx-auto flex justify-end px-4 pt-6">
+            <ThemeToggle id="home-theme-toggle" />
+          </div>
         </div>
+        {/* Hero Section */}
+        <section className="relative overflow-hidden pt-20 pb-48 sm:pt-24 sm:pb-56">
+          <div className="absolute -top-40 -right-32 h-[420px] w-[420px] rounded-full bg-primary/25 blur-3xl" />
+          <div className="absolute -bottom-24 -left-20 h-80 w-80 rounded-full bg-secondary/30 blur-3xl" />
 
-        <div className="relative z-10">
-          <div className="relative z-20">
-            <div className="container mx-auto flex justify-end px-4 pt-6">
-              <ThemeToggle id="home-theme-toggle" />
-            </div>
-          </div>
-          {/* Hero Section */}
-        <section className="relative overflow-hidden pt-24 pb-36 sm:pt-32">
-          <div className="absolute inset-0 -z-10">
-            <div className="absolute -top-48 -left-36 h-[520px] w-[520px] rounded-full bg-primary/25 blur-3xl" />
-            <div className="absolute top-1/4 right-0 h-[420px] w-[420px] rounded-full bg-secondary/20 blur-3xl" />
-            <div className="absolute bottom-[-140px] left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-accent/15 blur-3xl" />
-          </div>
-
-          <div className="container relative mx-auto px-4">
-            <div className="grid items-center gap-16 lg:grid-cols-[minmax(0,1.2fr)_1fr]">
-              <div className="space-y-10">
-                <Badge
-                  variant="outline"
-                  className="inline-flex items-center gap-3 rounded-full border border-primary/40 bg-primary/10 px-6 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-primary backdrop-blur"
-                >
-                  <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" /> Infrastructure mission control
-                </Badge>
-                <div
-                  className={cn(
-                    "space-y-6 transform transition-all duration-700 ease-out",
-                    isHeroTextVisible ? "translate-x-0 opacity-100" : "-translate-x-16 opacity-0"
-                  )}
-                >
-                  <h1 className="text-left font-serif text-4xl font-bold leading-tight sm:text-5xl md:text-6xl lg:text-7xl">
-                    Command every phase of your build
-                    <span className="mt-3 block text-primary">
-                      <TypingAnimation text="Powered by Murban Engineering" speed={40} className="text-primary" />
-                    </span>
-                  </h1>
-                  <p className="max-w-2xl text-lg text-muted-foreground md:text-xl">
-                    Integrated structural, MEP and advisory teams share a single source of truth so decisions happen with the same
-                    pace as your programme.
-                  </p>
-                </div>
-                <div className="flex justify-center lg:justify-start">
-                  <DisplayCards cards={heroCards} />
-                </div>
-                <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                  <Button size="lg" asChild className="text-base rounded-full px-8 shadow-primary/40 shadow-2xl">
-                    <Link to="/contact">
-                      Schedule a consultation <ArrowRight className="ml-2 h-5 w-5" />
-                    </Link>
-                  </Button>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    asChild
-                    className="text-base rounded-full border-foreground/20 bg-background/70 px-8 backdrop-blur hover:bg-foreground/5"
-                  >
-                    <Link to="/services">View capabilities</Link>
-                  </Button>
-                </div>
+          <div className="relative z-10 container mx-auto px-4">
+            <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1fr)_420px]">
+            <div className="space-y-10">
+              <div className="inline-flex items-center gap-3 rounded-full border border-foreground/10 bg-foreground/5 px-6 py-2 text-xs font-semibold uppercase tracking-[0.3em] backdrop-blur">
+                <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" /> Next era engineering partner
               </div>
-              <div className="relative">
-                <div className="absolute -inset-8 rounded-[40px] bg-gradient-to-br from-primary/20 via-primary/10 to-background blur-3xl" />
-                <div className="relative overflow-hidden rounded-[36px] border border-foreground/10 bg-background/85 shadow-2xl backdrop-blur">
-                  <img
-                    src={heroImage}
-                    alt="Engineers collaborating in a project command centre"
-                    className="h-full w-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6 rounded-3xl border border-border bg-card/95 p-6 backdrop-blur">
-                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Operations theatre</p>
-                    <p className="mt-2 text-base font-semibold text-card-foreground">
-                      Immersive oversight aligning structural, MEP and advisory teams in one command space.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        {/* Modern Delivery Section */}
-        <section className="relative overflow-hidden py-20">
-          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background via-primary/10 to-transparent -z-10" />
-          <div className="absolute inset-0 -z-10 bg-gradient-to-br from-muted/30 via-background to-background" />
-          <div className="container mx-auto px-4">
-            <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1.1fr)_1fr]">
               <div className="space-y-6">
-                <Badge variant="secondary" className="inline-flex items-center gap-2 rounded-full bg-secondary/20 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-secondary-foreground">
-                  <span className="flex h-2 w-2 rounded-full bg-secondary/80" /> Future-forward delivery
-                </Badge>
-                <h2 className="text-4xl font-serif font-bold md:text-5xl">Signature frameworks built for modern infrastructure</h2>
-                <p className="text-lg text-muted-foreground">
-                  Our integrated squads pair advanced modelling, sustainability science and on-site intelligence to orchestrate
-                  transformational programmes with certainty.
+                <h1 className="text-left font-serif text-4xl font-bold leading-tight sm:text-5xl md:text-6xl lg:text-7xl">
+                  <TypingAnimation text="Murban Engineering" speed={40} className="text-foreground" />
+                </h1>
+                <p className="max-w-2xl text-lg text-muted-foreground md:text-xl">
+                  Murban Engineering blends structural, MEP and advisory expertise to deliver iconic developments, resilient infrastructure and immersive experiences across the continent.
                 </p>
-                <div className="flex flex-wrap gap-3">
-                  <Badge variant="outline" className="border-primary/40 bg-primary/10 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
-                    AI-assisted coordination
-                  </Badge>
-                  <Badge variant="outline" className="border-secondary/30 bg-secondary/10 text-xs font-semibold uppercase tracking-[0.3em] text-secondary-foreground">
-                    Carbon-positive design
-                  </Badge>
-                  <Badge variant="outline" className="border-accent/30 bg-accent/10 text-xs font-semibold uppercase tracking-[0.3em] text-accent-foreground">
-                    Lifecycle intelligence
-                  </Badge>
-                </div>
-                <Button size="lg" asChild className="rounded-full shadow-primary/30 shadow-lg">
-                  <Link to="/industry-solutions">
-                    Discover industry solutions <ArrowRight className="ml-2 h-5 w-5" />
+              </div>
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+                <Button size="lg" asChild className="text-base rounded-full px-8 shadow-primary/40 shadow-2xl">
+                  <Link to="/contact">
+                    Start a project <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  asChild
+                  className="text-base rounded-full border-foreground/20 bg-background/70 px-8 backdrop-blur hover:bg-foreground/5"
+                >
+                  <Link to="/services">Explore services</Link>
+                </Button>
               </div>
-              <div className="space-y-6">
-                {transformationHighlights.map((item) => (
+              <div className="grid gap-4 sm:grid-cols-3">
+                {stats.slice(0, 3).map((stat) => (
                   <div
-                    key={item.title}
-                    className="group relative overflow-hidden rounded-3xl border border-foreground/10 bg-background/80 p-6 shadow-lg shadow-primary/10 transition-transform hover:-translate-y-1 hover:shadow-primary/20"
+                    key={stat.label}
+                    className="rounded-3xl border border-foreground/10 bg-background/80 p-5 text-left shadow-lg shadow-primary/10 backdrop-blur"
                   >
-                    <div className="flex items-start gap-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                        <item.icon className="h-6 w-6" />
-                      </div>
-                      <div className="space-y-2">
-                        <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
-                        <p className="text-sm text-muted-foreground">{item.description}</p>
-                        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/80">{item.stat}</p>
-                      </div>
-                    </div>
+                    <span className="text-3xl font-semibold text-foreground md:text-4xl">{stat.value}</span>
+                    <span className="mt-2 block text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                      {stat.label}
+                    </span>
                   </div>
                 ))}
               </div>
             </div>
+            <div className="relative">
+              <div className="absolute -inset-6 rounded-[36px] bg-gradient-to-br from-primary/25 via-primary/10 to-background blur-3xl" />
+              <div className="relative overflow-hidden rounded-[32px] border border-foreground/10 bg-background/85 shadow-2xl backdrop-blur">
+                <div
+                  className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background/70 to-background"
+                  aria-hidden="true"
+                />
+                <div className="absolute -top-10 -left-8 h-40 w-40 rounded-full bg-primary/20 blur-3xl" />
+                <div className="absolute -bottom-12 -right-10 h-48 w-48 rounded-full bg-secondary/25 blur-3xl" />
+                <div className="relative flex h-96 flex-col items-center justify-center gap-4 text-center">
+                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Immersive collaboration</p>
+                  <p className="max-w-[260px] text-sm text-muted-foreground">
+                    Human-centred engineering partnerships powered by real-time project intelligence.
+                  </p>
+                </div>
+                <div className="absolute bottom-5 left-5 right-5 rounded-3xl border border-border bg-card/95 p-5 backdrop-blur">
+                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Real-time oversight</p>
+                  <p className="mt-2 text-base font-semibold text-card-foreground">
+                    Command centre dashboards orchestrating every workstream across your portfolio.
+                  </p>
+                </div>
+              </div>
+              <div className="absolute -bottom-20 left-6 right-6">
+                <div className="rounded-3xl border border-foreground/10 bg-background/95 p-6 shadow-2xl">
+                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Why partners choose Murban</p>
+                  <div className="mt-4 space-y-4">
+                    {heroHighlights.map((item) => (
+                      <div key={item.title} className="flex items-start gap-3">
+                        <item.icon className="mt-1 h-5 w-5 text-primary" />
+                        <div>
+                          <p className="text-sm font-semibold text-foreground">{item.title}</p>
+                          <p className="text-xs text-muted-foreground">{item.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="absolute -top-10 right-6">
+                <div className="rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/25 via-primary/10 to-background/90 p-4 text-sm text-primary shadow-xl">
+                  <p className="text-xs uppercase tracking-[0.3em] text-primary/80">Active programmes</p>
+                  <p className="mt-2 text-lg font-semibold text-primary">72 sites in delivery</p>
+                  <p className="text-xs text-primary/80">Across energy, logistics and civic infrastructure</p>
+                </div>
+              </div>
+            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
       {/* Stats Section */}
       <section className="relative py-20">
@@ -679,7 +588,7 @@ const Home = () => {
                 <h3 className="text-xl font-semibold text-foreground">{insight.title}</h3>
                 <p className="text-sm text-muted-foreground">{insight.description}</p>
                 <Link to="/services" className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-primary">
-                  Discover services <ArrowRight className="h-4 w-4" />
+                  Explore services <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
             ))}
@@ -718,7 +627,6 @@ const Home = () => {
         </div>
       </section>
       </div>
-    </div>
     </div>
   );
 };
