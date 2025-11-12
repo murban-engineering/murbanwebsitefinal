@@ -32,14 +32,16 @@ const Navigation = () => {
   return (
     <nav
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled ? "bg-background/90 backdrop-blur-xl border-b border-border/60 shadow-lg" : "bg-transparent"
+        scrolled ? "bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60" : "bg-transparent"
       }`}
     >
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 rounded-full border border-border/40 bg-background/90 px-4 py-2 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 backdrop-blur-md">
+          <Link
+            to="/"
+            className="flex items-center gap-3 rounded-full px-4 py-2 transition-colors hover:bg-foreground/5"
+          >
             <div className="relative h-10 w-10 overflow-hidden rounded-full ring-2 ring-primary/20">
               <img src={murbanLogo} alt="Murban Engineering Logo" className="h-full w-full object-cover" />
             </div>
@@ -52,7 +54,7 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
-            <div className="flex items-center gap-1 rounded-full border border-border/60 bg-background/70 p-1 shadow-sm">
+            <div className="flex items-center gap-1 rounded-full bg-transparent p-1">
               {desktopLinks.map((link) => {
                 const active = !link.external && isActive(link.path);
 
@@ -63,7 +65,7 @@ const Navigation = () => {
                       href={link.path}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group relative inline-flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-foreground transition-all hover:text-primary"
+                      className="group relative inline-flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-foreground transition-colors hover:text-primary"
                     >
                       {link.name}
                       <span className="absolute inset-0 rounded-full border border-transparent transition-all group-hover:border-primary/40" />
@@ -75,10 +77,10 @@ const Navigation = () => {
                   <Link
                     key={link.path}
                     to={link.path}
-                    className={`group relative inline-flex items-center rounded-full px-4 py-2 text-sm font-medium transition-all ${
+                    className={`group relative inline-flex items-center rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                       active
                         ? "bg-gradient-to-r from-primary/15 via-primary/10 to-secondary/20 text-primary shadow-sm"
-                        : "text-foreground hover:text-primary"
+                        : "text-foreground hover:text-primary hover:bg-foreground/5"
                     }`}
                   >
                     {link.name}
@@ -91,14 +93,14 @@ const Navigation = () => {
                 );
               })}
             </div>
-            <Button asChild size="lg" className="rounded-full shadow-primary/30 shadow-lg">
+            <Button asChild size="lg" className="rounded-full shadow-none">
               <Link to="/contact">Start a project</Link>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden rounded-full border border-border/70 bg-background/80 p-2 shadow-sm"
+            className="md:hidden rounded-full bg-background/70 p-2 transition-colors hover:bg-background/80"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -113,7 +115,7 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden pb-6">
-            <div className="space-y-4 rounded-3xl border border-border/60 bg-background/95 p-6 shadow-xl">
+            <div className="space-y-4 rounded-3xl bg-background/90 p-6 shadow-lg">
               {navLinks.map((link) => {
                 const active = !link.external && isActive(link.path);
 
@@ -125,7 +127,7 @@ const Navigation = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => setIsOpen(false)}
-                      className="flex items-center justify-between rounded-2xl border border-transparent bg-foreground/5 px-4 py-3 text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"
+                      className="flex items-center justify-between rounded-2xl bg-foreground/5 px-4 py-3 text-sm font-medium text-foreground transition-colors hover:bg-foreground/10 hover:text-primary"
                     >
                       {link.name}
                       <span className="text-xs text-muted-foreground">External</span>
@@ -138,7 +140,7 @@ const Navigation = () => {
                     key={link.path}
                     to={link.path}
                     onClick={() => setIsOpen(false)}
-                    className={`flex items-center justify-between rounded-2xl px-4 py-3 text-sm font-medium transition-all ${
+                    className={`flex items-center justify-between rounded-2xl px-4 py-3 text-sm font-medium transition-colors ${
                       active
                         ? "bg-gradient-to-r from-primary/15 via-primary/10 to-secondary/20 text-primary"
                         : "bg-foreground/5 text-foreground hover:bg-foreground/10 hover:text-primary"
