@@ -21,6 +21,7 @@ const Navigation = () => {
     { name: "About", path: "/about" },
     { name: "Services", path: "/services" },
     { name: "Industry Solutions", path: "/industry-solutions" },
+    { name: "Certifications", path: "/certifications" },
     { name: "Portal", path: "https://murbanportal.com/", external: true },
     { name: "Contact Us", path: "/contact" },
   ];
