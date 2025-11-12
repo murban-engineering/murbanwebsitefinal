@@ -19,7 +19,6 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { DottedSurface } from "@/components/ui/dotted-surface";
-import { BackgroundPaths } from "@/components/ui/background-paths";
 import TypingAnimation from "@/components/TypingAnimation";
 import Testimonials from "@/components/Testimonials";
 import totalenergiesLogo from "@/assets/totalenergies-logo.png";
@@ -219,10 +218,6 @@ const Home = () => {
 
   return (
     <div className="flex flex-col">
-      <section className="relative">
-        <BackgroundPaths title="Engineering Excellence" />
-      </section>
-
       <div className="relative min-h-screen bg-background">
         {/* Full Page Dotted Background */}
         <div className="fixed inset-0 pointer-events-none z-0">
@@ -237,78 +232,78 @@ const Home = () => {
             </div>
           </div>
           {/* Hero Section */}
-        <section className="relative overflow-hidden pt-24 pb-36 sm:pt-32">
-          <div className="absolute inset-0 -z-10">
-            <div className="absolute -top-48 -left-36 h-[520px] w-[520px] rounded-full bg-primary/25 blur-3xl" />
-            <div className="absolute top-1/4 right-0 h-[420px] w-[420px] rounded-full bg-secondary/20 blur-3xl" />
-            <div className="absolute bottom-[-140px] left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-accent/15 blur-3xl" />
-          </div>
+          <section className="relative overflow-hidden pt-24 pb-36 sm:pt-32">
+            <div className="absolute inset-0 -z-10">
+              <div className="absolute -top-48 -left-36 h-[520px] w-[520px] rounded-full bg-primary/25 blur-3xl" />
+              <div className="absolute top-1/4 right-0 h-[420px] w-[420px] rounded-full bg-secondary/20 blur-3xl" />
+              <div className="absolute bottom-[-140px] left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-accent/15 blur-3xl" />
+            </div>
 
-          <div className="container relative mx-auto px-4">
-            <div className="grid items-center gap-16 lg:grid-cols-[minmax(0,1.2fr)_1fr]">
-              <div className="space-y-10">
-                <Badge
-                  variant="outline"
-                  className="inline-flex items-center gap-3 rounded-full border border-primary/40 bg-primary/10 px-6 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-primary backdrop-blur"
-                >
-                  <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" /> Infrastructure mission control
-                </Badge>
-                <div
-                  className={cn(
-                    "space-y-6 transform transition-all duration-700 ease-out",
-                    isHeroTextVisible ? "translate-x-0 opacity-100" : "-translate-x-16 opacity-0"
-                  )}
-                >
-                  <h1 className="text-left font-serif text-4xl font-bold leading-tight sm:text-5xl md:text-6xl lg:text-7xl">
-                    Command every phase of your build
-                    <span className="mt-3 block text-primary">
-                      <TypingAnimation text="Powered by Murban Engineering" speed={40} className="text-primary" />
-                    </span>
-                  </h1>
-                  <p className="max-w-2xl text-lg text-muted-foreground md:text-xl">
-                    Integrated structural, MEP and advisory teams share a single source of truth so decisions happen with the same
-                    pace as your programme.
-                  </p>
-                </div>
-                <div className="flex justify-center lg:justify-start">
-                  <DisplayCards cards={heroCards} />
-                </div>
-                <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                  <Button size="lg" asChild className="text-base rounded-full px-8 shadow-primary/40 shadow-2xl">
-                    <Link to="/contact">
-                      Schedule a consultation <ArrowRight className="ml-2 h-5 w-5" />
-                    </Link>
-                  </Button>
-                  <Button
-                    size="lg"
+            <div className="container relative mx-auto px-4">
+              <div className="grid items-center gap-16 lg:grid-cols-[minmax(0,1.2fr)_1fr]">
+                <div className="space-y-10">
+                  <Badge
                     variant="outline"
-                    asChild
-                    className="text-base rounded-full border-foreground/20 bg-background/70 px-8 backdrop-blur hover:bg-foreground/5"
+                    className="inline-flex items-center gap-3 rounded-full border border-primary/40 bg-primary/10 px-6 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-primary backdrop-blur"
                   >
-                    <Link to="/services">View capabilities</Link>
-                  </Button>
-                </div>
-              </div>
-              <div className="relative">
-                <div className="absolute -inset-8 rounded-[40px] bg-gradient-to-br from-primary/20 via-primary/10 to-background blur-3xl" />
-                <div className="relative overflow-hidden rounded-[36px] border border-foreground/10 bg-background/85 shadow-2xl backdrop-blur">
-                  <img
-                    src={heroImage}
-                    alt="Engineers collaborating in a project command centre"
-                    className="h-full w-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6 rounded-3xl border border-border bg-card/95 p-6 backdrop-blur">
-                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Operations theatre</p>
-                    <p className="mt-2 text-base font-semibold text-card-foreground">
-                      Immersive oversight aligning structural, MEP and advisory teams in one command space.
+                    <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" /> Infrastructure mission control
+                  </Badge>
+                  <div
+                    className={cn(
+                      "space-y-6 transform transition-all duration-700 ease-out",
+                      isHeroTextVisible ? "translate-x-0 opacity-100" : "-translate-x-16 opacity-0"
+                    )}
+                  >
+                    <h1 className="text-left font-serif text-4xl font-bold leading-tight sm:text-5xl md:text-6xl lg:text-7xl">
+                      Command every phase of your build
+                      <span className="mt-3 block text-primary">
+                        <TypingAnimation text="Powered by Murban Engineering" speed={40} className="text-primary" />
+                      </span>
+                    </h1>
+                    <p className="max-w-2xl text-lg text-muted-foreground md:text-xl">
+                      Integrated structural, MEP and advisory teams share a single source of truth so decisions happen with the same
+                      pace as your programme.
                     </p>
+                  </div>
+                  <div className="flex justify-center lg:justify-start">
+                    <DisplayCards cards={heroCards} />
+                  </div>
+                  <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+                    <Button size="lg" asChild className="text-base rounded-full px-8 shadow-primary/40 shadow-2xl">
+                      <Link to="/contact">
+                        Schedule a consultation <ArrowRight className="ml-2 h-5 w-5" />
+                      </Link>
+                    </Button>
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      asChild
+                      className="text-base rounded-full border-foreground/20 bg-background/70 px-8 backdrop-blur hover:bg-foreground/5"
+                    >
+                      <Link to="/services">View capabilities</Link>
+                    </Button>
+                  </div>
+                </div>
+                <div className="relative">
+                  <div className="absolute -inset-8 rounded-[40px] bg-gradient-to-br from-primary/20 via-primary/10 to-background blur-3xl" />
+                  <div className="relative overflow-hidden rounded-[36px] border border-foreground/10 bg-background/85 shadow-2xl backdrop-blur">
+                    <img
+                      src={heroImage}
+                      alt="Engineers collaborating in a project command centre"
+                      className="h-full w-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent" />
+                    <div className="absolute bottom-6 left-6 right-6 rounded-3xl border border-border bg-card/95 p-6 backdrop-blur">
+                      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Operations theatre</p>
+                      <p className="mt-2 text-base font-semibold text-card-foreground">
+                        Immersive oversight aligning structural, MEP and advisory teams in one command space.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
         {/* Modern Delivery Section */}
         <section className="relative overflow-hidden py-20">
           <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background via-primary/10 to-transparent -z-10" />
