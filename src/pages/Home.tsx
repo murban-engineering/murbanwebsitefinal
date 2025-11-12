@@ -19,6 +19,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { DottedSurface } from "@/components/ui/dotted-surface";
+import { BackgroundPaths } from "@/components/ui/background-paths";
 import TypingAnimation from "@/components/TypingAnimation";
 import Testimonials from "@/components/Testimonials";
 import totalenergiesLogo from "@/assets/totalenergies-logo.png";
@@ -199,20 +200,25 @@ const Home = () => {
   ];
 
   return (
-    <div className="relative min-h-screen bg-background">
-      {/* Full Page Dotted Background */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <DottedSurface className="size-full opacity-40" />
-        <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
-      </div>
-      
-      <div className="relative z-10">
-        <div className="relative z-20">
-          <div className="container mx-auto flex justify-end px-4 pt-6">
-            <ThemeToggle id="home-theme-toggle" />
-          </div>
+    <div className="flex flex-col">
+      <section className="relative">
+        <BackgroundPaths title="Engineering Excellence" />
+      </section>
+
+      <div className="relative min-h-screen bg-background">
+        {/* Full Page Dotted Background */}
+        <div className="fixed inset-0 pointer-events-none z-0">
+          <DottedSurface className="size-full opacity-40" />
+          <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
         </div>
-        {/* Hero Section */}
+
+        <div className="relative z-10">
+          <div className="relative z-20">
+            <div className="container mx-auto flex justify-end px-4 pt-6">
+              <ThemeToggle id="home-theme-toggle" />
+            </div>
+          </div>
+          {/* Hero Section */}
         <section className="relative overflow-hidden pt-24 pb-36 sm:pt-32">
           <div className="absolute inset-0 -z-10">
             <div className="absolute -top-48 -left-36 h-[520px] w-[520px] rounded-full bg-primary/25 blur-3xl" />
