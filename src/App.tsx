@@ -17,6 +17,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Faq from "./pages/Faq";
 import ProjectGallery from "./pages/ProjectGallery";
 import ScrollToTop from "./components/ScrollToTop";
+import QuickLinks from "./pages/QuickLinks";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/quick-links" element={<QuickLinks />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/services/:slug" element={<ServiceDetailPage />} />

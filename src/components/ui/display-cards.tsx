@@ -1,6 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
+import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { SparklesIcon as Sparkles } from "@/components/ui/icons";
 
@@ -12,6 +13,7 @@ interface DisplayCardProps {
   date?: string;
   iconClassName?: string;
   titleClassName?: string;
+  to?: string;
 }
 
 function DisplayCard({
@@ -22,8 +24,9 @@ function DisplayCard({
   date = "Just now",
   iconClassName = "text-blue-500",
   titleClassName = "text-blue-500",
+  to,
 }: DisplayCardProps) {
-  return (
+  const card = (
     <div
       className={cn(
         "relative flex h-36 w-[22rem] -skew-y-[8deg] select-none flex-col justify-between rounded-xl border-2 bg-muted/70 backdrop-blur-sm px-4 py-3 transition-all duration-700 after:absolute after:-right-1 after:top-[-5%] after:h-[110%] after:w-[20rem] after:bg-gradient-to-l after:from-background after:to-transparent after:content-[''] hover:border-white/20 hover:bg-muted [&>*]:flex [&>*]:items-center [&>*]:gap-2",
@@ -40,6 +43,19 @@ function DisplayCard({
       <p className="text-muted-foreground">{date}</p>
     </div>
   );
+
+  if (to) {
+    return (
+      <Link
+        to={to}
+        className="block rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+      >
+        {card}
+      </Link>
+    );
+  }
+
+  return card;
 }
 
 interface DisplayCardsProps {

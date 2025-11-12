@@ -18,6 +18,7 @@ const Navigation = () => {
 
   const navLinks: Array<{ name: string; path: string; external?: boolean }> = [
     { name: "Home", path: "/" },
+    { name: "Quick Links", path: "/quick-links" },
     { name: "About", path: "/about" },
     { name: "Services", path: "/services" },
     { name: "Industry Solutions", path: "/industry-solutions" },
