@@ -284,24 +284,12 @@ const Home = () => {
                     className="h-full w-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent" />
-                  <div className="absolute top-6 left-6 right-6 flex items-center justify-between rounded-2xl border border-white/10 bg-background/80 p-4 text-sm text-secondary-foreground backdrop-blur">
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Live programme feed</p>
-                      <p className="text-base font-semibold text-foreground">Predictive dashboards activated</p>
-                    </div>
-                    <Sparkles className="h-6 w-6 text-primary" />
-                  </div>
                   <div className="absolute bottom-6 left-6 right-6 rounded-3xl border border-border bg-card/95 p-6 backdrop-blur">
                     <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Real-time oversight</p>
                     <p className="mt-2 text-base font-semibold text-card-foreground">
                       Command centre orchestration across structural, MEP and advisory workstreams.
                     </p>
                   </div>
-                </div>
-                <div className="absolute -top-10 right-0 w-52 rounded-3xl border border-primary/30 bg-gradient-to-br from-primary/25 via-primary/10 to-background/90 p-4 text-sm text-primary shadow-xl">
-                  <p className="text-xs uppercase tracking-[0.3em] text-primary/80">Active programmes</p>
-                  <p className="mt-2 text-lg font-semibold text-primary">72 sites in delivery</p>
-                  <p className="text-xs text-primary/80">Energy, logistics & civic infrastructure</p>
                 </div>
               </div>
             </div>
