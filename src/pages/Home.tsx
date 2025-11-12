@@ -13,6 +13,7 @@ import {
   WrenchIcon as Wrench,
 } from "@/components/ui/icons";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -27,8 +28,16 @@ import kpcLogo from "@/assets/kpc-logo.png";
 import fieldWork1 from "@/assets/field-work-1.jpg";
 import fieldWork3 from "@/assets/field-work-3.jpg";
 import fieldWork4 from "@/assets/field-work-4.jpg";
+import { cn } from "@/lib/utils";
 const Home = () => {
   const heroImage = "/_MG_2668%20-%20Copy%20-%20Copy%20-%20Copy(1).jpg";
+  const [isHeroTextVisible, setHeroTextVisible] = useState(false);
+
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => setHeroTextVisible(true));
+
+    return () => cancelAnimationFrame(frame);
+  }, []);
 
   const services = [
     {
@@ -220,16 +229,21 @@ const Home = () => {
                 >
                   <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" /> Modern infrastructure partner
                 </Badge>
-                <div className="space-y-6">
+                <div
+                  className={cn(
+                    "space-y-6 transform transition-all duration-700 ease-out",
+                    isHeroTextVisible ? "translate-x-0 opacity-100" : "-translate-x-16 opacity-0"
+                  )}
+                >
                   <h1 className="text-left font-serif text-4xl font-bold leading-tight sm:text-5xl md:text-6xl lg:text-7xl">
-                    Engineering the next era with
+                    Engineering tomorrow with
                     <span className="mt-3 block text-primary">
                       <TypingAnimation text="Murban Engineering" speed={40} className="text-primary" />
                     </span>
                   </h1>
                   <p className="max-w-2xl text-lg text-muted-foreground md:text-xl">
-                    We integrate structural ingenuity, smart MEP systems and strategic advisory to deliver future-ready spaces
-                    that respond to people, climate and performance goals.
+                    We fuse structural intelligence, adaptive MEP systems, and strategic advisory to craft future-ready spaces
+                    tuned to people, climate, and performance ambitions.
                   </p>
                 </div>
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
