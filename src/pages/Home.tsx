@@ -28,6 +28,7 @@ import kpcLogo from "@/assets/kpc-logo.png";
 import fieldWork1 from "@/assets/field-work-1.jpg";
 import fieldWork3 from "@/assets/field-work-3.jpg";
 import fieldWork4 from "@/assets/field-work-4.jpg";
+import portSunset from "@/assets/port-sunset.jpg";
 const Home = () => {
   const services = [
     {
@@ -202,101 +203,68 @@ const Home = () => {
           </div>
         </div>
         {/* Hero Section */}
-        <section className="relative overflow-hidden pt-24 pb-36 sm:pt-32">
+        <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+          {/* Background Image */}
           <div className="absolute inset-0 -z-10">
-            <div className="absolute -top-48 -left-36 h-[520px] w-[520px] rounded-full bg-primary/25 blur-3xl" />
-            <div className="absolute top-1/4 right-0 h-[420px] w-[420px] rounded-full bg-secondary/20 blur-3xl" />
-            <div className="absolute bottom-[-140px] left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-accent/15 blur-3xl" />
+            <img 
+              src={portSunset} 
+              alt="Port machinery at sunset" 
+              className="h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30" />
           </div>
 
-          <div className="container relative mx-auto px-4">
-            <div className="grid items-center gap-16 lg:grid-cols-[minmax(0,1.2fr)_1fr]">
-              <div className="space-y-10">
-                <Badge
+          <div className="container relative mx-auto px-4 py-20">
+            <div className="max-w-3xl space-y-8">
+              <Badge
+                variant="outline"
+                className="inline-flex items-center gap-3 rounded-full border border-primary/40 bg-background/80 px-6 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-primary backdrop-blur"
+              >
+                <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" /> Modern infrastructure partner
+              </Badge>
+              
+              <h1 className="font-serif text-4xl font-bold leading-tight sm:text-5xl md:text-6xl lg:text-7xl">
+                Engineering the next era with
+                <span className="mt-3 block text-primary">
+                  <TypingAnimation text="Murban Engineering" speed={40} className="text-primary" />
+                </span>
+              </h1>
+              
+              <p className="max-w-2xl text-lg text-muted-foreground md:text-xl">
+                We integrate structural ingenuity, smart MEP systems and strategic advisory to deliver future-ready spaces
+                that respond to people, climate and performance goals.
+              </p>
+              
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+                <Button size="lg" asChild className="text-base rounded-full px-8 shadow-primary/40 shadow-2xl">
+                  <Link to="/contact">
+                    Start a project <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                <Button
+                  size="lg"
                   variant="outline"
-                  className="inline-flex items-center gap-3 rounded-full border border-primary/40 bg-primary/10 px-6 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-primary backdrop-blur"
+                  asChild
+                  className="text-base rounded-full border-foreground/20 bg-background/70 px-8 backdrop-blur hover:bg-foreground/5"
                 >
-                  <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" /> Modern infrastructure partner
-                </Badge>
-                <div className="space-y-6">
-                  <h1 className="text-left font-serif text-4xl font-bold leading-tight sm:text-5xl md:text-6xl lg:text-7xl">
-                    Engineering the next era with
-                    <span className="mt-3 block text-primary">
-                      <TypingAnimation text="Murban Engineering" speed={40} className="text-primary" />
-                    </span>
-                  </h1>
-                  <p className="max-w-2xl text-lg text-muted-foreground md:text-xl">
-                    We integrate structural ingenuity, smart MEP systems and strategic advisory to deliver future-ready spaces
-                    that respond to people, climate and performance goals.
-                  </p>
-                </div>
-                <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                  <Button size="lg" asChild className="text-base rounded-full px-8 shadow-primary/40 shadow-2xl">
-                    <Link to="/contact">
-                      Start a project <ArrowRight className="ml-2 h-5 w-5" />
-                    </Link>
-                  </Button>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    asChild
-                    className="text-base rounded-full border-foreground/20 bg-background/70 px-8 backdrop-blur hover:bg-foreground/5"
-                  >
-                    <Link to="/services">Explore services</Link>
-                  </Button>
-                </div>
-                <div className="grid gap-4 sm:grid-cols-3">
-                  {heroMetrics.map((stat) => (
-                    <div
-                      key={stat.label}
-                      className="rounded-3xl border border-foreground/10 bg-background/80 p-5 text-left shadow-lg shadow-primary/10 backdrop-blur"
-                    >
-                      <span className="text-3xl font-semibold text-foreground md:text-4xl">{stat.value}</span>
-                      <span className="mt-2 block text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                        {stat.label}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-                <div className="rounded-3xl border border-foreground/10 bg-background/70 p-6 shadow-lg shadow-primary/10 backdrop-blur">
-                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Why partners choose Murban</p>
-                  <div className="mt-4 grid gap-4 sm:grid-cols-2">
-                    {heroHighlights.map((item) => (
-                      <div key={item.title} className="flex items-start gap-3">
-                        <item.icon className="mt-1 h-5 w-5 text-primary" />
-                        <div>
-                          <p className="text-sm font-semibold text-foreground">{item.title}</p>
-                          <p className="text-xs text-muted-foreground">{item.description}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                  <Link to="/services">Explore services</Link>
+                </Button>
               </div>
-              <div className="relative">
-                <div className="absolute -inset-8 rounded-[40px] bg-gradient-to-br from-primary/20 via-primary/10 to-background blur-3xl" />
-                <div className="relative overflow-hidden rounded-[36px] border border-foreground/10 bg-background/85 shadow-2xl backdrop-blur">
-                  <img src={projectImage} alt="Engineers collaborating in a project command centre" className="h-full w-full object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent" />
-                  <div className="absolute top-6 left-6 right-6 flex items-center justify-between rounded-2xl border border-white/10 bg-background/80 p-4 text-sm text-secondary-foreground backdrop-blur">
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Live programme feed</p>
-                      <p className="text-base font-semibold text-foreground">Predictive dashboards activated</p>
-                    </div>
-                    <Sparkles className="h-6 w-6 text-primary" />
+              
+              {/* Stats Row */}
+              <div className="grid gap-4 sm:grid-cols-3 pt-8">
+                {heroMetrics.map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="rounded-2xl border border-foreground/10 bg-background/80 p-5 text-left shadow-lg backdrop-blur"
+                  >
+                    <span className="text-3xl font-semibold text-foreground md:text-4xl">{stat.value}</span>
+                    <span className="mt-2 block text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                      {stat.label}
+                    </span>
                   </div>
-                  <div className="absolute bottom-6 left-6 right-6 rounded-3xl border border-border bg-card/95 p-6 backdrop-blur">
-                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Real-time oversight</p>
-                    <p className="mt-2 text-base font-semibold text-card-foreground">
-                      Command centre orchestration across structural, MEP and advisory workstreams.
-                    </p>
-                  </div>
-                </div>
-                <div className="absolute -top-10 right-0 w-52 rounded-3xl border border-primary/30 bg-gradient-to-br from-primary/25 via-primary/10 to-background/90 p-4 text-sm text-primary shadow-xl">
-                  <p className="text-xs uppercase tracking-[0.3em] text-primary/80">Active programmes</p>
-                  <p className="mt-2 text-lg font-semibold text-primary">72 sites in delivery</p>
-                  <p className="text-xs text-primary/80">Energy, logistics & civic infrastructure</p>
-                </div>
+                ))}
               </div>
             </div>
           </div>
