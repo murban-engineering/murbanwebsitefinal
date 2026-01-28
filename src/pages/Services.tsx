@@ -2072,9 +2072,6 @@ const Services = () => {
             alt="Murban Engineering field inspection team"
             className="h-full w-full object-cover"
           />
-          {/* Sophisticated overlay with gray-blue tones */}
-          <div className="absolute inset-0 bg-gradient-to-br from-secondary/90 via-secondary/75 to-primary/60" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
         </div>
         
 
