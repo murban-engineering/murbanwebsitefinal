@@ -223,21 +223,38 @@ const Home = () => {
           </div>
         </section>
 
-        {/* Stats Row - Clean cards */}
-        <section className="py-16 bg-muted/30">
+        {/* Stats Row - Marquee cards */}
+        <section className="bg-muted/30 py-16">
           <div className="container mx-auto px-4">
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="rounded-xl border border-border bg-background p-6"
-                >
-                  <span className="text-3xl font-bold text-foreground md:text-4xl">{stat.value}</span>
-                  <span className="mt-2 block text-sm text-muted-foreground">
-                    {stat.label}
-                  </span>
+            <div className="relative overflow-hidden">
+              <div className="flex w-max animate-marquee gap-6">
+                <div className="flex gap-6 pr-6">
+                  {stats.map((stat) => (
+                    <div
+                      key={stat.label}
+                      className="min-w-[220px] rounded-xl border border-border bg-background p-6"
+                    >
+                      <span className="text-3xl font-bold text-foreground md:text-4xl">{stat.value}</span>
+                      <span className="mt-2 block text-sm text-muted-foreground">
+                        {stat.label}
+                      </span>
+                    </div>
+                  ))}
                 </div>
-              ))}
+                <div className="flex gap-6 pr-6" aria-hidden="true">
+                  {stats.map((stat) => (
+                    <div
+                      key={`${stat.label}-duplicate`}
+                      className="min-w-[220px] rounded-xl border border-border bg-background p-6"
+                    >
+                      <span className="text-3xl font-bold text-foreground md:text-4xl">{stat.value}</span>
+                      <span className="mt-2 block text-sm text-muted-foreground">
+                        {stat.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
