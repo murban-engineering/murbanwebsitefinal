@@ -39,7 +39,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
-import { DottedSurface } from "@/components/ui/dotted-surface";
+
 import fieldWork1 from "@/assets/field-work-1.jpg";
 import fieldWork3 from "@/assets/field-work-3.jpg";
 import "./Services.css";
@@ -2055,9 +2055,8 @@ const Services = () => {
 
   return (
     <div className="min-h-screen pt-20 bg-background relative">
-      {/* Full Page Dotted Background with Grid Mesh */}
+      {/* Gradient Background */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        <DottedSurface className="size-full opacity-40" />
         <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
       </div>
       
@@ -2078,10 +2077,6 @@ const Services = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
         </div>
         
-        {/* Subtle engineering grid pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <DottedSurface className="size-full" />
-        </div>
 
         <div className="container relative z-10 mx-auto px-4 text-center">
           <div className="animate-fade-in">

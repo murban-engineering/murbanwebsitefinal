@@ -13,7 +13,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import teamImage from "@/assets/team-collaboration.jpg";
 import AfricaMap from "@/components/AfricaMap";
 import WhyChooseUs from "@/components/WhyChooseUs";
-import { DottedSurface } from "@/components/ui/dotted-surface";
+
 import fieldWork2 from "@/assets/field-work-2.jpg";
 import fieldWork5 from "@/assets/field-work-5.jpg";
 
@@ -57,9 +57,8 @@ const About = () => {
 
   return (
     <div className="min-h-screen pt-20 relative">
-      {/* Full Page Dotted Background with Grid Mesh */}
+      {/* Gradient Background */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        <DottedSurface className="size-full opacity-40" />
         <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
       </div>
       

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { DottedSurface } from "@/components/ui/dotted-surface";
+
 import oilGasImg from "@/assets/oil-gas-industry.png";
 import storageTerminalsImg from "@/assets/storage-terminals.png";
 import foodProcessingImg from "@/assets/food-processing.png";
@@ -246,9 +246,8 @@ const ProjectGallery = () => {
 
   return (
     <div className="min-h-screen pt-20 relative">
-      {/* Full Page Dotted Background */}
+      {/* Gradient Background */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        <DottedSurface className="size-full opacity-40" />
         <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
       </div>
 

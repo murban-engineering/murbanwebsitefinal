@@ -17,7 +17,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { DottedSurface } from "@/components/ui/dotted-surface";
+
 import TypingAnimation from "@/components/TypingAnimation";
 import projectImage from "@/assets/project-showcase.jpg";
 import Testimonials from "@/components/Testimonials";
@@ -190,9 +190,8 @@ const Home = () => {
 
   return (
     <div className="relative min-h-screen bg-background">
-      {/* Full Page Dotted Background */}
+      {/* Gradient Background */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        <DottedSurface className="size-full opacity-40" />
         <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
       </div>
       

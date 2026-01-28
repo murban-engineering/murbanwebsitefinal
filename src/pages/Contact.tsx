@@ -13,7 +13,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
-import { DottedSurface } from "@/components/ui/dotted-surface";
+
 
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
 const ACCEPTED_FILE_TYPES = [
@@ -166,9 +166,8 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen pt-20 relative">
-      {/* Full Page Dotted Background with Grid Mesh */}
+      {/* Gradient Background */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        <DottedSurface className="size-full opacity-40" />
         <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
       </div>
       
