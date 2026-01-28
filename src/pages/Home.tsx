@@ -210,9 +210,12 @@ const Home = () => {
               src={portSunset} 
               alt="Port machinery at sunset" 
               className="h-full w-full object-cover"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40" />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30" />
+            <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
           </div>
 
           <div className="container relative mx-auto px-4 py-20">
