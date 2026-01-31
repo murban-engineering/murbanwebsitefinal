@@ -240,21 +240,23 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Stats Section - Clean cards with subtle shadows */}
+      {/* Stats Section - Left-to-right marquee */}
       <section className="relative z-10 -mt-20 pb-16">
         <div className="container mx-auto px-4">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-2xl border border-border bg-card p-6 shadow-lg shadow-foreground/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-              >
-                <span className="text-3xl font-bold text-primary">{stat.value}</span>
-                <span className="mt-2 block text-sm font-medium text-muted-foreground">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
+          <div className="overflow-hidden rounded-3xl border border-border bg-card/60 shadow-lg shadow-foreground/5">
+            <div className="flex w-[200%] items-center gap-4 px-6 py-6 motion-reduce:animate-none animate-marquee-right">
+              {[...stats, ...stats].map((stat, index) => (
+                <div
+                  key={`${stat.label}-${index}`}
+                  className="min-w-[220px] rounded-2xl border border-border bg-card p-6 shadow-lg shadow-foreground/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <span className="text-3xl font-bold text-primary">{stat.value}</span>
+                  <span className="mt-2 block text-sm font-medium text-muted-foreground">
+                    {stat.label}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
