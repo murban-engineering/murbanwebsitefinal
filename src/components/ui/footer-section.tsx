@@ -154,7 +154,7 @@ function Footerdemo() {
           </div>
         </div>
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t pt-8 text-center md:flex-row">
-          <p className="text-sm text-muted-foreground">© 2024 Murban Engineering Services. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground">© 2026 Murban Engineering Services. All rights reserved.</p>
           <nav className="flex gap-4 text-sm">
             <Link to="/about" className="transition-colors hover:text-primary">
               About Us
