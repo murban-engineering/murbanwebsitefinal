@@ -63,6 +63,7 @@ const Home = () => {
     { value: "42", label: "Expert Engineers" },
     { value: "ISO 9001", label: "Certified" },
   ];
+  const marqueeStats = [...stats, ...stats];
 
   const differentiators = [
     {
@@ -246,8 +247,8 @@ const Home = () => {
       <section className="relative z-10 -mt-20 pb-16">
         <div className="container mx-auto px-4">
           <div className="overflow-hidden rounded-3xl border border-border bg-card/60 shadow-lg shadow-foreground/5">
-            <div className="flex w-[200%] items-center gap-4 px-6 py-6 motion-reduce:animate-none animate-marquee-right">
-              {[...stats, ...stats].map((stat, index) => (
+            <div className="flex w-max items-center gap-4 px-6 py-6 motion-reduce:animate-none animate-marquee [animation-direction:reverse]">
+              {marqueeStats.map((stat, index) => (
                 <div
                   key={`${stat.label}-${index}`}
                   className="min-w-[220px] rounded-2xl border border-border bg-card p-6 shadow-lg shadow-foreground/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
