@@ -40,8 +40,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 
-import fieldWork1 from "@/assets/field-work-1.jpg";
-import fieldWork3 from "@/assets/field-work-3.jpg";
+import servicesIndustrial1 from "@/assets/services-industrial-1.jpg";
+import servicesBuilding from "@/assets/services-building.jpg";
+import servicesStorage from "@/assets/services-storage.jpg";
+import servicesPipeline from "@/assets/services-pipeline.jpg";
+import servicesEngine from "@/assets/services-engine.jpg";
+import servicesPlant from "@/assets/services-plant.jpg";
 import "./Services.css";
 
 type ServiceCardProps = {
@@ -2055,44 +2059,41 @@ const Services = () => {
 
   return (
     <div className="min-h-screen pt-20 bg-background relative">
-      {/* Gradient Background */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
-      </div>
-      
-      {/* Hero Section */}
+      {/* Hero Section with Industrial Image */}
       <section
         id="services-hero"
-        className="relative overflow-hidden py-32 md:py-40 text-white"
+        className="relative overflow-hidden py-32 md:py-40"
       >
-        {/* Photorealistic Background */}
+        {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src={fieldWork1}
-            alt="Murban Engineering field inspection team"
+            src={servicesBuilding}
+            alt="Industrial engineering infrastructure"
             className="h-full w-full object-cover"
+            loading="eager"
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-secondary/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-transparent to-secondary/40" />
         </div>
-        
 
         <div className="container relative z-10 mx-auto px-4 text-center">
           <div className="animate-fade-in">
             <Badge className="mb-6 border border-white/40 bg-white/15 text-white backdrop-blur-md text-sm uppercase tracking-wider">
               Murban Inspection & Engineering
             </Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 leading-[1.1] text-white drop-shadow-lg">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold mb-6 leading-[1.1] text-white drop-shadow-lg">
               Precision Inspection &<br />Engineering Services
             </h1>
             <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto text-white/95 leading-relaxed mb-10 drop-shadow-md">
               Comprehensive Non-Destructive Testing and turnkey engineering support to keep critical infrastructure running at peak performance.
             </p>
             
-            {/* Primary CTA with Murban red accent */}
+            {/* Primary CTA */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
               <Button 
                 size="lg" 
                 asChild
-                className="bg-primary hover:bg-primary/90 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 rounded-full px-8 text-base"
+                className="bg-primary hover:bg-primary/90 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 rounded-xl px-8 text-base"
               >
                 <Link to="/contact">Get Started Today</Link>
               </Button>
@@ -2100,13 +2101,13 @@ const Services = () => {
                 size="lg" 
                 variant="outline"
                 asChild
-                className="border-2 border-white/60 bg-white/10 text-white hover:bg-white/20 backdrop-blur-md rounded-full px-8 text-base transition-all duration-300 hover:scale-105"
+                className="border-2 border-white/60 bg-white/10 text-white hover:bg-white/20 backdrop-blur-md rounded-xl px-8 text-base transition-all duration-300 hover:scale-105"
               >
                 <Link to="/project-gallery">View Projects</Link>
               </Button>
             </div>
 
-            {/* Navigation to sections with consistent styling */}
+            {/* Navigation to sections */}
             <nav
               aria-label="Services sections"
               className="flex flex-wrap items-center justify-center gap-3"
@@ -2115,7 +2116,7 @@ const Services = () => {
                 <a
                   key={section.id}
                   href={`#${section.id}`}
-                  className="group inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-5 py-2.5 text-sm font-medium text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/20 hover:border-white/50 hover:scale-105 hover:shadow-lg"
+                  className="group inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/10 px-5 py-2.5 text-sm font-medium text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/20 hover:border-white/50 hover:scale-105 hover:shadow-lg"
                 >
                   <span>{section.label}</span>
                 </a>
@@ -2123,45 +2124,43 @@ const Services = () => {
             </nav>
           </div>
         </div>
-
-        {/* Decorative blur orbs */}
-        <div className="pointer-events-none absolute -bottom-20 right-10 h-64 w-64 rounded-full bg-primary/30 blur-3xl" />
-        <div className="pointer-events-none absolute -top-16 left-10 h-72 w-72 rounded-full bg-white/20 blur-3xl" />
       </section>
 
-      {/* Smooth Wave Transition */}
-      <div className="relative -mt-1">
-        <svg className="w-full h-24 md:h-32" viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-          <path d="M0,64 C240,100 480,100 720,80 C960,60 1200,20 1440,40 L1440,0 L0,0 Z" className="fill-secondary/20" />
-          <path d="M0,80 C360,110 720,110 1080,90 C1260,80 1380,60 1440,70 L1440,0 L0,0 Z" className="fill-background" />
-        </svg>
-      </div>
+      {/* Image Gallery Strip */}
+      <section className="py-8 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <img src={servicesIndustrial1} alt="Industrial facility" className="h-48 w-full rounded-2xl object-cover shadow-lg" />
+            <img src={servicesStorage} alt="Storage tanks" className="h-48 w-full rounded-2xl object-cover shadow-lg" />
+            <img src={servicesPipeline} alt="Pipeline construction" className="h-48 w-full rounded-2xl object-cover shadow-lg" />
+            <img src={servicesEngine} alt="Engineering equipment" className="h-48 w-full rounded-2xl object-cover shadow-lg" />
+          </div>
+        </div>
+      </section>
 
       {/* Service Spotlight Section */}
       <section id="service-spotlight" className="relative py-24 bg-background">
-        {/* Smooth gradient transition from hero */}
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background via-background/80 to-transparent -z-10" />
         <div className="container relative z-10 mx-auto px-4">
-          <div className="mx-auto mb-16 max-w-4xl text-center animate-fade-in">
-            <Badge className="mb-4 bg-primary/10 text-primary border border-primary/20 uppercase tracking-wider">
+          <div className="mx-auto mb-16 max-w-4xl text-center">
+            <span className="text-sm font-semibold uppercase tracking-widest text-primary">
               Service Spotlight
-            </Badge>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 text-foreground leading-tight">
+            </span>
+            <h2 className="mt-4 text-3xl md:text-4xl font-semibold text-foreground">
               Explore Our Specialized Capabilities
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-muted-foreground">
               Choose a service to see how Murban Engineering delivers precision, compliance, and dependable results for your assets.
             </p>
           </div>
 
-          {/* Category Filter with consistent hover animations */}
+          {/* Category Filter */}
           <div className="mb-10 flex flex-wrap justify-center gap-3">
             {categories.map((category) => (
               <Button
                 key={category}
                 variant={selectedCategory === category ? "default" : "outline"}
                 onClick={() => setSelectedCategory(category)}
-                className="rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                className="rounded-xl transition-all duration-300 hover:scale-105"
               >
                 {category}
               </Button>
@@ -2169,7 +2168,7 @@ const Services = () => {
           </div>
 
           <div className="mb-6 flex items-center justify-between text-muted-foreground">
-            <span className="text-sm uppercase tracking-[0.2em]">Service Cards</span>
+            <span className="text-sm uppercase tracking-widest">Service Cards</span>
             <span className="text-sm">{filteredServices.length} services</span>
           </div>
           <div className="services-grid services-grid--selectable">
@@ -2192,37 +2191,25 @@ const Services = () => {
         id="fabrication-services"
         className="relative overflow-hidden py-24"
       >
-        {/* Smooth gradient transition */}
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background via-background/50 to-muted" />
-        <div className="absolute inset-0 bg-muted" />
-        
-        {/* Engineering-inspired background pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `linear-gradient(to right, currentColor 1px, transparent 1px),
-                              linear-gradient(to bottom, currentColor 1px, transparent 1px)`,
-            backgroundSize: '40px 40px'
-          }} />
-        </div>
-
-        {/* Photorealistic accent image */}
-        <div className="absolute right-0 top-0 bottom-0 w-1/3 opacity-10 hidden lg:block">
+        {/* Background Image */}
+        <div className="absolute inset-0">
           <img 
-            src={fieldWork3} 
-            alt="Engineering work" 
+            src={servicesPlant} 
+            alt="Industrial plant" 
             className="h-full w-full object-cover"
           />
+          <div className="absolute inset-0 bg-background/95" />
         </div>
 
         <div className="container relative z-10 mx-auto px-4">
-          <div className="mx-auto mb-16 max-w-3xl text-center text-foreground animate-fade-in">
-            <Badge className="mb-4 bg-secondary/10 text-secondary border border-secondary/20 uppercase tracking-wider">
+          <div className="mx-auto mb-16 max-w-3xl text-center">
+            <span className="text-sm font-semibold uppercase tracking-widest text-primary">
               Engineering & Fabrication
-            </Badge>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 leading-tight">
+            </span>
+            <h2 className="mt-4 text-3xl md:text-4xl font-semibold text-foreground">
               Murban Engineering and Fabrication Services
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-muted-foreground">
               From detailed engineering to turnkey fabrication and installation
             </p>
           </div>
@@ -2242,7 +2229,7 @@ const Services = () => {
             <Button 
               size="lg"
               asChild
-              className="bg-primary hover:bg-primary/90 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 rounded-full px-8"
+              className="bg-primary hover:bg-primary/90 text-white shadow-lg transition-all duration-300 hover:scale-105 rounded-xl px-8"
             >
               <Link to="/contact">Discuss Your Next Build</Link>
             </Button>
@@ -2250,41 +2237,36 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Smooth transition to CTA */}
-      <div className="relative">
-        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-muted via-background/80 to-background" />
-      </div>
-
-      {/* CTA Section */}
+      {/* CTA Section with Image Background */}
       <section id="services-contact" className="py-24 relative">
-        <div className="container mx-auto px-4">
-          <Card className="overflow-hidden border-0 bg-gradient-to-br from-primary via-primary/90 to-secondary text-white shadow-2xl shadow-primary/40 animate-fade-in">
-            <CardContent className="relative px-6 py-20 md:px-16 text-center">
-              <div className="absolute -left-16 top-1/2 hidden h-40 w-40 -translate-y-1/2 rounded-full bg-white/10 blur-3xl md:block" />
-              <div className="absolute -right-20 top-12 hidden h-44 w-44 rounded-full bg-white/10 blur-3xl md:block" />
-              <div className="relative z-10">
-                <Badge className="mb-6 border border-white/40 bg-white/15 text-white backdrop-blur-md uppercase tracking-wider">
-                  Contact Our Team
-                </Badge>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 leading-tight">
-                  Let's Build Something<br />Great Together
-                </h2>
-                <p className="text-lg md:text-xl opacity-95 mb-10 max-w-2xl mx-auto leading-relaxed">
-                  Ready to start your next project? Contact our team to discover how Murban's inspection and engineering experts can bring your vision to life with safety and precision.
-                </p>
-                <Button 
-                  size="lg" 
-                  variant="secondary" 
-                  asChild 
-                  className="text-base md:text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 rounded-full px-10"
-                >
-                  <Link to="/contact">
-                    Get in Touch
-                  </Link>
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
+        <div className="absolute inset-0">
+          <img 
+            src={servicesPipeline} 
+            alt="Pipeline construction" 
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-primary/90" />
+        </div>
+        <div className="container relative z-10 mx-auto px-4 text-center">
+          <span className="text-sm font-semibold uppercase tracking-widest text-white/80">
+            Contact Our Team
+          </span>
+          <h2 className="mt-4 text-3xl md:text-4xl font-semibold text-white">
+            Let's Build Something Great Together
+          </h2>
+          <p className="mt-4 max-w-2xl mx-auto text-white/90">
+            Ready to start your next project? Contact our team to discover how Murban's inspection and engineering experts can bring your vision to life.
+          </p>
+          <Button 
+            size="lg" 
+            variant="secondary" 
+            asChild 
+            className="mt-8 text-base shadow-lg transition-all duration-300 hover:scale-105 rounded-xl px-10 bg-background text-foreground hover:bg-background/90"
+          >
+            <Link to="/contact">
+              Get in Touch
+            </Link>
+          </Button>
         </div>
       </section>
     </div>
