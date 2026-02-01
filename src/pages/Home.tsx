@@ -448,6 +448,8 @@ const Home = () => {
                   src={client.logo}
                   alt={client.name}
                   className={`${client.width} h-auto opacity-70 grayscale transition-all hover:opacity-100 hover:grayscale-0`}
+                  loading="lazy"
+                  decoding="async"
                 />
               ))}
             </div>

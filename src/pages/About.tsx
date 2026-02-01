@@ -121,6 +121,8 @@ const About = () => {
                 src={teamImage}
                 alt="Our Team"
                 className="rounded-lg shadow-xl"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -196,10 +198,12 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             <div className="group relative overflow-hidden rounded-3xl border border-border bg-card shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
               <div className="aspect-[4/3] overflow-hidden">
-                <img 
-                  src={fieldWork2} 
-                  alt="Industrial tank inspection with advanced equipment" 
+                <img
+                  src={fieldWork2}
+                  alt="Industrial tank inspection with advanced equipment"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="p-6">
@@ -212,10 +216,12 @@ const About = () => {
             </div>
             <div className="group relative overflow-hidden rounded-3xl border border-border bg-card shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
               <div className="aspect-[4/3] overflow-hidden">
-                <img 
-                  src={fieldWork5} 
-                  alt="Precision measurement equipment in industrial setting" 
+                <img
+                  src={fieldWork5}
+                  alt="Precision measurement equipment in industrial setting"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="p-6">

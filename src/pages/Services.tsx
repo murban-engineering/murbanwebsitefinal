@@ -2077,6 +2077,8 @@ const Services = () => {
             alt="Industrial engineering infrastructure"
             className="h-full w-full object-cover"
             loading="eager"
+            decoding="async"
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-secondary/60" />
           <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-transparent to-secondary/40" />
@@ -2136,10 +2138,34 @@ const Services = () => {
       <section className="py-8 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <img src={servicesIndustrial1} alt="Industrial facility" className="h-48 w-full rounded-2xl object-cover shadow-lg" />
-            <img src={servicesStorage} alt="Storage tanks" className="h-48 w-full rounded-2xl object-cover shadow-lg" />
-            <img src={servicesPipeline} alt="Pipeline construction" className="h-48 w-full rounded-2xl object-cover shadow-lg" />
-            <img src={servicesEngine} alt="Engineering equipment" className="h-48 w-full rounded-2xl object-cover shadow-lg" />
+            <img
+              src={servicesIndustrial1}
+              alt="Industrial facility"
+              className="h-48 w-full rounded-2xl object-cover shadow-lg"
+              loading="lazy"
+              decoding="async"
+            />
+            <img
+              src={servicesStorage}
+              alt="Storage tanks"
+              className="h-48 w-full rounded-2xl object-cover shadow-lg"
+              loading="lazy"
+              decoding="async"
+            />
+            <img
+              src={servicesPipeline}
+              alt="Pipeline construction"
+              className="h-48 w-full rounded-2xl object-cover shadow-lg"
+              loading="lazy"
+              decoding="async"
+            />
+            <img
+              src={servicesEngine}
+              alt="Engineering equipment"
+              className="h-48 w-full rounded-2xl object-cover shadow-lg"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
       </section>
@@ -2199,10 +2225,12 @@ const Services = () => {
       >
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img 
-            src={servicesPlant} 
-            alt="Industrial plant" 
+          <img
+            src={servicesPlant}
+            alt="Industrial plant"
             className="h-full w-full object-cover"
+            loading="lazy"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-background/95" />
         </div>
@@ -2246,10 +2274,12 @@ const Services = () => {
       {/* CTA Section with Image Background */}
       <section id="services-contact" className="py-24 relative">
         <div className="absolute inset-0">
-          <img 
-            src={servicesPipeline} 
-            alt="Pipeline construction" 
+          <img
+            src={servicesPipeline}
+            alt="Pipeline construction"
             className="h-full w-full object-cover"
+            loading="lazy"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-primary/90" />
         </div>

@@ -74,6 +74,8 @@ export function WorldMap({ dots = [], lineColor = "#0ea5e9" }: MapProps) {
         alt="world map"
         height={495}
         width={1056}
+        loading="lazy"
+        decoding="async"
         draggable={false}
       />
       <svg ref={svgRef} viewBox="0 0 800 400" className="pointer-events-none absolute inset-0 h-full w-full select-none">

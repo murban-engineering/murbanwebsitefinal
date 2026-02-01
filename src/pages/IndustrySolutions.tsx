@@ -212,6 +212,8 @@ const IndustrySolutions = () => {
                       src={industry.image} 
                       alt={industry.title}
                       className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500"
+                      loading="lazy"
+                      decoding="async"
                     />
                     {/* Glossy overlay gradient */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>

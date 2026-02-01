@@ -31,10 +31,12 @@ const AfricaMap = () => {
       {/* Map container with image background */}
       <div className="relative w-full rounded-2xl overflow-hidden shadow-elegant border border-primary/20 bg-gradient-to-br from-primary/5 to-accent/5">
         {/* Africa map image */}
-        <img 
-          src={africaMap} 
+        <img
+          src={africaMap}
           alt="Africa Map showing Murban Engineering operational areas"
           className="w-full h-auto"
+          loading="lazy"
+          decoding="async"
         />
         
         {/* Decorative overlay for depth */}

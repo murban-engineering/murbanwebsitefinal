@@ -20,6 +20,8 @@ const WhyChooseUs = () => {
               src={teamImage}
               alt="Industrial Equipment"
               className="rounded-lg shadow-xl w-full h-auto"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="animate-fade-in order-1 lg:order-2">
