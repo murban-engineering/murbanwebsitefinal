@@ -27,6 +27,12 @@ const Navigation = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
+  const handleHomeClick = () => {
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <nav
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
@@ -71,14 +77,15 @@ const Navigation = () => {
                 );
               }
 
-              return (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`text-sm font-medium transition-colors ${
-                    active
-                      ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground"
+                return (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    onClick={link.path === "/" ? handleHomeClick : undefined}
+                    className={`text-sm font-medium transition-colors ${
+                      active
+                        ? "text-foreground"
+                        : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   {link.name}
@@ -134,7 +141,12 @@ const Navigation = () => {
                   <Link
                     key={link.path}
                     to={link.path}
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => {
+                      if (link.path === "/") {
+                        handleHomeClick();
+                      }
+                      setIsOpen(false);
+                    }}
                     className={`block px-4 py-3 text-sm font-medium transition-colors ${
                       active
                         ? "text-foreground bg-muted rounded-lg"
