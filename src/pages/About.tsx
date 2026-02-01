@@ -10,7 +10,6 @@ import {
   MapPinIcon as MapPin,
 } from "@/components/ui/icons";
 import { Card, CardContent } from "@/components/ui/card";
-import teamImage from "@/assets/team-collaboration.jpg";
 import AfricaMap from "@/components/AfricaMap";
 import WhyChooseUs from "@/components/WhyChooseUs";
 
@@ -118,8 +117,8 @@ const About = () => {
             </div>
             <div className="animate-scale-in">
               <img
-                src={teamImage}
-                alt="Our Team"
+                src="/_MG_2642%20-%20Copy%20(2).jpg"
+                alt="Murban Engineering inspection team"
                 className="rounded-lg shadow-xl"
                 loading="lazy"
                 decoding="async"
