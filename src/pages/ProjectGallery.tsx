@@ -17,6 +17,7 @@ import fieldWork3 from "@/assets/field-work-3.jpg";
 import fieldWork4 from "@/assets/field-work-4.jpg";
 import fieldWork5 from "@/assets/field-work-5.jpg";
 import fieldWork6 from "@/assets/field-work-6.jpg";
+import constructionBlueprints from "@/assets/construction-blueprints.jpg";
 
 interface Project {
   id: number;
@@ -237,6 +238,30 @@ const ProjectGallery = () => {
         "Early detection of 23 critical issues",
       ],
     },
+    {
+      id: 9,
+      title: "Engineering Design & Quality Assurance",
+      category: "Oil & Gas",
+      location: "Kenya",
+      year: "2024",
+      description: "Comprehensive design review and quality assurance for major infrastructure project with detailed blueprint analysis.",
+      image: constructionBlueprints,
+      challenges: [
+        "Complex engineering specifications",
+        "Multiple stakeholder requirements",
+        "Tight project timelines",
+      ],
+      solutions: [
+        "Detailed blueprint and design review",
+        "Quality management protocols",
+        "Expert engineering consultation",
+      ],
+      results: [
+        "All designs approved on first review",
+        "Zero rework required",
+        "Project delivered ahead of schedule",
+      ],
+    },
   ];
 
   const filteredProjects =
@@ -300,6 +325,8 @@ const ProjectGallery = () => {
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">

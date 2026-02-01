@@ -238,6 +238,14 @@ const Home = () => {
               >
                 <Link to="/services">Explore Services</Link>
               </Button>
+              <Button
+                size="lg"
+                variant="secondary"
+                asChild
+                className="rounded-xl px-8 shadow-lg"
+              >
+                <Link to="/project-gallery">View Our Projects</Link>
+              </Button>
             </div>
           </div>
         </div>
@@ -385,6 +393,8 @@ const Home = () => {
                 src={projectImage}
                 alt="Engineering project showcase"
                 className="rounded-3xl shadow-2xl shadow-foreground/10"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute -bottom-6 -left-6 rounded-2xl border border-border bg-card p-6 shadow-xl">
                 <div className="text-3xl font-bold text-primary">98%</div>
@@ -462,16 +472,22 @@ const Home = () => {
               src={fieldWork1}
               alt="Field work 1"
               className="h-64 w-full rounded-2xl object-cover shadow-lg transition-transform duration-300 hover:scale-[1.02]"
+              loading="lazy"
+              decoding="async"
             />
             <img
               src={fieldWork3}
               alt="Field work 3"
               className="h-64 w-full rounded-2xl object-cover shadow-lg transition-transform duration-300 hover:scale-[1.02]"
+              loading="lazy"
+              decoding="async"
             />
             <img
               src={fieldWork4}
               alt="Field work 4"
               className="h-64 w-full rounded-2xl object-cover shadow-lg transition-transform duration-300 hover:scale-[1.02]"
+              loading="lazy"
+              decoding="async"
             />
           </div>
 
