@@ -41,11 +41,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 
-import servicesIndustrial1 from "@/assets/services-industrial-1.jpg";
 import servicesBuilding from "@/assets/services-building.jpg";
-import servicesStorage from "@/assets/services-storage.jpg";
 import servicesPipeline from "@/assets/services-pipeline.jpg";
-import servicesEngine from "@/assets/services-engine.jpg";
 import servicesPlant from "@/assets/services-plant.jpg";
 import "./Services.css";
 
@@ -2143,42 +2140,6 @@ const Services = () => {
                 ))}
               </div>
             </nav>
-          </div>
-        </div>
-      </section>
-
-      {/* Image Gallery Strip */}
-      <section className="py-8 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <img
-              src={servicesIndustrial1}
-              alt="Industrial facility"
-              className="h-48 w-full rounded-2xl object-cover shadow-lg"
-              loading="lazy"
-              decoding="async"
-            />
-            <img
-              src={servicesStorage}
-              alt="Storage tanks"
-              className="h-48 w-full rounded-2xl object-cover shadow-lg"
-              loading="lazy"
-              decoding="async"
-            />
-            <img
-              src={servicesPipeline}
-              alt="Pipeline construction"
-              className="h-48 w-full rounded-2xl object-cover shadow-lg"
-              loading="lazy"
-              decoding="async"
-            />
-            <img
-              src={servicesEngine}
-              alt="Engineering equipment"
-              className="h-48 w-full rounded-2xl object-cover shadow-lg"
-              loading="lazy"
-              decoding="async"
-            />
           </div>
         </div>
       </section>
