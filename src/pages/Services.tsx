@@ -2077,8 +2077,6 @@ const Services = () => {
             decoding="async"
             fetchPriority="high"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/55 to-primary/30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-primary/75 via-transparent to-primary/25" />
         </div>
 
         <div className="container relative z-10 mx-auto px-4 text-center">
