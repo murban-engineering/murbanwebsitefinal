@@ -15,6 +15,7 @@ import foodProcessingImg from "@/assets/food-processing.png";
 import renewableEnergyImg from "@/assets/renewable-energy.png";
 import railIndustryImg from "@/assets/rail-industry.png";
 import shippingMarineImg from "@/assets/shipping-marine.png";
+import industryHero from "@/assets/industry-hero.jpg";
 
 const IndustrySolutions = () => {
   const industries = [
@@ -166,12 +167,21 @@ const IndustrySolutions = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-hero text-secondary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6">
+      <section className="relative py-24 overflow-hidden min-h-[50vh] flex items-center">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={industryHero}
+            alt="Pipeline construction"
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30" />
+        </div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h1 className="text-5xl md:text-6xl font-semibold mb-6 text-foreground">
             Industry Solutions
           </h1>
-          <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
             Tailored inspection and integrity solutions for diverse industries across Africa
           </p>
         </div>
