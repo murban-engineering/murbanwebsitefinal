@@ -2235,7 +2235,6 @@ const Services = () => {
             loading="lazy"
             decoding="async"
           />
-          <div className="absolute inset-0 bg-primary/90" />
         </div>
         <div className="container relative z-10 mx-auto px-4 text-center">
           <span className="text-sm font-semibold uppercase tracking-widest text-white/80">
