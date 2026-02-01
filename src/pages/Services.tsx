@@ -2080,8 +2080,8 @@ const Services = () => {
             decoding="async"
             fetchPriority="high"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-secondary/60" />
-          <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-transparent to-secondary/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/55 to-primary/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/75 via-transparent to-primary/25" />
         </div>
 
         <div className="container relative z-10 mx-auto px-4 text-center">
@@ -2118,17 +2118,30 @@ const Services = () => {
             {/* Navigation to sections */}
             <nav
               aria-label="Services sections"
-              className="flex flex-wrap items-center justify-center gap-3"
+              className="flex flex-col items-center justify-center gap-3"
             >
-              {serviceSections.map((section) => (
-                <a
-                  key={section.id}
-                  href={`#${section.id}`}
-                  className="group inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/10 px-5 py-2.5 text-sm font-medium text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/20 hover:border-white/50 hover:scale-105 hover:shadow-lg"
-                >
-                  <span>{section.label}</span>
-                </a>
-              ))}
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                {serviceSections.slice(0, 2).map((section) => (
+                  <a
+                    key={section.id}
+                    href={`#${section.id}`}
+                    className="group inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/10 px-5 py-2.5 text-sm font-medium text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/20 hover:border-white/50 hover:scale-105 hover:shadow-lg"
+                  >
+                    <span>{section.label}</span>
+                  </a>
+                ))}
+              </div>
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                {serviceSections.slice(2).map((section) => (
+                  <a
+                    key={section.id}
+                    href={`#${section.id}`}
+                    className="group inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/10 px-5 py-2.5 text-sm font-medium text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/20 hover:border-white/50 hover:scale-105 hover:shadow-lg"
+                  >
+                    <span>{section.label}</span>
+                  </a>
+                ))}
+              </div>
             </nav>
           </div>
         </div>
