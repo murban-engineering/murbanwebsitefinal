@@ -160,7 +160,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Address",
-      details: "Off Airport Road, Mombasa Port Reitz",
+      details: "P. O. Box 99215, Off-Airport Road Port Reiz, Mombasa, Coast 80107, KE",
     },
   ];
 
@@ -383,12 +383,13 @@ const Contact = () => {
                     </div>
                     <h3 className="text-xl font-semibold mb-3">Visit Our Office</h3>
                     <p className="text-muted-foreground font-medium mb-6">
-                      6G7XXM89+4F (XM89+4F7)<br />
-                      Tom Mboya, Mombasa
+                      P. O. Box 99215<br />
+                      Off-Airport Road, Port Reiz<br />
+                      Mombasa, Coast 80107, KE
                     </p>
                     <Button variant="outline" className="mt-2 shadow-md hover:shadow-lg" asChild>
                       <a
-                        href="https://www.google.com/maps/search/?api=1&query=6G7XXM89%2B4F%20XM89%2B4F7%2C%20Tom%20Mboya%2C%20Mombasa"
+                        href="https://www.google.com/maps/search/?api=1&query=P.%20O.%20Box%2099215%2C%20Off-Airport%20Road%20Port%20Reiz%2C%20Mombasa%2C%20Coast%2080107%2C%20KE"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
