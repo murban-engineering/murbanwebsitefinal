@@ -26,16 +26,6 @@ const ServiceDetailPage = () => {
         .filter(Boolean)
     : [];
 
-  const relatedEntries = (detail?.relatedServices ?? []).map((name) => {
-    const relatedSlug = getServiceSlugForName(name);
-    const relatedService = relatedSlug ? getServiceBySlug(relatedSlug) : undefined;
-
-    return {
-      name,
-      slug: relatedService ? relatedSlug : undefined,
-    };
-  });
-
   return (
     <div className="min-h-screen bg-background pt-24 pb-16">
       <div className="container mx-auto px-4">
@@ -124,41 +114,6 @@ const ServiceDetailPage = () => {
             </section>
           ))}
 
-          {relatedEntries.length > 0 && (
-            <section className="space-y-3">
-              <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                Related Services
-              </h2>
-              <div className="grid gap-2 sm:grid-cols-2">
-                {relatedEntries.map(({ name, slug: relatedSlug }) =>
-                  relatedSlug ? (
-                    <Link
-                      key={name}
-                      to={`/services/${relatedSlug}`}
-                      className="flex items-center gap-2 rounded-xl border border-border/40 bg-background/70 px-4 py-2 text-sm text-muted-foreground transition hover:border-primary/50 hover:text-foreground"
-                    >
-                      <span
-                        className="inline-flex h-1.5 w-1.5 rounded-full bg-primary"
-                        aria-hidden="true"
-                      />
-                      <span className="leading-tight">{name}</span>
-                    </Link>
-                  ) : (
-                    <div
-                      key={name}
-                      className="flex items-center gap-2 rounded-xl border border-border/40 bg-background/70 px-4 py-2 text-sm text-muted-foreground"
-                    >
-                      <span
-                        className="inline-flex h-1.5 w-1.5 rounded-full bg-primary"
-                        aria-hidden="true"
-                      />
-                      <span className="leading-tight">{name}</span>
-                    </div>
-                  ),
-                )}
-              </div>
-            </section>
-          )}
         </div>
       </div>
     </div>
