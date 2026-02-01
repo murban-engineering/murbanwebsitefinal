@@ -254,7 +254,7 @@ const Home = () => {
       {/* Stats Section - Left-to-right marquee */}
       <section className="relative z-10 -mt-20 pb-16">
         <div className="container mx-auto px-4">
-          <div className="overflow-hidden rounded-3xl border border-border bg-card/60 shadow-lg shadow-foreground/5">
+          <div className="overflow-hidden rounded-3xl border border-transparent bg-transparent shadow-none">
             <div className="flex w-max items-center gap-4 px-6 py-6 motion-reduce:animate-none animate-marquee [animation-direction:reverse]">
               {marqueeStats.map((stat, index) => (
                 <div
