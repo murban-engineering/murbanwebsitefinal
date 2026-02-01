@@ -278,7 +278,14 @@ const ProjectGallery = () => {
 
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-hero" />
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage:
+              'url("/construction-concept-image-helmet-rolled-blueprints-wooden-boards-retro-style.jpg")',
+          }}
+        />
+        <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 bg-gradient-mesh" />
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="inline-block px-4 py-2 mb-6 rounded-full bg-white/10 backdrop-blur-md border border-white/20 animate-fade-in">
