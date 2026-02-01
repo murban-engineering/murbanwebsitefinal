@@ -383,12 +383,12 @@ const Contact = () => {
                     </div>
                     <h3 className="text-xl font-semibold mb-3">Visit Our Office</h3>
                     <p className="text-muted-foreground font-medium mb-6">
-                      Off Airport Road<br />
-                      Mombasa Port Reitz
+                      6G7XXM89+4F (XM89+4F7)<br />
+                      Tom Mboya, Mombasa
                     </p>
                     <Button variant="outline" className="mt-2 shadow-md hover:shadow-lg" asChild>
                       <a
-                        href="https://maps.google.com"
+                        href="https://www.google.com/maps/search/?api=1&query=6G7XXM89%2B4F%20XM89%2B4F7%2C%20Tom%20Mboya%2C%20Mombasa"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
