@@ -16,6 +16,7 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 
 import fieldWork2 from "@/assets/field-work-2.jpg";
 import fieldWork5 from "@/assets/field-work-5.jpg";
+import portSunset from "@/assets/port-sunset.jpg";
 
 const About = () => {
   const foundationValues = [
@@ -63,12 +64,21 @@ const About = () => {
       </div>
       
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-hero text-secondary-foreground relative z-10">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 animate-fade-in">
+      <section className="relative py-24 overflow-hidden min-h-[50vh] flex items-center z-10">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={portSunset}
+            alt="Port machinery at sunset"
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30" />
+        </div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h1 className="text-5xl md:text-6xl font-semibold mb-6 animate-fade-in text-foreground">
             About Murban Engineering
           </h1>
-          <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto animate-fade-in">
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-fade-in">
             Specialist in Asset Integrity, Inspection, and Non-Destructive Testing
           </p>
         </div>
