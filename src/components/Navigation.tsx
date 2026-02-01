@@ -38,7 +38,14 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
             <div className="relative h-10 w-10 overflow-hidden rounded-lg">
-              <img src={murbanLogo} alt="Murban Engineering Logo" className="h-full w-full object-cover" />
+              <img
+                src={murbanLogo}
+                alt="Murban Engineering Logo"
+                className="h-full w-full object-cover"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+              />
             </div>
             <span className="text-xl font-bold tracking-tight text-foreground">
               MURBAN ENGINEERING
