@@ -27,7 +27,7 @@ import kpcLogo from "@/assets/kpc-logo.png";
 import fieldWork1 from "@/assets/field-work-1.jpg";
 import fieldWork3 from "@/assets/field-work-3.jpg";
 import fieldWork4 from "@/assets/field-work-4.jpg";
-import industryHero from "@/assets/industry-hero.jpg";
+import industrialPlant from "@/assets/industrial-plant.jpg";
 
 const Home = () => {
   const services = [
@@ -189,7 +189,7 @@ const Home = () => {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src={industryHero}
+            src={industrialPlant}
             alt="Industrial engineering infrastructure"
             className="h-full w-full object-cover"
             loading="eager"
