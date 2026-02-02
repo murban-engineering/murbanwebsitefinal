@@ -33,113 +33,114 @@ const Home = () => {
   const services = [
     {
       icon: Building2,
-      title: "Structural Engineering",
-      description: "Future-ready structures engineered with advanced simulation and modelling.",
-      highlights: ["Seismic resilience", "Hybrid material systems", "Digital twin ready"],
+      title: "Asset Integrity Engineering",
+      description:
+        "Engineering solutions that keep critical infrastructure safe, compliant, and operating at peak performance.",
+      highlights: ["Fitness-for-service", "Lifecycle extension", "Reliability strategies"],
     },
     {
       icon: Wrench,
-      title: "MEP Systems",
-      description: "High-performance mechanical, electrical and plumbing systems for smart facilities.",
-      highlights: ["Net-zero ready", "Smart automation", "Lifecycle analytics"],
+      title: "Non-Destructive Testing (NDT)",
+      description:
+        "Advanced inspection techniques that uncover defects without interrupting operations or damaging assets.",
+      highlights: ["UT, RT, MPI, PT", "On-site & lab testing", "Rapid reporting"],
     },
     {
       icon: Shield,
-      title: "Project Leadership",
-      description: "Integrated delivery teams that align people, processes and technology.",
-      highlights: ["Design-build expertise", "Risk mitigation", "Transparent dashboards"],
+      title: "Inspection & Compliance",
+      description:
+        "Rigorous inspection programs aligned with industry standards and regulatory expectations.",
+      highlights: ["Code compliance", "Risk-based inspection", "Safety assurance"],
     },
     {
       icon: Users,
-      title: "Advisory & Consulting",
-      description: "Strategic engineering guidance for complex infrastructure ventures.",
-      highlights: ["Sustainability roadmaps", "Feasibility studies", "Regulatory compliance"],
+      title: "Advisory & Engineering Support",
+      description:
+        "Trusted engineering guidance to optimize maintenance planning, safety performance, and uptime.",
+      highlights: ["Integrity planning", "Failure analysis", "Operational readiness"],
     },
   ];
 
   const stats = [
-    { value: "25+", label: "Years Experience" },
-    { value: "1.8k", label: "Projects Delivered" },
-    { value: "42", label: "Expert Engineers" },
-    { value: "ISO 9001", label: "Certified" },
+    { value: "15+ Years", label: "Asset Integrity Experience" },
+    { value: "Africa", label: "Regional Coverage" },
+    { value: "24/7", label: "Operational Support" },
+    { value: "Compliance", label: "Safety-First Approach" },
   ];
   const marqueeStats = [...stats, ...stats];
 
-  const differentiators = [
+  const values = [
     {
-      icon: Sparkles,
-      title: "Signature Delivery Experience",
+      icon: Lightbulb,
+      title: "Passion for Innovation",
       description:
-        "Our cross-functional squads embed alongside your team to accelerate approvals, procurement and commissioning.",
+        "We apply new inspection methods, digital tools, and engineering insights to improve asset performance.",
+    },
+    {
+      icon: Users,
+      title: "Customer Obsession",
+      description:
+        "Every engagement starts with client goals, keeping uptime, safety, and reliability at the center.",
     },
     {
       icon: BarChart3,
-      title: "Data-Driven Decisions",
+      title: "Drive for Results",
       description:
-        "Live project analytics and predictive modelling ensure you are always ahead of risk and budget curveballs.",
+        "We deliver measurable outcomes that strengthen compliance, reduce risk, and protect operations.",
     },
     {
       icon: Compass,
-      title: "Sustainability by Design",
+      title: "Respect & Diversity",
       description:
-        "We engineer for carbon, water and energy performance from day zero, ensuring compliance and positive impact.",
+        "We foster an inclusive culture that values every stakeholder across our African footprint.",
+    },
+    {
+      icon: Shield,
+      title: "Ethics & Integrity",
+      description:
+        "We hold ourselves to the highest ethical standards in reporting, inspection, and advisory work.",
+    },
+    {
+      icon: Sparkles,
+      title: "Safety & Sustainability",
+      description:
+        "Safety is non-negotiable, and sustainability guides how we extend asset life responsibly.",
     },
   ];
 
   const process = [
     {
-      title: "Discover",
-      description: "Immersive workshops to align scope, metrics and stakeholders from day one.",
+      title: "Assess",
+      description: "Define criticality, risk, and scope to align inspection objectives.",
     },
     {
-      title: "Design",
-      description: "Iterative co-design with digital twins, rapid prototyping and compliance reviews.",
+      title: "Inspect",
+      description: "Deploy certified inspectors and advanced NDT methods on-site.",
     },
     {
-      title: "Deliver",
-      description: "On-site leadership coupled with smart monitoring to keep execution seamless.",
+      title: "Report",
+      description: "Deliver clear, standards-aligned reporting that informs decisions fast.",
     },
     {
       title: "Optimize",
-      description: "Operational intelligence, retro-commissioning and continuous performance tuning.",
-    },
-  ];
-
-  const projects = [
-    {
-      title: "Regional Smart Logistics Hub",
-      description:
-        "A 120,000 sqm logistics campus integrating autonomous warehousing, renewable microgrids and resilient structures.",
-      impact: "32% faster fulfilment, 18% energy reduction",
-    },
-    {
-      title: "Urban Mixed-Use Tower",
-      description:
-        "Iconic high-rise featuring adaptive façade systems, community amenities and net-zero ready mechanical systems.",
-      impact: "LEED Platinum pre-certified, 24-month delivery",
-    },
-    {
-      title: "Industrial Utilities Upgrade",
-      description:
-        "Mission-critical plant revitalization ensuring continuity, safety compliance and digital oversight.",
-      impact: "Zero downtime transition, predictive maintenance deployed",
+      description: "Translate findings into action plans that maximize uptime and safety.",
     },
   ];
 
   const insights = [
     {
-      title: "Decarbonizing Industrial Assets",
-      description: "Frameworks for transforming existing facilities into low-carbon powerhouses.",
+      title: "Inspection Excellence",
+      description: "How NDT programs protect assets while minimizing operational disruption.",
       icon: Layers,
     },
     {
-      title: "Digital Twins for Smarter Operations",
-      description: "How real-time models unlock visibility across the project lifecycle.",
+      title: "Integrity Data in Action",
+      description: "Turning inspection data into predictive maintenance and risk insights.",
       icon: Spline,
     },
     {
-      title: "Collaborative Delivery Playbook",
-      description: "Integrating designers, builders and owners to unlock speed and certainty.",
+      title: "Safety-First Compliance",
+      description: "Aligning inspection outcomes with regulatory and client expectations.",
       icon: Lightbulb,
     },
   ];
@@ -156,24 +157,24 @@ const Home = () => {
   const transformationHighlights = [
     {
       icon: Sparkles,
-      title: "Immersive Digital Oversight",
+      title: "Purpose-Driven Outcomes",
       description:
-        "Unified command centres with predictive analytics that surface insights for every stakeholder in real time.",
-      stat: "98% uptime across active sites",
+        "We exist to enhance safety, reliability, and performance in critical infrastructure.",
+      stat: "Purpose-led delivery",
     },
     {
       icon: Compass,
-      title: "Regenerative Design Systems",
+      title: "Vision for Africa",
       description:
-        "Low-carbon materials, adaptive envelopes and net-positive water strategies embedded at concept stage.",
-      stat: "40% average energy intensity reduction",
+        "To lead specialized NDT and inspection across Africa through innovation and experience.",
+      stat: "Innovation + experience",
     },
     {
       icon: Shield,
-      title: "Lifecycle Assurance",
+      title: "Mission-Focused Execution",
       description:
-        "Asset integrity programmes, NDT and digital twins that extend operational life and mitigate unplanned downtime.",
-      stat: "ISO 55001-aligned stewardship",
+        "World-class asset integrity services that maximize uptime and ensure safety compliance.",
+      stat: "Compliance first",
     },
   ];
 
@@ -206,28 +207,27 @@ const Home = () => {
           <div className="max-w-2xl">
             {/* Label */}
             <span className="inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold uppercase tracking-wide text-primary">
-              Engineering Excellence
+              Murban Engineering
             </span>
             
             {/* Main Heading */}
             <h1 className="mt-8 text-4xl font-semibold leading-tight text-foreground sm:text-5xl md:text-6xl">
-              Building Tomorrow's
+              Enhancing safety,
               <br />
-              <span className="text-primary">Infrastructure</span> Today
+              <span className="text-primary">reliability</span>, and performance
             </h1>
             
             {/* Description */}
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground">
-              We deliver comprehensive engineering solutions for businesses that need 
-              reliable systems. From structural design to MEP, we create infrastructure 
-              that scales with your growth.
+              We deliver innovative inspection and engineering solutions that protect critical
+              infrastructure across Africa, ensuring safe compliance and reliable uptime.
             </p>
             
             {/* Buttons */}
             <div className="mt-10 flex flex-wrap gap-4">
               <Button size="lg" asChild className="rounded-xl px-8 shadow-lg shadow-primary/20">
                 <Link to="/contact">
-                  Start a Project <ArrowRight className="ml-2 h-5 w-5" />
+                  Start an Inspection <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
               <Button
@@ -244,7 +244,7 @@ const Home = () => {
                 asChild
                 className="rounded-xl px-8 shadow-lg"
               >
-                <Link to="/project-gallery">View Our Projects</Link>
+                <Link to="/project-gallery">View Our Work</Link>
               </Button>
             </div>
           </div>
@@ -280,10 +280,10 @@ const Home = () => {
               Our Services
             </span>
             <h2 className="mt-4 text-3xl font-semibold text-foreground md:text-4xl">
-              Engineering services tailored to your needs
+              Specialized inspection and engineering services
             </h2>
             <p className="mt-4 text-muted-foreground">
-              From concept to commissioning, our teams create resilient systems that are effortless to operate.
+              We safeguard assets through advanced inspection, integrity engineering, and compliance expertise.
             </p>
           </div>
 
@@ -322,20 +322,20 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Why Choose Us - Clean horizontal layout */}
+      {/* Values Section */}
       <section className="py-24">
         <div className="container mx-auto px-4">
           <div className="mx-auto mb-16 max-w-2xl text-center">
             <span className="text-sm font-semibold uppercase tracking-widest text-primary">
-              Why Choose Us
+              Our Values
             </span>
             <h2 className="mt-4 text-3xl font-semibold text-foreground md:text-4xl">
-              What sets us apart
+              How we show up for our clients
             </h2>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-3">
-            {differentiators.map((item) => (
+          <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+            {values.map((item) => (
               <div
                 key={item.title}
                 className="rounded-2xl border border-border bg-card p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
@@ -357,14 +357,14 @@ const Home = () => {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
               <span className="text-sm font-semibold uppercase tracking-widest text-primary">
-                Featured Work
+                Purpose, Vision, Mission
               </span>
               <h2 className="mt-4 text-3xl font-semibold text-foreground md:text-4xl">
-                Engineering excellence in action
+                Asset integrity driven by purpose
               </h2>
               <p className="mt-4 text-lg text-muted-foreground">
-                Our teams combine deep technical mastery with a human-centric approach. Every engagement 
-                delivers measurable outcomes and resilient systems.
+                We exist to enhance safety, reliability, and performance in critical infrastructure through
+                innovative inspection and engineering solutions.
               </p>
 
               <div className="mt-8 space-y-4">
@@ -398,7 +398,7 @@ const Home = () => {
               />
               <div className="absolute -bottom-6 -left-6 rounded-2xl border border-border bg-card p-6 shadow-xl">
                 <div className="text-3xl font-bold text-primary">98%</div>
-                <div className="text-sm text-muted-foreground">Client Satisfaction</div>
+                <div className="text-sm text-muted-foreground">Safety Compliance Focus</div>
               </div>
             </div>
           </div>
@@ -465,7 +465,7 @@ const Home = () => {
               Project Gallery
             </span>
             <h2 className="mt-4 text-3xl font-semibold text-foreground md:text-4xl">
-              Our work in the field
+              Field inspection highlights
             </h2>
           </div>
 
@@ -512,7 +512,7 @@ const Home = () => {
               Insights
             </span>
             <h2 className="mt-4 text-3xl font-semibold text-foreground md:text-4xl">
-              Latest from our team
+              Knowledge that elevates safety
             </h2>
           </div>
 
@@ -540,10 +540,10 @@ const Home = () => {
       <section className="py-24 bg-primary">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-semibold text-primary-foreground md:text-4xl">
-            Ready to start your project?
+            Ready to protect your assets?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-primary-foreground/80">
-            Let's discuss how we can help you build infrastructure that drives real progress.
+            Let&apos;s discuss how Murban Engineering can maximize uptime and ensure safety compliance.
           </p>
           <Button
             size="lg"
