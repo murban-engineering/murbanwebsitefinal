@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { CloseIcon, MenuIcon } from "@/components/ui/icons";
 import { Button } from "@/components/ui/button";
-import murbanLogo from "@/assets/murban-logo.jpg";
+import murbanLogo from "@/assets/murban-favicon.ico";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
