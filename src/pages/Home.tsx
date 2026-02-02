@@ -220,7 +220,7 @@ const Home = () => {
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground">
               We deliver comprehensive engineering solutions for businesses that need 
               reliable systems. From structural design to MEP, we create infrastructure 
-              that scales with your growth.
+              that scales with your growth, including advanced NDT and other engineering services.
             </p>
             
             {/* Buttons */}
