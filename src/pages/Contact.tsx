@@ -389,7 +389,7 @@ const Contact = () => {
                     </p>
                     <Button variant="outline" className="mt-2 shadow-md hover:shadow-lg" asChild>
                       <a
-                        href="https://maps.app.goo.gl/CDAsok3gMKbgbFPB8"
+                        href="https://www.google.com/maps/search/?api=1&query=Off-Airport%20Road%2C%20Port%20Reiz%2C%20Mombasa%2C%20Coast%2080107%2C%20KE"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
