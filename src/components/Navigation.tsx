@@ -50,7 +50,7 @@ const Navigation = () => {
               decoding="async"
               fetchPriority="high"
             />
-            <span className="text-lg font-semibold tracking-tight text-black">
+            <span className="text-lg font-semibold tracking-tight text-black dark:text-white">
               MURBAN ENGINEERING
             </span>
           </Link>
