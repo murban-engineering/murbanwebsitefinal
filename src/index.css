@@ -80,7 +80,7 @@ All colors MUST be HSL.
     --popover: 227 25% 14%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 358 71% 40%;
+    --primary: 358 71% 35%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 227 55% 30%;
@@ -97,7 +97,7 @@ All colors MUST be HSL.
 
     --border: 227 15% 25%;
     --input: 227 15% 25%;
-    --ring: 358 71% 40%;
+    --ring: 358 71% 35%;
     
     /* Dark Mode Glossy Effects */
     --glass-bg: hsl(227 30% 18% / 0.8);

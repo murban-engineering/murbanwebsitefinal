@@ -51,7 +51,7 @@ const Navigation = () => {
               fetchPriority="high"
             />
             <span className="text-lg font-semibold uppercase tracking-wide">
-              <span className="text-red-600">murban</span>{" "}
+              <span className="text-primary">murban</span>{" "}
               <span className="text-black">engineering</span>
             </span>
           </Link>
