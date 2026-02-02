@@ -91,7 +91,7 @@ const About = () => {
         <div className="container mx-auto space-y-12 px-4">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
             <div className="space-y-6 animate-fade-in">
-              <h2 className="text-4xl font-serif font-bold mb-6">Company Profile</h2>
+              <h2 className="text-4xl font-semibold mb-6">Company Profile</h2>
               <p className="text-lg text-muted-foreground mb-4">
                 Murban Engineering is a specialist firm in Asset Integrity, Inspection, and Non-Destructive Testing (NDT). We deliver reliable and safe inspection solutions that support critical infrastructure in the oil & gas, energy, marine, and industrial sectors.
               </p>
