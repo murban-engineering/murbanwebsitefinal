@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { CloseIcon, MenuIcon } from "@/components/ui/icons";
 import { Button } from "@/components/ui/button";
-import murbanLogo from "@/assets/murban-logo-full.jpeg";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,15 +41,19 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-3">
             <img
-              src={murbanLogo}
+              src="/murbanlogo.ico"
               alt="Murban Engineering Logo"
-              className="h-12 w-auto object-contain"
+              className="h-12 w-12 object-contain"
               loading="eager"
               decoding="async"
               fetchPriority="high"
             />
+            <span className="text-lg font-semibold uppercase tracking-wide">
+              <span className="text-red-600">murban</span>{" "}
+              <span className="text-blue-600">engineering</span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
