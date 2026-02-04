@@ -27,24 +27,31 @@ import fieldWork4 from "@/assets/field-work-4.jpg";
 import industrialPlant from "@/assets/industrial-plant.jpg";
 
 const Home = () => {
-  const services: Array<{
-    icon: typeof Wrench;
-    title: string;
-    description?: string;
-    highlights?: string[];
-  }> = [
-    { icon: Wrench, title: "Alternating Current Field Measurement" },
-    { icon: Wrench, title: "API 570 Piping Inspection and Certification" },
-    { icon: Wrench, title: "Murban Fitness for Service" },
-    { icon: Wrench, title: "Murban Risk Based Inspection" },
-    { icon: Wrench, title: "Boiler Inspection" },
-    { icon: Wrench, title: "Light Equipment Through Examination and Certification" },
-    { icon: Wrench, title: "MURBAN Pressure Testing" },
-    { icon: Wrench, title: "Paint Inspection" },
-    { icon: Wrench, title: "PMI Testing" },
-    { icon: Wrench, title: "RT Service" },
-    { icon: Wrench, title: "Risk Based Inspection" },
-    { icon: Wrench, title: "Sphere Tank Inspection" },
+  const services = [
+    {
+      icon: Building2,
+      title: "Structural Engineering",
+      description: "Future-ready structures engineered with advanced simulation and modelling.",
+      highlights: ["Seismic resilience", "Hybrid material systems", "Digital twin ready"],
+    },
+    {
+      icon: Wrench,
+      title: "MEP Systems",
+      description: "High-performance mechanical, electrical and plumbing systems for smart facilities.",
+      highlights: ["Net-zero ready", "Smart automation", "Lifecycle analytics"],
+    },
+    {
+      icon: Shield,
+      title: "Project Leadership",
+      description: "Integrated delivery teams that align people, processes and technology.",
+      highlights: ["Design-build expertise", "Risk mitigation", "Transparent dashboards"],
+    },
+    {
+      icon: Users,
+      title: "Advisory & Consulting",
+      description: "Strategic engineering guidance for complex infrastructure ventures.",
+      highlights: ["Sustainability roadmaps", "Feasibility studies", "Regulatory compliance"],
+    },
   ];
 
   const stats = [
@@ -270,19 +277,15 @@ const Home = () => {
                     <service.icon className="h-6 w-6" />
                   </div>
                   <h3 className="mt-5 text-lg font-semibold text-foreground">{service.title}</h3>
-                  {service.description ? (
-                    <p className="mt-2 text-sm text-muted-foreground">{service.description}</p>
-                  ) : null}
-                  {service.highlights?.length ? (
-                    <div className="mt-auto pt-6 space-y-2">
-                      {service.highlights.map((highlight) => (
-                        <div key={highlight} className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <CheckCircle2 className="h-4 w-4 text-primary" />
-                          {highlight}
-                        </div>
-                      ))}
-                    </div>
-                  ) : null}
+                  <p className="mt-2 text-sm text-muted-foreground">{service.description}</p>
+                  <div className="mt-auto pt-6 space-y-2">
+                    {service.highlights.map((highlight) => (
+                      <div key={highlight} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <CheckCircle2 className="h-4 w-4 text-primary" />
+                        {highlight}
+                      </div>
+                    ))}
+                  </div>
                 </CardContent>
               </Card>
             ))}
