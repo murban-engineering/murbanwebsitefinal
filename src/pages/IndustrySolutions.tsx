@@ -1,7 +1,6 @@
 import {
   EnergyReservoirIcon,
   TerminalLogisticsIcon,
-  FoodProcessIcon,
   RenewableCycleIcon,
   RailNetworkIcon,
   MarineLogisticsIcon,
@@ -11,7 +10,6 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import oilGasImg from "@/assets/oil-gas-industry.png";
 import storageTerminalsImg from "@/assets/storage-terminals.png";
-import foodProcessingImg from "@/assets/food-processing.png";
 import renewableEnergyImg from "@/assets/renewable-energy.png";
 import railIndustryImg from "@/assets/rail-industry.png";
 import shippingMarineImg from "@/assets/shipping-marine.png";
@@ -59,21 +57,6 @@ const IndustrySolutions = () => {
         "NDT Testing",
       ],
       whyItMatters: "Bulk liquid and fuel terminals are complex facilities that demand accurate calibration, corrosion monitoring, and tank integrity assurance. Murban Engineering provides comprehensive solutions for tank farms, depots, and LPG storage facilities using technologies like 3D laser scanning, UAV-based inspections, and API 653-compliant tank assessments. Our goal is to help operators maintain regulatory compliance, safeguard stored products, and optimize infrastructure performance across the entire terminal lifecycle.",
-    },
-    {
-      icon: FoodProcessIcon,
-      title: "Food Processing Industry",
-      image: foodProcessingImg,
-      assetsCovered: "Stainless tanks, pressure vessels, food-grade pipelines, steam boilers",
-      services: [
-        "UT Thickness Surveys for Corrosion in Clean Systems",
-        "Surface Hardness Testing for Safety Compliance",
-        "3D Tank Calibration for Volume Control",
-        "Radiographic Testing to check welds on hygiene-critical vessels",
-        "QA/QC for stainless welding and fittings",
-        "Non-contaminating NDT procedures (e.g., non-toxic DPI)",
-      ],
-      whyItMatters: "In food and beverage processing, cleanliness, accuracy, and structural integrity are non negotiable. Murban supports this industry with non-contaminating inspection techniques, volumetric tank calibration, and material identification suited for food grade environments. Whether it's ensuring weld quality in stainless vessels or verifying tank geometry for accurate mixing and batching, we bring precision, hygiene-compliant methods, and peace of mind to food manufacturers.",
     },
     {
       icon: RenewableCycleIcon,

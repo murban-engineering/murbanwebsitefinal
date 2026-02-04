@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 
 import oilGasImg from "@/assets/oil-gas-industry.png";
 import storageTerminalsImg from "@/assets/storage-terminals.png";
-import foodProcessingImg from "@/assets/food-processing.png";
 import renewableEnergyImg from "@/assets/renewable-energy.png";
 import railIndustryImg from "@/assets/rail-industry.png";
 import shippingMarineImg from "@/assets/shipping-marine.png";
@@ -39,7 +38,6 @@ const ProjectGallery = () => {
     "All",
     "Oil & Gas",
     "Storage Terminals",
-    "Food Processing",
     "Renewable Energy",
     "Rail Industry",
     "Marine & Shipping",
@@ -96,30 +94,6 @@ const ProjectGallery = () => {
     },
     {
       id: 3,
-      title: "Food Processing Plant Tank Integrity",
-      category: "Food Processing",
-      location: "Uganda",
-      year: "2024",
-      description: "Hygienic inspection and calibration of stainless steel storage vessels for beverage production facility.",
-      image: foodProcessingImg,
-      challenges: [
-        "Food-grade hygiene requirements",
-        "Non-contaminating inspection methods needed",
-        "Tight production schedule constraints",
-      ],
-      solutions: [
-        "Non-toxic dye penetrant testing",
-        "Ultrasonic thickness measurement",
-        "Clean room inspection protocols",
-      ],
-      results: [
-        "Zero contamination incidents",
-        "HACCP compliance maintained",
-        "Production efficiency improved by 12%",
-      ],
-    },
-    {
-      id: 4,
       title: "KenGen Geothermal Rig Inspection",
       category: "Renewable Energy",
       location: "Olkaria, Kenya",
@@ -143,7 +117,7 @@ const ProjectGallery = () => {
       ],
     },
     {
-      id: 5,
+      id: 4,
       title: "Railway Fuel Tank Wagon Certification",
       category: "Rail Industry",
       location: "Tanzania",
@@ -167,7 +141,7 @@ const ProjectGallery = () => {
       ],
     },
     {
-      id: 6,
+      id: 5,
       title: "Bolloré Marine Terminal Expansion",
       category: "Marine & Shipping",
       location: "Djibouti",
@@ -191,7 +165,7 @@ const ProjectGallery = () => {
       ],
     },
     {
-      id: 7,
+      id: 6,
       title: "Custom Platform Fabrication & Installation",
       category: "Oil & Gas",
       location: "Mombasa, Kenya",
@@ -215,7 +189,7 @@ const ProjectGallery = () => {
       ],
     },
     {
-      id: 8,
+      id: 7,
       title: "Multi-Site Inspection Program",
       category: "Storage Terminals",
       location: "East Africa",
@@ -239,7 +213,7 @@ const ProjectGallery = () => {
       ],
     },
     {
-      id: 9,
+      id: 8,
       title: "Engineering Design & Quality Assurance",
       category: "Oil & Gas",
       location: "Kenya",
