@@ -4,11 +4,8 @@ import {
   BuildingIcon as Building2,
   CheckCircleIcon as CheckCircle2,
   CompassIcon as Compass,
-  LayersIcon as Layers,
-  LightbulbIcon as Lightbulb,
   ShieldIcon as Shield,
   SparklesIcon as Sparkles,
-  SplineIcon as Spline,
   UsersIcon as Users,
   WrenchIcon as Wrench,
 } from "@/components/ui/icons";
@@ -123,24 +120,6 @@ const Home = () => {
       description:
         "Mission-critical plant revitalization ensuring continuity, safety compliance and digital oversight.",
       impact: "Zero downtime transition, predictive maintenance deployed",
-    },
-  ];
-
-  const insights = [
-    {
-      title: "Decarbonizing Industrial Assets",
-      description: "Frameworks for transforming existing facilities into low-carbon powerhouses.",
-      icon: Layers,
-    },
-    {
-      title: "Digital Twins for Smarter Operations",
-      description: "How real-time models unlock visibility across the project lifecycle.",
-      icon: Spline,
-    },
-    {
-      title: "Collaborative Delivery Playbook",
-      description: "Integrating designers, builders and owners to unlock speed and certainty.",
-      icon: Lightbulb,
     },
   ];
 
@@ -503,38 +482,6 @@ const Home = () => {
 
       {/* Testimonials */}
       <Testimonials />
-
-      {/* Insights Section */}
-      <section className="py-24">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto mb-16 max-w-2xl text-center">
-            <span className="text-sm font-semibold uppercase tracking-widest text-primary">
-              Insights
-            </span>
-            <h2 className="mt-4 text-3xl font-semibold text-foreground md:text-4xl">
-              Latest from our team
-            </h2>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-3">
-            {insights.map((insight) => (
-              <div
-                key={insight.title}
-                className="group rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-              >
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                  <insight.icon className="h-6 w-6" />
-                </div>
-                <h3 className="mt-5 text-lg font-semibold text-foreground">{insight.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{insight.description}</p>
-                <div className="mt-4 flex items-center text-sm font-medium text-primary">
-                  Read more <ArrowRight className="ml-1 h-4 w-4" />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-24 bg-primary">
