@@ -374,28 +374,36 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            {/* Map Placeholder */}
+            {/* Google Map */}
             <Card className="animate-fade-in border-border/50 shadow-xl overflow-hidden">
-              <CardContent className="p-0 h-full">
-                <div className="w-full h-full min-h-[500px] bg-gradient-to-br from-muted to-muted/50 rounded-lg flex items-center justify-center relative overflow-hidden group">
-                  <div className="absolute inset-0 bg-gradient-mesh opacity-30" />
-                  <div className="text-center p-8 relative z-10">
-                    <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-primary/10 mb-6 shadow-lg group-hover:scale-110 transition-transform">
-                      <MapPin className="h-10 w-10 text-primary animate-pulse-glow" />
+              <CardContent className="p-0 h-full flex flex-col">
+                <div className="w-full flex-1 min-h-[500px]">
+                  <iframe
+                    title="Murban Engineering Office Location - Mombasa, Kenya"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127672.75772082584!2d39.5942!3d-4.0435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x184012e78ec02c15%3A0x3b46b3c6a9bd771b!2sPort%20Reitz%2C%20Mombasa!5e0!3m2!1sen!2ske!4v1700000000000"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0, minHeight: "500px" }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
+                <div className="p-4 bg-card border-t border-border">
+                  <div className="flex items-center justify-between flex-wrap gap-3">
+                    <div className="flex items-center gap-2">
+                      <MapPin className="h-5 w-5 text-primary flex-shrink-0" />
+                      <p className="text-sm text-muted-foreground font-medium">
+                        Off-Airport Road, Port Reitz, Mombasa, Kenya
+                      </p>
                     </div>
-                    <h3 className="text-xl font-semibold mb-3">Visit Our Office</h3>
-                    <p className="text-muted-foreground font-medium mb-6">
-                      P. O. Box 99215<br />
-                      Off-Airport Road, Port Reiz<br />
-                      Mombasa, Coast 80107, KE
-                    </p>
-                    <Button variant="outline" className="mt-2 shadow-md hover:shadow-lg" asChild>
+                    <Button variant="outline" size="sm" asChild>
                       <a
-                        href="https://www.google.com/maps/search/?api=1&query=Off-Airport%20Road%2C%20Port%20Reiz%2C%20Mombasa%2C%20Coast%2080107%2C%20KE"
+                        href="https://www.google.com/maps/search/?api=1&query=Port+Reitz+Mombasa+Kenya"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Open in Maps
+                        Open in Google Maps
                       </a>
                     </Button>
                   </div>
