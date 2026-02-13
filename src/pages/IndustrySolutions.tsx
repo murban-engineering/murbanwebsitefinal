@@ -4,6 +4,8 @@ import {
   RenewableCycleIcon,
   RailNetworkIcon,
   MarineLogisticsIcon,
+  BoilerGuardIcon,
+  FoodProcessIcon,
 } from "@/components/ui/icons";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -13,6 +15,7 @@ import storageTerminalsImg from "@/assets/storage-terminals.png";
 import renewableEnergyImg from "@/assets/renewable-energy.png";
 import railIndustryImg from "@/assets/rail-industry.png";
 import shippingMarineImg from "@/assets/shipping-marine.png";
+import foodProcessingImg from "@/assets/food-processing.png";
 import industryHero from "@/assets/industry-hero.jpg";
 
 const IndustrySolutions = () => {
@@ -40,8 +43,23 @@ const IndustrySolutions = () => {
       whyItMatters: "At Murban Engineering, we offer industry-leading inspection and integrity solutions tailored to the critical demands of the oil and gas sector. Our services span upstream, midstream, and downstream operations—from pipeline and pressure vessel inspections to storage tank calibration and corrosion assessment. Using advanced techniques like Phased Array Ultrasonic Testing (PAUT), Magnetic Flux Leakage (MFL), and Risk-Based Inspection (RBI), we help oil and gas operators extend asset life, avoid unplanned outages, and meet the highest standards of safety and compliance.",
     },
     {
+      icon: BoilerGuardIcon,
+      title: "Power & Steam Generation",
+      image: storageTerminalsImg,
+      assetsCovered: "Boilers, heat exchangers, pressure vessels, steam lines",
+      services: [
+        "Boiler Internal & External Inspections",
+        "Surface Hardness & Weld Flaw Detection",
+        "Pressure Testing of High-Pressure Systems",
+        "PMI & Material Traceability",
+        "Thermal Surveys for Insulation Performance",
+        "QA/QC during plant maintenance",
+      ],
+      whyItMatters: "The power industry relies on the continuous and safe operation of high-pressure systems. Our inspection and testing services are designed to support steam generation plants, turbines, and high-energy piping. We conduct in-depth assessments of boilers, heat exchangers, and pressure vessels using ultrasonic flaw detection, surface hardness testing, and pressure validation. These services ensure the structural integrity, operational efficiency, and safety of critical components under extreme conditions.",
+    },
+    {
       icon: TerminalLogisticsIcon,
-      title: "Storage and Logistic Terminals",
+      title: "Storage & Logistics Terminals",
       image: storageTerminalsImg,
       assetsCovered: "Bulk liquid tanks, LPG spheres, loading lines, depot infrastructure",
       services: [
@@ -57,6 +75,21 @@ const IndustrySolutions = () => {
         "NDT Testing",
       ],
       whyItMatters: "Bulk liquid and fuel terminals are complex facilities that demand accurate calibration, corrosion monitoring, and tank integrity assurance. Murban Engineering provides comprehensive solutions for tank farms, depots, and LPG storage facilities using technologies like 3D laser scanning, UAV-based inspections, and API 653-compliant tank assessments. Our goal is to help operators maintain regulatory compliance, safeguard stored products, and optimize infrastructure performance across the entire terminal lifecycle.",
+    },
+    {
+      icon: FoodProcessIcon,
+      title: "Food Processing Industry",
+      image: foodProcessingImg,
+      assetsCovered: "Stainless tanks, pressure vessels, food-grade pipelines, steam boilers",
+      services: [
+        "UT Thickness Surveys for Corrosion in Clean Systems",
+        "Surface Hardness Testing for Safety Compliance",
+        "3D Tank Calibration for Volume Control",
+        "Radiographic Testing to check welds on hygiene-critical vessels",
+        "QA/QC for stainless welding and fittings",
+        "Non-contaminating NDT procedures (e.g., non-toxic DPI)",
+      ],
+      whyItMatters: "In food and beverage processing, cleanliness, accuracy, and structural integrity are non-negotiable. Murban supports this industry with non-contaminating inspection techniques, volumetric tank calibration, and material identification suited for food-grade environments. Whether it's ensuring weld quality in stainless vessels or verifying tank geometry for accurate mixing and batching, we bring precision, hygiene-compliant methods, and peace of mind to food manufacturers.",
     },
     {
       icon: RenewableCycleIcon,

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   IntegrityShieldIcon,
   CalibrationGaugeIcon,
@@ -156,7 +155,9 @@ const ServiceCard = ({
 };
 
 const serviceSections = [
-  { id: "service-spotlight", label: "Service Spotlight" },
+  { id: "general-ndt", label: "General NDT" },
+  { id: "advanced-ndt", label: "Advanced NDT" },
+  { id: "engineering-assessments", label: "Engineering Assessments" },
   { id: "fabrication-services", label: "Engineering & Fabrication" },
 ];
 
@@ -2042,22 +2043,70 @@ export const getServiceDetailBySlug = (slug: string) => {
   return service ? serviceDetails[service.title] : undefined;
 };
 
+// Service cluster definitions
+const generalNdtTitles = [
+  "NDT Inspection Services",
+  "Ultrasonic Flaw Testing B-Scan",
+  "Ultrasonic Flaw Testing C-Scan",
+  "Magnetic Particle Testing",
+  "Fluorescent Magnet Particle Testing",
+  "Dye Penetrant Testing",
+  "RT Radiographic Services",
+  "Surface Hardness Testing",
+  "Murban Pressure Testing",
+  "Paint & Coating Inspection",
+  "Murban Gas Detection",
+];
+
+const advancedNdtTitles = [
+  "Murban Phased Array Testing",
+  "Alternating Current Field Measurement",
+  "Floormap 3D MFL Scanning",
+  "Murban UAV Inspection",
+  "3D Laser Scanning Services",
+  "Thermal Camera Inspection",
+  "Tank Calibration Services",
+];
+
+const engineeringAssessmentTitles = [
+  "API 579 Murban Fitness for Service",
+  "API 580 Murban Risk Based Inspection",
+  "Positive Material Identification Testing",
+  "API 510 Pressure Vessel Inspection",
+  "API 570 Piping Inspection and Certification",
+  "API 653 Aboveground Storage Tank Inspection and Certification",
+  "Boiler Inspection Services",
+  "Lifting Equipment Thorough Examination and Certification",
+  "Sphere Tank Inspections",
+];
+
+const generalNdtServices = allServices.filter(s => generalNdtTitles.includes(s.title));
+const advancedNdtServices = allServices.filter(s => advancedNdtTitles.includes(s.title));
+const engineeringAssessmentServices = allServices.filter(s => engineeringAssessmentTitles.includes(s.title));
+
 const Services = () => {
   const navigate = useNavigate();
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
 
-  const categories = ["All", "NDT Inspection", "API Certifications", "Advanced Testing", "Engineering Services"];
-
-  const getServiceCategory = (title: string): string => {
-    if (title.includes("API")) return "API Certifications";
-    if (title.includes("Fabrication") || title.includes("Engineering") || title.includes("Welding") || title.includes("Construction")) return "Engineering Services";
-    if (title.includes("Phased Array") || title.includes("3D") || title.includes("UAV") || title.includes("Thermal") || title.includes("Laser")) return "Advanced Testing";
-    return "NDT Inspection";
-  };
-
-  const filteredServices = selectedCategory === "All" 
-    ? allServices 
-    : allServices.filter(service => getServiceCategory(service.title) === selectedCategory);
+  const serviceClusters = [
+    {
+      id: "general-ndt",
+      label: "General Non-Destructive Testing (NDT)",
+      description: "Foundational techniques used across all industries to detect surface and subsurface flaws without damaging the asset.",
+      services: generalNdtServices,
+    },
+    {
+      id: "advanced-ndt",
+      label: "Advanced NDT & Specialized Technologies",
+      description: "Used in high-precision or high-risk environments where early flaw detection and detailed assessments are critical.",
+      services: advancedNdtServices,
+    },
+    {
+      id: "engineering-assessments",
+      label: "Engineering Assessments & Certification",
+      description: "For in-depth structural assessments, compliance evaluations, and performance validation.",
+      services: engineeringAssessmentServices,
+    },
+  ];
 
   return (
     <div className="min-h-screen pt-20 bg-background relative">
@@ -2083,7 +2132,7 @@ const Services = () => {
         <div className="container relative z-10 mx-auto px-4 text-center">
           <div className="animate-fade-in">
             <Badge className="mb-6 border border-white/40 bg-white/15 text-white backdrop-blur-md text-sm uppercase tracking-wider">
-              Murban Inspection & Engineering
+              Murban Engineering – NDT & Asset Integrity Services
             </Badge>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold mb-6 leading-[1.1] text-white drop-shadow-lg">
               Precision Inspection &<br />Engineering Services
@@ -2098,18 +2147,7 @@ const Services = () => {
               className="flex flex-col items-center justify-center gap-3"
             >
               <div className="flex flex-wrap items-center justify-center gap-3">
-                {serviceSections.slice(0, 2).map((section) => (
-                  <a
-                    key={section.id}
-                    href={`#${section.id}`}
-                    className="group inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/10 px-5 py-2.5 text-sm font-medium text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/20 hover:border-white/50 hover:scale-105 hover:shadow-lg"
-                  >
-                    <span>{section.label}</span>
-                  </a>
-                ))}
-              </div>
-              <div className="flex flex-wrap items-center justify-center gap-3">
-                {serviceSections.slice(2).map((section) => (
+                {serviceSections.map((section) => (
                   <a
                     key={section.id}
                     href={`#${section.id}`}
@@ -2124,53 +2162,40 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Service Spotlight Section */}
-      <section id="service-spotlight" className="relative py-24 bg-background">
-        <div className="container relative z-10 mx-auto px-4">
-          <div className="mx-auto mb-16 max-w-4xl text-center">
-            <span className="text-sm font-semibold uppercase tracking-widest text-primary">
-              Service Spotlight
-            </span>
-            <h2 className="mt-4 text-3xl md:text-4xl font-semibold text-foreground">
-              Explore Our Specialized Capabilities
-            </h2>
-            <p className="mt-4 text-muted-foreground">
-              Choose a service to see how Murban Engineering delivers precision, compliance, and dependable results for your assets.
-            </p>
+      {/* Service Clusters */}
+      {serviceClusters.map((cluster, clusterIndex) => (
+        <section
+          key={cluster.id}
+          id={cluster.id}
+          className={`relative py-24 ${clusterIndex % 2 === 0 ? "bg-background" : "bg-muted/30"}`}
+        >
+          <div className="container relative z-10 mx-auto px-4">
+            <div className="mx-auto mb-16 max-w-4xl text-center">
+              <span className="text-sm font-semibold uppercase tracking-widest text-primary">
+                Service Cluster {clusterIndex + 1}
+              </span>
+              <h2 className="mt-4 text-3xl md:text-4xl font-semibold text-foreground">
+                {cluster.label}
+              </h2>
+              <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+                {cluster.description}
+              </p>
+            </div>
+            <div className="services-grid services-grid--selectable">
+              {cluster.services.map((service) => (
+                <ServiceCard
+                  key={service.title}
+                  icon={service.icon}
+                  title={service.title}
+                  description={service.description}
+                  onSelect={() => navigate(`/services/${service.slug}`)}
+                  ctaHref={`/services/${service.slug}`}
+                />
+              ))}
+            </div>
           </div>
-
-          {/* Category Filter */}
-          <div className="mb-10 flex flex-wrap justify-center gap-3">
-            {categories.map((category) => (
-              <Button
-                key={category}
-                variant={selectedCategory === category ? "default" : "outline"}
-                onClick={() => setSelectedCategory(category)}
-                className="rounded-xl transition-all duration-300 hover:scale-105"
-              >
-                {category}
-              </Button>
-            ))}
-          </div>
-
-          <div className="mb-6 flex items-center justify-between text-muted-foreground">
-            <span className="text-sm uppercase tracking-widest">Service Cards</span>
-            <span className="text-sm">{filteredServices.length} services</span>
-          </div>
-          <div className="services-grid services-grid--selectable">
-            {filteredServices.map((service) => (
-              <ServiceCard
-                key={service.title}
-                icon={service.icon}
-                title={service.title}
-                description={service.description}
-                onSelect={() => navigate(`/services/${service.slug}`)}
-                ctaHref={`/services/${service.slug}`}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
+      ))}
 
       {/* Fabrication Services Section */}
       <section
