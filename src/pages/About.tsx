@@ -40,17 +40,20 @@ const About = () => {
     {
       icon: Lightbulb,
       title: "Passion for Innovation",
-      description: "We constantly explore new technologies, methods, and ideas to improve how we deliver value. Innovation is embedded in our people, tools, and problem-solving approach.",
+      description: "We constantly explore new technologies, methods, and ideas to improve how we deliver value. Innovation is embedded in our people, tools, and approach to problem-solving.",
+      why: "It keeps Murban at the forefront of inspection and engineering technology, giving our clients future-ready solutions.",
     },
     {
       icon: Users,
       title: "Customer Obsession",
-      description: "We go beyond meeting expectations: we anticipate needs, act on feedback, and build lasting relationships. Your success is our success.",
+      description: "We go beyond meeting expectations — we anticipate needs, act on feedback, and build lasting relationships.",
+      why: "Your success is our success. We align our work to what matters most to you: safety, uptime, and compliance.",
     },
     {
       icon: TrendingUp,
       title: "Drive for Results",
       description: "We focus on delivering measurable, impactful outcomes. Every team member is empowered to act with speed, ownership, and excellence.",
+      why: "Because when results speak, trust follows — and Murban is built on trust.",
     },
   ];
 
@@ -101,7 +104,7 @@ const About = () => {
                 With over 15 years of experience, we operate across Africa. Our services help clients extend asset life, ensure regulatory compliance, and minimize downtime.
               </p>
               <div className="bg-muted rounded-lg p-6 mb-4">
-                <h3 className="text-xl font-semibold mb-3">Our Divisions</h3>
+                <h3 className="text-xl font-semibold mb-3">We operate through two divisions:</h3>
                 <ul className="space-y-2 text-muted-foreground">
                   <li className="flex items-start">
                     <Award className="h-5 w-5 text-primary mr-2 mt-1 flex-shrink-0" />
@@ -114,7 +117,7 @@ const About = () => {
                 </ul>
               </div>
               <p className="text-lg text-muted-foreground">
-                We have a fully equipped laboratory in Mombasa and mobile inspection teams deployed regionally, enabling us to serve both on-site and laboratory-based inspection needs with safety, speed, and precision.
+                With a fully equipped laboratory in Mombasa and mobile teams deployed regionally, Murban is your trusted partner for both on-site and lab-based inspections, delivered with safety, speed, and precision.
               </p>
             </div>
             <div className="animate-scale-in">
@@ -250,9 +253,9 @@ const About = () => {
         <div className="absolute inset-0 bg-muted" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">Our How (Values)</h2>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">Core Values</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              How we work and what we stand for
+              Our Compass: How We Work and What We Stand For
             </p>
           </div>
 
@@ -288,7 +291,8 @@ const About = () => {
                       <value.icon className="h-8 w-8 text-secondary group-hover:text-secondary-foreground" />
                     </div>
                     <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
-                    <p className="text-muted-foreground text-sm">{value.description}</p>
+                    <p className="text-muted-foreground text-sm mb-3">{value.description}</p>
+                    <p className="text-xs text-primary font-medium italic">Why it matters: {value.why}</p>
                   </CardContent>
                 </Card>
               ))}
