@@ -1,4 +1,4 @@
-import { CheckCircleIcon } from "@/components/ui/icons";
+import { CheckCircle2 } from "lucide-react";
 import teamImage from "@/assets/team-collaboration.jpg";
 
 const WhyChooseUs = () => {
@@ -36,7 +36,7 @@ const WhyChooseUs = () => {
             <ul className="space-y-4">
               {reasons.map((reason, index) => (
                 <li key={index} className="flex items-start">
-                  <CheckCircleIcon className="h-6 w-6 text-primary mr-3 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="h-6 w-6 text-primary mr-3 flex-shrink-0 mt-0.5" />
                   <span className="text-lg">{reason}</span>
                 </li>
               ))}

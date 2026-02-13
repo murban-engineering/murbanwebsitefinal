@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { CloseIcon, MenuIcon } from "@/components/ui/icons";
+import { X, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
@@ -45,7 +45,7 @@ const Navigation = () => {
             <img
               src="/murbanlogo.ico"
               alt="Murban Engineering Logo"
-              className="h-12 w-12 object-contain"
+              className="h-10 w-10 object-contain rounded-md"
               loading="eager"
               decoding="async"
               fetchPriority="high"
@@ -105,9 +105,9 @@ const Navigation = () => {
             aria-label="Toggle menu"
           >
             {isOpen ? (
-              <CloseIcon className="h-6 w-6 text-foreground" />
+              <X className="h-6 w-6 text-foreground" />
             ) : (
-              <MenuIcon className="h-6 w-6 text-foreground" />
+              <Menu className="h-6 w-6 text-foreground" />
             )}
           </button>
         </div>

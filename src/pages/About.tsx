@@ -1,14 +1,14 @@
 import {
-  AwardIcon as Award,
-  TargetIcon as Target,
-  EyeIcon as Eye,
-  ShieldIcon as Shield,
-  HeartIcon as Heart,
-  LightbulbIcon as Lightbulb,
-  UsersIcon as Users,
-  TrendingUpIcon as TrendingUp,
-  MapPinIcon as MapPin,
-} from "@/components/ui/icons";
+  Award,
+  Target,
+  Eye,
+  Shield,
+  Heart,
+  Lightbulb,
+  Users,
+  TrendingUp,
+  MapPin,
+} from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import AfricaMap from "@/components/AfricaMap";
 import WhyChooseUs from "@/components/WhyChooseUs";

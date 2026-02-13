@@ -1,5 +1,5 @@
 import * as React from "react";
-import { LinkedinIcon } from "@/components/ui/icons";
+import { Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -43,7 +43,7 @@ const socialLinks = [
   {
     label: "LinkedIn",
     href: linkedInCompanyUrl,
-    icon: LinkedinIcon,
+    icon: Linkedin,
     tooltip: "Connect with us on LinkedIn",
   },
 ];
