@@ -1,14 +1,14 @@
 import {
-  ArrowRightIcon as ArrowRight,
-  BarChartIcon as BarChart3,
-  BuildingIcon as Building2,
-  CheckCircleIcon as CheckCircle2,
-  CompassIcon as Compass,
-  ShieldIcon as Shield,
-  SparklesIcon as Sparkles,
-  UsersIcon as Users,
-  WrenchIcon as Wrench,
-} from "@/components/ui/icons";
+  ArrowRight,
+  BarChart3,
+  Building2,
+  CheckCircle2,
+  Compass,
+  Shield,
+  Sparkles,
+  Users,
+  Wrench,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";

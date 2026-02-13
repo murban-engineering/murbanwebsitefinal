@@ -1,4 +1,4 @@
-import { MoonIcon, SunIcon } from "@/components/ui/icons";
+import { Moon, Sun } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Switch } from "@/components/ui/switch";
@@ -19,14 +19,14 @@ export const ThemeToggle = ({ className, id }: ThemeToggleProps) => {
         className,
       )}
     >
-      <SunIcon className="h-4 w-4" aria-hidden="true" />
+      <Sun className="h-4 w-4" aria-hidden="true" />
       <Switch
         id={id ?? "theme-toggle"}
         checked={isDarkMode}
         onCheckedChange={(checked) => toggleTheme(checked)}
         aria-label="Toggle dark mode"
       />
-      <MoonIcon className="h-4 w-4" aria-hidden="true" />
+      <Moon className="h-4 w-4" aria-hidden="true" />
     </div>
   );
 };
