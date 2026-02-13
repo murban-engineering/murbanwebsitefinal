@@ -50,8 +50,9 @@ const Navigation = () => {
               decoding="async"
               fetchPriority="high"
             />
-            <span className="text-lg font-semibold tracking-tight text-black dark:text-white">
-              MURBAN ENGINEERING
+            <span className="text-lg font-semibold tracking-tight">
+              <span className="text-primary">MURBAN</span>{" "}
+              <span className="text-foreground">ENGINEERING</span>
             </span>
           </Link>
 
