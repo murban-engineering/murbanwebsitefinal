@@ -22,6 +22,8 @@ const WhyChooseUs = () => {
               className="rounded-lg shadow-xl w-full h-auto"
               loading="lazy"
               decoding="async"
+              width={800}
+              height={600}
             />
           </div>
           <div className="animate-fade-in order-1 lg:order-2">

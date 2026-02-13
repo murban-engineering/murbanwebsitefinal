@@ -252,12 +252,15 @@ const ProjectGallery = () => {
 
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              'url("/construction-concept-image-helmet-rolled-blueprints-wooden-boards-retro-style.jpg")',
-          }}
+        <img
+          src="/construction-concept-image-helmet-rolled-blueprints-wooden-boards-retro-style.jpg"
+          alt="Construction concept with helmet and blueprints"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
+          width={1920}
+          height={1080}
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 bg-gradient-mesh" />
@@ -308,6 +311,8 @@ const ProjectGallery = () => {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     loading="lazy"
                     decoding="async"
+                    width={800}
+                    height={500}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">

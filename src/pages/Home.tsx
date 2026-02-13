@@ -174,6 +174,8 @@ const Home = () => {
             loading="eager"
             decoding="async"
             fetchPriority="high"
+            width={1920}
+            height={1080}
           />
           {/* Clean gradient overlay for readability */}
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
@@ -374,6 +376,8 @@ const Home = () => {
                 className="rounded-3xl shadow-2xl shadow-foreground/10"
                 loading="lazy"
                 decoding="async"
+                width={800}
+                height={600}
               />
               <div className="absolute -bottom-6 -left-6 rounded-2xl border border-border bg-card p-6 shadow-xl">
                 <div className="text-3xl font-bold text-primary">98%</div>

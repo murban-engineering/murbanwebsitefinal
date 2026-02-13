@@ -72,6 +72,8 @@ const About = () => {
             loading="eager"
             decoding="async"
             fetchPriority="high"
+            width={1920}
+            height={1080}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30" />
@@ -122,6 +124,8 @@ const About = () => {
                 className="rounded-lg shadow-xl"
                 loading="lazy"
                 decoding="async"
+                width={800}
+                height={600}
               />
             </div>
           </div>
@@ -203,6 +207,8 @@ const About = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   loading="lazy"
                   decoding="async"
+                  width={800}
+                  height={600}
                 />
               </div>
               <div className="p-6">
@@ -221,6 +227,8 @@ const About = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   loading="lazy"
                   decoding="async"
+                  width={800}
+                  height={600}
                 />
               </div>
               <div className="p-6">
