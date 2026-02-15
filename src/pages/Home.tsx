@@ -25,9 +25,6 @@ import fieldWork1 from "@/assets/field-work-1.jpg";
 import fieldWork3 from "@/assets/field-work-3.jpg";
 import fieldWork4 from "@/assets/field-work-4.jpg";
 import industrialPlant from "@/assets/industrial-plant.jpg";
-import oilRigImg from "@/assets/oil-rig-vessel.jpg";
-import pipelineInspectionImg from "@/assets/pipeline-inspection.jpg";
-import steelFactoryImg from "@/assets/steel-factory.jpg";
 
 const Home = () => {
   const services = [
@@ -306,13 +303,9 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Why Choose Us - With background image */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img src={oilRigImg} alt="" className="h-full w-full object-cover" loading="lazy" />
-          <div className="absolute inset-0 bg-background/90 dark:bg-background/95" />
-        </div>
-        <div className="container relative z-10 mx-auto px-4">
+      {/* Why Choose Us */}
+      <section className="py-24">
+        <div className="container mx-auto px-4">
           <div className="mx-auto mb-16 max-w-2xl text-center">
             <span className="text-sm font-semibold uppercase tracking-widest text-primary">
               Why Choose Us
@@ -326,7 +319,7 @@ const Home = () => {
             {differentiators.map((item) => (
               <div
                 key={item.title}
-                className="rounded-2xl border border-border bg-card/80 backdrop-blur-sm p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+                className="rounded-2xl border border-border bg-card p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
               >
                 <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                   <item.icon className="h-7 w-7" />
@@ -395,13 +388,9 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Our Process - With background image */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img src={pipelineInspectionImg} alt="" className="h-full w-full object-cover" loading="lazy" />
-          <div className="absolute inset-0 bg-background/90 dark:bg-background/95" />
-        </div>
-        <div className="container relative z-10 mx-auto px-4">
+      {/* Our Process */}
+      <section className="py-24 bg-muted/30">
+        <div className="container mx-auto px-4">
           <div className="mx-auto mb-16 max-w-2xl text-center">
             <span className="text-sm font-semibold uppercase tracking-widest text-primary">
               Our Process
@@ -415,7 +404,7 @@ const Home = () => {
             {process.map((step, index) => (
               <div
                 key={step.title}
-                className="relative rounded-2xl border border-border bg-card/80 backdrop-blur-sm p-6 shadow-sm"
+                className="relative rounded-2xl border border-border bg-card p-6 shadow-sm"
               >
                 <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground font-bold">
                   {index + 1}
@@ -498,17 +487,13 @@ const Home = () => {
       {/* Testimonials */}
       <Testimonials />
 
-      {/* CTA Section - With background image */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img src={steelFactoryImg} alt="" className="h-full w-full object-cover" loading="lazy" />
-          <div className="absolute inset-0 bg-primary/90" />
-        </div>
-        <div className="container relative z-10 mx-auto px-4 text-center">
-          <h2 className="text-3xl font-semibold text-primary-foreground md:text-4xl">
+      {/* CTA Section */}
+      <section className="py-24 bg-secondary">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-semibold text-secondary-foreground md:text-4xl">
             Ready to start your project?
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-primary-foreground/80">
+          <p className="mx-auto mt-4 max-w-xl text-secondary-foreground/80">
             Let's discuss how we can help you build infrastructure that drives real progress.
           </p>
           <Button
