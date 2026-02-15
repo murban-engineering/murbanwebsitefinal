@@ -1,17 +1,15 @@
 import {
   ArrowRight,
-  BarChart3,
-  Building2,
   CheckCircle2,
-  Compass,
-  Shield,
-  Sparkles,
-  Users,
+  Clock,
+  HardHat,
+  MapPin,
+  Phone,
+  ShieldCheck,
   Wrench,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
@@ -29,97 +27,50 @@ import industrialPlant from "@/assets/industrial-plant.jpg";
 const Home = () => {
   const services = [
     {
-      icon: Building2,
-      title: "Structural Engineering",
-      description: "Future-ready structures engineered with advanced simulation and modelling.",
-      highlights: ["Seismic resilience", "Hybrid material systems", "Digital twin ready"],
-    },
-    {
       icon: Wrench,
-      title: "MEP Systems",
-      description: "High-performance mechanical, electrical and plumbing systems for smart facilities.",
-      highlights: ["Net-zero ready", "Smart automation", "Lifecycle analytics"],
-    },
-    {
-      icon: Shield,
-      title: "Project Leadership",
-      description: "Integrated delivery teams that align people, processes and technology.",
-      highlights: ["Design-build expertise", "Risk mitigation", "Transparent dashboards"],
-    },
-    {
-      icon: Users,
-      title: "Advisory & Consulting",
-      description: "Strategic engineering guidance for complex infrastructure ventures.",
-      highlights: ["Sustainability roadmaps", "Feasibility studies", "Regulatory compliance"],
-    },
-  ];
-
-  const stats = [
-    { value: "25+", label: "Years Experience" },
-    { value: "1.8k", label: "Projects Delivered" },
-    { value: "42", label: "Expert Engineers" },
-    { value: "ISO 9001", label: "Certified" },
-  ];
-  const marqueeStats = [...stats, ...stats];
-
-  const differentiators = [
-    {
-      icon: Sparkles,
-      title: "Signature Delivery Experience",
+      title: "Non-Destructive Testing",
       description:
-        "Our cross-functional squads embed alongside your team to accelerate approvals, procurement and commissioning.",
+        "We inspect pipelines, pressure vessels, storage tanks and structural steelwork — without shutting down your operations. Our NDT crew is certified to international standards and works across oil depots, factories and construction sites.",
+      points: ["Ultrasonic & radiographic testing", "Magnetic particle inspection", "Dye penetrant testing"],
     },
     {
-      icon: BarChart3,
-      title: "Data-Driven Decisions",
+      icon: HardHat,
+      title: "Mechanical & Piping Works",
       description:
-        "Live project analytics and predictive modelling ensure you are always ahead of risk and budget curveballs.",
+        "From fabricating pipe spools in our workshop to installing them on site, we handle mechanical projects from start to handover. We've fitted MEP systems in warehouses, commercial buildings and industrial plants across the coast.",
+      points: ["Pipe fabrication & installation", "Equipment erection", "Welding & fit-up"],
     },
     {
-      icon: Compass,
-      title: "Sustainability by Design",
+      icon: ShieldCheck,
+      title: "Engineering Assessments",
       description:
-        "We engineer for carbon, water and energy performance from day zero, ensuring compliance and positive impact.",
-    },
-  ];
-
-  const process = [
-    {
-      title: "Discover",
-      description: "Immersive workshops to align scope, metrics and stakeholders from day one.",
+        "Need a fitness-for-service report before your insurance renewal? We carry out corrosion mapping, thickness surveys and structural integrity assessments so you know exactly where you stand.",
+      points: ["Tank floor scanning", "Corrosion mapping", "Fitness-for-service reports"],
     },
     {
-      title: "Design",
-      description: "Iterative co-design with digital twins, rapid prototyping and compliance reviews.",
-    },
-    {
-      title: "Deliver",
-      description: "On-site leadership coupled with smart monitoring to keep execution seamless.",
-    },
-    {
-      title: "Optimize",
-      description: "Operational intelligence, retro-commissioning and continuous performance tuning.",
+      icon: MapPin,
+      title: "Project Management & Supervision",
+      description:
+        "We don't just inspect — we manage. Our engineers sit on site, coordinate subcontractors, track progress and make sure the job closes out on time and within budget.",
+      points: ["Site supervision", "Quality assurance", "HSE compliance"],
     },
   ];
 
   const projects = [
     {
-      title: "Regional Smart Logistics Hub",
-      description:
-        "A 120,000 sqm logistics campus integrating autonomous warehousing, renewable microgrids and resilient structures.",
-      impact: "32% faster fulfilment, 18% energy reduction",
+      title: "Pipeline Inspection — Mombasa Oil Terminal",
+      scope: "12km pipeline corridor, ultrasonic thickness gauging and corrosion mapping across 48 test points.",
+      outcome: "Completed in 3 weeks. Identified 7 critical areas for repair before the next insurance audit.",
     },
     {
-      title: "Urban Mixed-Use Tower",
-      description:
-        "Iconic high-rise featuring adaptive façade systems, community amenities and net-zero ready mechanical systems.",
-      impact: "LEED Platinum pre-certified, 24-month delivery",
+      title: "Tank Cleaning & Inspection — Fuel Depot",
+      scope: "Full internal cleaning and MPI/UT inspection of four 5,000m³ fuel storage tanks.",
+      outcome: "Zero safety incidents. Tanks returned to service 4 days ahead of schedule.",
     },
     {
-      title: "Industrial Utilities Upgrade",
-      description:
-        "Mission-critical plant revitalization ensuring continuity, safety compliance and digital oversight.",
-      impact: "Zero downtime transition, predictive maintenance deployed",
+      title: "MEP Installation — Commercial Warehouse, Changamwe",
+      scope: "Mechanical, electrical and plumbing installation for a 3,200 sqm cold storage warehouse.",
+      outcome: "Handed over on budget. Client expanded scope to include fire protection systems.",
     },
   ];
 
@@ -129,32 +80,7 @@ const Home = () => {
     { name: "Bolloré Africa Logistics", logo: bolloreLogo, width: "w-36" },
     { name: "KPC", logo: kpcLogo, width: "w-20" },
   ];
-
   const marqueeLogos = [...clientLogos, ...clientLogos];
-
-  const transformationHighlights = [
-    {
-      icon: Sparkles,
-      title: "Immersive Digital Oversight",
-      description:
-        "Unified command centres with predictive analytics that surface insights for every stakeholder in real time.",
-      stat: "98% uptime across active sites",
-    },
-    {
-      icon: Compass,
-      title: "Regenerative Design Systems",
-      description:
-        "Low-carbon materials, adaptive envelopes and net-positive water strategies embedded at concept stage.",
-      stat: "40% average energy intensity reduction",
-    },
-    {
-      icon: Shield,
-      title: "Lifecycle Assurance",
-      description:
-        "Asset integrity programmes, NDT and digital twins that extend operational life and mitigate unplanned downtime.",
-      stat: "ISO 55001-aligned stewardship",
-    },
-  ];
 
   return (
     <div className="relative min-h-screen bg-background">
@@ -163,13 +89,12 @@ const Home = () => {
         <ThemeToggle id="home-theme-toggle" />
       </div>
 
-      {/* Hero Section - Full width image with overlay */}
-      <section className="relative min-h-[90vh] flex items-center">
-        {/* Background Image */}
+      {/* ─── Hero ─── */}
+      <section className="relative min-h-[85vh] flex items-center">
         <div className="absolute inset-0 z-0">
           <img
             src={industrialPlant}
-            alt="Industrial engineering infrastructure"
+            alt="Murban engineers on site at an industrial facility"
             className="h-full w-full object-cover"
             loading="eager"
             decoding="async"
@@ -177,262 +102,279 @@ const Home = () => {
             width={1920}
             height={1080}
           />
-          {/* Clean gradient overlay for readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
         </div>
 
-        {/* Content */}
-        <div className="container relative z-10 mx-auto px-4 py-32">
-          <div className="max-w-2xl">
-            {/* Label */}
-            <span className="inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold uppercase tracking-wide text-primary">
-              Engineering Excellence
-            </span>
-            
-            {/* Main Heading */}
-            <h1 className="mt-8 text-4xl font-semibold leading-tight text-foreground sm:text-5xl md:text-6xl">
-              Building Tomorrow's
-              <br />
-              <span className="text-primary">Infrastructure</span> Today
-            </h1>
-            
-            {/* Description */}
-            <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground">
-              We deliver comprehensive engineering solutions for businesses that need 
-              reliable systems. From structural design to MEP, we create infrastructure 
-              that scales with your growth, including advanced NDT and other engineering services.
+        <div className="container relative z-10 mx-auto px-4 py-28">
+          <div className="max-w-xl">
+            <p className="text-sm font-medium uppercase tracking-widest text-primary">
+              Mombasa, Kenya — Since 1998
             </p>
-            
-            {/* Buttons */}
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Button size="lg" asChild className="rounded-xl px-8 shadow-lg shadow-primary/20">
+
+            <h1 className="mt-6 text-3xl font-bold leading-snug text-foreground sm:text-4xl md:text-5xl">
+              We inspect, build and maintain the infrastructure that keeps industry running.
+            </h1>
+
+            <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground">
+              Murban Engineering provides NDT inspection, mechanical works and project 
+              management for oil & gas, manufacturing and logistics facilities across 
+              East Africa. If it's steel and it matters, we're probably already on site.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Button size="lg" asChild className="rounded-xl px-7">
                 <Link to="/contact">
-                  Start a Project <ArrowRight className="ml-2 h-5 w-5" />
+                  Talk to Our Team <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                asChild
-                className="rounded-xl bg-background/80 px-8 backdrop-blur-sm"
-              >
-                <Link to="/services">Explore Services</Link>
+              <Button size="lg" variant="outline" asChild className="rounded-xl px-7">
+                <Link to="/services">See Our Services</Link>
               </Button>
-              <Button
-                size="lg"
-                variant="secondary"
-                asChild
-                className="rounded-xl bg-[#1C2A5F] px-8 text-white shadow-lg hover:bg-[#16224d]"
-              >
-                <Link to="/project-gallery">View Our Projects</Link>
-              </Button>
+            </div>
+
+            {/* Quick trust strip */}
+            <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
+              <span className="flex items-center gap-1.5">
+                <ShieldCheck className="h-4 w-4 text-primary" /> ISO 9001 Certified
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Clock className="h-4 w-4 text-primary" /> 25+ Years in Operation
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Phone className="h-4 w-4 text-primary" /> +254 41 234 5678
+              </span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section - Left-to-right marquee */}
-      <section className="relative z-10 -mt-20 pb-16">
+      {/* ─── What We Actually Do ─── */}
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="overflow-hidden rounded-3xl border border-transparent bg-transparent shadow-none">
-            <div className="flex w-max items-center gap-4 px-6 py-6 motion-reduce:animate-none animate-marquee [animation-direction:reverse]">
-              {marqueeStats.map((stat, index) => (
-                <div
-                  key={`${stat.label}-${index}`}
-                  className="min-w-[220px] rounded-2xl border border-border bg-card p-6 shadow-lg shadow-foreground/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-                >
-                  <span className="text-3xl font-bold text-primary">{stat.value}</span>
-                  <span className="mt-2 block text-sm font-medium text-muted-foreground">
-                    {stat.label}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section - Clean grid layout */}
-      <section className="py-24 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto mb-16 max-w-2xl text-center">
-            <span className="text-sm font-semibold uppercase tracking-widest text-primary">
-              Our Services
-            </span>
-            <h2 className="mt-4 text-3xl font-semibold text-foreground md:text-4xl">
-              Engineering services tailored to your needs
+          <div className="mb-14 max-w-xl">
+            <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+              What we actually do on site
             </h2>
-            <p className="mt-4 text-muted-foreground">
-              From concept to commissioning, our teams create resilient systems that are effortless to operate.
+            <p className="mt-3 text-muted-foreground">
+              No jargon. These are the services our engineers deliver every week — at depots, 
+              factories, terminals and construction sites across the region.
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {services.map((service) => (
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {services.map((s) => (
               <Card
-                key={service.title}
-                className="group h-full overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                key={s.title}
+                className="group h-full rounded-2xl border border-border bg-card transition-shadow duration-200 hover:shadow-md"
               >
                 <CardContent className="flex h-full flex-col p-6">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                    <service.icon className="h-6 w-6" />
+                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <s.icon className="h-5 w-5" />
                   </div>
-                  <h3 className="mt-5 text-lg font-semibold text-foreground">{service.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{service.description}</p>
-                  <div className="mt-auto pt-6 space-y-2">
-                    {service.highlights.map((highlight) => (
-                      <div key={highlight} className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <CheckCircle2 className="h-4 w-4 text-primary" />
-                        {highlight}
-                      </div>
+                  <h3 className="mt-4 text-base font-semibold text-foreground">{s.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.description}</p>
+                  <ul className="mt-auto space-y-1.5 pt-5">
+                    {s.points.map((p) => (
+                      <li key={p} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary" />
+                        {p}
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </CardContent>
               </Card>
             ))}
           </div>
 
-          <div className="mt-12 text-center">
-            <Button size="lg" asChild className="rounded-xl">
+          <div className="mt-10">
+            <Button variant="outline" asChild className="rounded-xl">
               <Link to="/services">
-                View All Services <ArrowRight className="ml-2 h-5 w-5" />
+                Full list of services <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us - Clean horizontal layout */}
-      <section className="py-24">
+      {/* ─── Numbers strip ─── */}
+      <section className="border-y border-border bg-card py-12">
         <div className="container mx-auto px-4">
-          <div className="mx-auto mb-16 max-w-2xl text-center">
-            <span className="text-sm font-semibold uppercase tracking-widest text-primary">
-              Why Choose Us
-            </span>
-            <h2 className="mt-4 text-3xl font-semibold text-foreground md:text-4xl">
-              What sets us apart
-            </h2>
-          </div>
-
-          <div className="grid gap-8 md:grid-cols-3">
-            {differentiators.map((item) => (
-              <div
-                key={item.title}
-                className="rounded-2xl border border-border bg-card p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-              >
-                <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                  <item.icon className="h-7 w-7" />
-                </div>
-                <h3 className="mt-6 text-xl font-semibold text-foreground">{item.title}</h3>
-                <p className="mt-3 text-muted-foreground">{item.description}</p>
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+            {[
+              { value: "25+", label: "Years in the field" },
+              { value: "1,800+", label: "Projects completed" },
+              { value: "42", label: "Engineers & technicians" },
+              { value: "0", label: "Compromises on safety" },
+            ].map((s) => (
+              <div key={s.label} className="text-center">
+                <div className="text-3xl font-bold text-primary">{s.value}</div>
+                <div className="mt-1 text-sm text-muted-foreground">{s.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Project with Image */}
-      <section className="py-24 bg-muted/30">
+      {/* ─── Recent Projects ─── */}
+      <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <div>
-              <span className="text-sm font-semibold uppercase tracking-widest text-primary">
-                Featured Work
-              </span>
-              <h2 className="mt-4 text-3xl font-semibold text-foreground md:text-4xl">
-                Engineering excellence in action
+          <div className="grid items-start gap-12 lg:grid-cols-5">
+            {/* Left column — intro + image */}
+            <div className="lg:col-span-2">
+              <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+                How our projects typically run
               </h2>
-              <p className="mt-4 text-lg text-muted-foreground">
-                Our teams combine deep technical mastery with a human-centric approach. Every engagement 
-                delivers measurable outcomes and resilient systems.
+              <p className="mt-3 text-muted-foreground">
+                Every job is different, but the pattern is the same: we scope the work 
+                honestly, execute it safely and close it out on time. Here are three 
+                recent examples.
               </p>
+              <img
+                src={projectImage}
+                alt="Murban engineering project on site"
+                className="mt-8 rounded-2xl object-cover shadow-lg"
+                loading="lazy"
+                decoding="async"
+                width={600}
+                height={400}
+              />
+            </div>
 
-              <div className="mt-8 space-y-4">
-                {transformationHighlights.map((item) => (
-                  <div key={item.title} className="flex items-start gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                      <item.icon className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground">{item.title}</h3>
-                      <p className="mt-1 text-sm text-muted-foreground">{item.description}</p>
-                    </div>
+            {/* Right column — project cards */}
+            <div className="space-y-5 lg:col-span-3">
+              {projects.map((p, i) => (
+                <div
+                  key={p.title}
+                  className="rounded-2xl border border-border bg-card p-6 transition-shadow hover:shadow-sm"
+                >
+                  <div className="flex items-baseline gap-3">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-primary text-xs font-bold text-primary-foreground">
+                      {i + 1}
+                    </span>
+                    <h3 className="text-base font-semibold text-foreground">{p.title}</h3>
                   </div>
-                ))}
-              </div>
+                  <p className="mt-3 text-sm text-muted-foreground">{p.scope}</p>
+                  <p className="mt-2 text-sm font-medium text-foreground/80">
+                    <span className="text-primary">Result:</span> {p.outcome}
+                  </p>
+                </div>
+              ))}
 
-              <Button size="lg" asChild className="mt-8 rounded-xl">
-                <Link to="/industry-solutions">
-                  View Industry Solutions <ArrowRight className="ml-2 h-5 w-5" />
+              <Button asChild className="mt-2 rounded-xl">
+                <Link to="/project-gallery">
+                  View project gallery <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             </div>
-
-            <div className="relative">
-              <img
-                src={projectImage}
-                alt="Engineering project showcase"
-                className="rounded-3xl shadow-2xl shadow-foreground/10"
-                loading="lazy"
-                decoding="async"
-                width={800}
-                height={600}
-              />
-              <div className="absolute -bottom-6 -left-6 rounded-2xl border border-border bg-card p-6 shadow-xl">
-                <div className="text-3xl font-bold text-primary">98%</div>
-                <div className="text-sm text-muted-foreground">Client Satisfaction</div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Our Process */}
-      <section className="py-24">
+      {/* ─── Why Clients Stick With Us ─── */}
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="mx-auto mb-16 max-w-2xl text-center">
-            <span className="text-sm font-semibold uppercase tracking-widest text-primary">
-              Our Process
-            </span>
-            <h2 className="mt-4 text-3xl font-semibold text-foreground md:text-4xl">
-              How we deliver results
+          <div className="mb-14 max-w-xl">
+            <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+              Why clients stick with us
             </h2>
+            <p className="mt-3 text-muted-foreground">
+              We're not the cheapest option and we don't pretend to be. But our clients 
+              come back because we deliver what we promise, on time, safely and without drama.
+            </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {process.map((step, index) => (
-              <div
-                key={step.title}
-                className="relative rounded-2xl border border-border bg-card p-6 shadow-sm"
-              >
-                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground font-bold">
-                  {index + 1}
-                </div>
-                <h3 className="text-lg font-semibold text-foreground">{step.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{step.description}</p>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                title: "We show up prepared",
+                text: "Our crew arrives with the right equipment, calibrated instruments and a clear plan. No wasted days waiting for parts or approvals.",
+              },
+              {
+                title: "Safety isn't a poster on the wall",
+                text: "Every technician holds valid OSHA and NEBOSH certifications. We run toolbox talks before every shift — not because we have to, but because it works.",
+              },
+              {
+                title: "You get the report, not the runaround",
+                text: "Inspection reports are delivered within the agreed timeline, clearly written and ready for your insurer or regulator. No chasing required.",
+              },
+              {
+                title: "Local team, international standards",
+                text: "Our engineers are ASNT, PCN and CSWIP certified. We apply the same procedures you'd expect from a multinational — because that's who trained us.",
+              },
+              {
+                title: "We know this coast",
+                text: "25 years working in Mombasa means we understand the logistics, the permits, the weather and the people. That local knowledge saves you time and money.",
+              },
+              {
+                title: "One call, one team",
+                text: "From NDT inspection to mechanical repair to project close-out, you deal with one company. Less coordination headache for you.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="rounded-xl border border-border bg-card p-6">
+                <h3 className="text-base font-semibold text-foreground">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Trusted By / Client Logos */}
-      <section className="py-16 bg-muted/30">
+      {/* ─── Field Gallery ─── */}
+      <section className="py-20">
         <div className="container mx-auto px-4">
-          <p className="mb-8 text-center text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-            Trusted by industry leaders
+          <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+                From the field
+              </h2>
+              <p className="mt-2 text-muted-foreground">
+                Real photos from real job sites — no stock images.
+              </p>
+            </div>
+            <Button variant="outline" asChild className="rounded-xl">
+              <Link to="/project-gallery">Full gallery</Link>
+            </Button>
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-3">
+            <img
+              src={fieldWork1}
+              alt="NDT inspection work at an oil depot"
+              className="h-60 w-full rounded-xl object-cover"
+              loading="lazy"
+            />
+            <img
+              src={fieldWork3}
+              alt="Pipeline welding and fabrication"
+              className="h-60 w-full rounded-xl object-cover"
+              loading="lazy"
+            />
+            <img
+              src={fieldWork4}
+              alt="Mechanical installation at industrial site"
+              className="h-60 w-full rounded-xl object-cover"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Trusted By ─── */}
+      <section className="border-y border-border py-14">
+        <div className="container mx-auto px-4">
+          <p className="mb-8 text-center text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+            Companies we work with
           </p>
           <div className="logo-marquee overflow-hidden">
-            <div className="logo-marquee-track flex w-max items-center gap-12">
+            <div className="logo-marquee-track flex w-max items-center gap-14">
               {marqueeLogos.map((client, index) => (
                 <img
                   key={`${client.name}-${index}`}
                   src={client.logo}
                   alt={client.name}
-                  className={`${client.width} h-auto opacity-70 grayscale transition-all hover:opacity-100 hover:grayscale-0`}
+                  className={`${client.width} h-auto opacity-60 grayscale transition-all hover:opacity-100 hover:grayscale-0`}
                   loading="lazy"
-                  decoding="async"
                 />
               ))}
             </div>
@@ -440,72 +382,39 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section className="py-24">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto mb-16 max-w-2xl text-center">
-            <span className="text-sm font-semibold uppercase tracking-widest text-primary">
-              Project Gallery
-            </span>
-            <h2 className="mt-4 text-3xl font-semibold text-foreground md:text-4xl">
-              Our work in the field
-            </h2>
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-3">
-            <img
-              src={fieldWork1}
-              alt="Field work 1"
-              className="h-64 w-full rounded-2xl object-cover shadow-lg transition-transform duration-300 hover:scale-[1.02]"
-              loading="lazy"
-              decoding="async"
-            />
-            <img
-              src={fieldWork3}
-              alt="Field work 3"
-              className="h-64 w-full rounded-2xl object-cover shadow-lg transition-transform duration-300 hover:scale-[1.02]"
-              loading="lazy"
-              decoding="async"
-            />
-            <img
-              src={fieldWork4}
-              alt="Field work 4"
-              className="h-64 w-full rounded-2xl object-cover shadow-lg transition-transform duration-300 hover:scale-[1.02]"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-
-          <div className="mt-8 text-center">
-            <Button variant="outline" size="lg" asChild className="rounded-xl">
-              <Link to="/project-gallery">View Full Gallery</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
+      {/* ─── Testimonials ─── */}
       <Testimonials />
 
-      {/* CTA Section */}
-      <section className="py-24 bg-primary">
+      {/* ─── CTA ─── */}
+      <section className="py-20 bg-primary">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-semibold text-primary-foreground md:text-4xl">
-            Ready to start your project?
+          <h2 className="text-2xl font-bold text-primary-foreground sm:text-3xl">
+            Got a project coming up?
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-primary-foreground/80">
-            Let's discuss how we can help you build infrastructure that drives real progress.
+          <p className="mx-auto mt-3 max-w-md text-primary-foreground/80">
+            Whether it's a routine inspection, a shutdown turnaround or a new build — 
+            give us a call and we'll scope it out together.
           </p>
-          <Button
-            size="lg"
-            variant="secondary"
-            asChild
-            className="mt-8 rounded-xl bg-background text-foreground hover:bg-background/90"
-          >
-            <Link to="/contact">
-              Get in Touch <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Button
+              size="lg"
+              variant="secondary"
+              asChild
+              className="rounded-xl bg-background text-foreground hover:bg-background/90"
+            >
+              <Link to="/contact">
+                Get in Touch <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              asChild
+              className="rounded-xl border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+            >
+              <Link to="/services">Browse Services</Link>
+            </Button>
+          </div>
         </div>
       </section>
     </div>
