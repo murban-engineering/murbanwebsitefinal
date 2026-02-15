@@ -511,19 +511,22 @@ const Home = () => {
       <Testimonials />
 
       {/* CTA Section */}
-      <section className="py-24 bg-secondary">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-semibold text-secondary-foreground md:text-4xl">
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src={industrialPlant} alt="" className="h-full w-full object-cover" loading="lazy" />
+          <div className="absolute inset-0 bg-foreground/70" />
+        </div>
+        <div className="container relative z-10 mx-auto px-4 text-center">
+          <h2 className="text-3xl font-semibold text-white md:text-4xl">
             Ready to start your project?
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-secondary-foreground/80">
+          <p className="mx-auto mt-4 max-w-xl text-white/80">
             Let's discuss how we can help you build infrastructure that drives real progress.
           </p>
           <Button
             size="lg"
-            variant="secondary"
             asChild
-            className="mt-8 rounded-xl bg-background text-foreground hover:bg-background/90"
+            className="mt-8 rounded-xl bg-primary px-8 text-primary-foreground hover:bg-primary/90"
           >
             <Link to="/contact">
               Get in Touch <ArrowRight className="ml-2 h-5 w-5" />
