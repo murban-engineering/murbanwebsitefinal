@@ -270,26 +270,49 @@ const Home = () => {
 
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {services.map((service) => (
-              <Card
+              <div
                 key={service.title}
-                className="group h-full overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="service-card group relative flex h-full flex-col gap-4 overflow-hidden rounded-2xl border border-border/50 bg-card p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
-                <CardContent className="flex h-full flex-col p-6">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                    <service.icon className="h-6 w-6" />
-                  </div>
-                  <h3 className="mt-5 text-lg font-semibold text-foreground">{service.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{service.description}</p>
-                  <div className="mt-auto pt-6 space-y-2">
-                    {service.highlights.map((highlight) => (
-                      <div key={highlight} className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <CheckCircle2 className="h-4 w-4 text-primary" />
-                        {highlight}
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+                {/* Animated border glow */}
+                <div className="pointer-events-none absolute inset-0 -z-10 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{ background: 'radial-gradient(circle at 50% 100%, hsl(var(--primary) / 0.15), transparent 70%)' }} />
+
+                {/* Icon */}
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <service.icon className="h-6 w-6" />
+                </div>
+
+                {/* Title & Description */}
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground">{service.title}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{service.description}</p>
+                </div>
+
+                {/* Divider */}
+                <hr className="border-border" />
+
+                {/* Checklist */}
+                <ul className="flex flex-col gap-2.5 mt-auto">
+                  {service.highlights.map((highlight) => (
+                    <li key={highlight} className="flex items-center gap-2.5">
+                      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                        <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                          <path clipRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" fillRule="evenodd" />
+                        </svg>
+                      </span>
+                      <span className="text-sm text-foreground">{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* CTA Button */}
+                <Link
+                  to="/services"
+                  className="mt-2 inline-flex w-full items-center justify-center rounded-full bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground shadow-inner transition-colors hover:bg-primary/90"
+                >
+                  Learn More
+                </Link>
+              </div>
             ))}
           </div>
 
