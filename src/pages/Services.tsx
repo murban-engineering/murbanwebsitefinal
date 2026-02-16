@@ -41,8 +41,8 @@ import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 
 import servicesBuilding from "@/assets/services-building.jpg";
-import servicesPipeline from "@/assets/services-pipeline.jpg";
-import servicesPlant from "@/assets/services-plant.jpg";
+import storageTanks from "@/assets/storage-tanks.jpg";
+import modernFactory from "@/assets/modern-factory.jpg";
 import "./Services.css";
 
 type ServiceCardProps = {
@@ -2120,7 +2120,7 @@ const Services = () => {
           <img
             src={servicesBuilding}
             alt="Industrial engineering infrastructure"
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover rounded-3xl"
             loading="eager"
             decoding="async"
             fetchPriority="high"
@@ -2205,9 +2205,9 @@ const Services = () => {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src={servicesPlant}
-            alt="Industrial plant"
-            className="h-full w-full object-cover"
+            src={storageTanks}
+            alt="Industrial storage tanks"
+            className="h-full w-full object-cover rounded-3xl"
             loading="lazy"
             decoding="async"
           />
@@ -2254,9 +2254,9 @@ const Services = () => {
       <section id="services-contact" className="py-24 relative">
         <div className="absolute inset-0">
           <img
-            src={servicesPipeline}
-            alt="Pipeline construction"
-            className="h-full w-full object-cover"
+            src={modernFactory}
+            alt="Modern industrial factory"
+            className="h-full w-full object-cover rounded-3xl"
             loading="lazy"
             decoding="async"
           />
