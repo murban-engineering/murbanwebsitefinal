@@ -137,20 +137,13 @@ const About = () => {
       </section>
 
       {/* Where We Work */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img src={fieldWork5} alt="" className="h-full w-full object-cover" loading="lazy" />
-          <div className="absolute inset-0 bg-foreground/70" />
-        </div>
+      <section className="py-20 relative">
         <div className="container mx-auto px-4">
-          <AnimateOnScroll direction="up" className="text-center mb-12 relative z-10">
-            <MapPin className="h-12 w-12 text-white mx-auto mb-4" />
-            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-white">Where We Work</h2>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
-              We offer our services across many African countries
-            </p>
+          <AnimateOnScroll direction="up" className="text-center mb-12">
+            <MapPin className="h-12 w-12 text-primary mx-auto mb-4" />
+            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">Where We Work</h2>
           </AnimateOnScroll>
-          <AnimateOnScroll direction="up" delay={200} className="relative z-10">
+          <AnimateOnScroll direction="up" delay={200}>
             <AfricaMap />
           </AnimateOnScroll>
         </div>
