@@ -23,7 +23,7 @@ const countries = [
 const AfricaMap = () => {
   const cityColors: Record<string, string> = {};
   countries.forEach(({ name, isHQ }) => {
-    cityColors[name] = isHQ ? "hsl(358, 71%, 25%)" : "hsl(358, 71%, 35%)";
+    cityColors[name] = isHQ ? "hsl(358, 71%, 30%)" : "hsl(358, 71%, 42%)";
   });
 
   const leftCol = countries.slice(0, 10);
@@ -61,8 +61,8 @@ const AfricaMap = () => {
           <Africa
             type="select-single"
             size={typeof window !== "undefined" && window.innerWidth < 768 ? 280 : 400}
-            mapColor="hsl(0, 0%, 85%)"
-            strokeColor="hsl(0, 0%, 96%)"
+            mapColor="hsl(0, 0%, 90%)"
+            strokeColor="hsl(0, 0%, 98%)"
             strokeWidth={0.8}
             hoverColor="hsl(358, 71%, 45%)"
             selectColor="hsl(358, 71%, 35%)"
