@@ -17,6 +17,7 @@ import Faq from "./pages/Faq";
 import ProjectGallery from "./pages/ProjectGallery";
 import Certifications from "./pages/Certifications";
 import ScrollToTop from "./components/ScrollToTop";
+import MurbanAI from "./components/MurbanAI";
 
 const queryClient = new QueryClient();
 
@@ -44,6 +45,7 @@ const App = () => (
           </Routes>
         </main>
         <Footer />
+        <MurbanAI />
       </div>
     </TooltipProvider>
   </QueryClientProvider>

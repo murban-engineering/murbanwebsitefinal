@@ -24,7 +24,7 @@ import bolloreLogo from "@/assets/bollore-logo.png";
 import kpcLogo from "@/assets/kpc-logo.png";
 import fieldWork1 from "@/assets/field-work-1.jpg";
 import fieldWork3 from "@/assets/field-work-3.jpg";
-import fieldWork4 from "@/assets/field-work-4.jpg";
+
 import industrialPlant from "@/assets/industrial-plant.jpg";
 
 const Home = () => {
@@ -248,19 +248,19 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Services Preview Section */}
       <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-4">
           <AnimateOnScroll direction="right">
             <div className="mx-auto mb-16 max-w-2xl text-center">
               <span className="text-sm font-semibold uppercase tracking-widest text-primary">
-                Our Services
+                What We Do
               </span>
               <h2 className="mt-4 text-3xl font-semibold text-foreground md:text-4xl">
-                Engineering services tailored to your needs
+                Our Services
               </h2>
               <p className="mt-4 text-muted-foreground">
-                From concept to commissioning, our teams create resilient systems that are effortless to operate.
+                Practical, high-impact engineering and NDT solutions designed for the African market.
               </p>
             </div>
           </AnimateOnScroll>
@@ -272,25 +272,18 @@ const Home = () => {
                 direction={i % 2 === 0 ? "left" : "right"}
                 delay={i * 100}
               >
-                <div
-                  className="service-card group relative flex h-full flex-col gap-4 overflow-hidden rounded-2xl border border-border/50 bg-card p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-                >
-                  <div className="pointer-events-none absolute inset-0 -z-10 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{ background: 'radial-gradient(circle at 50% 100%, hsl(var(--primary) / 0.15), transparent 70%)' }} />
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                    <service.icon className="h-6 w-6" />
+                <div className="group flex h-full flex-col rounded-2xl border border-border/60 bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary/20">
+                  <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                    <service.icon className="h-7 w-7" />
                   </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-foreground">{service.title}</h3>
-                    <p className="mt-1 text-sm text-muted-foreground">{service.description}</p>
-                  </div>
-                  <hr className="border-border" />
+                  <h3 className="text-xl font-bold text-foreground">{service.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{service.description}</p>
+                  <hr className="my-5 border-border" />
                   <ul className="flex flex-col gap-2.5 mt-auto">
                     {service.highlights.map((highlight) => (
                       <li key={highlight} className="flex items-center gap-2.5">
                         <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                          <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                            <path clipRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" fillRule="evenodd" />
-                          </svg>
+                          <CheckCircle2 className="h-3 w-3" />
                         </span>
                         <span className="text-sm text-foreground">{highlight}</span>
                       </li>
@@ -298,7 +291,7 @@ const Home = () => {
                   </ul>
                   <Link
                     to="/services"
-                    className="mt-2 inline-flex w-full items-center justify-center rounded-full bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground shadow-inner transition-colors hover:bg-primary/90"
+                    className="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
                   >
                     Learn More
                   </Link>
@@ -487,30 +480,21 @@ const Home = () => {
             </div>
           </AnimateOnScroll>
 
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-4 md:grid-cols-2">
             <AnimateOnScroll direction="left" delay={0}>
               <img
                 src={fieldWork1}
                 alt="Field work 1"
-                className="h-64 w-full rounded-2xl object-cover shadow-lg transition-transform duration-300 hover:scale-[1.02]"
+                className="h-72 w-full rounded-3xl object-cover shadow-lg transition-transform duration-300 hover:scale-[1.02]"
                 loading="eager"
                 decoding="async"
               />
             </AnimateOnScroll>
-            <AnimateOnScroll direction="up" delay={100}>
+            <AnimateOnScroll direction="right" delay={100}>
               <img
                 src={fieldWork3}
                 alt="Field work 3"
-                className="h-64 w-full rounded-2xl object-cover shadow-lg transition-transform duration-300 hover:scale-[1.02]"
-                loading="eager"
-                decoding="async"
-              />
-            </AnimateOnScroll>
-            <AnimateOnScroll direction="right" delay={200}>
-              <img
-                src={fieldWork4}
-                alt="Field work 4"
-                className="h-64 w-full rounded-2xl object-cover shadow-lg transition-transform duration-300 hover:scale-[1.02]"
+                className="h-72 w-full rounded-3xl object-cover shadow-lg transition-transform duration-300 hover:scale-[1.02]"
                 loading="eager"
                 decoding="async"
               />
