@@ -1,12 +1,12 @@
 import {
   ArrowRight,
   BarChart3,
-  Building2,
+  FlaskConical,
   CheckCircle2,
   Compass,
+  ScanLine,
   Shield,
   Sparkles,
-  Users,
   Wrench,
 } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -30,28 +30,28 @@ import industrialPlant from "@/assets/industrial-plant.jpg";
 const Home = () => {
   const services = [
     {
-      icon: Building2,
-      title: "Structural Engineering",
-      description: "Future-ready structures engineered with advanced simulation and modelling.",
-      highlights: ["Seismic resilience", "Hybrid material systems", "Digital twin ready"],
+      icon: ScanLine,
+      title: "NDT Inspection Services",
+      description: "Full-scope Non-Destructive Testing coverage tailored to your assets and regulations.",
+      highlights: ["Comprehensive inspections", "Code-compliant reporting", "Asset integrity insights"],
     },
     {
       icon: Wrench,
-      title: "MEP Systems",
-      description: "High-performance mechanical, electrical and plumbing systems for smart facilities.",
-      highlights: ["Net-zero ready", "Smart automation", "Lifecycle analytics"],
+      title: "Tank Calibration Services",
+      description: "Accurate volume measurement and tank calibration across all storage configurations.",
+      highlights: ["Volume verification", "Storage optimization", "Reliable calibration data"],
     },
     {
       icon: Shield,
-      title: "Project Leadership",
-      description: "Integrated delivery teams that align people, processes and technology.",
-      highlights: ["Design-build expertise", "Risk mitigation", "Transparent dashboards"],
+      title: "API 570 Piping Inspection and Certification",
+      description: "Piping system inspection for code compliance.",
+      highlights: ["API 570 alignment", "Safety-first assessments", "Detailed certification support"],
     },
     {
-      icon: Users,
-      title: "Advisory & Consulting",
-      description: "Strategic engineering guidance for complex infrastructure ventures.",
-      highlights: ["Sustainability roadmaps", "Feasibility studies", "Regulatory compliance"],
+      icon: FlaskConical,
+      title: "API 653 Aboveground Storage Tank Inspection and Certification",
+      description: "Tank integrity inspections that deliver official API 653 certification and reporting.",
+      highlights: ["Integrity-focused reviews", "Regulatory readiness", "Actionable maintenance findings"],
     },
   ];
 
@@ -260,7 +260,7 @@ const Home = () => {
                 Our Services
               </h2>
               <p className="mt-4 text-muted-foreground">
-                Practical, high-impact engineering and NDT solutions designed for the African market.
+                Featured offerings pulled directly from our core services catalog.
               </p>
             </div>
           </AnimateOnScroll>
