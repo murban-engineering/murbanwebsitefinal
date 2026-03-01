@@ -2,7 +2,6 @@ import {
   ArrowRight,
   BarChart3,
   FlaskConical,
-  CheckCircle2,
   Compass,
   ScanLine,
   Shield,
@@ -32,26 +31,30 @@ const Home = () => {
     {
       icon: ScanLine,
       title: "NDT Inspection Services",
-      description: "Full-scope Non-Destructive Testing coverage tailored to your assets and regulations.",
-      highlights: ["Comprehensive inspections", "Code-compliant reporting", "Asset integrity insights"],
+      description: "Full-scope Non-Destructive Testing covering magnetic particle, ultrasonic, radiographic and dye penetrant methods.",
+      forText: "Oil & gas, power plants, refineries, marine",
+      slug: "ndt-inspection-services",
     },
     {
       icon: Wrench,
       title: "Tank Calibration Services",
-      description: "Accurate volume measurement and tank calibration across all storage configurations.",
-      highlights: ["Volume verification", "Storage optimization", "Reliable calibration data"],
+      description: "Accurate volume measurement and tank calibration across all storage configurations to regulatory standards.",
+      forText: "Storage terminals, fuel depots, petrochemical plants",
+      slug: "tank-calibration-services",
     },
     {
       icon: Shield,
-      title: "API 570 Piping Inspection and Certification",
-      description: "Piping system inspection for code compliance.",
-      highlights: ["API 570 alignment", "Safety-first assessments", "Detailed certification support"],
+      title: "API 570 Piping Inspection",
+      description: "Piping system inspection and certification for code compliance, safety assurance and integrity management.",
+      forText: "Process plants, pipelines, manufacturing facilities",
+      slug: "api-570-piping-inspection-and-certification",
     },
     {
       icon: FlaskConical,
-      title: "API 653 Aboveground Storage Tank Inspection and Certification",
-      description: "Tank integrity inspections that deliver official API 653 certification and reporting.",
-      highlights: ["Integrity-focused reviews", "Regulatory readiness", "Actionable maintenance findings"],
+      title: "API 653 Storage Tank Inspection",
+      description: "Aboveground storage tank integrity inspections delivering official API 653 certification and detailed reporting.",
+      forText: "Tank farms, refineries, logistics operators",
+      slug: "api-653-aboveground-storage-tank-inspection-and-certification",
     },
   ];
 
@@ -272,30 +275,24 @@ const Home = () => {
                 direction={i % 2 === 0 ? "left" : "right"}
                 delay={i * 100}
               >
-                <div className="group flex h-full flex-col rounded-2xl border border-border/60 bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary/20">
-                  <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                <Link
+                  to={`/services/${service.slug}`}
+                  className="group flex h-full flex-col rounded-2xl border border-border/60 bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary/30 cursor-pointer"
+                >
+                  <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors group-hover:bg-primary/20">
                     <service.icon className="h-7 w-7" />
                   </div>
                   <h3 className="text-xl font-bold text-foreground">{service.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{service.description}</p>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{service.description}</p>
                   <hr className="my-5 border-border" />
-                  <ul className="flex flex-col gap-2.5 mt-auto">
-                    {service.highlights.map((highlight) => (
-                      <li key={highlight} className="flex items-center gap-2.5">
-                        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                          <CheckCircle2 className="h-3 w-3" />
-                        </span>
-                        <span className="text-sm text-foreground">{highlight}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    to="/services"
-                    className="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
-                  >
-                    Learn More
-                  </Link>
-                </div>
+                  <p className="text-sm text-foreground">
+                    <span className="font-semibold">For:</span>{" "}
+                    <span className="text-muted-foreground">{service.forText}</span>
+                  </p>
+                  <div className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
+                    Learn More <ArrowRight className="h-4 w-4" />
+                  </div>
+                </Link>
               </AnimateOnScroll>
             ))}
           </div>
