@@ -166,143 +166,137 @@ const serviceSections = [
 
 const ndtServiceItems: ServiceItemInput[] = [
   {
-    icon: IntegrityShieldIcon,
+    icon: ShieldCheck,
     title: "NDT Inspection Services",
     description: "Full-scope Non-Destructive Testing coverage tailored to your assets and regulations.",
   },
   {
-    icon: CalibrationGaugeIcon,
+    icon: Gauge,
     title: "Tank Calibration Services",
     description: "Accurate volume measurement and tank calibration across all storage configurations.",
   },
   {
-    icon: PipelineInspectionIcon,
+    icon: GitBranch,
     title: "API 570 Piping Inspection and Certification",
     description: "Piping system inspection for code compliance.",
   },
   {
-    icon: StorageTankIcon,
+    icon: Database,
     title: "API 653 Aboveground Storage Tank Inspection and Certification",
     description: "Tank integrity inspections that deliver official API 653 certification and reporting.",
   },
   {
-    icon: VesselComplianceIcon,
+    icon: FlaskConical,
     title: "API 510 Pressure Vessel Inspection",
     description: "Pressure vessel safety verification with detailed API 510 compliance documentation.",
   },
   {
-    icon: UltrasonicMatrixIcon,
+    icon: Waves,
     title: "Ultrasonic Flaw Testing C-Scan",
     description: "Detailed flaw mapping using advanced ultrasonic C-scan imaging techniques.",
   },
   {
-    icon: UltrasonicSliceIcon,
+    icon: Activity,
     title: "Ultrasonic Flaw Testing B-Scan",
     description: "Internal defect detection and profiling delivered through precision B-scan testing.",
   },
   {
-    icon: MagneticFieldIcon,
+    icon: Magnet,
     title: "Magnetic Particle Testing",
     description: "Surface flaw detection using powerful magnetic particle inspection methods.",
   },
   {
-    icon: MagneticLumenIcon,
+    icon: Sparkles,
     title: "Fluorescent Magnet Particle Testing",
     description: "Crack detection enhanced with fluorescent indicators and ultraviolet inspection.",
   },
   {
-    icon: CapillarySearchIcon,
+    icon: Droplets,
     title: "Dye Penetrant Testing",
     description: "Reliable surface-breaking flaw detection with visible and fluorescent dye systems.",
   },
   {
-    icon: RadiographicImagingIcon,
+    icon: Radio,
     title: "RT Radiographic Services",
-    description:
-      "High-resolution radiographic imaging that uncovers hidden discontinuities without interrupting service.",
+    description: "High-resolution radiographic imaging that uncovers hidden discontinuities without interrupting service.",
   },
   {
-    icon: CoatingShieldIcon,
+    icon: Paintbrush,
     title: "Paint & Coating Inspection",
     description: "Checking protective coating thickness and quality to extend asset life.",
   },
   {
-    icon: MaterialSpectrumIcon,
+    icon: TestTube,
     title: "Positive Material Identification Testing",
     description: "Verify alloy composition quickly with positive material identification technology.",
   },
   {
-    icon: PhasedArrayIcon,
+    icon: ScanLine,
     title: "Murban Phased Array Testing",
     description: "Advanced phased array ultrasonics for complex geometry and high-resolution flaw detection.",
   },
   {
-    icon: LaserCubeIcon,
+    icon: Crosshair,
     title: "3D Laser Scanning Services",
-    description:
-      "High-accuracy spatial data capture for asset management, design planning, and facility maintenance.",
+    description: "High-accuracy spatial data capture for asset management, design planning, and facility maintenance.",
   },
   {
-    icon: ThermalScannerIcon,
+    icon: Thermometer,
     title: "Thermal Camera Inspection",
-    description:
-      "Thermal imaging surveys that uncover temperature anomalies and emerging issues before they escalate.",
+    description: "Thermal imaging surveys that uncover temperature anomalies and emerging issues before they escalate.",
   },
   {
-    icon: ElectromagneticFieldIcon,
+    icon: Cpu,
     title: "Alternating Current Field Measurement",
-    description:
-      "Advanced electromagnetic inspection that detects and sizes surface cracks with exceptional accuracy.",
+    description: "Advanced electromagnetic inspection that detects and sizes surface cracks with exceptional accuracy.",
   },
   {
-    icon: FitnessAssessmentIcon,
+    icon: TrendingUp,
     title: "API 579 Murban Fitness for Service",
-    description:
-      "API 579-based integrity assessments that uncover defects, document risk, and guide repair or replacement decisions.",
+    description: "API 579-based integrity assessments that uncover defects, document risk, and guide repair or replacement decisions.",
   },
   {
-    icon: RiskGaugeIcon,
+    icon: GaugeCircle,
     title: "API 580 Murban Risk Based Inspection",
     description: "Risk-based inspection strategies prioritizing safety-critical assets and intervals.",
   },
   {
-    icon: BoilerGuardIcon,
+    icon: Flame,
     title: "Boiler Inspection Services",
     description: "Thorough inspections that keep boiler systems safe, efficient, and compliant.",
   },
   {
-    icon: LiftingHookIcon,
+    icon: Wind,
     title: "Lifting Equipment Thorough Examination and Certification",
     description: "Safe lifting equipment checks paired with formal certification packages.",
   },
   {
-    icon: GasMonitorIcon,
+    icon: Zap,
     title: "Murban Gas Detection",
-    description:
-      "Comprehensive monitoring solutions that detect hazardous gases early and keep worksites compliant.",
+    description: "Comprehensive monitoring solutions that detect hazardous gases early and keep worksites compliant.",
   },
   {
-    icon: PressureSealIcon,
+    icon: Fuel,
     title: "Murban Pressure Testing",
     description: "Verify system strength and tightness through controlled pressure testing.",
   },
   {
-    icon: TankFloorScanIcon,
+    icon: Map,
     title: "Floormap 3D MFL Scanning",
     description: "3D magnetic flux leakage scanning that pinpoints tank floor defects with precision.",
   },
   {
-    icon: SphereInspectionIcon,
+    icon: Globe,
     title: "Sphere Tank Inspections",
     description: "Inspection of spherical tanks with detailed structural and safety reporting.",
   },
   {
-    icon: HardnessMeterIcon,
+    icon: Settings,
     title: "Surface Hardness Testing",
     description: "Measuring metal surface strength to validate fabrication quality and wear resistance.",
   },
   {
-    icon: UavSurveyIcon,
+    icon: Plane,
     title: "Murban UAV Inspection",
     description: "Aerial inspection using drone-based technology to access challenging environments.",
   },
