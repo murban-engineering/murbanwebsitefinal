@@ -434,40 +434,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Our Process */}
-      <section className="py-24 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <AnimateOnScroll direction="right">
-            <div className="mx-auto mb-16 max-w-2xl text-center">
-              <span className="text-sm font-semibold uppercase tracking-widest text-primary">
-                Our Process
-              </span>
-              <h2 className="mt-4 text-3xl font-semibold text-foreground md:text-4xl">
-                How we deliver results
-              </h2>
-            </div>
-          </AnimateOnScroll>
-
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {process.map((step, index) => (
-              <AnimateOnScroll
-                key={step.title}
-                direction={index % 2 === 0 ? "left" : "right"}
-                delay={index * 100}
-              >
-                <div className="relative rounded-2xl border border-border bg-card p-6 shadow-sm">
-                  <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground font-bold">
-                    {index + 1}
-                  </div>
-                  <h3 className="text-lg font-semibold text-foreground">{step.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{step.description}</p>
-                </div>
-              </AnimateOnScroll>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Gallery Section */}
       <section className="py-24">
         <div className="container mx-auto px-4">
