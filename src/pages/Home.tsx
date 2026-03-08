@@ -144,21 +144,21 @@ const Home = () => {
 
   const transformationHighlights = [
     {
-      icon: Sparkles,
+      icon: Globe2,
       title: "Immersive Digital Oversight",
       description:
         "Unified command centres with predictive analytics that surface insights for every stakeholder in real time.",
       stat: "98% uptime across active sites",
     },
     {
-      icon: Compass,
+      icon: Leaf,
       title: "Regenerative Design Systems",
       description:
         "Low-carbon materials, adaptive envelopes and net-positive water strategies embedded at concept stage.",
       stat: "40% average energy intensity reduction",
     },
     {
-      icon: Shield,
+      icon: ShieldCheck,
       title: "Lifecycle Assurance",
       description:
         "Asset integrity programmes, NDT and digital twins that extend operational life and mitigate unplanned downtime.",
