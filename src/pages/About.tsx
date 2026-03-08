@@ -179,7 +179,7 @@ const About = () => {
               <AnimateOnScroll direction="right" delay={200}>
                 <Card className="border-border">
                   <CardContent className="p-8">
-                    <Crosshair className="h-12 w-12 text-primary mb-4" />
+                    <Crosshair className="h-12 w-12 text-foreground mb-4" />
                     <h3 className="text-2xl font-serif font-bold mb-4">Our Mission</h3>
                     <p className="text-muted-foreground">
                       To deliver value to clients by executing world-class asset integrity services that maximize uptime and ensure safety compliance.
