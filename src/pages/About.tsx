@@ -156,7 +156,7 @@ const About = () => {
             <AnimateOnScroll direction="right">
               <Card className="border-border">
                 <CardContent className="p-8">
-                  <Heart className="h-12 w-12 text-primary mb-4" />
+                  <HeartHandshake className="h-12 w-12 text-primary mb-4" />
                   <h3 className="text-2xl font-serif font-bold mb-4">Our Why (Purpose)</h3>
                   <p className="text-muted-foreground">
                     We exist to enhance safety, reliability, and performance in critical infrastructure through innovative inspection and engineering solutions.
