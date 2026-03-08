@@ -140,7 +140,7 @@ const About = () => {
       <section className="py-20 relative">
         <div className="container mx-auto px-4">
           <AnimateOnScroll direction="up" className="text-center mb-12">
-            <MapPin className="h-12 w-12 text-primary mx-auto mb-4" />
+            <MapPin className="h-12 w-12 text-foreground mx-auto mb-4" />
             <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">Where We Work</h2>
           </AnimateOnScroll>
           <AnimateOnScroll direction="up" delay={200}>
