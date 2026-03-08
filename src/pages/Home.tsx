@@ -1,13 +1,14 @@
 import {
   ArrowRight,
-  BarChart3,
-  Compass,
-  ScanSearch,
-  Zap,
-  ClipboardCheck,
-  HardHat,
-  Sparkles,
-  Shield,
+  LineChart,
+  Globe2,
+  Activity,
+  Cpu,
+  FileSearch,
+  Hammer,
+  BrainCircuit,
+  Leaf,
+  ShieldCheck,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";

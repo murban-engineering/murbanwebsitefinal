@@ -1,11 +1,11 @@
 import {
-  Award,
-  Target,
-  Eye,
-  Shield,
-  Heart,
-  Lightbulb,
-  Users,
+  BadgeCheck,
+  Crosshair,
+  Telescope,
+  ShieldCheck,
+  HeartHandshake,
+  FlameKindling,
+  UsersRound,
   TrendingUp,
   MapPin,
 } from "lucide-react";

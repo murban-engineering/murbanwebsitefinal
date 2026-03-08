@@ -1,4 +1,4 @@
-import { CheckCircle2 } from "lucide-react";
+import { CircleCheckBig } from "lucide-react";
 import teamImage from "@/assets/team-collaboration.jpg";
 
 const WhyChooseUs = () => {
