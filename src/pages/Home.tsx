@@ -257,6 +257,31 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Trusted By */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <AnimateOnScroll direction="up">
+            <p className="mb-8 text-center text-sm font-semibold uppercase tracking-widest text-muted-foreground">
+              Trusted by industry leaders
+            </p>
+            <div className="logo-marquee overflow-hidden">
+              <div className="logo-marquee-track flex w-max items-center gap-12">
+                {marqueeLogos.map((client, index) => (
+                  <img
+                    key={`${client.name}-${index}`}
+                    src={client.logo}
+                    alt={client.name}
+                    className={`${client.width} h-auto opacity-70 grayscale transition-all hover:opacity-100 hover:grayscale-0`}
+                    loading="eager"
+                    decoding="async"
+                  />
+                ))}
+              </div>
+            </div>
+          </AnimateOnScroll>
+        </div>
+      </section>
+
       {/* Services Preview Section */}
       <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-4">
@@ -440,31 +465,6 @@ const Home = () => {
               </AnimateOnScroll>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Trusted By */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <AnimateOnScroll direction="up">
-            <p className="mb-8 text-center text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-              Trusted by industry leaders
-            </p>
-            <div className="logo-marquee overflow-hidden">
-              <div className="logo-marquee-track flex w-max items-center gap-12">
-                {marqueeLogos.map((client, index) => (
-                  <img
-                    key={`${client.name}-${index}`}
-                    src={client.logo}
-                    alt={client.name}
-                    className={`${client.width} h-auto opacity-70 grayscale transition-all hover:opacity-100 hover:grayscale-0`}
-                    loading="eager"
-                    decoding="async"
-                  />
-                ))}
-              </div>
-            </div>
-          </AnimateOnScroll>
         </div>
       </section>
 
