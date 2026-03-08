@@ -111,7 +111,7 @@ const About = () => {
                       <span><strong>Murban Inspection Services</strong></span>
                     </li>
                     <li className="flex items-start">
-                      <BadgeCheck className="h-5 w-5 text-primary mr-2 mt-1 flex-shrink-0" />
+                      <BadgeCheck className="h-5 w-5 text-foreground mr-2 mt-1 flex-shrink-0" />
                       <span><strong>Murban Engineering Services</strong></span>
                     </li>
                   </ul>

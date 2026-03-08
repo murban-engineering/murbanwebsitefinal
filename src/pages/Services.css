@@ -110,7 +110,7 @@
 .service-card-icon {
   width: 1.75rem;
   height: 1.75rem;
-  color: hsl(var(--primary));
+  color: hsl(var(--foreground));
   flex-shrink: 0;
 }
 
