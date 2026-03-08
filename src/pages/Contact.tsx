@@ -210,7 +210,7 @@ const Contact = () => {
                 >
                   <CardContent className="p-8">
                     <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 group-hover:bg-primary group-hover:scale-110 transition-all shadow-md group-hover:shadow-glow">
-                      <info.icon className="h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors" />
+                      <info.icon className="h-8 w-8 text-foreground group-hover:text-primary-foreground transition-colors" />
                     </div>
                     <h3 className="text-lg font-semibold mb-2">{info.title}</h3>
                     {info.link ? (
