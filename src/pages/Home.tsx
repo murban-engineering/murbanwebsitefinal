@@ -31,7 +31,7 @@ import industrialPlant from "@/assets/industrial-plant.jpg";
 const Home = () => {
   const services = [
     {
-      icon: ScanSearch,
+      icon: Activity,
       title: "General NDT",
       description: "Comprehensive non-destructive testing using magnetic particle, dye penetrant, ultrasonic, and radiographic methods for structural integrity assurance.",
       forText: "Oil & gas, power plants, refineries, marine",
@@ -39,7 +39,7 @@ const Home = () => {
       tag: "General NDT",
     },
     {
-      icon: Zap,
+      icon: Cpu,
       title: "Advanced NDT",
       description: "Cutting-edge inspection techniques including Phased Array UT, TOFD, ACFM, and AUT for complex geometry and high-integrity assets.",
       forText: "Subsea, aerospace, high-pressure systems",
@@ -47,7 +47,7 @@ const Home = () => {
       tag: "Advanced NDT",
     },
     {
-      icon: ClipboardCheck,
+      icon: FileSearch,
       title: "Engineering Assessments",
       description: "API 570, API 653, fitness-for-service evaluations and risk-based inspection programs to extend asset life and ensure code compliance.",
       forText: "Process plants, storage terminals, pipelines",
@@ -55,7 +55,7 @@ const Home = () => {
       tag: "Engineering Assessments",
     },
     {
-      icon: HardHat,
+      icon: Hammer,
       title: "Engineering & Fabrication",
       description: "Structural fabrication, tank construction, piping works and project management delivered to international codes and standards.",
       forText: "Industrial plants, refineries, construction projects",

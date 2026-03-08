@@ -21,17 +21,17 @@ import portSunset from "@/assets/port-sunset.jpg";
 const About = () => {
   const foundationValues = [
     {
-      icon: Heart,
+      icon: HeartHandshake,
       title: "Respect & Diversity",
       description: "We treat our team, clients, communities, and the environment with the highest respect.",
     },
     {
-      icon: Shield,
+      icon: ShieldCheck,
       title: "Ethics & Integrity",
       description: "We uphold the highest standards of honesty and ethical business practices.",
     },
     {
-      icon: Target,
+      icon: Crosshair,
       title: "Safety & Sustainability",
       description: "Safety and sustainability define how we operate and protect our environment.",
     },
@@ -39,13 +39,13 @@ const About = () => {
 
   const driveValues = [
     {
-      icon: Lightbulb,
+      icon: FlameKindling,
       title: "Passion for Innovation",
       description: "We constantly explore new technologies, methods, and ideas to improve how we deliver value. Innovation is embedded in our people, tools, and approach to problem-solving.",
       why: "It keeps Murban at the forefront of inspection and engineering technology, giving our clients future-ready solutions.",
     },
     {
-      icon: Users,
+      icon: UsersRound,
       title: "Customer Obsession",
       description: "We go beyond meeting expectations — we anticipate needs, act on feedback, and build lasting relationships.",
       why: "Your success is our success. We align our work to what matters most to you: safety, uptime, and compliance.",
