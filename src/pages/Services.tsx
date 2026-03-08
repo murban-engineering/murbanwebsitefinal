@@ -152,7 +152,7 @@ const ServiceCard = ({
       {showCTA && (
         <Link to={ctaHref} className="service-card-cta">
           <span>{ctaLabel}</span>
-          <ArrowRightIcon className="service-card-cta-icon" aria-hidden="true" />
+          <ArrowRight className="service-card-cta-icon" aria-hidden="true" />
         </Link>
       )}
     </div>
