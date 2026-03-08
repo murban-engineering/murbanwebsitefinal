@@ -140,9 +140,7 @@ const ServiceCard = ({
           >
             <p className="service-card-prompt">Learn more</p>
             <div className="service-card-header">
-              <span className="service-card-icon-wrapper" aria-hidden="true">
-                <Icon className="service-card-icon" aria-hidden="true" strokeWidth={2.5} />
-              </span>
+              <Icon className="service-card-icon" aria-hidden="true" strokeWidth={2} />
               <h3 className="service-card-title">{title}</h3>
             </div>
             <p className="service-card-description">{description}</p>
