@@ -93,7 +93,7 @@ const IndustrySolutions = () => {
       whyItMatters: "In food and beverage processing, cleanliness, accuracy, and structural integrity are non-negotiable. Murban supports this industry with non-contaminating inspection techniques, volumetric tank calibration, and material identification suited for food-grade environments. Whether it's ensuring weld quality in stainless vessels or verifying tank geometry for accurate mixing and batching, we bring precision, hygiene-compliant methods, and peace of mind to food manufacturers.",
     },
     {
-      icon: RenewableCycleIcon,
+      icon: Wind,
       title: "Renewable Energy & Geothermal",
       image: renewableEnergyImg,
       assetsCovered: "Geothermal drilling rigs, solar plants, wind support structures",
