@@ -281,7 +281,7 @@ const ndtServiceItems: ServiceItemInput[] = [
     description: "Verify system strength and tightness through controlled pressure testing.",
   },
   {
-    icon: Map,
+    icon: MapIcon,
     title: "Floormap 3D MFL Scanning",
     description: "3D magnetic flux leakage scanning that pinpoints tank floor defects with precision.",
   },
