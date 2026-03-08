@@ -307,8 +307,8 @@ const Home = () => {
                 delay={i * 100}
               >
                 <Link
-                   to={`/services/${service.slug}`}
-                   className="group flex h-full flex-col rounded-2xl border border-border/60 p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary/30 cursor-pointer"
+                  to={`/services/${service.slug}`}
+                  className="group flex h-full flex-col rounded-2xl border border-border/60 bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary/30 cursor-pointer"
                 >
                   <div className="mb-4 flex items-center gap-3">
                     <service.icon className="h-7 w-7 text-primary" />
