@@ -1,12 +1,13 @@
 import {
   ArrowRight,
   BarChart3,
-  FlaskConical,
   Compass,
-  ScanLine,
-  Shield,
+  ScanSearch,
+  Zap,
+  ClipboardCheck,
+  HardHat,
   Sparkles,
-  Wrench,
+  Shield,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -29,32 +30,36 @@ import industrialPlant from "@/assets/industrial-plant.jpg";
 const Home = () => {
   const services = [
     {
-      icon: ScanLine,
-      title: "NDT Inspection Services",
-      description: "Full-scope Non-Destructive Testing covering magnetic particle, ultrasonic, radiographic and dye penetrant methods.",
+      icon: ScanSearch,
+      title: "General NDT",
+      description: "Comprehensive non-destructive testing using magnetic particle, dye penetrant, ultrasonic, and radiographic methods for structural integrity assurance.",
       forText: "Oil & gas, power plants, refineries, marine",
       slug: "ndt-inspection-services",
+      tag: "General NDT",
     },
     {
-      icon: Wrench,
-      title: "Tank Calibration Services",
-      description: "Accurate volume measurement and tank calibration across all storage configurations to regulatory standards.",
-      forText: "Storage terminals, fuel depots, petrochemical plants",
-      slug: "tank-calibration-services",
+      icon: Zap,
+      title: "Advanced NDT",
+      description: "Cutting-edge inspection techniques including Phased Array UT, TOFD, ACFM, and AUT for complex geometry and high-integrity assets.",
+      forText: "Subsea, aerospace, high-pressure systems",
+      slug: "phased-array-ultrasonic-testing",
+      tag: "Advanced NDT",
     },
     {
-      icon: Shield,
-      title: "API 570 Piping Inspection",
-      description: "Piping system inspection and certification for code compliance, safety assurance and integrity management.",
-      forText: "Process plants, pipelines, manufacturing facilities",
+      icon: ClipboardCheck,
+      title: "Engineering Assessments",
+      description: "API 570, API 653, fitness-for-service evaluations and risk-based inspection programs to extend asset life and ensure code compliance.",
+      forText: "Process plants, storage terminals, pipelines",
       slug: "api-570-piping-inspection-and-certification",
+      tag: "Engineering Assessments",
     },
     {
-      icon: FlaskConical,
-      title: "API 653 Storage Tank Inspection",
-      description: "Aboveground storage tank integrity inspections delivering official API 653 certification and detailed reporting.",
-      forText: "Tank farms, refineries, logistics operators",
-      slug: "api-653-aboveground-storage-tank-inspection-and-certification",
+      icon: HardHat,
+      title: "Engineering & Fabrication",
+      description: "Structural fabrication, tank construction, piping works and project management delivered to international codes and standards.",
+      forText: "Industrial plants, refineries, construction projects",
+      slug: "tank-calibration-services",
+      tag: "Engineering & Fabrication",
     },
   ];
 
@@ -279,10 +284,15 @@ const Home = () => {
                   to={`/services/${service.slug}`}
                   className="group flex h-full flex-col rounded-2xl border border-border/60 bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary/30 cursor-pointer"
                 >
-                  <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors group-hover:bg-primary/20">
-                    <service.icon className="h-7 w-7" />
+                  <div className="mb-4 inline-flex items-center gap-2">
+                    <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary/20">
+                      <service.icon className="h-6 w-6" />
+                    </div>
+                    <span className="rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
+                      {service.tag}
+                    </span>
                   </div>
-                  <h3 className="text-xl font-bold text-foreground">{service.title}</h3>
+                  <h3 className="mt-2 text-xl font-bold text-foreground">{service.title}</h3>
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{service.description}</p>
                   <hr className="my-5 border-border" />
                   <p className="text-sm text-foreground">
