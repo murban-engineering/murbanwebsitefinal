@@ -74,19 +74,19 @@ const Home = () => {
 
   const differentiators = [
     {
-      icon: Sparkles,
+      icon: BrainCircuit,
       title: "Signature Delivery Experience",
       description:
         "Our cross-functional squads embed alongside your team to accelerate approvals, procurement and commissioning.",
     },
     {
-      icon: BarChart3,
+      icon: LineChart,
       title: "Data-Driven Decisions",
       description:
         "Live project analytics and predictive modelling ensure you are always ahead of risk and budget curveballs.",
     },
     {
-      icon: Compass,
+      icon: Leaf,
       title: "Sustainability by Design",
       description:
         "We engineer for carbon, water and energy performance from day zero, ensuring compliance and positive impact.",
