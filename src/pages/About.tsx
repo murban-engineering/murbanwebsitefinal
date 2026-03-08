@@ -168,7 +168,7 @@ const About = () => {
               <AnimateOnScroll direction="left" delay={100}>
                 <Card className="border-border">
                   <CardContent className="p-8">
-                    <Telescope className="h-12 w-12 text-primary mb-4" />
+                    <Telescope className="h-12 w-12 text-foreground mb-4" />
                     <h3 className="text-2xl font-serif font-bold mb-4">Our Vision</h3>
                     <p className="text-muted-foreground">
                       To be the undisputed leader in specialized Non-Destructive Testing and Inspection across Africa through innovation, experience, and technology.
