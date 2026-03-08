@@ -38,7 +38,7 @@ const WhyChooseUs = () => {
             <ul className="space-y-4">
               {reasons.map((reason, index) => (
                 <li key={index} className="flex items-start">
-                  <CircleCheckBig className="h-6 w-6 text-primary mr-3 flex-shrink-0 mt-0.5" />
+                  <CircleCheckBig className="h-6 w-6 text-foreground mr-3 flex-shrink-0 mt-0.5" />
                   <span className="text-lg">{reason}</span>
                 </li>
               ))}

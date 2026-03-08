@@ -395,7 +395,7 @@ const Home = () => {
                 <div className="mt-8 space-y-4">
                   {transformationHighlights.map((item) => (
                     <div key={item.title} className="flex items-start gap-4">
-                      <item.icon className="h-6 w-6 shrink-0 text-primary mt-0.5" />
+                      <item.icon className="h-6 w-6 shrink-0 text-foreground mt-0.5" />
                       <div>
                         <h3 className="font-semibold text-foreground">{item.title}</h3>
                         <p className="mt-1 text-sm text-muted-foreground">{item.description}</p>

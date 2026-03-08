@@ -243,7 +243,7 @@ const IndustrySolutions = () => {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                       <div className="absolute bottom-0 left-0 right-0 p-6 flex flex-col items-center text-center">
-                        <industry.icon className="h-8 w-8 text-white mb-3 drop-shadow-lg" />
+                        <industry.icon className="h-8 w-8 text-foreground mb-3 drop-shadow-lg" />
                         <CardTitle className="text-xl font-serif text-white font-bold">{industry.title}</CardTitle>
                       </div>
                     </div>

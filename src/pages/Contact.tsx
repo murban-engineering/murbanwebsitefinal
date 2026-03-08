@@ -360,7 +360,7 @@ const Contact = () => {
                   <div className="p-4 bg-card border-t border-border">
                     <div className="flex items-center justify-between flex-wrap gap-3">
                       <div className="flex items-center gap-2">
-                        <MapPin className="h-5 w-5 text-primary flex-shrink-0" />
+                        <MapPin className="h-5 w-5 text-foreground flex-shrink-0" />
                         <p className="text-sm text-muted-foreground font-medium">
                           Off-Airport Road, Port Reitz, Mombasa, Kenya
                         </p>

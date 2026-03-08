@@ -263,7 +263,7 @@ const Certifications = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {certifications.industry.map((cert, i) =>
-              renderCertCard(cert, <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors"><ShieldIcon className="w-6 h-6 text-accent-foreground" /></div>, i, i % 2 === 0 ? "left" : "right")
+              renderCertCard(cert, <div className="w-12 h-12 rounded-lg bg-foreground/10 flex items-center justify-center mb-4 group-hover:bg-foreground/20 transition-colors"><ShieldIcon className="w-6 h-6 text-foreground" /></div>, i, i % 2 === 0 ? "left" : "right")
             )}
           </div>
         </div>

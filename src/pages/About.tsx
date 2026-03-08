@@ -304,7 +304,7 @@ const About = () => {
                 <AnimateOnScroll key={index} direction={index % 2 === 0 ? "right" : "left"} delay={index * 100}>
                   <Card className="group hover:shadow-lg transition-all duration-300 border-border">
                     <CardContent className="p-6">
-                      <value.icon className="h-10 w-10 text-primary mb-4" />
+                      <value.icon className="h-10 w-10 text-foreground mb-4" />
                       <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
                       <p className="text-muted-foreground text-sm mb-3">{value.description}</p>
                       <p className="text-xs text-primary font-medium italic">Why it matters: {value.why}</p>
