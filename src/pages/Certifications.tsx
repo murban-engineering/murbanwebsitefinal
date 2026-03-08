@@ -238,7 +238,7 @@ const Certifications = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {certifications.iso.map((cert, i) =>
-              renderCertCard(cert, <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition-colors"><AwardIcon className="w-6 h-6 text-secondary" /></div>, i, i % 2 === 0 ? "right" : "left")
+              renderCertCard(cert, <div className="w-12 h-12 rounded-lg bg-foreground/10 flex items-center justify-center mb-4 group-hover:bg-foreground/20 transition-colors"><AwardIcon className="w-6 h-6 text-foreground" /></div>, i, i % 2 === 0 ? "right" : "left")
             )}
           </div>
         </div>
