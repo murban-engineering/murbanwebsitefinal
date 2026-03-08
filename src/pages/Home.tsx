@@ -370,9 +370,7 @@ const Home = () => {
                 <div className="mt-8 space-y-4">
                   {transformationHighlights.map((item) => (
                     <div key={item.title} className="flex items-start gap-4">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                        <item.icon className="h-5 w-5" />
-                      </div>
+                      <item.icon className="h-6 w-6 shrink-0 text-primary mt-0.5" />
                       <div>
                         <h3 className="font-semibold text-foreground">{item.title}</h3>
                         <p className="mt-1 text-sm text-muted-foreground">{item.description}</p>
