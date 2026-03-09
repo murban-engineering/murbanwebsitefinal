@@ -396,8 +396,10 @@ const Home = () => {
                 src={fieldWork1}
                 alt="Field work 1"
                 className="h-72 w-full rounded-3xl object-cover shadow-lg transition-transform duration-300 hover:scale-[1.02]"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
+                width={800}
+                height={288}
               />
             </AnimateOnScroll>
             <AnimateOnScroll direction="right" delay={100}>
@@ -405,8 +407,10 @@ const Home = () => {
                 src={fieldWork3}
                 alt="Field work 3"
                 className="h-72 w-full rounded-3xl object-cover shadow-lg transition-transform duration-300 hover:scale-[1.02]"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
+                width={800}
+                height={288}
               />
             </AnimateOnScroll>
           </div>
