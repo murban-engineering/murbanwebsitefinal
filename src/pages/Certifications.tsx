@@ -165,7 +165,7 @@ const Certifications = () => {
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={fieldWork4} alt="" className="h-full w-full object-cover" loading="eager" />
+          <img src={fieldWork4} alt="" className="h-full w-full object-cover" loading="eager" decoding="async" fetchPriority="high" width={1920} height={1080} />
           <div className="absolute inset-0 bg-foreground/70" />
         </div>
         

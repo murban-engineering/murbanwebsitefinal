@@ -258,7 +258,7 @@ const About = () => {
       {/* Values Section */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={fieldWork2} alt="" className="h-full w-full object-cover" loading="lazy" />
+          <img src={fieldWork2} alt="" className="h-full w-full object-cover" loading="lazy" decoding="async" width={1920} height={1080} />
           <div className="absolute inset-0 bg-foreground/70" />
         </div>
         <div className="container mx-auto px-4 relative z-10">

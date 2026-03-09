@@ -87,6 +87,8 @@ const ServiceDetailPage = () => {
                 alt={service.title}
                 className="h-full w-full object-cover"
                 loading="eager"
+                decoding="async"
+                fetchPriority="high"
                 width={960}
                 height={400}
               />

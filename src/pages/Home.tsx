@@ -433,7 +433,7 @@ const Home = () => {
       {/* CTA Section */}
        <section className="relative py-24 overflow-hidden">
          <div className="absolute inset-0 z-0">
-           <img src={industrialPlant} alt="" className="h-full w-full object-cover" loading="eager" decoding="async" />
+           <img src={industrialPlant} alt="" className="h-full w-full object-cover" loading="lazy" decoding="async" width={1920} height={600} />
            <div className="absolute inset-0 bg-transparent" />
         </div>
         <AnimateOnScroll direction="up" className="container relative z-10 mx-auto px-4 text-center">
