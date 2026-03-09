@@ -375,64 +375,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Featured Project with Image */}
-      <section className="py-24 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <AnimateOnScroll direction="left">
-              <div>
-                <span className="text-sm font-semibold uppercase tracking-widest text-primary">
-                  Featured Work
-                </span>
-                <h2 className="mt-4 text-3xl font-semibold text-foreground md:text-4xl">
-                  Engineering excellence in action
-                </h2>
-                <p className="mt-4 text-lg text-muted-foreground">
-                  Our teams combine deep technical mastery with a human-centric approach. Every engagement 
-                  delivers measurable outcomes and resilient systems.
-                </p>
-
-                <div className="mt-8 space-y-4">
-                  {transformationHighlights.map((item) => (
-                    <div key={item.title} className="flex items-start gap-4">
-                      <item.icon className="h-6 w-6 shrink-0 text-primary mt-0.5" />
-                      <div>
-                        <h3 className="font-semibold text-foreground">{item.title}</h3>
-                        <p className="mt-1 text-sm text-muted-foreground">{item.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <Button size="lg" asChild className="mt-8 rounded-xl">
-                  <Link to="/industry-solutions">
-                    View Industry Solutions <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-              </div>
-            </AnimateOnScroll>
-
-            <AnimateOnScroll direction="right" delay={200}>
-              <div className="relative">
-                <img
-                  src={projectImage}
-                  alt="Engineering project showcase"
-                  className="rounded-3xl shadow-2xl shadow-foreground/10"
-                  loading="eager"
-                  decoding="async"
-                  fetchPriority="high"
-                  width={800}
-                  height={600}
-                />
-                <div className="absolute -bottom-6 -left-6 rounded-2xl border border-border bg-card p-6 shadow-xl">
-                  <div className="text-3xl font-bold text-primary">98%</div>
-                  <div className="text-sm text-muted-foreground">Client Satisfaction</div>
-                </div>
-              </div>
-            </AnimateOnScroll>
-          </div>
-        </div>
-      </section>
 
       {/* Gallery Section */}
       <section className="py-24">
