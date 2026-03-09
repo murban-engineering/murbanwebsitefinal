@@ -427,10 +427,10 @@ const Home = () => {
       </AnimateOnScroll>
 
       {/* CTA Section */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img src={industrialPlant} alt="" className="h-full w-full object-cover" loading="eager" decoding="async" />
-          <div className="absolute inset-0 bg-foreground/70" />
+       <section className="relative py-24 overflow-hidden">
+         <div className="absolute inset-0 z-0">
+           <img src={industrialPlant} alt="" className="h-full w-full object-cover" loading="eager" decoding="async" />
+           <div className="absolute inset-0 bg-transparent" />
         </div>
         <AnimateOnScroll direction="up" className="container relative z-10 mx-auto px-4 text-center">
           <h2 className="text-3xl font-semibold text-white md:text-4xl">
