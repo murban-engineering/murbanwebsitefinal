@@ -85,7 +85,7 @@ const ServiceDetailPage = () => {
               <img
                 src={heroImage}
                 alt={service.title}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover rounded-3xl"
                 loading="eager"
                 width={960}
                 height={400}
