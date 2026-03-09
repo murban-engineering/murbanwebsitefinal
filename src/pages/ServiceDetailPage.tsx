@@ -81,11 +81,11 @@ const ServiceDetailPage = () => {
       <div className="w-full">
         <div className="grid md:grid-cols-2">
           <AnimateOnScroll direction="left">
-            <div className="h-64 md:h-96">
+            <div className="h-64 md:h-96 overflow-hidden rounded-3xl">
               <img
                 src={heroImage}
                 alt={service.title}
-                className="h-full w-full object-cover rounded-3xl"
+                className="h-full w-full object-cover"
                 loading="eager"
                 width={960}
                 height={400}
