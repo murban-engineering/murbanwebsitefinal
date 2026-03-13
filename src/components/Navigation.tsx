@@ -58,8 +58,11 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => {
+          {navLinks.map((link) => {
               const active = isActive(link.path);
+              const baseLinkClass = scrolled
+                ? active ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                : active ? "text-white" : "text-white/80 hover:text-white";
 
               if (link.external) {
                 return (
@@ -68,23 +71,19 @@ const Navigation = () => {
                     href={link.path}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                    className={`text-sm font-medium transition-colors ${baseLinkClass}`}
                   >
                     {link.name}
                   </a>
                 );
               }
 
-                return (
-                  <Link
-                    key={link.path}
-                    to={link.path}
-                    onClick={link.path === "/" ? handleHomeClick : undefined}
-                    className={`text-sm font-medium transition-colors ${
-                      active
-                        ? "text-foreground"
-                        : "text-muted-foreground hover:text-foreground"
-                  }`}
+              return (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={link.path === "/" ? handleHomeClick : undefined}
+                  className={`text-sm font-medium transition-colors ${baseLinkClass}`}
                 >
                   {link.name}
                 </Link>
