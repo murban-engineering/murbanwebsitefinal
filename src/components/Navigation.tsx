@@ -51,8 +51,8 @@ const Navigation = () => {
               fetchPriority="high"
             />
             <span className="text-lg font-semibold tracking-tight">
-              <span className="text-primary">MURBAN</span>{" "}
-              <span className="text-foreground">ENGINEERING</span>
+              <span className={scrolled ? "text-primary" : "text-white"}>MURBAN</span>{" "}
+              <span className={scrolled ? "text-foreground" : "text-white"}>ENGINEERING</span>
             </span>
           </Link>
 
