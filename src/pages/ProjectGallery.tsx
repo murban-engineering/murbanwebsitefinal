@@ -18,6 +18,7 @@ import fieldWork4 from "@/assets/field-work-4.jpg";
 import fieldWork5 from "@/assets/field-work-5.jpg";
 import fieldWork6 from "@/assets/field-work-6.jpg";
 import constructionBlueprints from "@/assets/construction-blueprints.jpg";
+import modernOilFactory2 from "@/assets/modern-oil-factory-2.jpg";
 
 interface Project {
   id: number;
@@ -236,8 +237,16 @@ const ProjectGallery = () => {
       <section className="py-20 relative z-10">
         <div className="container mx-auto px-4">
           <AnimateOnScroll direction="up">
-            <Card className="bg-gradient-hero text-white border-0">
-              <CardContent className="p-12 text-center">
+            <Card className="overflow-hidden text-white border-0 relative">
+              <img
+                src={modernOilFactory2}
+                alt="Modern oil factory"
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="absolute inset-0 bg-gradient-hero opacity-80" />
+              <CardContent className="p-12 text-center relative z-10">
                 <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">
                   Ready to Start Your Project?
                 </h2>
