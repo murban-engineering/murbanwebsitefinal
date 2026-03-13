@@ -93,7 +93,7 @@ const Navigation = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Button asChild size="lg" className="rounded-lg px-6">
+            <Button asChild size="lg" variant="outline" className="rounded-lg px-6">
               <Link to="/contact">Start a Project</Link>
             </Button>
           </div>
