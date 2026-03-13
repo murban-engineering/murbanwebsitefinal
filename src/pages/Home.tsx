@@ -25,6 +25,7 @@ import bolloreLogo from "@/assets/bollore-logo.png";
 import kpcLogo from "@/assets/kpc-logo.png";
 import fieldWork1 from "@/assets/field-work-1.jpg";
 import fieldWork3 from "@/assets/field-work-3.jpg";
+import modernOilFactory from "@/assets/modern-oil-factory.jpg";
 
 import industrialPlant from "@/assets/industrial-plant.jpg";
 
