@@ -26,6 +26,7 @@ import kpcLogo from "@/assets/kpc-logo.png";
 import fieldWork1 from "@/assets/field-work-1.jpg";
 import fieldWork3 from "@/assets/field-work-3.jpg";
 import modernOilFactory from "@/assets/modern-oil-factory.jpg";
+import modernOilFactory3 from "@/assets/modern-oil-factory-3.jpg";
 
 import industrialPlant from "@/assets/industrial-plant.jpg";
 
