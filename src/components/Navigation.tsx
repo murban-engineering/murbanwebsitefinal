@@ -34,8 +34,8 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background border-b border-border shadow-sm" : "bg-background"
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+        scrolled ? "bg-background border-b border-border shadow-sm" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4">
@@ -51,15 +51,18 @@ const Navigation = () => {
               fetchPriority="high"
             />
             <span className="text-lg font-semibold tracking-tight">
-              <span className="text-primary">MURBAN</span>{" "}
-              <span className="text-foreground">ENGINEERING</span>
+              <span className={scrolled ? "text-primary" : "text-white"}>MURBAN</span>{" "}
+              <span className={scrolled ? "text-foreground" : "text-white"}>ENGINEERING</span>
             </span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => {
+          {navLinks.map((link) => {
               const active = isActive(link.path);
+              const baseLinkClass = scrolled
+                ? active ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                : active ? "text-white" : "text-white/80 hover:text-white";
 
               if (link.external) {
                 return (
@@ -68,23 +71,19 @@ const Navigation = () => {
                     href={link.path}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                    className={`text-sm font-medium transition-colors ${baseLinkClass}`}
                   >
                     {link.name}
                   </a>
                 );
               }
 
-                return (
-                  <Link
-                    key={link.path}
-                    to={link.path}
-                    onClick={link.path === "/" ? handleHomeClick : undefined}
-                    className={`text-sm font-medium transition-colors ${
-                      active
-                        ? "text-foreground"
-                        : "text-muted-foreground hover:text-foreground"
-                  }`}
+              return (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={link.path === "/" ? handleHomeClick : undefined}
+                  className={`text-sm font-medium transition-colors ${baseLinkClass}`}
                 >
                   {link.name}
                 </Link>
