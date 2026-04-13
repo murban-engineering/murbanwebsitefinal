@@ -10,7 +10,7 @@ if (redirectedPath) {
 }
 
 createRoot(document.getElementById("root")!).render(
-  <BrowserRouter basename={import.meta.env.BASE_URL}>
+  <BrowserRouter>
     <ThemeProvider>
       <App />
     </ThemeProvider>
