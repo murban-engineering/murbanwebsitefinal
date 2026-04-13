@@ -13,42 +13,63 @@ import pipelineInspectionImg from "@/assets/pipeline-inspection.jpg";
 import steelFactoryImg from "@/assets/steel-factory.jpg";
 import servicesPlant from "@/assets/services-plant.jpg";
 import servicesPipeline from "@/assets/services-pipeline.jpg";
+import fieldWork1 from "@/assets/field-work-1.jpg";
+import fieldWork2 from "@/assets/field-work-2.jpg";
+import fieldWork3 from "@/assets/field-work-3.jpg";
+import fieldWork4 from "@/assets/field-work-4.jpg";
+import fieldWork5 from "@/assets/field-work-5.jpg";
+import fieldWork6 from "@/assets/field-work-6.jpg";
+import industrialPlant from "@/assets/industrial-plant.jpg";
+import modernFactory from "@/assets/modern-factory.jpg";
+import modernOilFactory from "@/assets/modern-oil-factory.jpg";
+import modernOilFactory2 from "@/assets/modern-oil-factory-2.jpg";
+import modernOilFactory3 from "@/assets/modern-oil-factory-3.jpg";
+import modernBuilding from "@/assets/modern-building.jpg";
+import servicesBuilding from "@/assets/services-building.jpg";
+import servicesEngine from "@/assets/services-engine.jpg";
+import servicesIndustrial from "@/assets/services-industrial-1.jpg";
+import servicesStorage from "@/assets/services-storage.jpg";
+import storageTanks from "@/assets/storage-tanks.jpg";
+import constructionBlueprints from "@/assets/construction-blueprints.jpg";
+import heroEngineering from "@/assets/hero-engineering.jpg";
+import portSunset from "@/assets/port-sunset.jpg";
 
+// Each service gets a unique image — no repeats
 const serviceImageMap: Record<string, string> = {
-  "magnetic-particle-testing": magneticTestingImg,
-  "fluorescent-magnet-particle-testing": magneticTestingImg,
-  "surface-hardness-testing": magneticTestingImg,
-  "boiler-inspection-services": chimneyIndustryImg,
-  "thermal-camera-inspection": chimneyIndustryImg,
-  "murban-gas-detection": chimneyIndustryImg,
   "ndt-inspection-services": pipelineInspectionImg,
-  "api-570-piping-inspection-and-certification": pipelineInspectionImg,
-  "pipeline-inspection": pipelineInspectionImg,
-  "ultrasonic-flaw-testing-c-scan": pipelineInspectionImg,
-  "ultrasonic-flaw-testing-b-scan": pipelineInspectionImg,
+  "magnetic-particle-testing": magneticTestingImg,
+  "fluorescent-magnet-particle-testing": fieldWork1,
+  "surface-hardness-testing": fieldWork2,
+  "boiler-inspection-services": chimneyIndustryImg,
+  "thermal-camera-inspection": fieldWork3,
+  "murban-gas-detection": modernFactory,
+  "api-570-piping-inspection-and-certification": servicesPipeline,
+  "pipeline-inspection": servicesIndustrial,
+  "ultrasonic-flaw-testing-c-scan": fieldWork4,
+  "ultrasonic-flaw-testing-b-scan": servicesEngine,
   "api-653-aboveground-storage-tank-inspection-and-certification": oilContainerImg,
-  "sphere-tank-inspections": oilContainerImg,
-  "tank-calibration-services": oilContainerImg,
-  "floormap-3d-mfl-scanning": oilContainerImg,
-  "api-510-pressure-vessel-inspection": oilContainerImg,
-  "murban-pressure-testing": oilContainerImg,
+  "sphere-tank-inspections": storageTanks,
+  "tank-calibration-services": servicesStorage,
+  "floormap-3d-mfl-scanning": industrialPlant,
+  "api-510-pressure-vessel-inspection": modernOilFactory,
+  "murban-pressure-testing": modernOilFactory2,
   "api-579-murban-fitness-for-service": oilRigImg,
-  "api-580-murban-risk-based-inspection": oilRigImg,
-  "murban-uav-inspection": oilRigImg,
-  "3d-laser-scanning-services": oilRigImg,
+  "api-580-murban-risk-based-inspection": portSunset,
+  "murban-uav-inspection": fieldWork5,
+  "3d-laser-scanning-services": modernBuilding,
   "fabrication": steelFactoryImg,
-  "specialized-welding": steelFactoryImg,
-  "construction-and-erection": steelFactoryImg,
-  "surface-preparation-and-paint-works": steelFactoryImg,
-  "detailed-engineering": servicesPipeline,
+  "specialized-welding": fieldWork6,
+  "construction-and-erection": constructionBlueprints,
+  "surface-preparation-and-paint-works": servicesBuilding,
+  "detailed-engineering": heroEngineering,
   "procurement": servicesPlant,
-  "rt-radiographic-services": pipelineInspectionImg,
-  "dye-penetrant-testing": magneticTestingImg,
-  "paint-coating-inspection": steelFactoryImg,
-  "positive-material-identification-testing": magneticTestingImg,
-  "murban-phased-array-testing": pipelineInspectionImg,
-  "alternating-current-field-measurement": magneticTestingImg,
-  "lifting-equipment-thorough-examination-and-certification": oilRigImg,
+  "rt-radiographic-services": modernOilFactory3,
+  "dye-penetrant-testing": modernFactory,
+  "paint-coating-inspection": servicesBuilding,
+  "positive-material-identification-testing": fieldWork1,
+  "murban-phased-array-testing": servicesIndustrial,
+  "alternating-current-field-measurement": fieldWork3,
+  "lifting-equipment-thorough-examination-and-certification": industrialPlant,
 };
 
 const ServiceDetailPage = () => {
@@ -76,7 +97,7 @@ const ServiceDetailPage = () => {
   const heroImage = serviceImageMap[slug] ?? pipelineInspectionImg;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pt-20">
       {/* Hero Section - Image left, text right */}
       <div className="w-full">
         <div className="grid md:grid-cols-2">
