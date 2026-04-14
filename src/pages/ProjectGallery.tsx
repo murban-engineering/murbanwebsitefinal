@@ -244,6 +244,8 @@ const ProjectGallery = () => {
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
                 decoding="async"
+                width={1920}
+                height={1080}
               />
               <div className="absolute inset-0 bg-gradient-hero opacity-80" />
               <CardContent className="p-12 text-center relative z-10">
