@@ -2114,17 +2114,17 @@ const Services = () => {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src={servicesBuilding}
-            alt="Industrial engineering infrastructure"
-            className="h-full w-full object-cover rounded-3xl"
+            src={modernWhiteBuilding}
+            alt="Modern engineering infrastructure"
+            className="h-full w-full object-cover"
             loading="eager"
             decoding="async"
             fetchPriority="high"
             width={1920}
             height={1080}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/55 to-primary/30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-primary/75 via-transparent to-primary/25" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/70 to-background/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/30" />
         </div>
 
         <div className="container relative z-10 mx-auto px-4 text-center">
