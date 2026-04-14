@@ -2210,6 +2210,8 @@ const Services = () => {
             className="h-full w-full object-cover rounded-3xl"
             loading="lazy"
             decoding="async"
+            width={1920}
+            height={1080}
           />
           <div className="absolute inset-0 bg-background/95" />
         </div>
@@ -2261,6 +2263,8 @@ const Services = () => {
             className="h-full w-full object-cover rounded-3xl"
             loading="lazy"
             decoding="async"
+            width={1920}
+            height={1080}
           />
         </div>
         <div className="container relative z-10 mx-auto px-4 text-center">

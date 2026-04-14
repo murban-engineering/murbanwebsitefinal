@@ -49,6 +49,8 @@ const Navigation = () => {
               loading="eager"
               decoding="async"
               fetchPriority="high"
+              width={40}
+              height={40}
             />
             <span className="text-lg font-semibold tracking-tight">
               <span className="text-primary">MURBAN</span>{" "}

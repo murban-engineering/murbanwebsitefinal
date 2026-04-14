@@ -334,7 +334,7 @@ const IndustrySolutions = () => {
       {/* CTA Section */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={industryHero} alt="" className="h-full w-full object-cover" loading="lazy" />
+          <img src={industryHero} alt="" className="h-full w-full object-cover" loading="lazy" decoding="async" width={1920} height={1080} />
           <div className="absolute inset-0 bg-foreground/70" />
         </div>
         <AnimateOnScroll direction="up" className="container mx-auto px-4 relative z-10">
