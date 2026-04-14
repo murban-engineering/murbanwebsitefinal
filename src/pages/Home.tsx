@@ -289,22 +289,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Services Image Banner */}
-      <section className="w-full">
-        <AnimateOnScroll direction="up">
-          <div className="h-64 md:h-80 overflow-hidden">
-            <img
-              src={modernWhiteBuilding}
-              alt="Modern engineering infrastructure"
-              className="h-full w-full object-cover"
-              loading="lazy"
-              width={1920}
-              height={400}
-            />
-          </div>
-        </AnimateOnScroll>
-      </section>
-
       {/* Services Preview Section */}
       <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-4">

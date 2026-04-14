@@ -46,6 +46,7 @@ import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import servicesBuilding from "@/assets/services-building.jpg";
+import modernWhiteBuilding from "@/assets/modern-white-building.jpg";
 import storageTanks from "@/assets/storage-tanks.jpg";
 import modernFactory from "@/assets/modern-factory.jpg";
 import "./Services.css";
