@@ -29,7 +29,6 @@ import modernOilFactory from "@/assets/modern-oil-factory.jpg";
 import modernOilFactory3 from "@/assets/modern-oil-factory-3.jpg";
 
 import industrialPlant from "@/assets/industrial-plant.jpg";
-import modernWhiteBuilding from "@/assets/modern-white-building.jpg";
 
 const Home = () => {
   const services = [
