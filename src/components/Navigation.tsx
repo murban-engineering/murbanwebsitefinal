@@ -114,7 +114,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden pb-6">
+          <div className="lg:hidden pb-6 bg-background/95 backdrop-blur-md rounded-b-2xl shadow-lg">
             <div className="space-y-2 border-t border-border pt-4">
               {navLinks.map((link) => {
                 const active = isActive(link.path);

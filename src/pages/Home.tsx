@@ -29,6 +29,7 @@ import modernOilFactory from "@/assets/modern-oil-factory.jpg";
 import modernOilFactory3 from "@/assets/modern-oil-factory-3.jpg";
 
 import industrialPlant from "@/assets/industrial-plant.jpg";
+import modernWhiteBuilding from "@/assets/modern-white-building.jpg";
 
 const Home = () => {
   const services = [
@@ -231,7 +232,7 @@ const Home = () => {
                 size="lg"
                 variant="secondary"
                 asChild
-                className="rounded-xl bg-[#1C2A5F] px-8 text-white shadow-lg hover:bg-[#16224d]"
+                className="rounded-xl px-8"
               >
                 <Link to="/project-gallery">View Our Projects</Link>
               </Button>
@@ -286,6 +287,22 @@ const Home = () => {
             </div>
           </AnimateOnScroll>
         </div>
+      </section>
+
+      {/* Services Image Banner */}
+      <section className="w-full">
+        <AnimateOnScroll direction="up">
+          <div className="h-64 md:h-80 overflow-hidden">
+            <img
+              src={modernWhiteBuilding}
+              alt="Modern engineering infrastructure"
+              className="h-full w-full object-cover"
+              loading="lazy"
+              width={1920}
+              height={400}
+            />
+          </div>
+        </AnimateOnScroll>
       </section>
 
       {/* Services Preview Section */}
