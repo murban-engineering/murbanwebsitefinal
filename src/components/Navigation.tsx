@@ -21,7 +21,7 @@ const Navigation = () => {
     { name: "Services", path: "/services" },
     { name: "Industry Solutions", path: "/industry-solutions" },
     { name: "Contact", path: "/contact" },
-    { name: "Portal", path: "https://murbanportal.com/", external: true },
+    { name: "Portal", path: "https://portal.murban-eng.com/", external: true },
   ];
 
   const isActive = (path: string) => location.pathname === path;
