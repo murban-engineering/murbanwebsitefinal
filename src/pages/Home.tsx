@@ -194,20 +194,24 @@ const Home = () => {
         <div className="container relative z-10 mx-auto px-4 py-32">
           <AnimateOnScroll direction="left" className="max-w-2xl">
             <span className="inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold uppercase tracking-wide text-primary">
-              Engineering Excellence
+              Asset Integrity & NDT Specialists
             </span>
             
             <h1 className="mt-8 text-4xl font-semibold leading-tight text-foreground sm:text-5xl md:text-6xl">
-              Building Tomorrow's
-              <br />
-              <span className="text-primary">Infrastructure</span> Today
+              Murban <span className="text-primary">Engineering</span>
             </h1>
             
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground">
-              We deliver comprehensive engineering solutions for businesses that need 
-              reliable systems. From structural design to MEP, we create infrastructure 
-              that scales with your growth, including advanced NDT and other engineering services.
+              A specialist firm in Asset Integrity, Inspection, and Non-Destructive Testing (NDT). We deliver reliable and safe inspection solutions for oil & gas, energy, marine, and industrial sectors across Africa.
             </p>
+
+            <div className="mt-4 max-w-lg">
+              <p className="text-sm font-semibold text-foreground">We operate through two divisions:</p>
+              <ul className="mt-1 space-y-0.5 text-sm text-muted-foreground">
+                <li>— Murban Inspection Services</li>
+                <li>— Murban Engineering Services</li>
+              </ul>
+            </div>
             
             <div className="mt-10 flex flex-wrap gap-4">
               <Button size="lg" asChild className="rounded-xl px-8 shadow-lg shadow-primary/20">
