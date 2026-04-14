@@ -117,7 +117,7 @@ const ProjectGallery = () => {
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         <img
-          src="/construction-concept-image-helmet-rolled-blueprints-wooden-boards-retro-style.jpg"
+          src={`${import.meta.env.BASE_URL}construction-concept-image-helmet-rolled-blueprints-wooden-boards-retro-style.jpg`}
           alt="Construction concept with helmet and blueprints"
           className="absolute inset-0 w-full h-full object-cover object-center"
           loading="eager"

@@ -123,7 +123,7 @@ const About = () => {
             </AnimateOnScroll>
             <AnimateOnScroll direction="right" delay={200}>
               <img
-                src="/_MG_2642%20-%20Copy%20(2).jpg"
+                src={`${import.meta.env.BASE_URL}_MG_2642%20-%20Copy%20(2).jpg`}
                 alt="Murban Engineering inspection team"
                 className="rounded-lg shadow-xl"
                 loading="lazy"

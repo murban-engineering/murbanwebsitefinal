@@ -43,7 +43,7 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
             <img
-              src="/murbanlogo.ico"
+              src={`${import.meta.env.BASE_URL}murbanlogo.ico`}
               alt="Murban Engineering Logo"
               className="h-10 w-10 object-contain rounded-md"
               loading="eager"
