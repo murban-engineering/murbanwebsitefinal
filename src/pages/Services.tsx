@@ -46,6 +46,7 @@ import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import servicesBuilding from "@/assets/services-building.jpg";
+import modernWhiteBuilding from "@/assets/modern-white-building.jpg";
 import storageTanks from "@/assets/storage-tanks.jpg";
 import modernFactory from "@/assets/modern-factory.jpg";
 import "./Services.css";
@@ -2113,28 +2114,28 @@ const Services = () => {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src={servicesBuilding}
-            alt="Industrial engineering infrastructure"
-            className="h-full w-full object-cover rounded-3xl"
+            src={modernWhiteBuilding}
+            alt="Modern engineering infrastructure"
+            className="h-full w-full object-cover"
             loading="eager"
             decoding="async"
             fetchPriority="high"
             width={1920}
             height={1080}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/55 to-primary/30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-primary/75 via-transparent to-primary/25" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/70 to-background/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/30" />
         </div>
 
         <div className="container relative z-10 mx-auto px-4 text-center">
           <AnimateOnScroll direction="left">
-            <Badge className="mb-6 border border-white/40 bg-white/15 text-white backdrop-blur-md text-sm uppercase tracking-wider">
+            <Badge className="mb-6 border border-primary/40 bg-primary/10 text-primary backdrop-blur-md text-sm uppercase tracking-wider">
               Murban Engineering – NDT & Asset Integrity Services
             </Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold mb-6 leading-[1.1] text-white drop-shadow-lg">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold mb-6 leading-[1.1] text-foreground drop-shadow-sm">
               Precision Inspection &<br />Engineering Services
             </h1>
-            <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto text-white/95 leading-relaxed mb-10 drop-shadow-md">
+            <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto text-muted-foreground leading-relaxed mb-10">
               Comprehensive Non-Destructive Testing and turnkey engineering support to keep critical infrastructure running at peak performance.
             </p>
             
@@ -2148,7 +2149,7 @@ const Services = () => {
                   <a
                     key={section.id}
                     href={`#${section.id}`}
-                    className="group inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/10 px-5 py-2.5 text-sm font-medium text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/20 hover:border-white/50 hover:scale-105 hover:shadow-lg"
+                    className="group inline-flex items-center gap-2 rounded-xl border border-primary/30 bg-background/60 px-5 py-2.5 text-sm font-medium text-foreground backdrop-blur-sm transition-all duration-300 hover:bg-primary/10 hover:border-primary/50 hover:scale-105 hover:shadow-lg"
                   >
                     <span>{section.label}</span>
                   </a>
