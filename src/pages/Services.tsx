@@ -2136,7 +2136,7 @@ const Services = () => {
               Precision Inspection &<br />Engineering Services
             </h1>
             <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto text-muted-foreground leading-relaxed mb-10">
-              Comprehensive Non-Destructive Testing and turnkey engineering support to keep critical infrastructure running at peak performance.
+              Comprehensive Non-Destructive Testing and Advanced NDT support to keep critical infrastructure running at peak performance.
             </p>
             
             {/* Navigation to sections */}
